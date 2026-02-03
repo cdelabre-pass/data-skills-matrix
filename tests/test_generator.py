@@ -97,9 +97,9 @@ class TestGenerateXlsx:
 
         for role in config.roles:
             # Each role should have C/S and 4 level columns
-            assert any(
-                role.name in str(h) for h in header_row
-            ), f"Role {role.name} not found in headers"
+            assert any(role.name in str(h) for h in header_row), (
+                f"Role {role.name} not found in headers"
+            )
 
     def test_assessment_sheet_has_dropdowns(self, generated_workbook):
         wb, stats, config, categories = generated_workbook
