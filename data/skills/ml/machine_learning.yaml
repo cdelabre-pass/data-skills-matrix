@@ -1,0 +1,474 @@
+# Machine Learning skills
+category:
+  id: machine_learning
+  name: "Machine Learning"
+
+skills:
+  - id: recommendation_systems
+    name: "Systèmes de Recommandation"
+    description: "Concevoir et implémenter des systèmes de recommandation (collaborative, content-based, two-tower)"
+    core_roles: [ml_engineer, data_scientist]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [NC, NC, 1, 2]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance des systèmes de recommandation"
+      1: "Comprend les types de systèmes de recommandation"
+      2: "Peut implémenter des recos basiques (collaborative filtering)"
+      3: "Conçoit des systèmes two-tower et recos hybrides"
+      4: "Expert en architectures de recommandation avancées"
+      5: "Architecte recommandation de l'organisation"
+      6: "Expert RecSys reconnu, publications, speaker RecSys"
+    behavioral_indicators:
+      1:
+        - "Je connais la différence entre collaborative et content-based filtering"
+        - "Je comprends le problème du cold start"
+        - "Je sais ce qu'est une matrice user-item"
+      2:
+        - "J'ai implémenté un collaborative filtering basique"
+        - "Je calcule les métriques de recommandation (precision, recall, MRR)"
+        - "Je comprends les factorisations matricielles"
+        - "J'utilise des bibliothèques comme Surprise ou implicit"
+      3:
+        - "J'ai conçu un système two-tower avec embeddings"
+        - "Je combine plusieurs signaux (collaborative + content)"
+        - "Je gère le ranking et la diversité des recommandations"
+        - "J'ai déployé un système de recommandation en production"
+      4:
+        - "J'ai conçu l'architecture de recommandation de l'organisation"
+        - "Je gère le serving temps réel des recommandations"
+        - "Je mesure l'impact business des recommandations"
+        - "Je forme les équipes aux systèmes de recommandation"
+      5:
+        - "Je définis les standards et patterns de recommandation pour l'organisation"
+        - "Je suis la référence interne pour les architectures RecSys"
+        - "Je mentore les équipes sur les systèmes de recommandation avancés"
+        - "J'ai mis en place la roadmap technique RecSys de l'entreprise"
+      6:
+        - "Je suis speaker à des conférences RecSys ou similaires"
+        - "J'ai publié des articles ou papers sur les systèmes de recommandation"
+        - "Je contribue à des projets open-source dans le domaine RecSys"
+        - "Je suis reconnu comme expert externe et sollicité par d'autres entreprises"
+    resources:
+      - url: "https://www.coursera.org/specializations/recommender-systems"
+        title: "Recommender Systems Specialization (Coursera)"
+        type: "course"
+      - url: "https://developers.google.com/machine-learning/recommendation"
+        title: "Google ML Recommendations"
+        type: "tutorial"
+      - url: "https://arxiv.org/abs/1905.01395"
+        title: "Two-Tower Models Paper"
+        type: "documentation"
+      - url: "https://eugeneyan.com/writing/system-design-for-discovery/"
+        title: "System Design for Discovery"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Implémentez un système de collaborative filtering simple. Comprenez les métriques (MRR, NDCG)."
+      "2→3": "Construisez un système two-tower avec des embeddings. Combinez plusieurs signaux."
+      "3→4": "Concevez un système de recommandation à l'échelle. Publiez vos learnings."
+
+  - id: embeddings
+    name: "Embeddings & Retrieval Vectoriel"
+    description: "Générer des embeddings et implémenter la recherche sémantique"
+    core_roles: [ml_engineer, data_scientist]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [NC, NC, 1, 2]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance des embeddings"
+      1: "Comprend les concepts de vecteurs et similarité"
+      2: "Peut générer des embeddings avec des modèles pré-entraînés"
+      3: "Conçoit des pipelines d'embeddings et retrieval vectoriel"
+      4: "Expert en architectures d'embeddings et vector stores"
+      5: "Architecte search/embeddings de l'organisation"
+      6: "Expert vector search reconnu, publications"
+    behavioral_indicators:
+      1:
+        - "Je comprends ce qu'est un vecteur et la similarité cosine"
+        - "Je sais ce qu'est un embedding et son utilité"
+        - "Je connais des applications (recherche sémantique, recommandation)"
+      2:
+        - "J'utilise des modèles pré-entraînés (Sentence-BERT, OpenAI)"
+        - "J'ai implémenté une recherche par similarité"
+        - "Je comprends les métriques de distance"
+        - "J'utilise une base vectorielle (Pinecone, Qdrant)"
+      3:
+        - "Je conçois des pipelines d'embeddings à l'échelle"
+        - "Je fine-tune des modèles d'embeddings"
+        - "J'optimise les performances de retrieval"
+        - "J'ai déployé une recherche sémantique en production"
+      4:
+        - "J'ai conçu l'architecture de recherche vectorielle"
+        - "Je gère des milliards d'embeddings"
+        - "J'optimise les coûts et latences"
+        - "Je forme les équipes aux embeddings"
+      5:
+        - "Je définis la stratégie embeddings et vector search de l'organisation"
+        - "Je suis la référence interne pour les architectures de retrieval"
+        - "Je mentore les équipes sur les systèmes de recherche sémantique"
+        - "J'ai établi les bonnes pratiques d'indexation vectorielle à l'échelle"
+      6:
+        - "Je suis speaker à des conférences sur le vector search ou les embeddings"
+        - "J'ai publié des articles ou papers sur le retrieval vectoriel"
+        - "Je contribue à des projets open-source (Qdrant, Milvus, FAISS)"
+        - "Je suis reconnu comme expert externe en recherche sémantique"
+    resources:
+      - url: "https://www.pinecone.io/learn/"
+        title: "Pinecone Learning Center"
+        type: "tutorial"
+      - url: "https://huggingface.co/learn/nlp-course/chapter5/5"
+        title: "HuggingFace Embeddings"
+        type: "tutorial"
+      - url: "https://www.sbert.net/"
+        title: "Sentence Transformers"
+        type: "documentation"
+      - url: "https://qdrant.tech/articles/"
+        title: "Qdrant Vector Search Articles"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Utilisez des modèles pré-entraînés pour générer des embeddings. Implémentez une recherche par similarité."
+      "2→3": "Construisez un pipeline d'embeddings avec un vector store. Fine-tunez un modèle pour votre domaine."
+      "3→4": "Optimisez les performances à grande échelle. Contribuez à la communauté vector search."
+
+  - id: deep_learning
+    name: "TensorFlow/PyTorch"
+    description: "Utiliser les frameworks de deep learning"
+    core_roles: [ml_engineer, data_scientist]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [NC, NC, 1, 2]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [NC, NC, NC, 1]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance DL"
+      1: "Comprend les concepts de base, peut exécuter des modèles existants"
+      2: "Peut construire et entraîner des réseaux de neurones basiques"
+      3: "Conçoit des architectures custom, optimise le training"
+      4: "Expert en frameworks DL, peut construire des systèmes complexes"
+      5: "Architecte DL de l'organisation"
+      6: "Contributeur TensorFlow/PyTorch, publications NeurIPS/ICML"
+    behavioral_indicators:
+      1:
+        - "Je comprends les concepts de neurones, layers, activation"
+        - "Je peux exécuter un modèle pré-entraîné"
+        - "Je connais la différence entre PyTorch et TensorFlow"
+      2:
+        - "J'ai entraîné un CNN ou RNN de base"
+        - "Je comprends la backpropagation et les optimizers"
+        - "J'utilise les dataloaders et augmentation"
+        - "Je peux fine-tuner un modèle pré-entraîné"
+      3:
+        - "Je conçois des architectures custom pour un problème"
+        - "J'optimise le training (learning rate scheduling, regularization)"
+        - "J'utilise le training distribué (multi-GPU)"
+        - "J'ai déployé un modèle DL en production"
+      4:
+        - "Je maîtrise les architectures avancées (Transformers, etc.)"
+        - "J'optimise les performances de training à l'échelle"
+        - "Je contribue à la recherche DL"
+        - "Je forme les équipes au deep learning"
+      5:
+        - "Je définis les standards et patterns deep learning de l'organisation"
+        - "Je suis la référence interne pour les architectures DL complexes"
+        - "Je mentore les équipes sur les techniques de training avancées"
+        - "J'ai mis en place l'infrastructure de training à l'échelle"
+      6:
+        - "Je suis speaker à des conférences NeurIPS, ICML ou similaires"
+        - "J'ai publié des papers de recherche en deep learning"
+        - "Je contribue aux frameworks TensorFlow ou PyTorch"
+        - "Je suis reconnu comme expert externe en deep learning"
+    resources:
+      - url: "https://www.deeplearning.ai/"
+        title: "DeepLearning.AI Courses"
+        type: "course"
+      - url: "https://pytorch.org/tutorials/"
+        title: "PyTorch Tutorials"
+        type: "tutorial"
+      - url: "https://www.tensorflow.org/tutorials"
+        title: "TensorFlow Tutorials"
+        type: "tutorial"
+      - url: "https://d2l.ai/"
+        title: "Dive into Deep Learning"
+        type: "book"
+    improvement_tips:
+      "1→2": "Suivez le cours DeepLearning.AI. Implémentez un CNN et un RNN de base."
+      "2→3": "Construisez une architecture custom. Maîtrisez les techniques d'optimisation."
+      "3→4": "Contribuez à un framework. Publiez vos recherches."
+
+  - id: mlflow
+    name: "MLFlow & Experiment Tracking"
+    description: "Tracking des expériences ML et gestion des modèles"
+    core_roles: [ml_engineer, data_scientist]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance MLFlow"
+      1: "Comprend les concepts MLFlow, peut voir les expériences"
+      2: "Peut logger des expériences, tracker les métriques, enregistrer des modèles"
+      3: "Conçoit des workflows MLFlow, intègre avec les pipelines"
+      4: "Expert en architecture MLFlow et MLOps"
+      5: "Architecte MLOps de l'organisation"
+      6: "Expert MLOps reconnu, contributeur open-source"
+    behavioral_indicators:
+      1:
+        - "Je navigue dans l'UI MLFlow"
+        - "Je comprends les concepts d'experiment et run"
+        - "Je peux comparer des runs dans l'interface"
+      2:
+        - "Je logue les paramètres, métriques et artefacts"
+        - "J'enregistre des modèles dans le Model Registry"
+        - "J'utilise mlflow.autolog() pour le tracking automatique"
+        - "Je compare les performances de plusieurs runs"
+      3:
+        - "J'intègre MLFlow dans les pipelines de training"
+        - "Je configure le Model Registry avec stages (dev/staging/prod)"
+        - "J'utilise MLFlow Projects pour la reproductibilité"
+        - "J'automatise la promotion des modèles"
+      4:
+        - "J'ai conçu l'architecture MLOps de l'organisation"
+        - "J'intègre MLFlow avec le CI/CD"
+        - "Je configure le serving de modèles"
+        - "Je forme les équipes aux bonnes pratiques"
+      5:
+        - "Je définis les standards MLOps et experiment tracking de l'organisation"
+        - "Je suis la référence interne pour l'architecture MLFlow"
+        - "Je mentore les équipes sur les workflows ML en production"
+        - "J'ai mis en place la gouvernance des modèles ML"
+      6:
+        - "Je suis speaker à des conférences MLOps ou ML Platform"
+        - "Je contribue au projet MLFlow ou outils similaires"
+        - "J'ai publié des articles sur les bonnes pratiques MLOps"
+        - "Je suis reconnu comme expert externe en ML lifecycle management"
+    resources:
+      - url: "https://mlflow.org/docs/latest/index.html"
+        title: "MLFlow Documentation"
+        type: "documentation"
+      - url: "https://www.databricks.com/blog/2020/04/15/databricks-mlflow-2-0.html"
+        title: "MLFlow Best Practices"
+        type: "documentation"
+      - url: "https://madewithml.com/courses/mlops/"
+        title: "Made with ML - MLOps"
+        type: "course"
+      - url: "https://neptune.ai/blog/mlflow-vs-other-tools"
+        title: "MLFlow vs Other Tools"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Loggez vos premières expériences avec MLFlow. Utilisez le Model Registry."
+      "2→3": "Intégrez MLFlow dans vos pipelines de training. Automatisez le versioning."
+      "3→4": "Concevez l'architecture MLOps de l'organisation. Partagez vos learnings."
+
+  - id: ml_deployment
+    name: "Déploiement de Modèles ML"
+    description: "Déployer des modèles ML en production (APIs, conteneurs, endpoints)"
+    core_roles: [ml_engineer]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [2, 3, 4, 4]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance déploiement ML"
+      1: "Comprend les concepts et défis du déploiement"
+      2: "Peut déployer des modèles avec des méthodes basiques (API, conteneurs)"
+      3: "Conçoit des systèmes ML production, gère scaling, monitoring"
+      4: "Expert en patterns de déploiement ML et infrastructure"
+      5: "Architecte ML production de l'organisation"
+      6: "Expert ML serving reconnu, publications"
+    behavioral_indicators:
+      1:
+        - "Je comprends les défis du déploiement ML (latence, throughput)"
+        - "Je connais les options de déploiement (batch vs temps réel)"
+        - "Je sais ce qu'est un endpoint de prédiction"
+      2:
+        - "J'ai déployé un modèle via une API FastAPI"
+        - "Je conteneurise mes modèles avec Docker"
+        - "Je gère la sérialisation des modèles (pickle, ONNX)"
+        - "Je configure des endpoints de prédiction basiques"
+      3:
+        - "Je configure le scaling automatique des endpoints"
+        - "Je mets en place le monitoring des prédictions"
+        - "J'implémente le A/B testing de modèles"
+        - "Je gère le versioning et rollback des modèles"
+      4:
+        - "J'ai conçu l'architecture de serving de l'organisation"
+        - "J'optimise les latences et throughput"
+        - "Je gère le serving de modèles à grande échelle"
+        - "Je forme les équipes au déploiement ML"
+      5:
+        - "Je définis les standards de déploiement ML de l'organisation"
+        - "Je suis la référence interne pour les architectures ML serving"
+        - "Je mentore les équipes sur le ML en production"
+        - "J'ai mis en place la plateforme ML serving de l'entreprise"
+      6:
+        - "Je suis speaker à des conférences ML Platform ou MLOps"
+        - "J'ai publié des articles sur le ML serving à grande échelle"
+        - "Je contribue à des projets open-source (Seldon, KServe, BentoML)"
+        - "Je suis reconnu comme expert externe en ML production"
+    resources:
+      - url: "https://www.oreilly.com/library/view/building-machine-learning/9781492045106/"
+        title: "Building ML Powered Applications"
+        type: "book"
+      - url: "https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning"
+        title: "Google MLOps Guide"
+        type: "documentation"
+      - url: "https://ml-ops.org/"
+        title: "ML-Ops.org"
+        type: "documentation"
+      - url: "https://www.seldon.io/what-is-ml-serving"
+        title: "ML Serving Guide"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Déployez un modèle simple via une API FastAPI. Conteneurisez-le avec Docker."
+      "2→3": "Implémentez le monitoring et l'alerting. Gérez le scaling automatique."
+      "3→4": "Concevez une plateforme ML serving. Partagez vos patterns."
+
+  - id: feature_engineering
+    name: "Feature Engineering"
+    description: "Créer des features efficaces pour les modèles ML (transformations, feature stores)"
+    core_roles: [ml_engineer, data_scientist]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance feature engineering"
+      1: "Comprend les types de features basiques et transformations"
+      2: "Peut créer des features, gérer les données catégoriques et numériques"
+      3: "Conçoit des pipelines de features, implémente des transformations avancées"
+      4: "Expert en feature engineering et feature stores"
+      5: "Architecte feature store de l'organisation"
+      6: "Expert feature engineering reconnu, publications"
+    behavioral_indicators:
+      1:
+        - "Je comprends la différence entre features numériques et catégoriques"
+        - "Je sais ce qu'est la normalisation et le scaling"
+        - "Je connais les encodages basiques (one-hot, label encoding)"
+      2:
+        - "Je crée des features à partir de données temporelles"
+        - "Je gère les valeurs manquantes et outliers"
+        - "J'utilise les transformations (log, polynomial)"
+        - "J'applique la sélection de features"
+      3:
+        - "Je crée des pipelines de features reproductibles"
+        - "J'utilise un feature store (Feast, Vertex Feature Store)"
+        - "Je gère le feature drift en production"
+        - "J'automatise le feature engineering"
+      4:
+        - "J'ai conçu l'architecture du feature store"
+        - "Je gère des milliers de features à l'échelle"
+        - "J'optimise les performances de serving"
+        - "Je forme les équipes au feature engineering"
+      5:
+        - "Je définis les standards de feature engineering de l'organisation"
+        - "Je suis la référence interne pour l'architecture feature store"
+        - "Je mentore les équipes sur la création de features avancées"
+        - "J'ai mis en place la gouvernance des features ML"
+      6:
+        - "Je suis speaker à des conférences ML ou Feature Store Summit"
+        - "J'ai publié des articles sur le feature engineering à l'échelle"
+        - "Je contribue à des projets open-source (Feast, Feathr)"
+        - "Je suis reconnu comme expert externe en feature platforms"
+    resources:
+      - url: "https://www.featurestore.org/"
+        title: "Feature Store.org"
+        type: "documentation"
+      - url: "https://www.kaggle.com/learn/feature-engineering"
+        title: "Feature Engineering (Kaggle)"
+        type: "course"
+      - url: "https://feast.dev/"
+        title: "Feast Feature Store"
+        type: "documentation"
+      - url: "https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/"
+        title: "Feature Engineering for ML (O'Reilly)"
+        type: "book"
+    improvement_tips:
+      "1→2": "Créez des features pour un projet Kaggle. Maîtrisez les encodages catégoriels."
+      "2→3": "Construisez un pipeline de features reproductible. Explorez les feature stores."
+      "3→4": "Implémentez un feature store pour l'organisation. Automatisez la feature discovery."
+
+  - id: entity_resolution
+    name: "Entity Resolution & Linkage"
+    description: "Résoudre les entités et relier les données (déduplication, matching)"
+    core_roles: [ml_engineer, data_engineer]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance entity resolution"
+      1: "Comprend les problèmes de déduplication et matching"
+      2: "Peut implémenter des solutions de matching basiques"
+      3: "Conçoit des systèmes d'entity resolution à grande échelle"
+      4: "Expert en algorithmes d'entity resolution"
+      5: "Architecte MDM de l'organisation"
+      6: "Expert entity resolution reconnu, publications"
+    behavioral_indicators:
+      1:
+        - "Je comprends le problème de déduplication de données"
+        - "Je connais les techniques de fuzzy matching"
+        - "Je sais ce qu'est le record linkage"
+      2:
+        - "J'utilise des bibliothèques de fuzzy matching (fuzzywuzzy, rapidfuzz)"
+        - "J'implémente des règles de matching simples"
+        - "Je calcule des scores de similarité entre records"
+        - "J'ai dédupliqué un dataset de taille moyenne"
+      3:
+        - "Je conçois des systèmes de matching à grande échelle"
+        - "J'utilise le blocking pour optimiser les performances"
+        - "J'implémente des modèles ML pour le matching"
+        - "J'ai géré un projet de déduplication complet"
+      4:
+        - "J'ai conçu l'architecture MDM de l'organisation"
+        - "Je gère des millions de records à matcher"
+        - "J'optimise la précision et le recall du matching"
+        - "Je forme les équipes à l'entity resolution"
+      5:
+        - "Je définis les standards MDM et entity resolution de l'organisation"
+        - "Je suis la référence interne pour les architectures de déduplication"
+        - "Je mentore les équipes sur les techniques de matching avancées"
+        - "J'ai mis en place la stratégie de qualité des données maître"
+      6:
+        - "Je suis speaker à des conférences MDM ou Data Quality"
+        - "J'ai publié des articles sur l'entity resolution à l'échelle"
+        - "Je contribue à des projets open-source (dedupe, Zingg)"
+        - "Je suis reconnu comme expert externe en Master Data Management"
+    resources:
+      - url: "https://recordlinkage.readthedocs.io/"
+        title: "Python Record Linkage Toolkit"
+        type: "documentation"
+      - url: "https://dedupe.io/"
+        title: "Dedupe.io"
+        type: "documentation"
+      - url: "https://www.microsoft.com/en-us/research/publication/swoosh-a-generic-approach-to-entity-resolution/"
+        title: "Swoosh Paper (Microsoft)"
+        type: "documentation"
+      - url: "https://www.oreilly.com/library/view/data-quality-fundamentals/9781098112035/"
+        title: "Data Quality Fundamentals"
+        type: "book"
+    improvement_tips:
+      "1→2": "Implémentez une déduplication simple avec fuzzy matching. Utilisez dedupe.io."
+      "2→3": "Construisez un pipeline de matching à grande échelle. Combinez plusieurs techniques."
+      "3→4": "Concevez un système MDM pour l'organisation. Publiez vos algorithmes."

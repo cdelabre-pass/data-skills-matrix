@@ -1,0 +1,407 @@
+# Soft Skills
+category:
+  id: soft_skills
+  name: "Soft Skills"
+
+skills:
+  - id: technical_communication
+    name: "Communication Technique"
+    description: "Communiquer efficacement les insights data et les concepts techniques"
+    core_roles: [data_analyst, data_scientist]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Communication technique faible"
+      1: "Peut expliquer des concepts basiques à une audience technique"
+      2: "Présente clairement les insights à des audiences mixtes"
+      3: "Crée des data stories compelling, influence les décisions"
+      4: "Expert communicateur, drive le changement organisationnel"
+      5: "Référent communication de l'organisation"
+      6: "Speaker reconnu, formateur externe"
+    behavioral_indicators:
+      1:
+        - "Je peux expliquer mon travail à mes collègues techniques"
+        - "Je documente mes analyses avec des commentaires clairs"
+        - "Je sais présenter mes résultats en réunion d'équipe"
+      2:
+        - "J'adapte mon discours à mon audience (tech vs business)"
+        - "Mes présentations sont comprises par les non-techniques"
+        - "Je reçois du feedback positif sur la clarté de mes explications"
+        - "Je sais synthétiser une analyse complexe en points clés"
+      3:
+        - "J'ai influencé une décision business avec mes insights"
+        - "Je crée des data stories avec un fil conducteur"
+        - "Je suis sollicité pour présenter les résultats importants"
+        - "J'ai formé d'autres personnes à la communication data"
+      4:
+        - "Je présente régulièrement au COMEX ou équivalent"
+        - "Je suis reconnu comme un excellent communicateur"
+        - "J'ai créé des templates de communication pour l'équipe"
+        - "Je drive le changement organisationnel par les données"
+      5:
+        - "Je définis les standards de communication data de l'organisation"
+        - "Je forme les équipes à la communication technique"
+        - "Je suis le référent pour les présentations stratégiques"
+        - "J'ai créé un programme de formation à la communication data"
+      6:
+        - "Je donne des conférences externes sur la communication data"
+        - "Je suis sollicité comme formateur externe par d'autres entreprises"
+        - "J'ai publié des articles ou livres sur la communication technique"
+        - "Je suis reconnu comme expert communication data dans l'industrie"
+    resources:
+      - url: "https://www.storytellingwithdata.com/"
+        title: "Storytelling with Data"
+        type: "book"
+      - url: "https://www.ted.com/talks"
+        title: "TED Talks"
+        type: "video"
+      - url: "https://www.coursera.org/learn/data-visualization"
+        title: "Data Visualization and Communication"
+        type: "course"
+      - url: "https://hbr.org/2013/09/make-data-come-alive"
+        title: "HBR - Make Data Come Alive"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Présentez régulièrement vos analyses à l'équipe. Demandez du feedback."
+      "2→3": "Créez une data story avec un fil conducteur clair. Influencez une décision business."
+      "3→4": "Présentez au COMEX ou équivalent. Formez les autres à la communication data."
+
+  - id: problem_solving
+    name: "Résolution de Problèmes"
+    description: "Approcher les problèmes complexes de manière systématique"
+    core_roles: [data_analyst, data_engineer, data_scientist, analytics_eng, ml_engineer, backend]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Ne peut pas structurer les problèmes"
+      1: "Peut décomposer des problèmes simples"
+      2: "Approche les problèmes complexes systématiquement"
+      3: "Résout des problèmes ambigus, crée des frameworks"
+      4: "Expert problem solver, guide les décisions stratégiques"
+      5: "Référent résolution de problèmes de l'organisation"
+      6: "Expert reconnu, consultant externe"
+    behavioral_indicators:
+      1:
+        - "Je décompose un problème en sous-problèmes"
+        - "Je cherche des solutions similaires avant de réinventer"
+        - "Je sais poser les bonnes questions pour clarifier un problème"
+      2:
+        - "J'utilise une approche structurée (5 whys, issue trees)"
+        - "Je documente mes hypothèses et les valide"
+        - "Je priorise les problèmes par impact et urgence"
+        - "Je sais quand demander de l'aide vs persévérer seul"
+      3:
+        - "Je crée des frameworks réutilisables pour résoudre des classes de problèmes"
+        - "Je gère l'ambiguïté et avance malgré l'incertitude"
+        - "J'ai résolu des problèmes impliquant plusieurs équipes"
+        - "Je challenge les hypothèses implicites"
+      4:
+        - "Je guide des décisions stratégiques par la résolution de problèmes"
+        - "Je forme les autres à structurer leurs problèmes"
+        - "Je suis sollicité pour les problèmes complexes de l'organisation"
+        - "Je transforme les problèmes en opportunités"
+      5:
+        - "Je définis la méthodologie de résolution de problèmes de l'organisation"
+        - "Je forme les managers et leads à la résolution de problèmes"
+        - "Je suis le référent pour les problèmes stratégiques cross-équipes"
+        - "J'ai institutionnalisé des pratiques de problem solving"
+      6:
+        - "Je suis consultant externe en résolution de problèmes"
+        - "Je donne des conférences sur les méthodologies de problem solving"
+        - "J'ai publié des articles ou livres sur la résolution de problèmes"
+        - "Je suis reconnu comme expert problem solving dans l'industrie"
+    resources:
+      - url: "https://www.coursera.org/learn/problem-solving"
+        title: "Problem Solving Skills (Coursera)"
+        type: "course"
+      - url: "https://www.mindtools.com/pages/main/newMN_TMC.htm"
+        title: "Mind Tools - Problem Solving"
+        type: "documentation"
+      - url: "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-problem-with-problem-solving"
+        title: "McKinsey - Problem Solving"
+        type: "documentation"
+      - url: "https://bulletproofproblemsolving.com/"
+        title: "Bulletproof Problem Solving"
+        type: "book"
+    improvement_tips:
+      "1→2": "Utilisez une approche structurée (5 whys, issue trees). Documentez votre processus."
+      "2→3": "Créez des frameworks réutilisables. Résolvez un problème cross-équipes."
+      "3→4": "Guidez des décisions stratégiques. Formez les autres à la résolution de problèmes."
+
+  - id: stakeholder_management
+    name: "Gestion des Stakeholders"
+    description: "Travailler efficacement avec les stakeholders (product, business, tech)"
+    core_roles: [data_analyst, analytics_eng]
+    levels:
+      data_analyst: [1, 1, 2, 3]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Ne peut pas gérer les stakeholders"
+      1: "Travaille avec les stakeholders directs"
+      2: "Gère plusieurs stakeholders, gère les conflits"
+      3: "Influence les stakeholders seniors, drive l'alignement"
+      4: "Expert en gestion des stakeholders"
+      5: "Référent relations inter-équipes de l'organisation"
+      6: "Expert influence reconnu"
+    behavioral_indicators:
+      1:
+        - "Je communique régulièrement avec mon PM/manager direct"
+        - "Je comprends les besoins de mes stakeholders directs"
+        - "Je livre mes résultats dans les délais attendus"
+      2:
+        - "Je gère plusieurs stakeholders avec des besoins différents"
+        - "J'ai priorisé des demandes conflictuelles avec succès"
+        - "Je communique proactivement les blocages et retards"
+        - "Je sais dire non de manière constructive"
+      3:
+        - "J'influence les décisions au niveau senior"
+        - "Je suis sollicité pour des sujets stratégiques"
+        - "J'ai aligné des priorités divergentes entre équipes"
+        - "Je suis reconnu comme un partenaire de confiance"
+      4:
+        - "Je suis le point de contact data pour plusieurs équipes"
+        - "Je forme les autres à la gestion des stakeholders"
+        - "J'ai établi des rituels de communication efficaces"
+        - "Je gère les escalades de manière constructive"
+      5:
+        - "Je définis les processus de collaboration inter-équipes"
+        - "Je forme les managers à la gestion des stakeholders"
+        - "Je suis médiateur pour les conflits inter-équipes"
+        - "J'ai créé des frameworks de priorisation organisationnels"
+      6:
+        - "Je suis consultant externe en gestion des stakeholders"
+        - "Je donne des formations externes sur l'influence et la négociation"
+        - "J'ai publié sur les techniques de stakeholder management"
+        - "Je suis reconnu comme expert en influence dans l'industrie"
+    resources:
+      - url: "https://www.pmi.org/learning/library/stakeholder-management-task-project-success-7736"
+        title: "PMI Stakeholder Management"
+        type: "documentation"
+      - url: "https://www.coursera.org/learn/stakeholder-management"
+        title: "Stakeholder Management (Coursera)"
+        type: "course"
+      - url: "https://hbr.org/2014/03/manage-your-stakeholders"
+        title: "HBR - Manage Your Stakeholders"
+        type: "documentation"
+      - url: "https://www.mindtools.com/pages/article/newPPM_07.htm"
+        title: "Stakeholder Analysis"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Identifiez tous vos stakeholders et leurs attentes. Communiquez régulièrement."
+      "2→3": "Gérez un conflit entre stakeholders. Alignez des priorités divergentes."
+      "3→4": "Influencez les décisions au niveau senior. Devenez un point de contact clé."
+
+  - id: mentoring_leadership
+    name: "Mentorat & Leadership"
+    description: "Accompagner et faire grandir les membres de l'équipe"
+    core_roles: []
+    levels:
+      data_analyst: [NC, 1, 2, 3]
+      data_engineer: [NC, 1, 2, 3]
+      data_scientist: [NC, 1, 2, 3]
+      analytics_eng: [NC, 1, 2, 3]
+      ml_engineer: [NC, 1, 2, 3]
+      backend: [NC, 1, 2, 3]
+    level_descriptions:
+      0: "Pas de compétence en mentorat"
+      1: "Peut aider ponctuellement un collègue sur un sujet maîtrisé"
+      2: "Mentor régulier, fait des code reviews constructives"
+      3: "Accompagne la montée en compétence de plusieurs personnes"
+      4: "Leader reconnu, développe les talents de l'équipe"
+      5: "Définit le programme de mentorat de l'organisation"
+      6: "Coach/mentor reconnu externement"
+    behavioral_indicators:
+      1:
+        - "J'aide mes collègues quand ils ont des questions"
+        - "Je partage des ressources utiles avec l'équipe"
+        - "Je peux expliquer un sujet que je maîtrise"
+      2:
+        - "Je fais des code reviews constructives régulièrement"
+        - "J'ai mentoré au moins une personne sur un sujet spécifique"
+        - "Je donne du feedback actionnable et bienveillant"
+        - "J'organise des sessions de pair programming"
+      3:
+        - "Je suis le mentor officiel d'un ou plusieurs juniors"
+        - "J'organise des sessions de partage de connaissances"
+        - "J'ai accompagné quelqu'un dans sa montée en compétence"
+        - "Je crée de la documentation pour faciliter l'onboarding"
+      4:
+        - "Je développe un programme de mentorat structuré"
+        - "Je suis reconnu comme un leader technique"
+        - "J'ai aidé plusieurs personnes à progresser significativement"
+        - "Je contribue aux décisions de promotion et évaluation"
+      5:
+        - "Je définis le programme de mentorat de l'organisation"
+        - "Je forme les mentors et managers au coaching"
+        - "Je mesure l'efficacité du programme de mentorat"
+        - "J'ai créé des parcours de développement de carrière"
+      6:
+        - "Je suis coach ou mentor externe pour d'autres entreprises"
+        - "Je donne des conférences sur le leadership et le mentorat"
+        - "J'ai publié sur les techniques de coaching et développement"
+        - "Je suis reconnu comme expert en leadership dans l'industrie"
+    resources:
+      - url: "https://www.coursera.org/learn/leadership-and-emotional-intelligence"
+        title: "Leadership and Emotional Intelligence"
+        type: "course"
+      - url: "https://hbr.org/2015/12/everyone-deserves-a-great-manager"
+        title: "HBR - Great Manager"
+        type: "documentation"
+      - url: "https://www.amazon.com/Radical-Candor-Revised-Kick-Ass-Humanity/dp/1250235375"
+        title: "Radical Candor"
+        type: "book"
+      - url: "https://www.atlassian.com/team-playbook/plays/retrospective"
+        title: "Atlassian Retrospectives"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Mentorez un junior sur un sujet spécifique. Faites des code reviews constructives."
+      "2→3": "Accompagnez plusieurs personnes dans leur développement. Organisez des sessions de partage."
+      "3→4": "Développez un programme de mentorat. Mesurez la progression de vos mentorés."
+
+  - id: presentation_vulgarization
+    name: "Présentation & Vulgarisation"
+    description: "Présenter des sujets techniques de manière accessible"
+    core_roles: [data_analyst, data_scientist]
+    levels:
+      data_analyst: [1, 1, 2, 3]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Ne peut pas présenter efficacement"
+      1: "Peut présenter à une petite audience technique"
+      2: "Présente clairement à des audiences non-techniques"
+      3: "Excellent présentateur, vulgarise des concepts complexes"
+      4: "Speaker reconnu, peut présenter en externe"
+      5: "Speaker régulier en conférences"
+      6: "Keynote speaker, formateur reconnu"
+    behavioral_indicators:
+      1:
+        - "Je présente mes travaux en réunion d'équipe"
+        - "Je peux expliquer mon travail à mes collègues"
+        - "Je prépare des slides basiques pour mes présentations"
+      2:
+        - "Je présente à des audiences non-techniques avec succès"
+        - "J'utilise des analogies pour expliquer des concepts complexes"
+        - "Je reçois du feedback positif sur mes présentations"
+        - "Je crée des visuels clairs et impactants"
+      3:
+        - "J'ai présenté dans un brown bag ou meetup interne"
+        - "Je vulgarise des concepts complexes avec aisance"
+        - "Je suis sollicité pour présenter les sujets importants"
+        - "J'ai formé d'autres personnes à la présentation"
+      4:
+        - "J'ai présenté dans une conférence externe"
+        - "Je suis reconnu comme un excellent présentateur"
+        - "J'ai créé des templates de présentation pour l'équipe"
+        - "Je forme les autres à la vulgarisation technique"
+      5:
+        - "Je suis speaker régulier dans des conférences tech"
+        - "Je définis les standards de présentation de l'organisation"
+        - "Je coache les speakers avant les présentations importantes"
+        - "J'organise des sessions de formation à la prise de parole"
+      6:
+        - "Je suis keynote speaker dans des conférences majeures"
+        - "Je suis formateur externe en prise de parole publique"
+        - "J'ai publié des contenus reconnus sur la vulgarisation"
+        - "Je suis sollicité comme expert pour des événements externes"
+    resources:
+      - url: "https://www.ted.com/talks/chris_anderson_ted_s_secret_to_great_public_speaking"
+        title: "TED - Secret to Great Speaking"
+        type: "video"
+      - url: "https://www.toastmasters.org/"
+        title: "Toastmasters"
+        type: "course"
+      - url: "https://www.presentationzen.com/"
+        title: "Presentation Zen"
+        type: "book"
+      - url: "https://www.coursera.org/learn/public-speaking"
+        title: "Public Speaking (Coursera)"
+        type: "course"
+    improvement_tips:
+      "1→2": "Présentez un sujet technique à une audience non-technique. Demandez du feedback."
+      "2→3": "Présentez dans un meetup ou brown bag interne. Créez des supports visuels impactants."
+      "3→4": "Proposez un talk à une conférence. Formez les autres à la présentation."
+
+  - id: project_management
+    name: "Gestion de Projet Data"
+    description: "Piloter un projet data de bout en bout"
+    core_roles: [data_analyst, analytics_eng]
+    levels:
+      data_analyst: [NC, 1, 2, 3]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune expérience en gestion de projet"
+      1: "Peut gérer ses propres tâches, respecte les deadlines"
+      2: "Peut piloter un petit projet data avec quelques dépendances"
+      3: "Gère des projets complexes multi-équipes"
+      4: "Expert en gestion de projet, méthodologies adaptées au data"
+      5: "Définit les méthodologies projet de l'organisation"
+      6: "Expert gestion de projet (conférences, formateur)"
+    behavioral_indicators:
+      1:
+        - "Je gère mes tâches dans un outil (Jira, Linear, etc.)"
+        - "Je respecte les deadlines communiquées"
+        - "Je sais estimer le temps nécessaire pour mes tâches"
+      2:
+        - "J'ai piloté un projet data de bout en bout"
+        - "Je découpe un projet en tâches avec des livrables clairs"
+        - "Je communique l'avancement régulièrement aux stakeholders"
+        - "Je gère les risques et les blocages proactivement"
+      3:
+        - "Je gère des projets avec des dépendances multi-équipes"
+        - "J'ai livré des projets impliquant 3+ personnes"
+        - "Je coordonne les travaux entre équipes"
+        - "J'ai géré un projet avec des contraintes fortes"
+      4:
+        - "J'ai défini une méthodologie de gestion de projet data"
+        - "Je forme les autres à la gestion de projet"
+        - "Je suis sollicité pour les projets complexes"
+        - "J'ai un track record de projets livrés avec succès"
+      5:
+        - "Je définis les méthodologies projet de l'organisation"
+        - "Je forme les chefs de projet et tech leads"
+        - "Je suis référent pour les projets stratégiques"
+        - "J'ai mis en place des outils et processus projet"
+      6:
+        - "Je suis consultant externe en gestion de projet data"
+        - "Je donne des conférences sur la gestion de projet"
+        - "J'ai publié sur les méthodologies de projet data"
+        - "Je suis certifié et reconnu comme expert (PMP, etc.)"
+    resources:
+      - url: "https://www.coursera.org/learn/project-management-foundations"
+        title: "Project Management Foundations"
+        type: "course"
+      - url: "https://www.atlassian.com/agile/project-management"
+        title: "Atlassian Agile Project Management"
+        type: "documentation"
+      - url: "https://www.pmi.org/learning/library"
+        title: "PMI Learning Library"
+        type: "documentation"
+      - url: "https://asana.com/resources/project-management-basics"
+        title: "Project Management Basics"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Pilotez un petit projet data avec des livrables clairs. Utilisez un outil de suivi."
+      "2→3": "Gérez un projet avec plusieurs dépendances. Communiquez régulièrement sur l'avancement."
+      "3→4": "Définissez une méthodologie de gestion de projet data. Formez les équipes."

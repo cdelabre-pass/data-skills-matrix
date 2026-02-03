@@ -1,0 +1,139 @@
+# Optimisation & Performance skills
+category:
+  id: optimization
+  name: "Optimisation & Performance"
+
+skills:
+  - id: cost_optimization
+    name: "Cost Optimization Cloud"
+    description: "Gestion des coûts cloud, slots BigQuery, optimisation stockage, FinOps data"
+    core_roles: [data_engineer]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, NC, 1, 2]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance de l'optimisation des coûts"
+      1: "Comprend les modèles de facturation cloud basiques"
+      2: "Surveille les coûts, identifie les optimisations simples"
+      3: "Optimise les coûts BigQuery (slots, stockage), met en place le monitoring"
+      4: "Expert FinOps, définit la stratégie d'optimisation des coûts data"
+      5: "Architecte FinOps de l'organisation"
+      6: "Expert FinOps reconnu, certifié FinOps Practitioner"
+    behavioral_indicators:
+      1:
+        - "Je comprends le modèle de facturation BigQuery (on-demand vs slots)"
+        - "Je connais les coûts de stockage GCS"
+        - "Je sais lire une facture cloud basique"
+      2:
+        - "J'analyse les coûts de mes projets GCP"
+        - "J'identifie les requêtes les plus coûteuses"
+        - "Je mets en place des alertes de budget"
+        - "J'ai réduit les coûts d'un projet de 20%+"
+      3:
+        - "Je configure les slot reservations BigQuery"
+        - "J'optimise les stratégies de stockage (partitioning, lifecycle)"
+        - "Je mets en place le monitoring des coûts"
+        - "J'ai défini les budgets par équipe"
+      4:
+        - "J'ai défini la stratégie FinOps de l'organisation"
+        - "J'ai réduit les coûts de 30%+ à l'échelle"
+        - "Je forme les équipes à l'optimisation"
+        - "Je produis des rapports de coûts réguliers"
+      5:
+        - "Je définis les standards FinOps pour l'ensemble de l'organisation"
+        - "Je suis la référence interne pour l'optimisation des coûts cloud"
+        - "Je mentore les équipes sur les stratégies de cost management"
+        - "J'ai mis en place le programme FinOps de l'entreprise"
+      6:
+        - "Je suis speaker à des conférences FinOps ou Cloud Economics"
+        - "J'ai obtenu la certification FinOps Practitioner"
+        - "J'ai publié des articles sur l'optimisation des coûts data"
+        - "Je suis reconnu comme expert externe en FinOps"
+    resources:
+      - url: "https://www.finops.org/introduction/what-is-finops/"
+        title: "What is FinOps"
+        type: "documentation"
+      - url: "https://cloud.google.com/architecture/cost-optimization"
+        title: "GCP Cost Optimization"
+        type: "documentation"
+      - url: "https://cloud.google.com/bigquery/docs/best-practices-costs"
+        title: "BigQuery Cost Best Practices"
+        type: "documentation"
+      - url: "https://www.finops.org/resources/finops-certifications/"
+        title: "FinOps Certification"
+        type: "course"
+    improvement_tips:
+      "1→2": "Analysez les coûts de vos projets GCP. Identifiez les requêtes BigQuery les plus coûteuses."
+      "2→3": "Implémentez le slot reservation pour BigQuery. Mettez en place des alertes de coûts."
+      "3→4": "Définissez la stratégie FinOps de l'organisation. Passez la certification FinOps."
+
+  - id: query_performance
+    name: "Query Performance"
+    description: "Optimisation des requêtes, partitioning, clustering, materialized views, plans d'exécution"
+    core_roles: [data_engineer, analytics_eng]
+    levels:
+      data_analyst: [1, 1, 2, 3]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance de l'optimisation de requêtes"
+      1: "Comprend l'impact des requêtes sur les performances"
+      2: "Optimise les requêtes basiques, utilise EXPLAIN, comprend les index"
+      3: "Conçoit des stratégies de partitioning/clustering, materialized views"
+      4: "Expert en performance, audite et optimise les pipelines critiques"
+      5: "Architecte performance data de l'organisation"
+      6: "Expert query optimization reconnu, publications"
+    behavioral_indicators:
+      1:
+        - "Je comprends que certaines requêtes sont plus lentes que d'autres"
+        - "Je sais que le volume de données impacte les performances"
+        - "Je connais l'existence des plans d'exécution"
+      2:
+        - "J'utilise EXPLAIN pour analyser mes requêtes"
+        - "J'optimise mes requêtes avec des filtres sur les partitions"
+        - "Je comprends l'impact du SELECT * vs colonnes spécifiques"
+        - "J'ai optimisé une requête en réduisant son temps de 50%+"
+      3:
+        - "Je conçois des stratégies de partitioning et clustering"
+        - "J'utilise les materialized views pour les agrégations fréquentes"
+        - "J'optimise les jointures et les sous-requêtes"
+        - "Je monitore les performances des requêtes critiques"
+      4:
+        - "J'audite les performances des pipelines"
+        - "J'ai défini les standards d'optimisation"
+        - "Je forme les équipes aux bonnes pratiques"
+        - "J'ai réduit les temps de build de 50%+ à l'échelle"
+      5:
+        - "Je définis les standards de performance data pour l'organisation"
+        - "Je suis la référence interne pour l'optimisation des requêtes"
+        - "Je mentore les équipes sur les stratégies de partitioning avancées"
+        - "J'ai mis en place le programme d'optimisation des pipelines"
+      6:
+        - "Je suis speaker à des conférences Data Engineering ou Performance"
+        - "J'ai publié des articles sur l'optimisation de requêtes à l'échelle"
+        - "Je contribue à des projets open-source liés à la performance"
+        - "Je suis reconnu comme expert externe en query optimization"
+    resources:
+      - url: "https://cloud.google.com/bigquery/docs/best-practices-performance-overview"
+        title: "BigQuery Performance Guide"
+        type: "documentation"
+      - url: "https://use-the-index-luke.com/"
+        title: "Use The Index, Luke!"
+        type: "book"
+      - url: "https://www.postgresql.org/docs/current/performance-tips.html"
+        title: "PostgreSQL Performance Tips"
+        type: "documentation"
+      - url: "https://mode.com/sql-tutorial/sql-performance-tuning/"
+        title: "SQL Performance Tuning"
+        type: "tutorial"
+    improvement_tips:
+      "1→2": "Apprenez à lire les plans d'exécution. Optimisez une requête lente existante."
+      "2→3": "Implémentez le partitioning et clustering sur vos tables critiques. Utilisez les materialized views."
+      "3→4": "Auditez les performances des pipelines de l'organisation. Formez les équipes."

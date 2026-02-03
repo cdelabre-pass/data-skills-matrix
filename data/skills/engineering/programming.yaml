@@ -1,0 +1,276 @@
+# Stack Data - Programmation skills
+category:
+  id: programming
+  name: "Stack Data - Programmation"
+
+skills:
+  - id: python_data
+    name: "Python (Data)"
+    description: "Programmation Python pour le data (pandas, numpy, pyarrow)"
+    core_roles: [data_analyst, data_engineer, data_scientist, analytics_eng, ml_engineer, backend]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [2, 3, 4, 4]
+      data_scientist: [2, 3, 4, 4]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [2, 3, 4, 4]
+      backend: [2, 3, 4, 4]
+    level_descriptions:
+      0: "Aucune connaissance Python"
+      1: "Peut écrire des scripts basiques, utilise pandas simplement"
+      2: "Écrit du code propre, utilise pandas/numpy efficacement"
+      3: "Construit des pipelines de données, gère les transformations complexes"
+      4: "Expert Python, écrit du code maintenable et scalable"
+      5: "Référent Python, définit les standards de code"
+      6: "Contributeur open-source Python data ecosystem"
+    behavioral_indicators:
+      1:
+        - "Je peux lire un CSV avec pandas et faire des filtres basiques"
+        - "J'utilise des boucles for et des conditions if/else"
+        - "Je sais créer des fonctions simples"
+        - "Je cherche souvent la syntaxe sur Stack Overflow"
+      2:
+        - "J'utilise groupby, merge, pivot_table couramment"
+        - "Je structure mon code en fonctions réutilisables"
+        - "Je gère les types de données (datetime, categorical, etc.)"
+        - "J'écris des list/dict comprehensions"
+        - "Je sais utiliser numpy pour les opérations vectorisées"
+      3:
+        - "Je construis des pipelines de transformation modulaires"
+        - "J'utilise pyarrow/polars pour les gros volumes"
+        - "Je crée des packages Python avec setup.py/pyproject.toml"
+        - "J'écris des tests unitaires pour mon code"
+        - "J'utilise les type hints et la validation Pydantic"
+      4:
+        - "Je fais des code reviews Python pour l'équipe"
+        - "J'ai défini les standards Python du projet"
+        - "Je maîtrise les patterns avancés (decorators, context managers)"
+        - "J'optimise les performances (profiling, memory)"
+      5:
+        - "Je définis les standards Python de l'organisation"
+        - "Je suis le référent pour les décisions d'architecture Python"
+        - "Je mentor les équipes sur les patterns Python avancés"
+        - "J'établis les conventions de code et les bonnes pratiques"
+      6:
+        - "Je contribue activement à des projets open-source (pandas, numpy, polars)"
+        - "Je suis speaker à PyCon ou autres conférences Python"
+        - "Je suis reconnu dans la communauté Python data"
+        - "Je publie des articles ou packages Python populaires"
+    resources:
+      - url: "https://docs.python.org/3/tutorial/"
+        title: "Python Official Tutorial"
+        type: "tutorial"
+      - url: "https://pandas.pydata.org/docs/getting_started/intro_tutorials/"
+        title: "Pandas Getting Started"
+        type: "tutorial"
+      - url: "https://www.coursera.org/specializations/python"
+        title: "Python for Everybody (Coursera)"
+        type: "course"
+      - url: "https://realpython.com/"
+        title: "Real Python Tutorials"
+        type: "tutorial"
+    improvement_tips:
+      "1→2": "Apprenez les opérations pandas avancées (groupby, merge, pivot). Écrivez du code avec des fonctions réutilisables."
+      "2→3": "Maîtrisez les patterns de data pipelines. Apprenez pyarrow pour les gros volumes."
+      "3→4": "Contribuez aux standards de code de l'équipe. Écrivez des packages Python internes documentés."
+
+  - id: python_backend
+    name: "Python (Backend/API)"
+    description: "Programmation Python pour backend/APIs (FastAPI, Flask)"
+    core_roles: [backend, ml_engineer]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [2, 3, 4, 4]
+    level_descriptions:
+      0: "Aucune connaissance backend Python"
+      1: "Comprend les APIs REST, peut faire des appels API"
+      2: "Peut construire des APIs simples avec FastAPI/Flask"
+      3: "Conçoit des APIs scalables, implémente auth, caching"
+      4: "Expert en architecture backend Python"
+      5: "Architecte API de l'organisation"
+      6: "Contributeur FastAPI/frameworks, speaker PyCon"
+    behavioral_indicators:
+      1:
+        - "Je comprends les concepts REST (GET, POST, PUT, DELETE)"
+        - "Je peux faire des appels API avec requests"
+        - "Je comprends les codes HTTP et le format JSON"
+      2:
+        - "J'ai créé une API CRUD avec FastAPI"
+        - "J'utilise Pydantic pour la validation"
+        - "Je gère les erreurs avec des exceptions HTTP"
+        - "Je documente mes APIs avec OpenAPI/Swagger"
+      3:
+        - "J'implémente l'authentification (JWT, OAuth)"
+        - "J'utilise le caching (Redis) pour les performances"
+        - "Je structure mes projets avec une architecture clean"
+        - "Je gère les transactions et la concurrence"
+      4:
+        - "Je conçois l'architecture API de l'organisation"
+        - "J'implémente le rate limiting et la sécurité"
+        - "Je mets en place le monitoring des APIs"
+        - "Je forme les équipes aux bonnes pratiques"
+      5:
+        - "Je définis la stratégie API de l'organisation"
+        - "Je suis le référent pour les décisions d'architecture backend"
+        - "Je mentor les équipes sur les patterns API avancés"
+        - "J'établis les standards de sécurité et de performance"
+      6:
+        - "Je contribue activement à FastAPI ou autres frameworks Python"
+        - "Je suis speaker à PyCon ou conférences API"
+        - "Je suis reconnu dans la communauté Python backend"
+        - "Je publie des articles ou maintiens des projets open-source"
+    resources:
+      - url: "https://fastapi.tiangolo.com/tutorial/"
+        title: "FastAPI Tutorial"
+        type: "tutorial"
+      - url: "https://testdriven.io/courses/tdd-fastapi/"
+        title: "Test-Driven Development with FastAPI"
+        type: "course"
+      - url: "https://www.youtube.com/watch?v=0sOvCWFmrtA"
+        title: "FastAPI Full Course"
+        type: "video"
+      - url: "https://12factor.net/"
+        title: "The Twelve-Factor App"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Créez une API CRUD simple avec FastAPI. Apprenez la validation Pydantic."
+      "2→3": "Implémentez l'authentification et la gestion des erreurs. Ajoutez du caching avec Redis."
+      "3→4": "Concevez une architecture API complète. Implémentez le monitoring et les métriques de performance."
+
+  - id: rest_api_integration
+    name: "Intégration API REST"
+    description: "Consommer et construire des APIs REST (pagination, auth, gestion erreurs)"
+    core_roles: [data_engineer, backend]
+    levels:
+      data_analyst: [1, 1, 2, 3]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [2, 3, 4, 4]
+    level_descriptions:
+      0: "Aucune connaissance API"
+      1: "Peut faire des appels API basiques, comprend JSON"
+      2: "Gère l'authentification, pagination et gestion d'erreurs"
+      3: "Conçoit des intégrations API efficaces, gère les scénarios complexes"
+      4: "Expert en design et patterns d'intégration API"
+      5: "Définit les standards API de l'organisation"
+      6: "Expert API design reconnu, publications"
+    behavioral_indicators:
+      1:
+        - "Je fais des appels GET avec requests ou curl"
+        - "Je comprends le format JSON"
+        - "Je peux lire la documentation d'une API"
+      2:
+        - "Je gère l'authentification (API keys, tokens)"
+        - "J'implémente la pagination pour récupérer toutes les données"
+        - "Je gère les erreurs HTTP correctement"
+        - "J'utilise les headers appropriés"
+      3:
+        - "Je crée des clients API robustes avec retry"
+        - "Je gère le rate limiting et les backoffs"
+        - "Je documente mes intégrations avec OpenAPI"
+        - "J'ai intégré plusieurs APIs externes"
+      4:
+        - "Je définis les standards d'intégration API"
+        - "Je conçois des patterns réutilisables"
+        - "Je gère les scénarios complexes (webhooks, streaming)"
+        - "Je forme les équipes aux bonnes pratiques"
+      5:
+        - "Je définis la stratégie d'intégration API de l'organisation"
+        - "Je suis le référent pour les architectures d'intégration"
+        - "Je mentor les équipes sur les patterns d'intégration avancés"
+        - "J'établis les standards de robustesse et de résilience"
+      6:
+        - "Je suis reconnu comme expert en API design dans l'industrie"
+        - "Je publie des articles ou livres sur l'intégration API"
+        - "Je donne des conférences sur les patterns d'intégration"
+        - "Je contribue aux standards et spécifications API (OpenAPI, AsyncAPI)"
+    resources:
+      - url: "https://restfulapi.net/"
+        title: "REST API Tutorial"
+        type: "tutorial"
+      - url: "https://swagger.io/specification/"
+        title: "OpenAPI Specification"
+        type: "documentation"
+      - url: "https://httpstatuses.com/"
+        title: "HTTP Status Codes Reference"
+        type: "documentation"
+      - url: "https://www.postman.com/api-platform/api-design/"
+        title: "API Design Guide (Postman)"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Intégrez une API externe avec authentification. Implémentez la gestion de pagination."
+      "2→3": "Créez un client API robuste avec retry et error handling. Documentez avec OpenAPI."
+      "3→4": "Définissez les standards d'API de votre équipe. Implémentez une gateway API."
+
+  - id: etl_connectors
+    name: "Connecteurs ETL"
+    description: "Développer des connecteurs vers des sources externes (APIs SaaS, fichiers)"
+    core_roles: [data_engineer]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, NC, 1, 2]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance ETL"
+      1: "Comprend les patterns d'extraction de données"
+      2: "Peut développer des connecteurs basiques vers des APIs"
+      3: "Conçoit des connecteurs robustes avec retry, error handling"
+      4: "Expert en patterns de connecteurs, gestion des états"
+      5: "Architecte intégration de l'organisation"
+      6: "Contributeur Singer/Airbyte, expert ETL reconnu"
+    behavioral_indicators:
+      1:
+        - "Je comprends le pattern Extract-Transform-Load"
+        - "Je sais ce qu'est un connecteur de données"
+        - "Je peux extraire des données d'un fichier CSV/JSON"
+      2:
+        - "J'ai développé un connecteur vers une API SaaS"
+        - "Je gère la pagination et les erreurs"
+        - "Je configure Airbyte ou Fivetran pour une source"
+        - "J'extrais des données incrémentales"
+      3:
+        - "Je crée des connecteurs avec retry et backoff"
+        - "Je gère l'état pour les extractions incrémentales"
+        - "J'ai développé des connecteurs custom robustes"
+        - "Je documente et teste mes connecteurs"
+      4:
+        - "J'ai créé un framework de connecteurs réutilisable"
+        - "Je contribue à Airbyte ou Singer"
+        - "Je définis les patterns de connecteurs de l'organisation"
+        - "Je forme les équipes au développement de connecteurs"
+      5:
+        - "Je définis la stratégie d'intégration de données de l'organisation"
+        - "Je suis le référent pour les architectures de connecteurs"
+        - "Je mentor les équipes sur les patterns ETL avancés"
+        - "J'établis les standards de qualité et de robustesse des connecteurs"
+      6:
+        - "Je contribue activement à Airbyte, Singer ou Fivetran"
+        - "Je suis reconnu comme expert ETL dans la communauté"
+        - "Je publie des connecteurs open-source populaires"
+        - "Je donne des conférences sur l'intégration de données"
+    resources:
+      - url: "https://airbyte.com/blog/data-extraction-complete-guide"
+        title: "Data Extraction Complete Guide"
+        type: "tutorial"
+      - url: "https://www.singer.io/"
+        title: "Singer - Open Source ETL"
+        type: "documentation"
+      - url: "https://docs.airbyte.com/connector-development/"
+        title: "Airbyte Connector Development"
+        type: "documentation"
+      - url: "https://www.getdbt.com/analytics-engineering/modular-data-modeling-technique/"
+        title: "Modular Data Modeling"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Développez un connecteur simple vers une API SaaS. Gérez la pagination et les erreurs."
+      "2→3": "Ajoutez la gestion d'état et les reprises après échec. Implémentez l'extraction incrémentale."
+      "3→4": "Contribuez à Airbyte ou Singer. Créez un framework de connecteurs réutilisable."

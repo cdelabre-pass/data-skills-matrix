@@ -1,0 +1,340 @@
+# Stack Data - Infrastructure skills
+category:
+  id: infrastructure
+  name: "Stack Data - Infrastructure"
+
+skills:
+  - id: gcp_fundamentals
+    name: "GCP Fondamentaux"
+    description: "Comprendre les services GCP (GCS, GCE, IAM, networking)"
+    core_roles: [data_engineer, ml_engineer, backend]
+    levels:
+      data_analyst: [1, 1, 2, 3]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance GCP"
+      1: "Peut naviguer dans la console, comprend les services de base"
+      2: "Utilise GCS, Compute Engine et IAM basique"
+      3: "Conçoit des architectures multi-services, comprend networking et sécurité"
+      4: "Expert en architecture GCP, optimise coûts et performances"
+      5: "Architecte cloud de l'organisation, certifié Professional"
+      6: "Google Cloud Champion, speaker Google Next"
+    behavioral_indicators:
+      1:
+        - "Je navigue dans la console GCP"
+        - "Je comprends les services de base (GCS, BigQuery, Compute)"
+        - "Je sais ce qu'est un projet GCP"
+      2:
+        - "J'uploade et télécharge des fichiers dans GCS"
+        - "Je configure les permissions IAM basiques"
+        - "J'utilise Cloud Shell pour des opérations simples"
+        - "Je comprends la facturation GCP"
+      3:
+        - "Je conçois des architectures utilisant plusieurs services"
+        - "Je configure les VPC et règles firewall"
+        - "Je mets en place les service accounts et rôles"
+        - "J'utilise Terraform ou Deployment Manager"
+      4:
+        - "J'optimise les coûts GCP de l'organisation"
+        - "Je conçois des architectures haute disponibilité"
+        - "J'ai une certification GCP Professional"
+        - "Je forme les équipes aux bonnes pratiques GCP"
+      5:
+        - "Je définis la stratégie cloud GCP de l'organisation"
+        - "Je suis le référent pour les décisions d'architecture cloud"
+        - "Je mentor les équipes sur les patterns GCP avancés"
+        - "J'établis les standards de sécurité et de gouvernance cloud"
+      6:
+        - "Je suis speaker à Google Cloud Next ou autres conférences Google"
+        - "Je suis reconnu comme Google Cloud Champion"
+        - "Je contribue aux discussions communautaires GCP"
+        - "Je publie des articles ou études de cas sur les architectures GCP"
+    resources:
+      - url: "https://cloud.google.com/docs"
+        title: "Google Cloud Documentation"
+        type: "documentation"
+      - url: "https://www.cloudskillsboost.google/"
+        title: "Google Cloud Skills Boost"
+        type: "course"
+      - url: "https://cloud.google.com/certification"
+        title: "Google Cloud Certifications"
+        type: "course"
+      - url: "https://www.youtube.com/googlecloudtech"
+        title: "Google Cloud Tech YouTube"
+        type: "video"
+    improvement_tips:
+      "1→2": "Créez un projet GCP et utilisez GCS pour stocker des données. Configurez les IAM basiques."
+      "2→3": "Concevez une architecture multi-services. Apprenez le VPC et la sécurité réseau."
+      "3→4": "Passez une certification GCP Professional. Optimisez les coûts d'un projet existant."
+
+  - id: bigquery_advanced
+    name: "BigQuery Avancé"
+    description: "Maîtriser BigQuery (partitionnement, clustering, BI Engine, coûts)"
+    core_roles: [data_engineer, analytics_eng]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [2, 3, 4, 4]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [2, 3, 4, 4]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance BigQuery"
+      1: "Peut exécuter des requêtes, naviguer dans les datasets"
+      2: "Conçoit tables/vues, optimise requêtes, comprend partitionnement/clustering"
+      3: "Conçoit l'architecture data warehouse, gère coûts et performances"
+      4: "Expert BigQuery, streaming, ML features, BigQuery Omni"
+      5: "Référent BigQuery, audite et optimise l'organisation"
+      6: "Expert BigQuery reconnu, contributions communautaires"
+    behavioral_indicators:
+      1:
+        - "Je navigue dans les datasets et exécute des requêtes"
+        - "Je comprends l'interface BigQuery Console"
+        - "Je sais exporter les résultats de requêtes"
+      2:
+        - "Je crée des tables avec partitionnement et clustering"
+        - "J'analyse les coûts de mes requêtes"
+        - "J'optimise les requêtes pour réduire les coûts"
+        - "J'utilise les vues matérialisées"
+      3:
+        - "J'ai conçu l'architecture data warehouse d'un domaine"
+        - "Je configure les slot reservations"
+        - "J'utilise BI Engine pour les dashboards temps réel"
+        - "Je mets en place des alertes de coûts"
+      4:
+        - "J'utilise BigQuery ML pour des modèles simples"
+        - "Je configure le streaming insert"
+        - "J'optimise les coûts à l'échelle de l'organisation"
+        - "Je forme les équipes aux bonnes pratiques BigQuery"
+      5:
+        - "Je définis la stratégie BigQuery de l'organisation"
+        - "Je suis le référent pour les optimisations et audits BigQuery"
+        - "Je mentor les équipes sur les patterns BigQuery avancés"
+        - "J'établis les standards de coûts et de performance"
+      6:
+        - "Je suis reconnu comme expert BigQuery dans la communauté"
+        - "Je contribue aux discussions et forums Google Cloud"
+        - "Je publie des articles ou donne des talks sur BigQuery"
+        - "Je participe aux beta tests et feedbacks des nouvelles fonctionnalités"
+    resources:
+      - url: "https://cloud.google.com/bigquery/docs/best-practices-performance-overview"
+        title: "BigQuery Performance Best Practices"
+        type: "documentation"
+      - url: "https://cloud.google.com/bigquery/docs/partitioned-tables"
+        title: "Partitioned Tables Guide"
+        type: "documentation"
+      - url: "https://www.cloudskillsboost.google/course_templates/53"
+        title: "BigQuery Fundamentals (Qwiklabs)"
+        type: "course"
+      - url: "https://medium.com/google-cloud/bigquery-explained-series-4f0c2c4e1e0c"
+        title: "BigQuery Explained Series"
+        type: "tutorial"
+    improvement_tips:
+      "1→2": "Appliquez le partitionnement et clustering sur vos tables les plus utilisées. Analysez les coûts de vos requêtes."
+      "2→3": "Concevez un data warehouse avec des couches distinctes (raw, staging, mart). Implémentez des strategies de slot reservation."
+      "3→4": "Explorez BigQuery ML et le streaming. Optimisez les coûts à l'échelle de l'organisation."
+
+  - id: kubernetes
+    name: "Kubernetes (K8s)"
+    description: "Orchestration de conteneurs pour déployer les applications"
+    core_roles: [data_engineer, ml_engineer, backend]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, NC, 1, 2]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance K8s"
+      1: "Comprend les conteneurs et concepts K8s de base"
+      2: "Peut déployer des applications, écrire des manifests basiques"
+      3: "Conçoit des architectures K8s, résout les problèmes"
+      4: "Expert en patterns K8s, scaling et optimisation"
+      5: "Architecte K8s, certifié CKA/CKAD"
+      6: "Contributeur Kubernetes, speaker KubeCon"
+    behavioral_indicators:
+      1:
+        - "Je comprends ce qu'est un conteneur Docker"
+        - "Je connais les concepts Pod, Service, Deployment"
+        - "Je peux utiliser kubectl pour des opérations basiques"
+      2:
+        - "J'écris des manifests YAML pour déployer des apps"
+        - "Je configure les ConfigMaps et Secrets"
+        - "Je comprends les services et l'exposition des apps"
+        - "J'ai déployé une application sur un cluster"
+      3:
+        - "Je configure le scaling automatique (HPA)"
+        - "Je debug les problèmes de pods et deployments"
+        - "J'utilise les PersistentVolumes pour le stockage"
+        - "Je configure les health checks et readiness probes"
+      4:
+        - "Je conçois des architectures K8s production-ready"
+        - "J'ai une certification CKA ou CKAD"
+        - "J'optimise les ressources et les coûts"
+        - "Je forme les équipes au déploiement K8s"
+      5:
+        - "Je définis la stratégie Kubernetes de l'organisation"
+        - "Je suis le référent pour les architectures K8s complexes"
+        - "Je mentor les équipes sur les patterns K8s avancés"
+        - "J'établis les standards de sécurité et de déploiement"
+      6:
+        - "Je contribue au projet Kubernetes ou aux projets CNCF"
+        - "Je suis speaker à KubeCon ou autres conférences cloud-native"
+        - "Je suis reconnu comme expert Kubernetes dans la communauté"
+        - "Je publie des articles ou maintiens des projets K8s open-source"
+    resources:
+      - url: "https://kubernetes.io/docs/tutorials/"
+        title: "Kubernetes Official Tutorials"
+        type: "tutorial"
+      - url: "https://www.katacoda.com/courses/kubernetes"
+        title: "Kubernetes Interactive Learning"
+        type: "tutorial"
+      - url: "https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/"
+        title: "CKA Certification"
+        type: "course"
+      - url: "https://learnk8s.io/"
+        title: "Learn Kubernetes"
+        type: "course"
+    improvement_tips:
+      "1→2": "Déployez une application simple sur un cluster K8s. Écrivez vos premiers manifests YAML."
+      "2→3": "Gérez les ConfigMaps, Secrets et les services. Implémentez le scaling automatique."
+      "3→4": "Passez la certification CKA ou CKAD. Concevez une architecture K8s production-ready."
+
+  - id: vertex_ai
+    name: "Vertex AI"
+    description: "Utiliser GCP Vertex AI pour les workflows ML (training, serving, endpoints)"
+    core_roles: [ml_engineer, data_scientist]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [NC, NC, 1, 2]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [2, 3, 4, 4]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance Vertex AI"
+      1: "Comprend les composants et cas d'usage"
+      2: "Utilise AutoML et pipelines de training basiques"
+      3: "Conçoit des pipelines de training custom, gère le model registry"
+      4: "Expert en architecture Vertex AI et patterns MLOps"
+      5: "Architecte MLOps GCP, certifié ML Engineer"
+      6: "Expert Vertex AI reconnu, speaker Google"
+    behavioral_indicators:
+      1:
+        - "Je connais les composants de Vertex AI"
+        - "Je comprends la différence entre AutoML et custom training"
+        - "Je sais ce qu'est un endpoint de prédiction"
+      2:
+        - "J'ai entraîné un modèle avec AutoML"
+        - "J'ai déployé un modèle sur un endpoint"
+        - "J'utilise Vertex AI Workbench pour le dev"
+        - "Je comprends le feature store"
+      3:
+        - "Je crée des pipelines de training custom"
+        - "J'utilise le Model Registry pour versionner"
+        - "Je configure le monitoring des modèles"
+        - "J'ai mis en place un workflow MLOps complet"
+      4:
+        - "Je conçois l'architecture MLOps de l'organisation"
+        - "J'ai une certification GCP ML Engineer"
+        - "J'optimise les coûts de training et serving"
+        - "Je forme les data scientists à Vertex AI"
+      5:
+        - "Je définis la stratégie MLOps et Vertex AI de l'organisation"
+        - "Je suis le référent pour les architectures ML complexes sur GCP"
+        - "Je mentor les équipes sur les patterns Vertex AI avancés"
+        - "J'établis les standards de déploiement et de monitoring ML"
+      6:
+        - "Je suis speaker aux événements Google Cloud sur le ML"
+        - "Je contribue aux discussions communautaires Vertex AI"
+        - "Je publie des articles ou études de cas sur MLOps avec Vertex AI"
+        - "Je suis reconnu comme expert Vertex AI dans l'industrie"
+    resources:
+      - url: "https://cloud.google.com/vertex-ai/docs"
+        title: "Vertex AI Documentation"
+        type: "documentation"
+      - url: "https://www.cloudskillsboost.google/paths/17"
+        title: "ML Engineer Learning Path"
+        type: "course"
+      - url: "https://github.com/GoogleCloudPlatform/vertex-ai-samples"
+        title: "Vertex AI Samples"
+        type: "tutorial"
+      - url: "https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning"
+        title: "MLOps Architecture Guide"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Créez un modèle avec AutoML. Déployez-le sur un endpoint."
+      "2→3": "Construisez un pipeline de training custom. Utilisez le Model Registry pour versioner."
+      "3→4": "Implémentez un workflow MLOps complet. Passez la certification ML Engineer."
+
+  - id: clickhouse
+    name: "ClickHouse"
+    description: "Utiliser ClickHouse pour les workloads analytiques (exports, optimisation)"
+    core_roles: [data_engineer]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, NC, 1, 2]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance ClickHouse"
+      1: "Comprend les cas d'usage et requêtes basiques"
+      2: "Conçoit des tables, optimise les requêtes pour ClickHouse"
+      3: "Architecte des clusters ClickHouse, gère les performances"
+      4: "Expert en internals ClickHouse et optimisation"
+      5: "Référent ClickHouse de l'organisation"
+      6: "Contributeur ClickHouse, speaker ClickHouse meetups"
+    behavioral_indicators:
+      1:
+        - "Je comprends pourquoi utiliser ClickHouse vs PostgreSQL"
+        - "Je peux exécuter des requêtes basiques"
+        - "Je connais les cas d'usage analytiques"
+      2:
+        - "Je crée des tables avec les bons engines (MergeTree)"
+        - "J'optimise mes requêtes pour ClickHouse"
+        - "Je comprends l'importance de l'ordre des colonnes"
+        - "J'utilise les materialized views"
+      3:
+        - "Je configure un cluster ClickHouse"
+        - "J'optimise les performances pour les gros volumes"
+        - "Je gère la réplication et le sharding"
+        - "Je monitore les performances du cluster"
+      4:
+        - "Je comprends les internals de ClickHouse"
+        - "J'optimise les settings pour des cas spécifiques"
+        - "Je forme les équipes à ClickHouse"
+        - "Je contribue à la communauté ClickHouse"
+      5:
+        - "Je définis la stratégie ClickHouse de l'organisation"
+        - "Je suis le référent pour les architectures analytiques ClickHouse"
+        - "Je mentor les équipes sur les patterns ClickHouse avancés"
+        - "J'établis les standards de performance et d'optimisation"
+      6:
+        - "Je contribue au code source de ClickHouse"
+        - "Je suis speaker aux ClickHouse meetups ou conférences"
+        - "Je suis reconnu comme expert ClickHouse dans la communauté"
+        - "Je publie des articles ou études de cas sur ClickHouse"
+    resources:
+      - url: "https://clickhouse.com/docs/en/"
+        title: "ClickHouse Documentation"
+        type: "documentation"
+      - url: "https://clickhouse.com/learn"
+        title: "ClickHouse Academy"
+        type: "course"
+      - url: "https://www.youtube.com/c/ClickHouseDB"
+        title: "ClickHouse YouTube"
+        type: "video"
+      - url: "https://clickhouse.com/blog"
+        title: "ClickHouse Blog"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Créez des tables avec les bons engines (MergeTree). Optimisez vos premières requêtes."
+      "2→3": "Concevez un schéma optimisé pour vos workloads analytiques. Implémentez les materialized views."
+      "3→4": "Gérez un cluster ClickHouse en production. Contribuez aux meetups."

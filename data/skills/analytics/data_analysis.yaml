@@ -1,0 +1,274 @@
+# Analyse de Données - Data Analysis skills
+category:
+  id: data_analysis
+  name: "Analyse de Données"
+
+skills:
+  - id: sql_bigquery
+    name: "SQL & BigQuery"
+    description: "Écrire des requêtes SQL optimisées sur BigQuery, comprendre le partitionnement et le clustering"
+    core_roles: [data_analyst, analytics_eng, data_engineer]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 2, 3, 3]
+      analytics_eng: [2, 3, 4, 4]
+      ml_engineer: [1, 2, 3, 3]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance SQL"
+      1: "Peut écrire des SELECT simples avec JOINs et WHERE basiques"
+      2: "Maîtrise les CTEs, fenêtres (window functions) et sous-requêtes complexes"
+      3: "Optimise les performances, comprend les plans d'exécution, gère les gros volumes"
+      4: "Conçoit des modèles de données efficaces, maîtrise le partitionnement/clustering BigQuery"
+      5: "Mentor SQL reconnu, forme les équipes, établit les standards"
+      6: "Contributeur BigQuery reconnu, speaker, expert externe"
+    behavioral_indicators:
+      1:
+        - "Je peux écrire SELECT, WHERE, GROUP BY sans aide"
+        - "Je sais faire un JOIN entre 2 tables"
+        - "Je dois parfois chercher la syntaxe pour les requêtes plus complexes"
+      2:
+        - "J'écris des CTEs (WITH) couramment dans mes requêtes"
+        - "J'utilise les window functions (ROW_NUMBER, LEAD, LAG, SUM OVER)"
+        - "Je peux écrire des sous-requêtes corrélées"
+        - "Je comprends la différence entre LEFT/RIGHT/INNER JOIN"
+      3:
+        - "Je lis et analyse les plans d'exécution BigQuery"
+        - "J'ai optimisé une requête en réduisant son coût de 50%+"
+        - "Je sais quand utiliser le partitionnement vs clustering"
+        - "Je gère des requêtes sur des tables de plusieurs TB"
+      4:
+        - "Je conçois des schémas de données optimisés pour BigQuery"
+        - "Je fais des revues de requêtes SQL pour l'équipe"
+        - "J'ai défini des conventions SQL pour le projet"
+        - "Je maîtrise les fonctions analytiques avancées (QUALIFY, PIVOT)"
+      5:
+        - "Je suis le référent SQL/BigQuery de l'organisation"
+        - "J'ai défini les standards et bonnes pratiques SQL pour l'entreprise"
+        - "Je forme et mentor les équipes sur les requêtes optimisées"
+        - "J'ai créé des templates et outils SQL réutilisables"
+      6:
+        - "Je contribue à des projets open-source liés à BigQuery ou SQL"
+        - "J'ai présenté sur SQL/BigQuery à des conférences externes"
+        - "Je suis reconnu comme expert SQL/BigQuery en dehors de l'entreprise"
+        - "J'ai publié des articles ou tutoriels sur l'optimisation SQL"
+    resources:
+      - url: "https://cloud.google.com/bigquery/docs/best-practices-performance-overview"
+        title: "BigQuery Best Practices"
+        type: "documentation"
+      - url: "https://mode.com/sql-tutorial/"
+        title: "Mode SQL Tutorial"
+        type: "tutorial"
+      - url: "https://www.coursera.org/learn/modern-big-data-analysis-with-sql"
+        title: "Modern Big Data Analysis with SQL (Coursera)"
+        type: "course"
+      - url: "https://learnsql.com/blog/sql-window-functions-cheat-sheet/"
+        title: "Window Functions Cheat Sheet"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Pratiquez les CTEs et window functions sur des cas réels. Essayez de réécrire vos requêtes existantes avec des CTEs pour améliorer la lisibilité."
+      "2→3": "Apprenez à lire les plans d'exécution BigQuery. Concentrez-vous sur l'optimisation des coûts et des performances avec le partitionnement."
+      "3→4": "Menez un projet de refonte de modèle de données. Documentez vos choix de partitionnement et clustering pour l'équipe."
+
+  - id: statistical_analysis
+    name: "Analyse Statistique"
+    description: "Appliquer des méthodes statistiques pour analyser les données et générer des insights"
+    core_roles: [data_analyst, data_scientist]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [NC, NC, 1, 2]
+      data_scientist: [2, 3, 4, 4]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [NC, NC, NC, 1]
+    level_descriptions:
+      0: "Aucune connaissance en statistiques"
+      1: "Comprend les statistiques descriptives (moyenne, médiane, écart-type)"
+      2: "Peut réaliser des tests d'hypothèses, analyses de corrélation et régression"
+      3: "Conçoit des expériences A/B, applique des méthodes statistiques avancées"
+      4: "Expert en modélisation statistique, guide les analyses complexes"
+      5: "Référent statistiques de l'organisation, forme les équipes"
+      6: "Publication de recherche, contribution à la communauté statistique"
+    behavioral_indicators:
+      1:
+        - "Je calcule et interprète moyenne, médiane, écart-type"
+        - "Je sais créer un histogramme ou box plot"
+        - "Je comprends la différence entre corrélation et causalité"
+      2:
+        - "J'ai réalisé un test t ou chi-carré sur des données réelles"
+        - "Je peux calculer et interpréter une régression linéaire"
+        - "Je sais calculer un intervalle de confiance"
+        - "Je comprends la notion de p-value et significativité"
+      3:
+        - "J'ai conçu et analysé un A/B test de bout en bout"
+        - "Je calcule la puissance statistique et taille d'échantillon nécessaire"
+        - "J'utilise des méthodes comme ANOVA ou régression multiple"
+        - "Je sais détecter et gérer les biais statistiques"
+      4:
+        - "Je choisis la méthode statistique appropriée selon le contexte"
+        - "J'ai formé des collègues aux statistiques"
+        - "Je valide les analyses statistiques des autres"
+        - "Je maîtrise les approches bayésiennes"
+      5:
+        - "Je suis le référent statistiques de l'organisation"
+        - "J'ai défini les méthodologies statistiques standard de l'entreprise"
+        - "Je forme et mentor les équipes sur l'analyse statistique"
+        - "J'ai créé des frameworks de tests statistiques réutilisables"
+      6:
+        - "Je contribue à des packages statistiques open-source"
+        - "J'ai présenté mes travaux à des conférences sur les statistiques ou data science"
+        - "Je suis reconnu comme expert statistique en dehors de l'entreprise"
+        - "J'ai des publications ou articles sur les méthodes statistiques"
+    resources:
+      - url: "https://www.khanacademy.org/math/statistics-probability"
+        title: "Khan Academy Statistics"
+        type: "course"
+      - url: "https://www.coursera.org/specializations/statistics"
+        title: "Statistics with Python (Coursera)"
+        type: "course"
+      - url: "https://seeing-theory.brown.edu/"
+        title: "Seeing Theory - Visual Statistics"
+        type: "tutorial"
+      - url: "https://statsthinking21.github.io/statsthinking21-core-site/"
+        title: "Statistical Thinking for the 21st Century"
+        type: "book"
+    improvement_tips:
+      "1→2": "Apprenez les tests d'hypothèses (t-test, chi-carré). Pratiquez sur des données réelles de l'entreprise."
+      "2→3": "Formez-vous au design d'expériences A/B. Calculez la puissance statistique et la taille d'échantillon nécessaire."
+      "3→4": "Explorez les méthodes avancées (analyse bayésienne, modèles mixtes). Menez une analyse complexe de bout en bout."
+
+  - id: insight_generation
+    name: "Génération d'Insights"
+    description: "Transformer les données en recommandations business actionnables"
+    core_roles: [data_analyst, data_scientist]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [NC, NC, 1, 2]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Ne peut pas générer d'insights"
+      1: "Peut décrire ce que montrent les données, observations basiques"
+      2: "Identifie les patterns, tendances et anomalies avec contexte métier"
+      3: "Génère des insights stratégiques et recommandations à partir d'analyses complexes"
+      4: "Pilote la prise de décision data-driven au niveau organisationnel"
+      5: "Influence la stratégie de l'entreprise par les données"
+      6: "Reconnu comme expert en data storytelling"
+    behavioral_indicators:
+      1:
+        - "Je peux décrire les chiffres clés d'un dashboard"
+        - "Je réponds aux questions 'combien' et 'quand'"
+        - "Je présente les données sans interprétation approfondie"
+      2:
+        - "J'identifie les tendances et anomalies dans les données"
+        - "Je pose la question 'pourquoi' après chaque observation"
+        - "Je relie les données au contexte métier"
+        - "Je peux expliquer l'impact potentiel d'un changement observé"
+      3:
+        - "Mes analyses mènent à des décisions concrètes"
+        - "Je propose des recommandations actionnables avec les données"
+        - "J'anticipe les questions des stakeholders"
+        - "J'ai influencé au moins une décision stratégique avec mes analyses"
+      4:
+        - "Je pilote des initiatives data-driven à l'échelle de l'organisation"
+        - "Les dirigeants me consultent pour des décisions importantes"
+        - "Je forme les équipes au data storytelling"
+        - "J'ai un track record d'impacts mesurables"
+      5:
+        - "Je suis le référent data storytelling de l'organisation"
+        - "J'ai défini les standards de communication des insights"
+        - "Je forme et mentor les équipes sur la génération d'insights"
+        - "J'ai créé des frameworks d'analyse réutilisables pour l'entreprise"
+      6:
+        - "Je contribue à la communauté data storytelling (blogs, open-source)"
+        - "J'ai présenté sur la génération d'insights à des conférences externes"
+        - "Je suis reconnu comme expert data storytelling en dehors de l'entreprise"
+        - "J'ai des publications ou articles sur l'analyse de données business"
+    resources:
+      - url: "https://www.storytellingwithdata.com/"
+        title: "Storytelling with Data"
+        type: "book"
+      - url: "https://www.coursera.org/learn/analytics-business"
+        title: "Business Analytics (Coursera)"
+        type: "course"
+      - url: "https://hbr.org/2013/03/know-the-difference-between-your-data-and-your-metrics"
+        title: "HBR - Data vs Metrics"
+        type: "documentation"
+      - url: "https://amplitude.com/blog/data-storytelling"
+        title: "Data Storytelling Guide"
+        type: "tutorial"
+    improvement_tips:
+      "1→2": "Ajoutez toujours le contexte métier à vos analyses. Posez la question 'So what?' après chaque observation."
+      "2→3": "Développez la capacité à anticiper les questions des stakeholders. Préparez des recommandations actionnables."
+      "3→4": "Menez des projets d'impact stratégique. Présentez régulièrement au COMEX ou équivalent."
+
+  - id: ml_fundamentals
+    name: "Fondamentaux ML"
+    description: "Comprendre et appliquer les concepts de Machine Learning"
+    core_roles: [data_scientist, ml_engineer]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [2, 3, 4, 4]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance ML"
+      1: "Comprend les concepts de base (supervisé vs non-supervisé, biais-variance)"
+      2: "Peut implémenter des modèles ML basiques avec scikit-learn"
+      3: "Sélectionne les algorithmes appropriés, optimise les hyperparamètres"
+      4: "Conçoit des solutions ML de bout en bout et optimise les performances"
+      5: "Architecte ML, définit les standards de l'organisation"
+      6: "Contributeur open-source ML, publications, conférences"
+    behavioral_indicators:
+      1:
+        - "Je comprends la différence entre supervisé et non-supervisé"
+        - "Je sais expliquer ce qu'est l'overfitting"
+        - "Je connais les algorithmes classiques (régression, arbre de décision)"
+        - "J'ai suivi un cours d'introduction au ML"
+      2:
+        - "J'ai entraîné un modèle scikit-learn sur des données réelles"
+        - "Je sais faire un train/test split correctement"
+        - "Je comprends les métriques de base (accuracy, precision, recall)"
+        - "J'ai participé à un projet ML même en support"
+      3:
+        - "Je choisis l'algorithme adapté selon le problème"
+        - "Je fais de l'optimisation d'hyperparamètres (GridSearch, RandomSearch)"
+        - "J'utilise la validation croisée systématiquement"
+        - "J'ai déployé au moins un modèle en production"
+      4:
+        - "Je conçois l'architecture ML complète d'un projet"
+        - "Je maîtrise les techniques avancées (ensemble, boosting)"
+        - "Je gère le monitoring et retraining des modèles"
+        - "Je forme les autres aux bonnes pratiques ML"
+      5:
+        - "Je suis le référent ML de l'organisation"
+        - "J'ai défini les standards et bonnes pratiques ML pour l'entreprise"
+        - "Je forme et mentor les équipes sur le Machine Learning"
+        - "J'ai créé des pipelines et outils ML réutilisables"
+      6:
+        - "Je contribue à des projets open-source ML (scikit-learn, TensorFlow, etc.)"
+        - "J'ai présenté sur le ML à des conférences externes"
+        - "Je suis reconnu comme expert ML en dehors de l'entreprise"
+        - "J'ai des publications ou articles de recherche sur le ML"
+    resources:
+      - url: "https://www.coursera.org/learn/machine-learning"
+        title: "Machine Learning by Andrew Ng"
+        type: "course"
+      - url: "https://scikit-learn.org/stable/tutorial/index.html"
+        title: "Scikit-learn Tutorials"
+        type: "tutorial"
+      - url: "https://www.statlearning.com/"
+        title: "Introduction to Statistical Learning"
+        type: "book"
+      - url: "https://madewithml.com/"
+        title: "Made with ML"
+        type: "course"
+    improvement_tips:
+      "1→2": "Implémentez les algorithmes classiques (régression, arbres de décision, clustering) sur des datasets publics."
+      "2→3": "Apprenez la validation croisée et l'optimisation d'hyperparamètres. Participez à une compétition Kaggle."
+      "3→4": "Développez un projet ML complet en production. Maîtrisez le monitoring et le retraining des modèles."

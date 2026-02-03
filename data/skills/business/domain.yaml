@@ -1,0 +1,340 @@
+# Domaine Métier skills
+category:
+  id: domain
+  name: "Domaine Métier"
+
+skills:
+  - id: pass_culture_knowledge
+    name: "Connaissance Pass Culture"
+    description: "Comprendre le dispositif Pass Culture: crédit jeunes 15-20 ans, parcours utilisateur, catalogue d'offres, objectifs de diversification culturelle"
+    core_roles: [data_analyst, data_scientist, analytics_eng]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance du Pass Culture"
+      1: "Comprend le dispositif (crédit jeunes 15-20 ans, objectifs de démocratisation culturelle)"
+      2: "Maîtrise les entités métier (offres, réservations, lieux, utilisateurs, acteurs culturels)"
+      3: "Expert des parcours utilisateurs, mécaniques de crédit et cycle de vie bénéficiaire"
+      4: "Référent métier, analyse les cohortes et mesure l'impact du dispositif"
+      5: "Expert domaine, influence la stratégie produit et les politiques publiques"
+      6: "Reconnu comme expert Pass Culture en externe, publications institutionnelles"
+    behavioral_indicators:
+      1:
+        - "Je comprends les objectifs du Pass Culture"
+        - "Je connais les tranches d'âge et les montants de crédit"
+        - "Je sais ce qu'est une offre et une réservation"
+      2:
+        - "Je maîtrise le modèle de données Pass Culture"
+        - "Je comprends les différents types d'offres et de lieux"
+        - "Je connais le parcours utilisateur de A à Z"
+        - "Je sais calculer les KPIs principaux"
+      3:
+        - "J'analyse les cohortes de bénéficiaires"
+        - "Je comprends les mécaniques de crédit par âge"
+        - "J'identifie les leviers de diversification culturelle"
+        - "Je connais l'écosystème des acteurs culturels"
+      4:
+        - "Je suis référent métier pour les équipes data"
+        - "Je mesure l'impact du dispositif"
+        - "Je contribue aux rapports institutionnels"
+        - "Je forme les nouveaux arrivants au métier"
+      5:
+        - "Je définis les orientations stratégiques du produit data"
+        - "Je suis consulté par la direction sur les sujets métier"
+        - "Je contribue aux réflexions de politique publique"
+        - "Je forme les équipes produit et direction aux enjeux métier"
+      6:
+        - "Je publie des études institutionnelles sur le Pass Culture"
+        - "Je suis sollicité par le ministère ou des institutions externes"
+        - "Je donne des conférences sur le dispositif Pass Culture"
+        - "Je suis reconnu comme expert de référence en externe"
+    resources:
+      - url: "https://pass.culture.fr/"
+        title: "Site officiel Pass Culture"
+        type: "documentation"
+      - url: "https://passculture.zendesk.com/hc/fr"
+        title: "Centre d'aide Pass Culture"
+        type: "documentation"
+      - url: "https://www.culture.gouv.fr/Thematiques/Pass-Culture"
+        title: "Ministère de la Culture - Pass Culture"
+        type: "documentation"
+      - url: "https://www.data.gouv.fr/fr/organizations/pass-culture/"
+        title: "Open Data Pass Culture"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Explorez les données métier (offres, réservations). Comprenez le modèle de données."
+      "2→3": "Analysez les parcours utilisateurs complets. Étudiez les cohortes sortantes."
+      "3→4": "Contribuez aux études d'impact. Présentez les résultats aux parties prenantes institutionnelles."
+
+  - id: cultural_domains
+    name: "Domaines Culturels Pass Culture"
+    description: "Connaître les catégories d'offres culturelles: Livres, Cinéma, Musique live, Spectacle vivant, Musées/Patrimoine, Festivals, Pratiques artistiques"
+    core_roles: [data_analyst, analytics_eng]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [NC, NC, 1, 2]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance des domaines culturels"
+      1: "Connaît les grandes catégories (livres, cinéma, musique, spectacle vivant, musées)"
+      2: "Comprend les spécificités de chaque domaine et leur poids dans les réservations"
+      3: "Analyse les tendances de consommation par domaine et les évolutions entre cohortes"
+      4: "Expert des dynamiques de chaque secteur, identifie les leviers de diversification"
+      5: "Définit les stratégies d'enrichissement du catalogue par domaine"
+      6: "Expert reconnu des politiques culturelles sectorielles"
+    behavioral_indicators:
+      1:
+        - "Je connais les grandes catégories d'offres (livre, cinéma, musique...)"
+        - "Je sais que le livre représente une part importante des réservations"
+        - "Je comprends la différence entre offres physiques et numériques"
+      2:
+        - "J'analyse la répartition des réservations par domaine"
+        - "Je comprends les spécificités de chaque secteur culturel"
+        - "Je connais les sous-catégories détaillées"
+        - "Je sais quels domaines sont surreprésentés ou sous-représentés"
+      3:
+        - "J'analyse l'évolution de la consommation par cohorte"
+        - "J'identifie les tendances émergentes par domaine"
+        - "Je comprends les facteurs de diversification"
+        - "Je propose des actions pour équilibrer les domaines"
+      4:
+        - "Je suis expert d'un ou plusieurs domaines culturels"
+        - "Je connais les acteurs clés de chaque secteur"
+        - "Je contribue aux stratégies d'enrichissement du catalogue"
+        - "Je forme les équipes aux spécificités de chaque domaine"
+      5:
+        - "Je définis la stratégie d'enrichissement du catalogue"
+        - "Je suis référent pour les partenariats sectoriels"
+        - "Je forme les équipes produit aux enjeux de chaque domaine"
+        - "Je contribue aux décisions stratégiques sur l'offre culturelle"
+      6:
+        - "Je suis reconnu comme expert des politiques culturelles"
+        - "Je publie des études sur les pratiques culturelles par secteur"
+        - "Je suis sollicité par des institutions culturelles externes"
+        - "Je donne des conférences sur les enjeux sectoriels culturels"
+    resources:
+      - url: "https://www.culture.gouv.fr/Thematiques"
+        title: "Ministère de la Culture - Thématiques"
+        type: "documentation"
+      - url: "https://www.observatoire-culture.net/"
+        title: "Observatoire des politiques culturelles"
+        type: "documentation"
+      - url: "https://www.deps.fr/"
+        title: "DEPS - Études et statistiques culturelles"
+        type: "documentation"
+      - url: "https://www.culturecommunication.gouv.fr/Etudes-et-statistiques"
+        title: "Études culturelles officielles"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Analysez la répartition des réservations par catégorie. Comprenez les spécificités de chaque domaine."
+      "2→3": "Étudiez les tendances de consommation par cohorte. Identifiez les facteurs de diversification."
+      "3→4": "Devenez expert d'un domaine spécifique. Contribuez aux stratégies de diversification."
+
+  - id: cultural_recommendation
+    name: "Recommandation Culturelle"
+    description: "Comprendre les enjeux de la recommandation d'offres culturelles: diversification, découverte, sérendipité, équilibre popularité/niche"
+    core_roles: [ml_engineer, data_scientist]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [NC, NC, 1, 2]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [NC, NC, 1, 2]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance de la recommandation culturelle"
+      1: "Comprend les enjeux de diversité et découverte culturelle propres au Pass Culture"
+      2: "Maîtrise les métriques spécifiques (diversité, sérendipité, taux de découverte)"
+      3: "Conçoit des stratégies de recommandation adaptées aux objectifs de politique publique"
+      4: "Expert en recommandation culturelle, équilibre popularité et découverte de niches"
+      5: "Définit la stratégie de recommandation et mesure son impact sur les pratiques"
+      6: "Expert reco culturelle reconnu, publications académiques sur la diversification"
+    behavioral_indicators:
+      1:
+        - "Je comprends les objectifs de diversification culturelle"
+        - "Je connais les risques des bulles de filtre"
+        - "Je sais ce qu'est la sérendipité dans un contexte culturel"
+      2:
+        - "Je calcule les métriques de diversité (coverage, novelty)"
+        - "Je mesure le taux de découverte de nouveaux domaines"
+        - "J'analyse l'impact des recommandations sur la diversification"
+        - "Je comprends l'équilibre explore/exploit"
+      3:
+        - "Je conçois des stratégies de recommandation pour la diversification"
+        - "J'intègre les objectifs de politique publique dans les algorithmes"
+        - "Je mesure l'impact à long terme sur les pratiques culturelles"
+        - "J'ai contribué à améliorer les recommandations du Pass Culture"
+      4:
+        - "Je définis la stratégie de recommandation de l'organisation"
+        - "J'équilibre popularité et découverte de niches"
+        - "Je publie sur la recommandation culturelle"
+        - "Je forme les équipes aux enjeux spécifiques"
+      5:
+        - "Je définis la roadmap stratégique de recommandation"
+        - "Je mesure l'impact des algorithmes sur les pratiques culturelles"
+        - "Je suis référent pour les choix éthiques de recommandation"
+        - "Je forme les équipes produit et direction aux enjeux de la reco"
+      6:
+        - "Je publie des articles académiques sur la recommandation culturelle"
+        - "Je suis speaker dans des conférences RecSys ou similaires"
+        - "Je suis consulté par d'autres organisations sur leurs stratégies"
+        - "Je suis reconnu comme expert de la recommandation culturelle"
+    resources:
+      - url: "https://research.netflix.com/publications"
+        title: "Netflix Research - Recommendations"
+        type: "documentation"
+      - url: "https://recsys.acm.org/"
+        title: "ACM RecSys Conference"
+        type: "documentation"
+      - url: "https://arxiv.org/list/cs.IR/recent"
+        title: "arXiv - Information Retrieval"
+        type: "documentation"
+      - url: "https://eugeneyan.com/writing/system-design-for-discovery/"
+        title: "System Design for Discovery"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Comprenez les métriques de diversité (coverage, novelty, serendipity). Analysez l'impact des recos actuelles."
+      "2→3": "Concevez des expériences pour mesurer la diversification. Équilibrez explore/exploit."
+      "3→4": "Publiez vos recherches. Contribuez aux discussions académiques sur la recommandation culturelle."
+
+  - id: cultural_ecosystem
+    name: "Écosystème Culturel Français"
+    description: "Connaître les acteurs culturels (librairies, cinémas, salles de spectacle, musées, festivals) et leurs enjeux économiques et territoriaux"
+    core_roles: [data_analyst]
+    levels:
+      data_analyst: [1, 1, 2, 3]
+      data_engineer: [NC, NC, 1, 2]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [NC, NC, 1, 2]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance de l'écosystème culturel"
+      1: "Comprend les grandes catégories d'acteurs culturels partenaires"
+      2: "Maîtrise les spécificités par secteur (librairies indépendantes, cinémas art et essai, scènes nationales...)"
+      3: "Expert des enjeux économiques et territoriaux de chaque secteur culturel"
+      4: "Référent écosystème, contextualise les analyses selon les dynamiques sectorielles"
+      5: "Expert reconnu de l'écosystème culturel français et de ses évolutions"
+      6: "Influence les politiques culturelles, expert auprès du ministère de la Culture"
+    behavioral_indicators:
+      1:
+        - "Je connais les types d'acteurs culturels partenaires"
+        - "Je comprends le rôle des librairies, cinémas, musées"
+        - "Je sais ce qu'est un acteur culturel vs un offreur"
+      2:
+        - "Je connais les spécificités des librairies indépendantes"
+        - "Je comprends les enjeux des cinémas art et essai"
+        - "Je sais ce qu'est une scène nationale ou conventionnée"
+        - "J'analyse les données des partenaires culturels"
+      3:
+        - "Je comprends les enjeux économiques par secteur"
+        - "J'analyse les dynamiques territoriales (zones rurales, QPV)"
+        - "Je connais les fédérations et syndicats professionnels"
+        - "Je contextualise mes analyses selon les réalités sectorielles"
+      4:
+        - "Je suis référent écosystème pour les équipes"
+        - "Je participe aux échanges avec les partenaires institutionnels"
+        - "Je contribue aux rapports sur l'écosystème"
+        - "Je forme les équipes aux spécificités des acteurs culturels"
+      5:
+        - "Je définis les orientations stratégiques sur l'écosystème"
+        - "Je suis l'interlocuteur privilégié des fédérations professionnelles"
+        - "Je contribue aux réflexions de politique publique sur les secteurs"
+        - "Je forme la direction aux enjeux de l'écosystème"
+      6:
+        - "Je suis sollicité par le ministère comme expert de l'écosystème"
+        - "Je publie des études sur l'écosystème culturel français"
+        - "Je donne des conférences sur les enjeux des acteurs culturels"
+        - "Je suis reconnu comme expert de référence de l'écosystème"
+    resources:
+      - url: "https://www.culture.gouv.fr/Thematiques/Industries-culturelles"
+        title: "Industries culturelles"
+        type: "documentation"
+      - url: "https://www.syndicat-librairie.fr/"
+        title: "Syndicat de la librairie française"
+        type: "documentation"
+      - url: "https://www.fncf.org/"
+        title: "FNCF - Cinémas"
+        type: "documentation"
+      - url: "https://www.lesindependants.net/"
+        title: "Les Indépendants"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Étudiez les différents types d'acteurs culturels. Comprenez leurs enjeux économiques."
+      "2→3": "Analysez les dynamiques territoriales. Identifiez les zones en tension."
+      "3→4": "Contribuez aux discussions avec les partenaires institutionnels. Publiez des analyses sectorielles."
+
+  - id: cultural_impact_measurement
+    name: "Mesure d'Impact Culturel"
+    description: "Évaluer l'impact du Pass Culture: études cohortes, diversification des pratiques, découverte culturelle, réitération post-crédit"
+    core_roles: [data_analyst, data_scientist]
+    levels:
+      data_analyst: [NC, 1, 2, 3]
+      data_engineer: [NC, NC, 1, 2]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [NC, 1, 2, 3]
+      ml_engineer: [NC, NC, 1, 2]
+      backend: [NC, NC, NC, 1]
+    level_descriptions:
+      0: "Aucune connaissance de la mesure d'impact"
+      1: "Comprend les indicateurs clés (taux d'utilisation, diversification, découverte)"
+      2: "Analyse les cohortes sortantes et mesure l'évolution des pratiques culturelles"
+      3: "Conçoit des méthodologies d'évaluation d'impact (enquêtes, analyse comportementale)"
+      4: "Expert en évaluation de politiques publiques culturelles"
+      5: "Définit la stratégie d'évaluation et produit les rapports institutionnels"
+      6: "Expert reconnu en évaluation d'impact, publications académiques"
+    behavioral_indicators:
+      1:
+        - "Je comprends les indicateurs d'impact du Pass Culture"
+        - "Je connais le taux d'utilisation et de diversification"
+        - "Je sais ce qu'est une étude de cohorte"
+      2:
+        - "J'analyse les cohortes sortantes (18-19 ans)"
+        - "Je mesure l'évolution des pratiques culturelles"
+        - "Je calcule les indicateurs de découverte et réitération"
+        - "Je contribue aux tableaux de bord d'impact"
+      3:
+        - "Je conçois des méthodologies d'évaluation d'impact"
+        - "Je croise les données comportementales et déclaratives"
+        - "J'analyse la réitération post-crédit"
+        - "Je produis des études d'impact structurées"
+      4:
+        - "Je suis expert en évaluation de politiques publiques"
+        - "Je produis les rapports pour les instances institutionnelles"
+        - "Je définis la stratégie d'évaluation"
+        - "Je forme les équipes à la mesure d'impact"
+      5:
+        - "Je définis la stratégie globale d'évaluation d'impact"
+        - "Je suis l'interlocuteur des instances de tutelle (ministère, etc.)"
+        - "Je coordonne les études d'impact avec des partenaires externes"
+        - "Je forme la direction et les équipes à l'évaluation d'impact"
+      6:
+        - "Je publie des articles académiques sur l'évaluation d'impact culturel"
+        - "Je suis sollicité comme expert par d'autres institutions publiques"
+        - "Je donne des conférences sur l'évaluation des politiques culturelles"
+        - "Je suis reconnu comme expert de référence en évaluation d'impact"
+    resources:
+      - url: "https://www.sciencespo.fr/liepp/fr/content/evaluation-des-politiques-publiques"
+        title: "Sciences Po - Évaluation politiques publiques"
+        type: "documentation"
+      - url: "https://www.francestrategic.fr/thematiques/evaluation-des-politiques-publiques"
+        title: "France Stratégie - Évaluation"
+        type: "documentation"
+      - url: "https://www.jpal.org/research"
+        title: "J-PAL - Impact Evaluation"
+        type: "documentation"
+      - url: "https://www.povertyactionlab.org/sites/default/files/research-resources/practical-guide-evaluating-impact.pdf"
+        title: "Guide pratique évaluation d'impact"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Analysez les indicateurs d'impact existants. Comprenez la méthodologie des études cohortes."
+      "2→3": "Contribuez à une étude d'impact. Concevez des indicateurs complémentaires."
+      "3→4": "Menez une étude d'impact de bout en bout. Présentez aux instances institutionnelles."

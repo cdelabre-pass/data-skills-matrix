@@ -1,0 +1,413 @@
+# Data Ops skills
+category:
+  id: data_ops
+  name: "Data Ops"
+
+skills:
+  - id: git_github
+    name: "Git & GitHub"
+    description: "Utiliser Git pour le contrôle de version (branches, merge, workflows)"
+    core_roles: [data_analyst, data_engineer, data_scientist, analytics_eng, ml_engineer, backend]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [2, 3, 4, 4]
+    level_descriptions:
+      0: "Aucune connaissance Git"
+      1: "Peut cloner, pull, commit, push - opérations basiques"
+      2: "Travaille avec les branches, gère les merges, comprend les workflows"
+      3: "Résout les conflits complexes, conçoit des stratégies de branching"
+      4: "Expert Git, peut gérer tout scénario"
+      5: "Définit les conventions Git de l'organisation"
+      6: "Contributeur Git, expert reconnu"
+    behavioral_indicators:
+      1:
+        - "Je fais git clone, pull, commit, push au quotidien"
+        - "J'écris des messages de commit descriptifs"
+        - "Je sais voir l'historique avec git log"
+        - "J'utilise parfois git status pour vérifier mes changements"
+      2:
+        - "Je crée et switch entre branches facilement"
+        - "Je fais des merge et comprends les conflits simples"
+        - "J'utilise git stash quand j'ai besoin de changer de contexte"
+        - "Je crée des Pull Requests et fais des code reviews"
+        - "Je comprends la différence entre merge et rebase"
+      3:
+        - "Je résous des conflits de merge complexes"
+        - "J'utilise rebase -i pour nettoyer l'historique"
+        - "Je sais utiliser cherry-pick et bisect"
+        - "J'ai défini une stratégie de branching (GitFlow, trunk-based)"
+        - "Je forme les collègues sur Git"
+      4:
+        - "Je peux récupérer d'erreurs Git complexes (reflog, reset)"
+        - "Je définis les conventions Git de l'équipe"
+        - "Je fais des revues de PR avec feedback constructif"
+        - "Je maîtrise les hooks et automatisations Git"
+      5:
+        - "Je définis les conventions et workflows Git pour l'organisation"
+        - "Je suis la référence interne pour les problèmes Git complexes"
+        - "Je mentore les équipes sur les stratégies de branching"
+        - "J'ai mis en place les standards de code review"
+      6:
+        - "Je suis speaker à des conférences Git ou DevOps"
+        - "Je contribue au projet Git ou outils associés"
+        - "J'ai publié des articles sur les workflows Git avancés"
+        - "Je suis reconnu comme expert externe en gestion de version"
+    resources:
+      - url: "https://learngitbranching.js.org/"
+        title: "Learn Git Branching (Interactive)"
+        type: "tutorial"
+      - url: "https://www.atlassian.com/git/tutorials"
+        title: "Atlassian Git Tutorials"
+        type: "tutorial"
+      - url: "https://ohshitgit.com/"
+        title: "Oh Shit, Git!?"
+        type: "tutorial"
+      - url: "https://git-scm.com/book/en/v2"
+        title: "Pro Git Book"
+        type: "book"
+    improvement_tips:
+      "1→2": "Apprenez le branching et le merging. Utilisez Learn Git Branching pour pratiquer."
+      "2→3": "Maîtrisez rebase et cherry-pick. Résolvez des conflits complexes."
+      "3→4": "Définissez une stratégie de branching pour votre équipe. Formez les autres."
+
+  - id: github_actions
+    name: "GitHub Actions"
+    description: "CI/CD avec GitHub Actions (workflows réutilisables, tests, déploiement)"
+    core_roles: [data_engineer, ml_engineer, backend]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance GitHub Actions"
+      1: "Comprend les concepts CI/CD, peut lire les workflows"
+      2: "Peut écrire des workflows basiques pour testing et déploiement"
+      3: "Conçoit des pipelines CI/CD complexes, fonctionnalités avancées"
+      4: "Expert en architecture GitHub Actions"
+      5: "Architecte CI/CD de l'organisation"
+      6: "Contributeur Actions community, expert DevOps reconnu"
+    behavioral_indicators:
+      1:
+        - "Je comprends les concepts de CI/CD"
+        - "Je sais lire un fichier workflow.yml"
+        - "Je peux voir les logs d'un workflow"
+      2:
+        - "J'écris des workflows pour lancer les tests"
+        - "J'utilise les actions du marketplace"
+        - "Je configure les triggers (push, PR, schedule)"
+        - "Je gère les secrets dans les workflows"
+      3:
+        - "Je crée des workflows réutilisables"
+        - "J'utilise les matrix builds"
+        - "Je configure les environments et approvals"
+        - "J'optimise les temps de build avec le cache"
+      4:
+        - "J'ai conçu l'architecture CI/CD de l'organisation"
+        - "Je crée des actions custom"
+        - "Je définis les standards de déploiement"
+        - "Je forme les équipes au CI/CD"
+      5:
+        - "Je définis les standards CI/CD pour l'ensemble de l'organisation"
+        - "Je suis la référence interne pour les pipelines complexes"
+        - "Je mentore les équipes sur les stratégies de déploiement"
+        - "J'ai mis en place la plateforme CI/CD de l'entreprise"
+      6:
+        - "Je suis speaker à des conférences DevOps ou CI/CD"
+        - "Je contribue au marketplace GitHub Actions"
+        - "J'ai publié des articles sur les pipelines CI/CD avancés"
+        - "Je suis reconnu comme expert externe en automatisation"
+    resources:
+      - url: "https://docs.github.com/en/actions"
+        title: "GitHub Actions Documentation"
+        type: "documentation"
+      - url: "https://github.com/features/actions"
+        title: "GitHub Actions Features"
+        type: "documentation"
+      - url: "https://www.youtube.com/watch?v=R8_veQiYBjI"
+        title: "GitHub Actions Tutorial"
+        type: "video"
+      - url: "https://github.com/actions/starter-workflows"
+        title: "Starter Workflows"
+        type: "tutorial"
+    improvement_tips:
+      "1→2": "Créez un workflow de test simple. Utilisez les actions du marketplace."
+      "2→3": "Implémentez des workflows réutilisables. Utilisez les secrets et environments."
+      "3→4": "Optimisez les temps de build. Créez des actions custom."
+
+  - id: terraform
+    name: "Terraform"
+    description: "Infrastructure as Code avec Terraform (GCP resources, modules, state)"
+    core_roles: [data_engineer, backend]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, NC, 1, 2]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance Terraform"
+      1: "Comprend les concepts IaC, peut lire les fichiers Terraform"
+      2: "Peut écrire des configurations Terraform basiques"
+      3: "Conçoit des architectures Terraform modulaires, gère le state"
+      4: "Expert en Terraform et patterns IaC"
+      5: "Architecte IaC, certifié Terraform Associate"
+      6: "Contributeur Terraform providers, expert HashiCorp reconnu"
+    behavioral_indicators:
+      1:
+        - "Je comprends les concepts d'Infrastructure as Code"
+        - "Je sais lire un fichier .tf"
+        - "Je connais terraform plan et apply"
+      2:
+        - "J'écris des configurations Terraform basiques"
+        - "Je crée des ressources GCP (buckets, datasets)"
+        - "Je comprends le state et son importance"
+        - "J'utilise les variables et outputs"
+      3:
+        - "Je développe des modules réutilisables"
+        - "Je configure le state remote (GCS)"
+        - "J'utilise les workspaces pour les environments"
+        - "J'intègre Terraform dans le CI/CD"
+      4:
+        - "J'ai conçu l'architecture IaC de l'organisation"
+        - "J'ai une certification Terraform"
+        - "Je forme les équipes à Terraform"
+        - "Je définis les standards et bonnes pratiques"
+      5:
+        - "Je définis les standards IaC pour l'ensemble de l'organisation"
+        - "Je suis la référence interne pour les architectures Terraform"
+        - "Je mentore les équipes sur les patterns de modules avancés"
+        - "J'ai mis en place la plateforme IaC de l'entreprise"
+      6:
+        - "Je suis speaker à des conférences HashiConf ou IaC"
+        - "Je contribue aux providers Terraform"
+        - "J'ai publié des articles sur l'Infrastructure as Code"
+        - "Je suis reconnu comme expert externe certifié HashiCorp"
+    resources:
+      - url: "https://developer.hashicorp.com/terraform/tutorials"
+        title: "HashiCorp Terraform Tutorials"
+        type: "tutorial"
+      - url: "https://www.terraform.io/docs"
+        title: "Terraform Documentation"
+        type: "documentation"
+      - url: "https://www.hashicorp.com/certification/terraform-associate"
+        title: "Terraform Associate Certification"
+        type: "course"
+      - url: "https://spacelift.io/blog/terraform-best-practices"
+        title: "Terraform Best Practices"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Créez vos premières ressources GCP avec Terraform. Comprenez le state."
+      "2→3": "Développez des modules réutilisables. Implémentez la gestion du state remote."
+      "3→4": "Passez la certification Terraform Associate. Contribuez à un provider."
+
+  - id: docker
+    name: "Docker & Conteneurisation"
+    description: "Conteneuriser les applications (Dockerfile, compose, multi-stage builds)"
+    core_roles: [data_engineer, ml_engineer, backend]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance Docker"
+      1: "Comprend les concepts de conteneurs, peut exécuter des images"
+      2: "Peut écrire des Dockerfiles basiques, utiliser docker-compose"
+      3: "Conçoit des images optimisées, multi-stage builds"
+      4: "Expert en patterns de conteneurisation"
+      5: "Architecte conteneurisation de l'organisation"
+      6: "Expert Docker reconnu, contributeur community"
+    behavioral_indicators:
+      1:
+        - "Je sais lancer un conteneur avec docker run"
+        - "Je comprends la différence entre image et conteneur"
+        - "J'utilise docker ps et docker logs"
+        - "Je peux pull des images depuis Docker Hub"
+      2:
+        - "J'écris des Dockerfiles fonctionnels"
+        - "J'utilise docker-compose pour plusieurs services"
+        - "Je sais construire et tag mes images"
+        - "Je gère les volumes pour la persistance"
+        - "J'expose et mappe les ports correctement"
+      3:
+        - "J'utilise les multi-stage builds pour réduire la taille"
+        - "J'optimise le layer caching dans mes Dockerfiles"
+        - "Je configure les health checks"
+        - "Je gère les secrets et variables d'environnement"
+        - "J'utilise des images de base minimales (alpine, distroless)"
+      4:
+        - "Je définis les standards Docker de l'équipe"
+        - "J'optimise les temps de build et la taille des images"
+        - "Je maîtrise les réseaux Docker et la sécurité"
+        - "Je forme les équipes aux bonnes pratiques"
+      5:
+        - "Je définis les standards de conteneurisation pour l'organisation"
+        - "Je suis la référence interne pour les architectures Docker"
+        - "Je mentore les équipes sur les patterns de conteneurisation avancés"
+        - "J'ai mis en place le registry et les pipelines de build"
+      6:
+        - "Je suis speaker à des conférences DockerCon ou Cloud Native"
+        - "Je contribue à Docker ou projets CNCF"
+        - "J'ai publié des articles sur la conteneurisation"
+        - "Je suis reconnu comme expert externe en containers"
+    resources:
+      - url: "https://docs.docker.com/get-started/"
+        title: "Docker Get Started"
+        type: "tutorial"
+      - url: "https://www.docker.com/101-tutorial/"
+        title: "Docker 101 Tutorial"
+        type: "tutorial"
+      - url: "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/"
+        title: "Dockerfile Best Practices"
+        type: "documentation"
+      - url: "https://www.youtube.com/watch?v=fqMOX6JJhGo"
+        title: "Docker Tutorial for Beginners"
+        type: "video"
+    improvement_tips:
+      "1→2": "Conteneurisez une application Python. Utilisez docker-compose pour plusieurs services."
+      "2→3": "Optimisez la taille des images avec multi-stage builds. Utilisez les layer caching."
+      "3→4": "Définissez les standards de conteneurisation. Formez les équipes."
+
+  - id: monitoring
+    name: "Monitoring & Alerting"
+    description: "Surveiller les systèmes et configurer des alertes (Grafana, logs, métriques)"
+    core_roles: [data_engineer, ml_engineer, backend]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance monitoring"
+      1: "Peut utiliser les dashboards existants, comprend les métriques"
+      2: "Peut créer des dashboards, alertes et queries basiques"
+      3: "Conçoit des stratégies de monitoring, dashboards complexes"
+      4: "Expert en observabilité et monitoring"
+      5: "Architecte observabilité de l'organisation"
+      6: "Expert monitoring reconnu, speaker ObservabilityCon"
+    behavioral_indicators:
+      1:
+        - "Je consulte les dashboards existants"
+        - "Je comprends les métriques de base (latence, erreurs)"
+        - "Je sais lire les logs dans Cloud Logging"
+      2:
+        - "Je crée des dashboards Grafana simples"
+        - "Je configure des alertes basiques"
+        - "J'écris des queries pour explorer les métriques"
+        - "Je sais déboguer avec les logs"
+      3:
+        - "Je conçois une stratégie de monitoring complète"
+        - "Je définis les SLIs et SLOs"
+        - "Je crée des dashboards pour les pipelines data"
+        - "J'implémente l'alerting sur les anomalies"
+      4:
+        - "J'ai conçu l'architecture d'observabilité"
+        - "Je définis les standards de monitoring"
+        - "Je forme les équipes au monitoring"
+        - "Je mesure et améliore la fiabilité"
+      5:
+        - "Je définis les standards d'observabilité pour l'organisation"
+        - "Je suis la référence interne pour les architectures de monitoring"
+        - "Je mentore les équipes sur les SLIs/SLOs et error budgets"
+        - "J'ai mis en place la plateforme d'observabilité"
+      6:
+        - "Je suis speaker à des conférences ObservabilityCon ou SREcon"
+        - "Je contribue à Prometheus, Grafana ou outils similaires"
+        - "J'ai publié des articles sur l'observabilité"
+        - "Je suis reconnu comme expert externe en monitoring"
+    resources:
+      - url: "https://grafana.com/tutorials/"
+        title: "Grafana Tutorials"
+        type: "tutorial"
+      - url: "https://prometheus.io/docs/introduction/overview/"
+        title: "Prometheus Documentation"
+        type: "documentation"
+      - url: "https://cloud.google.com/monitoring/docs"
+        title: "Google Cloud Monitoring"
+        type: "documentation"
+      - url: "https://www.datadoghq.com/blog/monitoring-101-collecting-data/"
+        title: "Monitoring 101"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Créez un dashboard Grafana pour vos pipelines. Configurez des alertes basiques."
+      "2→3": "Implémentez une stratégie de monitoring complète. Utilisez les SLIs/SLOs."
+      "3→4": "Concevez l'architecture d'observabilité de l'organisation. Partagez vos pratiques."
+
+  - id: precommit_quality
+    name: "Pre-commit & Qualité Code"
+    description: "Utiliser les outils de qualité de code (ruff, sqlfluff, pre-commit hooks)"
+    core_roles: [data_engineer, backend]
+    levels:
+      data_analyst: [1, 1, 2, 3]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance des outils de qualité"
+      1: "Comprend l'importance de la qualité de code"
+      2: "Utilise les hooks pre-commit, fixe les erreurs de linting"
+      3: "Configure les outils de qualité pour le projet"
+      4: "Expert en configuration et optimisation des outils"
+      5: "Définit les standards de qualité de l'organisation"
+      6: "Contributeur ruff/sqlfluff, expert code quality reconnu"
+    behavioral_indicators:
+      1:
+        - "Je comprends l'importance du linting"
+        - "Je sais ce qu'est un hook pre-commit"
+        - "Je connais les outils de base (ruff, black)"
+      2:
+        - "J'utilise pre-commit au quotidien"
+        - "Je fixe les erreurs de linting signalées"
+        - "Je comprends les règles de formatage"
+        - "J'utilise sqlfluff pour le SQL"
+      3:
+        - "Je configure pre-commit pour le projet"
+        - "Je personnalise les règles ruff/sqlfluff"
+        - "J'intègre les checks dans le CI"
+        - "Je définis les standards pour l'équipe"
+      4:
+        - "J'ai défini les standards de qualité de l'organisation"
+        - "J'optimise les performances des checks"
+        - "Je forme les équipes aux outils de qualité"
+        - "Je contribue aux outils open-source"
+      5:
+        - "Je définis les standards de qualité code pour l'organisation"
+        - "Je suis la référence interne pour les outils de linting"
+        - "Je mentore les équipes sur les bonnes pratiques de code"
+        - "J'ai mis en place le programme de qualité code"
+      6:
+        - "Je suis speaker à des conférences Python ou Code Quality"
+        - "Je contribue à ruff, sqlfluff ou outils similaires"
+        - "J'ai publié des articles sur la qualité de code"
+        - "Je suis reconnu comme expert externe en linting et formatage"
+    resources:
+      - url: "https://pre-commit.com/"
+        title: "Pre-commit Documentation"
+        type: "documentation"
+      - url: "https://docs.astral.sh/ruff/"
+        title: "Ruff Documentation"
+        type: "documentation"
+      - url: "https://docs.sqlfluff.com/"
+        title: "SQLFluff Documentation"
+        type: "documentation"
+      - url: "https://realpython.com/python-code-quality/"
+        title: "Python Code Quality"
+        type: "tutorial"
+    improvement_tips:
+      "1→2": "Installez pre-commit sur votre projet. Configurez ruff pour le linting Python."
+      "2→3": "Personnalisez les règles pour votre équipe. Ajoutez sqlfluff pour SQL."
+      "3→4": "Définissez les standards de l'organisation. Automatisez dans le CI."

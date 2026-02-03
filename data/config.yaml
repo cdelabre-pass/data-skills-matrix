@@ -1,0 +1,138 @@
+# Configuration globale de la matrice de compétences
+# Global configuration for the skills matrix
+
+roles:
+  - id: data_analyst
+    name: Data Analyst
+    abbreviation: DA
+  - id: data_engineer
+    name: Data Engineer
+    abbreviation: DE
+  - id: data_scientist
+    name: Data Scientist
+    abbreviation: DS
+  - id: analytics_eng
+    name: Analytics Eng
+    abbreviation: AE
+  - id: ml_engineer
+    name: ML Engineer
+    abbreviation: MLE
+  - id: backend
+    name: Backend
+    abbreviation: BE
+
+career_levels:
+  - id: junior
+    name: Junior
+    abbreviation: Jr
+    experience: "0-3 ans"
+    description: "Apprentissage, besoin d'accompagnement"
+    core_expected: [1, 2]
+    secondary_expected: [0, 1]
+  - id: confirmed
+    name: Confirmé
+    abbreviation: Cf
+    experience: "3-5 ans"
+    description: "Autonome sur les tâches standards"
+    core_expected: [2, 3]
+    secondary_expected: [1, 2]
+  - id: senior
+    name: Senior
+    abbreviation: Sr
+    experience: "5-10 ans"
+    description: "Expert technique, mentor"
+    core_expected: [3, 4]
+    secondary_expected: [2, 3]
+  - id: expert
+    name: Expert
+    abbreviation: Ex
+    experience: "10+ ans"
+    description: "Vision stratégique, leadership technique"
+    core_expected: [4, 5]
+    secondary_expected: [3, 4]
+
+skill_levels:
+  standard:
+    - level: 0
+      name: "Aucune connaissance"
+      description: "N'a jamais utilisé l'outil/technique"
+    - level: 1
+      name: "Débutant"
+      description: "Peut exécuter des tâches basiques avec assistance"
+    - level: 2
+      name: "Intermédiaire"
+      description: "Travaille de manière autonome sur des tâches standards"
+    - level: 3
+      name: "Avancé"
+      description: "Gère des scénarios complexes, peut guider les autres"
+    - level: 4
+      name: "Expert"
+      description: "Maîtrise complète, conçoit des solutions à grande échelle"
+  bonus:
+    - level: 5
+      name: "Mentor/Évangéliste"
+      description: "Forme les équipes, établit les bonnes pratiques, champion interne"
+    - level: 6
+      name: "Expert Externe"
+      description: "Contributions open-source, conférences, reconnu comme expert"
+
+colors:
+  header: "3943B4"  # Bleu Decathlon
+  categories:
+    data_analysis: "FFC8AA"       # Orange clair
+    product_analytics: "FFD966"   # Orange/Jaune
+    data_modeling: "FFE5A0"       # Jaune
+    infrastructure: "D4EDBC"      # Vert clair
+    orchestration: "D4EDBC"       # Vert clair
+    programming: "D4EDBC"         # Vert clair
+    visualization: "C6DBE1"       # Bleu clair
+    machine_learning: "E6CFF2"    # Violet clair
+    data_ops: "B4C7E7"            # Bleu
+    data_quality: "A9D08E"        # Vert
+    optimization: "9BC2E6"        # Bleu clair
+    security: "E6E6E6"            # Gris
+    domain: "F4CCCC"              # Rose clair
+    soft_skills: "F2F2F2"         # Gris clair
+  levels:
+    NC: "EFEFEF"   # Gris - Not Concerned
+    "0": "FFCFC9"  # Rouge clair
+    "1": "FFE5A0"  # Jaune
+    "2": "D4EDBC"  # Vert clair
+    "3": "93C47D"  # Vert
+    "4": "38761D"  # Vert foncé
+  core_secondary:
+    core: "93C47D"      # Vert
+    secondary: "E6E6E6"  # Gris
+
+category_order:
+  # Analytics
+  - data_analysis
+  - product_analytics
+  - visualization
+  # Engineering
+  - data_modeling
+  - infrastructure
+  - orchestration
+  - programming
+  # ML
+  - machine_learning
+  # Ops
+  - data_ops
+  - data_quality
+  - optimization
+  # Compliance
+  - security
+  # Business
+  - domain
+  - soft_skills
+
+output:
+  default_filename: "skills_matrix.xlsx"
+  sheets:
+    - levels
+    - matrix
+    - descriptions
+    - assessment
+    - radar
+    - development_plan
+    - history

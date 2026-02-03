@@ -1,0 +1,142 @@
+# Stack Data - Orchestration skills
+category:
+  id: orchestration
+  name: "Stack Data - Orchestration"
+
+skills:
+  - id: airflow
+    name: "Apache Airflow"
+    description: "Orchestration de workflows avec Airflow (DAGs, operators, hooks, sensors)"
+    core_roles: [data_engineer, analytics_eng, ml_engineer]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, NC, 1, 2]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance Airflow"
+      1: "Comprend les DAGs, peut lire les workflows existants"
+      2: "Peut écrire des DAGs, gérer les dépendances et scheduling"
+      3: "Conçoit des workflows complexes, implémente des operators custom"
+      4: "Expert en architecture Airflow, scaling et bonnes pratiques"
+      5: "Référent Airflow, définit les standards de l'organisation"
+      6: "Contributeur Apache Airflow, speaker Airflow Summit"
+    behavioral_indicators:
+      1:
+        - "Je navigue dans l'UI Airflow et comprends les états des tasks"
+        - "Je sais lire un DAG existant et comprendre ses dépendances"
+        - "Je peux relancer manuellement un DAG ou une task"
+        - "Je comprends la notion de schedule et de catchup"
+      2:
+        - "J'écris des DAGs avec plusieurs tasks et dépendances"
+        - "J'utilise les operators standards (PythonOperator, BashOperator)"
+        - "Je configure le scheduling avec des cron expressions"
+        - "J'utilise les templates Jinja pour les paramètres dynamiques"
+        - "Je gère les XComs pour passer des données entre tasks"
+      3:
+        - "Je crée des DAGs dynamiques avec des factories"
+        - "J'implémente les patterns de retry et alerting"
+        - "J'utilise les sensors pour les dépendances externes"
+        - "Je configure les pools et priorités"
+        - "J'ai créé des operators custom pour des besoins spécifiques"
+      4:
+        - "J'optimise les performances d'Airflow à l'échelle"
+        - "Je configure les executors (Celery, Kubernetes)"
+        - "Je définis les conventions Airflow de l'équipe"
+        - "Je forme les équipes aux bonnes pratiques"
+      5:
+        - "Je définis la stratégie Airflow de l'organisation"
+        - "Je suis le référent pour les architectures de workflows complexes"
+        - "Je mentor les équipes sur les patterns Airflow avancés"
+        - "J'établis les standards de qualité et de monitoring des DAGs"
+      6:
+        - "Je contribue au code source d'Apache Airflow"
+        - "Je suis speaker à Airflow Summit ou conférences data engineering"
+        - "Je suis reconnu comme expert Airflow dans la communauté"
+        - "Je publie des articles ou maintiens des providers Airflow"
+    resources:
+      - url: "https://airflow.apache.org/docs/"
+        title: "Apache Airflow Documentation"
+        type: "documentation"
+      - url: "https://www.astronomer.io/guides/"
+        title: "Astronomer Guides"
+        type: "tutorial"
+      - url: "https://academy.astronomer.io/"
+        title: "Astronomer Academy"
+        type: "course"
+      - url: "https://www.youtube.com/playlist?list=PLYizQ5FvN6pvIOcOd6dFZu3lQqc6zBGp2"
+        title: "Airflow YouTube Tutorials"
+        type: "video"
+    improvement_tips:
+      "1→2": "Écrivez votre premier DAG avec plusieurs tasks et dépendances. Utilisez les templates Jinja."
+      "2→3": "Créez un operator custom pour un use case spécifique. Implémentez les patterns de retry et alerting."
+      "3→4": "Optimisez les performances d'Airflow à l'échelle. Contribuez aux discussions de la communauté."
+
+  - id: airflow_custom_operators
+    name: "Airflow Custom Operators"
+    description: "Développer des operators, hooks et sensors custom pour Airflow"
+    core_roles: [data_engineer]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, NC, 1, 2]
+      analytics_eng: [1, 1, 2, 3]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance des extensions Airflow"
+      1: "Comprend le fonctionnement des operators, hooks, sensors"
+      2: "Peut modifier des operators existants pour des besoins spécifiques"
+      3: "Développe des operators custom robustes et réutilisables"
+      4: "Expert en patterns d'extension Airflow, plugins"
+      5: "Architecte plugins Airflow"
+      6: "Contributeur Airflow providers"
+    behavioral_indicators:
+      1:
+        - "Je comprends la différence entre operator, hook et sensor"
+        - "Je connais les operators standards"
+        - "Je peux lire le code d'un operator existant"
+      2:
+        - "J'ai modifié un operator pour un besoin spécifique"
+        - "Je comprends l'héritage de BaseOperator"
+        - "J'utilise les hooks pour les connexions externes"
+        - "Je crée des sensors pour les dépendances"
+      3:
+        - "J'ai développé des operators custom documentés et testés"
+        - "Je crée des plugins Airflow réutilisables"
+        - "Je gère les connexions et credentials proprement"
+        - "J'ai publié des operators dans un registry interne"
+      4:
+        - "J'ai contribué à un provider Airflow"
+        - "Je définis les patterns d'extension pour l'équipe"
+        - "Je forme les développeurs aux custom operators"
+        - "J'ai conçu l'architecture des plugins"
+      5:
+        - "Je définis la stratégie de plugins Airflow de l'organisation"
+        - "Je suis le référent pour les architectures d'extension Airflow"
+        - "Je mentor les équipes sur le développement d'operators avancés"
+        - "J'établis les standards de qualité et de réutilisabilité des plugins"
+      6:
+        - "Je contribue aux providers Apache Airflow officiels"
+        - "Je suis reconnu comme expert en extensibilité Airflow"
+        - "Je publie des providers open-source populaires"
+        - "Je donne des conférences sur le développement de plugins Airflow"
+    resources:
+      - url: "https://airflow.apache.org/docs/apache-airflow/stable/howto/custom-operator.html"
+        title: "Custom Operators Guide"
+        type: "documentation"
+      - url: "https://www.astronomer.io/guides/airflow-components/"
+        title: "Airflow Components Guide"
+        type: "tutorial"
+      - url: "https://github.com/apache/airflow/tree/main/airflow/providers"
+        title: "Airflow Providers Source Code"
+        type: "documentation"
+      - url: "https://registry.astronomer.io/"
+        title: "Astronomer Registry"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Étudiez le code source des operators existants. Modifiez-en un pour ajouter une fonctionnalité."
+      "2→3": "Créez un operator custom documenté et testé. Publiez-le dans votre registry interne."
+      "3→4": "Contribuez un provider à la communauté Apache Airflow. Partagez vos patterns en conférence."

@@ -1,0 +1,495 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	/* Theme CSS Variables */
+	:root {
+		/* Default to dark theme */
+		--color-bg: theme('colors.base.950');
+		--color-bg-secondary: theme('colors.base.900');
+		--color-bg-tertiary: theme('colors.base.800');
+		--color-text: theme('colors.base.100');
+		--color-text-secondary: theme('colors.base.400');
+		--color-text-muted: theme('colors.base.500');
+		--color-border: theme('colors.base.700');
+		--color-border-light: theme('colors.base.800');
+		--gradient-hero: rgba(99, 102, 241, 0.15);
+		--ring-offset: theme('colors.base.950');
+		--scrollbar-track: theme('colors.base.900');
+		--scrollbar-thumb: theme('colors.base.700');
+	}
+
+	/* Light theme overrides */
+	html.light {
+		--color-bg: theme('colors.base.50');
+		--color-bg-secondary: theme('colors.white');
+		--color-bg-tertiary: theme('colors.base.100');
+		--color-text: theme('colors.base.900');
+		--color-text-secondary: theme('colors.base.600');
+		--color-text-muted: theme('colors.base.500');
+		--color-border: theme('colors.base.200');
+		--color-border-light: theme('colors.base.100');
+		--gradient-hero: rgba(99, 102, 241, 0.1);
+		--ring-offset: theme('colors.white');
+		--scrollbar-track: theme('colors.base.100');
+		--scrollbar-thumb: theme('colors.base.300');
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	/* Dark mode body */
+	body {
+		@apply antialiased;
+		background-color: var(--color-bg);
+		color: var(--color-text);
+		transition: background-color 0.3s ease, color 0.3s ease;
+	}
+
+	html.dark body {
+		background-image:
+			radial-gradient(ellipse 80% 50% at 50% -20%, var(--gradient-hero), transparent),
+			url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+		background-blend-mode: overlay;
+	}
+
+	html.light body {
+		background-image:
+			radial-gradient(ellipse 80% 50% at 50% -20%, var(--gradient-hero), transparent);
+	}
+
+	::selection {
+		@apply bg-accent-500 text-white;
+	}
+
+	/* Custom scrollbar */
+	::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: var(--scrollbar-track);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--scrollbar-thumb);
+		border-radius: 9999px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		@apply bg-base-600;
+	}
+
+	html.light ::-webkit-scrollbar-thumb:hover {
+		@apply bg-base-400;
+	}
+}
+
+@layer components {
+	/* Buttons */
+	.btn {
+		@apply relative px-5 py-2.5 rounded-xl font-semibold text-sm tracking-wide;
+		@apply transition-all duration-200 ease-out;
+		@apply focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2;
+		@apply disabled:opacity-50 disabled:cursor-not-allowed;
+		--tw-ring-offset-color: var(--ring-offset);
+	}
+
+	.btn-primary {
+		@apply bg-gradient-to-b from-accent-500 to-accent-600 text-white;
+		@apply hover:from-accent-400 hover:to-accent-500 hover:shadow-glow;
+		@apply active:from-accent-600 active:to-accent-700;
+	}
+
+	.btn-secondary {
+		background-color: var(--color-bg-tertiary);
+		color: var(--color-text);
+		border: 1px solid var(--color-border);
+	}
+
+	.btn-secondary:hover {
+		background-color: var(--color-border);
+		border-color: var(--color-text-muted);
+	}
+
+	.btn-ghost {
+		color: var(--color-text-secondary);
+	}
+
+	.btn-ghost:hover {
+		color: var(--color-text);
+		background-color: var(--color-bg-tertiary);
+	}
+
+	.btn-lg {
+		@apply px-8 py-4 text-base rounded-2xl;
+	}
+
+	.btn-sm {
+		@apply px-3 py-1.5 text-xs rounded-lg;
+	}
+
+	/* Cards */
+	.card {
+		@apply relative backdrop-blur-sm rounded-2xl;
+		@apply shadow-card;
+		@apply transition-all duration-300 ease-out;
+		background-color: var(--color-bg-secondary);
+		border: 1px solid var(--color-border-light);
+	}
+
+	html.dark .card {
+		background-color: rgba(15, 23, 42, 0.6);
+		border-color: rgba(30, 41, 59, 0.8);
+	}
+
+	.card-interactive {
+		@apply cursor-pointer;
+		@apply hover:-translate-y-1;
+	}
+
+	.card-interactive:hover {
+		border-color: var(--color-border);
+		@apply shadow-card-hover;
+	}
+
+	.card-glow {
+		@apply hover:border-accent-500/30 hover:shadow-glow;
+	}
+
+	/* Form elements */
+	.input {
+		@apply w-full px-4 py-3 rounded-xl;
+		@apply focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none;
+		@apply transition-all duration-200;
+		background-color: var(--color-bg-secondary);
+		border: 1px solid var(--color-border);
+		color: var(--color-text);
+	}
+
+	html.dark .input {
+		@apply bg-base-900;
+	}
+
+	.input::placeholder {
+		color: var(--color-text-muted);
+	}
+
+	/* Badges */
+	.badge {
+		@apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium tracking-wide;
+		background-color: var(--color-bg-tertiary);
+		color: var(--color-text-secondary);
+		border: 1px solid var(--color-border);
+	}
+
+	.badge-accent {
+		@apply bg-accent-500/10 text-accent-400 border-accent-500/20;
+	}
+
+	html.light .badge-accent {
+		@apply bg-accent-500/10 text-accent-600 border-accent-500/30;
+	}
+
+	/* Progress bar */
+	.progress-track {
+		@apply h-2 rounded-full overflow-hidden;
+		background-color: var(--color-bg-tertiary);
+	}
+
+	.progress-fill {
+		@apply h-full bg-gradient-to-r from-accent-600 to-accent-400 rounded-full;
+		@apply transition-all duration-500 ease-out;
+	}
+
+	/* Level indicators */
+	.level-indicator {
+		@apply inline-flex items-center justify-center w-10 h-10 rounded-xl font-bold text-lg;
+		@apply transition-all duration-200;
+	}
+
+	/* Skill level buttons */
+	.level-btn {
+		@apply relative w-full p-4 rounded-xl border-2 text-left;
+		@apply transition-all duration-200 ease-out;
+		@apply hover:scale-[1.01];
+	}
+
+	.level-btn-0 {
+		@apply bg-level-0/20 border-level-0/40 hover:border-level-0;
+	}
+	.level-btn-0.selected {
+		@apply bg-level-0/30 border-level-0 ring-2 ring-level-0/50 ring-offset-2;
+		--tw-ring-offset-color: var(--ring-offset);
+	}
+
+	.level-btn-1 {
+		@apply bg-level-1/20 border-level-1/40 hover:border-level-1;
+	}
+	.level-btn-1.selected {
+		@apply bg-level-1/30 border-level-1 ring-2 ring-level-1/50 ring-offset-2;
+		--tw-ring-offset-color: var(--ring-offset);
+	}
+
+	.level-btn-2 {
+		@apply bg-level-2/20 border-level-2/40 hover:border-level-2;
+	}
+	.level-btn-2.selected {
+		@apply bg-level-2/30 border-level-2 ring-2 ring-level-2/50 ring-offset-2;
+		--tw-ring-offset-color: var(--ring-offset);
+	}
+
+	.level-btn-3 {
+		@apply bg-level-3/20 border-level-3/40 hover:border-level-3;
+	}
+	.level-btn-3.selected {
+		@apply bg-level-3/30 border-level-3 ring-2 ring-level-3/50 ring-offset-2;
+		--tw-ring-offset-color: var(--ring-offset);
+	}
+
+	.level-btn-4 {
+		@apply bg-level-4/30 border-level-4/60 hover:border-level-4 text-white;
+	}
+	.level-btn-4.selected {
+		@apply bg-level-4/50 border-level-4 ring-2 ring-level-4/50 ring-offset-2;
+		--tw-ring-offset-color: var(--ring-offset);
+	}
+
+	.level-btn-5 {
+		background-color: rgba(124, 58, 237, 0.3);
+		border-color: rgba(124, 58, 237, 0.6);
+		@apply hover:border-level-5 text-white;
+	}
+	.level-btn-5.selected {
+		background-color: rgba(124, 58, 237, 0.5);
+		border-color: #7c3aed;
+		@apply ring-2 ring-offset-2;
+		--tw-ring-color: rgba(124, 58, 237, 0.5);
+		--tw-ring-offset-color: var(--ring-offset);
+	}
+
+	.level-btn-6 {
+		background-color: rgba(192, 38, 211, 0.3);
+		border-color: rgba(192, 38, 211, 0.6);
+		@apply hover:border-level-6 text-white;
+	}
+	.level-btn-6.selected {
+		background-color: rgba(192, 38, 211, 0.5);
+		border-color: #c026d3;
+		@apply ring-2 ring-offset-2;
+		--tw-ring-color: rgba(192, 38, 211, 0.5);
+		--tw-ring-offset-color: var(--ring-offset);
+	}
+
+	.level-btn-nc {
+		background-color: var(--color-bg-tertiary);
+		border-color: var(--color-border);
+	}
+
+	.level-btn-nc:hover {
+		border-color: var(--color-text-muted);
+	}
+
+	.level-btn-nc.selected {
+		@apply ring-2 ring-offset-2;
+		background-color: var(--color-border);
+		border-color: var(--color-text-muted);
+		--tw-ring-offset-color: var(--ring-offset);
+		--tw-ring-color: var(--color-text-muted);
+	}
+
+	/* Nav links */
+	.nav-link {
+		@apply relative px-4 py-2 text-sm font-medium;
+		@apply transition-colors duration-200;
+		color: var(--color-text-secondary);
+	}
+
+	.nav-link:hover {
+		color: var(--color-text);
+	}
+
+	.nav-link::after {
+		content: '';
+		@apply absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent-500 rounded-full;
+		@apply transition-all duration-200;
+	}
+
+	.nav-link:hover::after,
+	.nav-link.active::after {
+		@apply w-full;
+	}
+
+	.nav-link.active {
+		color: var(--color-text);
+	}
+
+	/* Mobile nav links - touch-friendly 48px minimum */
+	.mobile-nav-link {
+		@apply flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium;
+		@apply transition-colors duration-200;
+		color: var(--color-text-secondary);
+		min-height: 48px;
+	}
+
+	.mobile-nav-link:hover,
+	.mobile-nav-link:active {
+		color: var(--color-text);
+		background-color: var(--color-bg-tertiary);
+	}
+
+	.mobile-nav-link.active {
+		color: var(--color-text);
+		background-color: var(--color-bg-tertiary);
+		border-left: 3px solid theme('colors.accent.500');
+	}
+
+	/* Text utilities */
+	.text-gradient {
+		@apply bg-clip-text text-transparent;
+		@apply bg-gradient-to-r from-accent-400 via-accent-300 to-accent-400;
+	}
+
+	html.light .text-gradient {
+		@apply bg-gradient-to-r from-accent-600 via-accent-500 to-accent-600;
+	}
+
+	.text-muted {
+		color: var(--color-text-secondary);
+	}
+
+	/* Hero section */
+	.hero-gradient {
+		background: radial-gradient(ellipse 100% 100% at 50% 0%, var(--gradient-hero), transparent 50%);
+	}
+
+	/* Stagger animation delays */
+	.stagger-1 { animation-delay: 0.1s; }
+	.stagger-2 { animation-delay: 0.2s; }
+	.stagger-3 { animation-delay: 0.3s; }
+	.stagger-4 { animation-delay: 0.4s; }
+	.stagger-5 { animation-delay: 0.5s; }
+	.stagger-6 { animation-delay: 0.6s; }
+
+	/* Shimmer effect */
+	.shimmer {
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(255, 255, 255, 0.1),
+			transparent
+		);
+		background-size: 200% 100%;
+		animation: shimmer 2s linear infinite;
+	}
+
+	/* Theme toggle button - touch-friendly 44px minimum */
+	.theme-toggle {
+		@apply rounded-xl transition-all duration-200;
+		background-color: var(--color-bg-tertiary);
+		border: 1px solid var(--color-border);
+		min-width: 44px;
+		min-height: 44px;
+	}
+
+	.theme-toggle:hover {
+		background-color: var(--color-border);
+	}
+
+	.theme-toggle:active {
+		transform: scale(0.95);
+	}
+}
+
+@layer utilities {
+	.animation-delay-100 { animation-delay: 100ms; }
+	.animation-delay-200 { animation-delay: 200ms; }
+	.animation-delay-300 { animation-delay: 300ms; }
+	.animation-delay-400 { animation-delay: 400ms; }
+	.animation-delay-500 { animation-delay: 500ms; }
+
+	/* Theme-aware text colors */
+	.text-theme {
+		color: var(--color-text);
+	}
+
+	.text-theme-secondary {
+		color: var(--color-text-secondary);
+	}
+
+	.text-theme-muted {
+		color: var(--color-text-muted);
+	}
+
+	.bg-theme {
+		background-color: var(--color-bg);
+	}
+
+	.bg-theme-secondary {
+		background-color: var(--color-bg-secondary);
+	}
+
+	.bg-theme-tertiary {
+		background-color: var(--color-bg-tertiary);
+	}
+
+	.border-theme {
+		border-color: var(--color-border);
+	}
+}
+
+/* Light mode specific overrides for hardcoded colors */
+html.light .text-base-100 { color: #0f172a; }
+html.light .text-base-200 { color: #1e293b; }
+html.light .text-base-300 { color: #334155; }
+html.light .text-base-400 { color: #475569; }
+html.light .text-base-500 { color: #64748b; }
+
+html.light .bg-base-900 { background-color: #ffffff; }
+html.light .bg-base-900\/80 { background-color: rgba(255, 255, 255, 0.9); }
+html.light .bg-base-800 { background-color: #f1f5f9; }
+html.light .bg-base-800\/50 { background-color: rgba(241, 245, 249, 0.8); }
+html.light .bg-base-800\/80 { background-color: rgba(241, 245, 249, 0.9); }
+html.light .bg-base-700 { background-color: #e2e8f0; }
+html.light .bg-base-700\/50 { background-color: rgba(226, 232, 240, 0.7); }
+
+html.light .border-base-700 { border-color: #cbd5e1; }
+html.light .border-base-700\/50 { border-color: rgba(203, 213, 225, 0.7); }
+html.light .border-base-600 { border-color: #94a3b8; }
+
+html.light .hover\:bg-base-600:hover { background-color: #cbd5e1; }
+html.light .hover\:bg-base-700:hover { background-color: #e2e8f0; }
+html.light .hover\:bg-base-800:hover { background-color: #f1f5f9; }
+html.light .hover\:bg-base-800\/50:hover { background-color: rgba(241, 245, 249, 0.8); }
+html.light .active\:bg-base-500:active { background-color: #cbd5e1; }
+html.light .active\:bg-base-700:active { background-color: #e2e8f0; }
+
+html.light .hover\:text-base-200:hover { color: #1e293b; }
+html.light .hover\:text-base-300:hover { color: #334155; }
+
+html.light .group:hover .group-hover\:text-base-300 { color: #334155; }
+html.light .group:hover .group-hover\:bg-base-600 { background-color: #cbd5e1; }
+
+html.light .shadow-glow { box-shadow: 0 0 20px -5px rgba(99, 102, 241, 0.25); }
+html.light .shadow-glow-lg { box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.3); }
+
+html.light .level-btn-0 { background-color: rgba(254, 202, 202, 0.3); border-color: rgba(254, 202, 202, 0.6); }
+html.light .level-btn-1 { background-color: rgba(253, 230, 138, 0.3); border-color: rgba(253, 230, 138, 0.6); }
+html.light .level-btn-2 { background-color: rgba(190, 242, 100, 0.3); border-color: rgba(190, 242, 100, 0.6); }
+html.light .level-btn-3 { background-color: rgba(74, 222, 128, 0.3); border-color: rgba(74, 222, 128, 0.6); }
+html.light .level-btn-4 { background-color: rgba(5, 150, 105, 0.4); border-color: rgba(5, 150, 105, 0.8); }
+html.light .level-btn-5 { background-color: rgba(124, 58, 237, 0.15); border-color: rgba(124, 58, 237, 0.5); }
+html.light .level-btn-6 { background-color: rgba(192, 38, 211, 0.15); border-color: rgba(192, 38, 211, 0.5); }
+
+html.light .bg-black\/70 { background-color: rgba(0, 0, 0, 0.5); }
+
+html.light .card {
+	background-color: white;
+	border-color: rgba(203, 213, 225, 0.8);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+html.light .progress-track { background-color: rgba(226, 232, 240, 0.8); }

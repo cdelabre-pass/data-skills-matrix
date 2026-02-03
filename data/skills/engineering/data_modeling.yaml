@@ -1,0 +1,410 @@
+# Modélisation de Données - Data Modeling skills
+category:
+  id: data_modeling
+  name: "Modélisation de Données"
+
+skills:
+  - id: data_preparation
+    name: "Préparation de Données"
+    description: "Nettoyer, transformer et préparer les données (pandas, numpy, pyarrow)"
+    core_roles: [data_analyst, data_engineer, analytics_eng]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune capacité de préparation de données"
+      1: "Peut réaliser un nettoyage basique (nulls, doublons)"
+      2: "Gère les transformations complexes, conversions de types et fusions"
+      3: "Conçoit des pipelines de préparation, gère les cas limites à grande échelle"
+      4: "Expert en qualité des données et automatisation de la préparation"
+      5: "Définit les standards de préparation de données de l'organisation"
+      6: "Contributeur open-source data processing"
+    behavioral_indicators:
+      1:
+        - "Je sais identifier et supprimer les doublons"
+        - "Je gère les valeurs nulles (suppression ou imputation simple)"
+        - "Je peux filtrer et trier un dataset"
+      2:
+        - "Je fais des jointures entre plusieurs tables"
+        - "Je convertis les types de données correctement (dates, numériques)"
+        - "J'utilise les opérations groupby et agrégations"
+        - "Je détecte les outliers et valeurs aberrantes"
+      3:
+        - "Je conçois des pipelines de transformation reproductibles"
+        - "Je gère les gros volumes avec pyarrow ou polars"
+        - "J'automatise les contrôles de qualité des données"
+        - "Je documente les transformations appliquées"
+      4:
+        - "J'ai défini les standards de préparation de données"
+        - "Je crée des outils de validation réutilisables"
+        - "Je forme les autres aux bonnes pratiques"
+        - "J'optimise les performances des pipelines de préparation"
+      5:
+        - "Je définis la stratégie de préparation de données de l'organisation"
+        - "Je suis la référence interne pour les problématiques de qualité des données"
+        - "Je forme et mentor les équipes sur les techniques avancées de data preparation"
+        - "J'établis les conventions et patterns réutilisables à l'échelle de l'entreprise"
+      6:
+        - "Je contribue activement à des projets open-source (pandas, polars, pyarrow)"
+        - "Je suis reconnu dans la communauté data pour mon expertise en préparation de données"
+        - "Je publie des articles ou donne des conférences sur le sujet"
+        - "Je participe à la définition des standards et best practices de l'industrie"
+    resources:
+      - url: "https://pandas.pydata.org/docs/user_guide/index.html"
+        title: "Pandas User Guide"
+        type: "documentation"
+      - url: "https://www.kaggle.com/learn/data-cleaning"
+        title: "Data Cleaning Course (Kaggle)"
+        type: "course"
+      - url: "https://arrow.apache.org/docs/python/"
+        title: "PyArrow Documentation"
+        type: "documentation"
+      - url: "https://realpython.com/python-data-cleaning-numpy-pandas/"
+        title: "Data Cleaning with Pandas"
+        type: "tutorial"
+    improvement_tips:
+      "1→2": "Maîtrisez les opérations pandas avancées (apply, transform, merge). Gérez les types de données correctement."
+      "2→3": "Construisez des pipelines de préparation reproductibles. Utilisez pyarrow pour les gros volumes."
+      "3→4": "Automatisez la validation de la qualité des données. Définissez les standards de l'équipe."
+
+  - id: data_modeling
+    name: "Modélisation de Données"
+    description: "Concevoir des modèles logiques et physiques (star/snowflake schemas)"
+    core_roles: [data_engineer, analytics_eng]
+    levels:
+      data_analyst: [1, 1, 2, 3]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [2, 3, 4, 4]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance en modélisation"
+      1: "Comprend les concepts de base (tables, relations, clés)"
+      2: "Peut concevoir des modèles dimensionnels basiques"
+      3: "Conçoit des modèles complexes considérant performance et scalabilité"
+      4: "Expert en patterns de modélisation, architectures enterprise"
+      5: "Architecte données de l'organisation"
+      6: "Expert data modeling reconnu, publications"
+    behavioral_indicators:
+      1:
+        - "Je comprends les clés primaires et étrangères"
+        - "Je sais ce qu'est une relation 1-N et N-N"
+        - "Je peux lire un schéma de base de données"
+      2:
+        - "J'ai conçu un star schema avec facts et dimensions"
+        - "Je comprends la différence entre SCD Type 1 et Type 2"
+        - "Je normalise et dénormalise selon les besoins"
+        - "Je documente mes modèles avec des diagrammes"
+      3:
+        - "Je conçois des modèles optimisés pour les performances"
+        - "Je choisis entre star et snowflake schema selon le cas"
+        - "J'ai conçu un data mart complet pour un domaine métier"
+        - "Je gère les slowly changing dimensions complexes"
+      4:
+        - "J'ai défini l'architecture data warehouse de l'organisation"
+        - "Je forme les équipes aux bonnes pratiques de modélisation"
+        - "Je fais des revues de modèles pour les autres"
+        - "J'ai documenté les conventions de modélisation"
+      5:
+        - "Je définis la stratégie de modélisation de données de l'organisation"
+        - "Je suis le référent pour les décisions d'architecture data warehouse"
+        - "Je mentor les équipes sur les patterns de modélisation avancés"
+        - "J'établis et fais évoluer les standards de modélisation"
+      6:
+        - "Je suis reconnu comme expert en modélisation de données dans l'industrie"
+        - "Je publie des articles ou livres sur le data modeling"
+        - "Je donne des conférences sur les architectures de données"
+        - "Je contribue aux évolutions des méthodologies (Kimball, Data Vault)"
+    resources:
+      - url: "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/"
+        title: "Kimball Dimensional Modeling"
+        type: "documentation"
+      - url: "https://www.getdbt.com/analytics-engineering/modular-data-modeling-technique/"
+        title: "dbt Modular Data Modeling"
+        type: "tutorial"
+      - url: "https://www.datacamp.com/courses/data-modeling-in-sql-server"
+        title: "Data Modeling Course (DataCamp)"
+        type: "course"
+      - url: "https://www.amazon.com/Data-Warehouse-Toolkit-Definitive-Dimensional/dp/1118530802"
+        title: "The Data Warehouse Toolkit (Kimball)"
+        type: "book"
+    improvement_tips:
+      "1→2": "Étudiez les modèles dimensionnels (star schema). Concevez votre premier data mart."
+      "2→3": "Appliquez les techniques Kimball à un projet complet. Documentez les conventions de nommage."
+      "3→4": "Concevez l'architecture data warehouse de l'organisation. Formez les équipes aux bonnes pratiques."
+
+  - id: dbt
+    name: "dbt (Data Build Tool)"
+    description: "Utiliser dbt pour la transformation: modèles, tests (generic, singular, freshness), documentation et seeds"
+    core_roles: [analytics_eng, data_engineer]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, NC, 1, 2]
+      analytics_eng: [2, 3, 4, 4]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance dbt"
+      1: "Peut exécuter des modèles existants, utilise les tests built-in (unique, not_null)"
+      2: "Écrit des modèles et tests singular, configure source freshness et documentation"
+      3: "Conçoit la structure du projet, implémente une stratégie de test complète avec data contracts"
+      4: "Expert en architecture dbt, CI/CD avec tests, alerting et couverture optimale"
+      5: "Référent dbt, définit la stratégie qualité données de l'organisation"
+      6: "dbt Champion, speaker Coalesce, contributeur packages open-source"
+    behavioral_indicators:
+      1:
+        - "Je sais exécuter dbt run et dbt test"
+        - "Je comprends la structure d'un projet dbt (models, tests, seeds)"
+        - "J'utilise les tests unique et not_null sur mes modèles"
+        - "Je sais lire la documentation générée par dbt"
+      2:
+        - "J'écris des modèles dbt avec ref() et source()"
+        - "J'ai créé des tests singular pour valider des règles métier"
+        - "Je configure la freshness des sources"
+        - "Je documente mes modèles dans les fichiers .yml"
+        - "J'utilise les seeds pour les données de référence"
+      3:
+        - "Je structure le projet en staging/intermediate/mart"
+        - "J'implémente des data contracts avec dbt"
+        - "J'utilise les tags et selectors pour organiser les runs"
+        - "J'ai mis en place une stratégie de test complète"
+        - "Je configure les exposures pour la traçabilité"
+      4:
+        - "J'ai mis en place le CI/CD dbt avec tests automatisés"
+        - "Je configure les alertes sur les échecs de tests"
+        - "Je définis les conventions dbt pour l'équipe"
+        - "J'optimise les temps de build avec defer et state"
+      5:
+        - "Je définis la stratégie dbt et qualité des données de l'organisation"
+        - "Je suis le référent interne pour les problématiques dbt complexes"
+        - "Je forme et mentor les équipes sur les patterns dbt avancés"
+        - "J'établis les conventions et best practices dbt à l'échelle de l'entreprise"
+      6:
+        - "Je contribue activement aux packages dbt open-source (dbt-utils, dbt-expectations)"
+        - "Je suis speaker à Coalesce ou autres conférences dbt"
+        - "Je suis reconnu dans la communauté dbt pour mon expertise"
+        - "Je participe aux discussions sur l'évolution de dbt"
+    resources:
+      - url: "https://docs.getdbt.com/"
+        title: "dbt Documentation"
+        type: "documentation"
+      - url: "https://courses.getdbt.com/"
+        title: "dbt Learn"
+        type: "course"
+      - url: "https://www.getdbt.com/blog/how-we-structure-our-dbt-projects"
+        title: "How to Structure dbt Projects"
+        type: "tutorial"
+      - url: "https://hub.getdbt.com/"
+        title: "dbt Hub - Packages"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Écrivez vos premiers modèles dbt. Ajoutez des tests et de la documentation."
+      "2→3": "Structurez votre projet en staging/intermediate/mart. Implémentez les data contracts."
+      "3→4": "Mettez en place le CI/CD dbt. Contribuez à un package open-source. Présentez à Coalesce."
+
+  - id: dbt_advanced
+    name: "dbt Avancé (Macros, Packages, Incremental)"
+    description: "Maîtriser les fonctionnalités avancées: macros Jinja, packages, modèles incrémentaux, hooks, materialisations custom"
+    core_roles: [analytics_eng, data_engineer]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, NC, 1, 2]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [NC, 1, 2, 3]
+      backend: [NC, NC, 1, 2]
+    level_descriptions:
+      0: "Aucune connaissance des fonctionnalités avancées dbt"
+      1: "Utilise des packages existants, comprend les modèles incrémentaux basiques"
+      2: "Écrit des macros réutilisables, configure incremental avec merge strategies"
+      3: "Développe des packages internes, optimise les runs avec defer et state"
+      4: "Expert en materialisations custom, hooks, performance tuning avancé"
+      5: "Architecte dbt, définit les patterns de l'organisation"
+      6: "Maintainer de packages dbt open-source, contributeur dbt-core"
+    behavioral_indicators:
+      1:
+        - "J'utilise dbt-utils dans mes projets"
+        - "Je comprends le fonctionnement des modèles incrémentaux"
+        - "Je sais quand utiliser incremental vs table"
+      2:
+        - "J'écris des macros Jinja réutilisables"
+        - "Je configure les merge strategies pour incremental"
+        - "J'utilise les hooks pour des opérations pre/post"
+        - "J'ai installé et configuré des packages externes"
+      3:
+        - "J'ai créé un package interne avec des macros"
+        - "J'utilise defer et state pour optimiser les builds"
+        - "Je configure des matérialisations ephemeral stratégiquement"
+        - "J'ai réduit significativement les temps de build"
+      4:
+        - "J'ai créé une matérialisation custom"
+        - "Je maîtrise les snapshots pour l'historisation"
+        - "Je contribue à des packages open-source"
+        - "Je forme l'équipe aux fonctionnalités avancées"
+      5:
+        - "Je définis l'architecture dbt et les patterns avancés de l'organisation"
+        - "Je suis le référent pour les optimisations dbt complexes"
+        - "Je mentor les équipes sur les macros, packages et matérialisations custom"
+        - "J'établis les standards de performance et de réutilisabilité"
+      6:
+        - "Je maintiens des packages dbt open-source populaires"
+        - "Je contribue au code de dbt-core ou aux adapters"
+        - "Je suis reconnu dans la communauté pour mes contributions techniques"
+        - "Je publie des articles ou donne des talks sur les patterns dbt avancés"
+    resources:
+      - url: "https://docs.getdbt.com/docs/build/jinja-macros"
+        title: "dbt Jinja and Macros"
+        type: "documentation"
+      - url: "https://docs.getdbt.com/docs/build/incremental-models"
+        title: "Incremental Models Guide"
+        type: "documentation"
+      - url: "https://github.com/dbt-labs/dbt-utils"
+        title: "dbt-utils Package"
+        type: "documentation"
+      - url: "https://www.getdbt.com/blog/how-we-built-dbt"
+        title: "How dbt Works"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Écrivez vos premières macros. Implémentez un modèle incrémental avec merge strategy."
+      "2→3": "Créez un package interne avec des macros réutilisables. Utilisez defer et state pour optimiser."
+      "3→4": "Créez une materialisation custom. Contribuez à dbt-utils ou créez votre propre package public."
+
+  - id: data_mesh
+    name: "Data Mesh"
+    description: "Comprendre et implémenter les principes du Data Mesh (domain ownership, data as product, self-serve platform, federated governance)"
+    core_roles: [data_engineer, analytics_eng]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, 1, 2, 3]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [NC, 1, 2, 3]
+      backend: [NC, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance du Data Mesh"
+      1: "Comprend les 4 principes fondamentaux du Data Mesh"
+      2: "Peut identifier les domaines de données et concevoir des data products"
+      3: "Implémente une architecture Data Mesh, définit les contrats de données inter-domaines"
+      4: "Expert en gouvernance fédérée, conçoit des plateformes self-serve pour les domaines"
+      5: "Référent Data Mesh, guide la transformation organisationnelle"
+      6: "Expert reconnu, speaker/auteur sur le Data Mesh"
+    behavioral_indicators:
+      1:
+        - "Je connais les 4 principes du Data Mesh"
+        - "Je comprends la différence avec une architecture centralisée"
+        - "Je sais ce qu'est un data product"
+      2:
+        - "J'ai identifié les domaines de données de l'organisation"
+        - "J'ai conçu un data product avec ses interfaces"
+        - "Je comprends les responsabilités d'un domain owner"
+        - "Je sais définir les SLAs d'un data product"
+      3:
+        - "J'ai mis en place des data contracts entre domaines"
+        - "Je configure une plateforme self-serve pour les domaines"
+        - "Je définis la gouvernance fédérée"
+        - "J'ai accompagné un domaine dans sa transformation"
+      4:
+        - "Je guide la transformation Data Mesh de l'organisation"
+        - "J'ai conçu la plateforme self-serve complète"
+        - "Je forme les domain owners à leurs responsabilités"
+        - "Je mesure la maturité Data Mesh des domaines"
+      5:
+        - "Je définis la vision et la roadmap Data Mesh de l'organisation"
+        - "Je suis le référent pour les questions d'architecture Data Mesh"
+        - "Je mentor les équipes et domain owners sur les principes Data Mesh"
+        - "J'établis les standards de gouvernance fédérée à l'échelle de l'entreprise"
+      6:
+        - "Je suis reconnu comme expert Data Mesh dans l'industrie"
+        - "Je donne des conférences sur le Data Mesh (QCon, Data Council)"
+        - "Je publie des articles ou livres sur le sujet"
+        - "Je conseille d'autres organisations sur leur transformation Data Mesh"
+    resources:
+      - url: "https://www.datamesh-architecture.com/"
+        title: "Data Mesh Architecture"
+        type: "documentation"
+      - url: "https://martinfowler.com/articles/data-mesh-principles.html"
+        title: "Data Mesh Principles (Martin Fowler)"
+        type: "documentation"
+      - url: "https://www.oreilly.com/library/view/data-mesh/9781492092384/"
+        title: "Data Mesh Book (O'Reilly)"
+        type: "book"
+      - url: "https://www.thoughtworks.com/what-we-do/data-and-ai/data-mesh"
+        title: "ThoughtWorks Data Mesh"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Identifiez les domaines de données de votre organisation. Concevez votre premier data product."
+      "2→3": "Implémentez les data contracts entre domaines. Mettez en place la gouvernance fédérée."
+      "3→4": "Guidez la transformation Data Mesh de l'organisation. Partagez votre expérience en conférence."
+
+  - id: medallion_architecture
+    name: "Architecture Medallion (Bronze/Silver/Gold)"
+    description: "Concevoir et implémenter l'architecture Medallion avec les couches Bronze (raw), Silver (cleaned/conformed), Gold (business-ready)"
+    core_roles: [data_engineer, analytics_eng]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [NC, 1, 2, 3]
+      analytics_eng: [2, 3, 4, 4]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [NC, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance de l'architecture Medallion"
+      1: "Comprend les couches Bronze/Silver/Gold et leurs objectifs"
+      2: "Peut structurer les données dans les bonnes couches avec les transformations appropriées"
+      3: "Conçoit des pipelines complets respectant les SLAs de qualité par couche"
+      4: "Expert en optimisation des couches, gestion du lineage et des métadonnées"
+      5: "Définit les standards Medallion de l'organisation"
+      6: "Expert reconnu, contributeur aux best practices Databricks/Delta Lake"
+    behavioral_indicators:
+      1:
+        - "Je comprends le rôle de chaque couche (Bronze/Silver/Gold)"
+        - "Je sais pourquoi on sépare raw et cleaned data"
+        - "Je peux expliquer le flux de données entre couches"
+      2:
+        - "J'ai structuré des données dans les bonnes couches"
+        - "J'applique les transformations appropriées par couche"
+        - "Je définis les schémas de validation par couche"
+        - "Je documente les transformations entre couches"
+      3:
+        - "J'ai conçu un pipeline complet Bronze to Gold"
+        - "Je définis les SLAs de qualité par couche"
+        - "Je gère le lineage entre les couches"
+        - "J'optimise les performances par couche"
+      4:
+        - "J'ai défini les standards Medallion de l'organisation"
+        - "Je forme les équipes à l'architecture Medallion"
+        - "Je gère les métadonnées et le data catalog"
+        - "J'optimise les coûts de stockage par couche"
+      5:
+        - "Je définis la stratégie d'architecture Medallion de l'organisation"
+        - "Je suis le référent pour les questions d'architecture lakehouse"
+        - "Je mentor les équipes sur les patterns Medallion avancés"
+        - "J'établis les standards de qualité et de gouvernance par couche"
+      6:
+        - "Je contribue aux best practices Databricks/Delta Lake"
+        - "Je suis speaker aux conférences Data+AI Summit"
+        - "Je publie des articles sur l'architecture lakehouse"
+        - "Je suis reconnu comme expert Medallion/Delta Lake dans l'industrie"
+    resources:
+      - url: "https://www.databricks.com/glossary/medallion-architecture"
+        title: "Medallion Architecture (Databricks)"
+        type: "documentation"
+      - url: "https://docs.databricks.com/en/lakehouse/medallion.html"
+        title: "Databricks Medallion Guide"
+        type: "documentation"
+      - url: "https://delta.io/"
+        title: "Delta Lake Documentation"
+        type: "documentation"
+      - url: "https://www.youtube.com/watch?v=kAMEZNfLG5U"
+        title: "Medallion Architecture Explained"
+        type: "video"
+    improvement_tips:
+      "1→2": "Structurez vos premières données en Bronze/Silver/Gold. Documentez les transformations par couche."
+      "2→3": "Définissez les SLAs de qualité par couche. Implémentez le lineage automatique."
+      "3→4": "Optimisez les performances et coûts par couche. Partagez vos patterns en interne."
