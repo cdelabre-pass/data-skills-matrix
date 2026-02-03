@@ -12,7 +12,6 @@
 	// Animated display values
 	let displayPercentage = 0;
 	let displayCurrent = 0;
-	let animationFrame: number;
 
 	// Milestone states
 	let showMilestone = false;
@@ -79,8 +78,14 @@
 		}));
 	}
 
+	// Track animation targets to avoid re-triggering on intermediate updates
+	let percentageTarget: number | null = null;
+	let currentTarget: number | null = null;
+	let percentageAnimFrame: number;
+	let currentAnimFrame: number;
+
 	// Smooth number animation
-	function animateValue(start: number, end: number, duration: number, callback: (v: number) => void) {
+	function animateValue(start: number, end: number, duration: number, callback: (v: number) => void, frameRef: 'percentage' | 'current') {
 		const startTime = performance.now();
 
 		function update(currentTime: number) {
@@ -91,22 +96,42 @@
 			callback(value);
 
 			if (progress < 1) {
-				animationFrame = requestAnimationFrame(update);
+				const frame = requestAnimationFrame(update);
+				if (frameRef === 'percentage') {
+					percentageAnimFrame = frame;
+				} else {
+					currentAnimFrame = frame;
+				}
 			}
 		}
 
-		animationFrame = requestAnimationFrame(update);
-	}
-
-	$: {
-		if (typeof window !== 'undefined') {
-			animateValue(displayPercentage, percentage, 400, (v) => displayPercentage = v);
+		const frame = requestAnimationFrame(update);
+		if (frameRef === 'percentage') {
+			percentageAnimFrame = frame;
+		} else {
+			currentAnimFrame = frame;
 		}
 	}
 
 	$: {
-		if (typeof window !== 'undefined') {
-			animateValue(displayCurrent, current, 400, (v) => displayCurrent = v);
+		if (typeof window !== 'undefined' && percentage !== percentageTarget) {
+			if (percentageAnimFrame) {
+				cancelAnimationFrame(percentageAnimFrame);
+			}
+			const startVal = displayPercentage;
+			percentageTarget = percentage;
+			animateValue(startVal, percentage, 400, (v) => displayPercentage = v, 'percentage');
+		}
+	}
+
+	$: {
+		if (typeof window !== 'undefined' && current !== currentTarget) {
+			if (currentAnimFrame) {
+				cancelAnimationFrame(currentAnimFrame);
+			}
+			const startVal = displayCurrent;
+			currentTarget = current;
+			animateValue(startVal, current, 400, (v) => displayCurrent = v, 'current');
 		}
 	}
 
@@ -176,6 +201,9 @@
 	onMount(() => {
 		displayPercentage = percentage;
 		displayCurrent = current;
+		// Initialize animation targets to prevent animation on first render
+		percentageTarget = percentage;
+		currentTarget = current;
 		// Initialize previousPercentage to current value to avoid triggering milestones on page load
 		previousPercentage = percentage;
 		// Small delay before enabling milestone detection to ensure initial state is set
@@ -185,8 +213,11 @@
 	});
 
 	onDestroy(() => {
-		if (animationFrame) {
-			cancelAnimationFrame(animationFrame);
+		if (percentageAnimFrame) {
+			cancelAnimationFrame(percentageAnimFrame);
+		}
+		if (currentAnimFrame) {
+			cancelAnimationFrame(currentAnimFrame);
 		}
 	});
 
