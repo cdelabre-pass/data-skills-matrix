@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd .. && uv run python scripts/build_web_data.py && cd web && npm run build:web",
+  "buildCommand": "npm run build:web",
   "outputDirectory": ".svelte-kit/output",
   "framework": "sveltekit",
   "installCommand": "npm install"
