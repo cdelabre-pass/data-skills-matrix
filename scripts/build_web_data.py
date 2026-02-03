@@ -61,7 +61,9 @@ def build_web_data():
             # Get category info from the file
             category_info = file_data.get("category", {})
             category_id = category_info.get("id", skill_file.stem)
-            category_name = category_info.get("name", category_id.replace("_", " ").title())
+            category_name = category_info.get(
+                "name", category_id.replace("_", " ").title()
+            )
 
             # Extract skills from the file
             skills_list = file_data.get("skills", [])
@@ -77,7 +79,7 @@ def build_web_data():
                 categories[category_dir_name] = {
                     "id": category_dir_name,
                     "name": category_dir_name.replace("_", " ").title(),
-                    "skill_count": 0
+                    "skill_count": 0,
                 }
             categories[category_dir_name]["skill_count"] += len(skills_list)
 

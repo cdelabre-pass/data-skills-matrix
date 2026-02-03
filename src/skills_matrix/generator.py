@@ -311,9 +311,9 @@ def create_assessment_sheet(wb: Workbook, config: Config, categories: list[Categ
     # Title and instructions
     builder.add_title("Auto-évaluation des Compétences", merge_to_col=8)
 
-    ws["A2"] = (
-        "Instructions: Évaluez votre niveau (0-4) et fournissez des preuves concrètes (liens projets, PRs, dashboards)"
-    )
+    ws[
+        "A2"
+    ] = "Instructions: Évaluez votre niveau (0-4) et fournissez des preuves concrètes (liens projets, PRs, dashboards)"
     ws["A2"].font = Font(italic=True)
     ws.merge_cells("A2:H2")
 
@@ -456,9 +456,9 @@ def create_development_plan_sheet(wb: Workbook, config: Config):
     # Title
     builder.add_title("Plan de Développement Annuel", merge_to_col=8)
 
-    ws["A2"] = (
-        "Choisissez un maximum de 4 compétences à développer sur l'année (privilégier les compétences Core)"
-    )
+    ws[
+        "A2"
+    ] = "Choisissez un maximum de 4 compétences à développer sur l'année (privilégier les compétences Core)"
     ws["A2"].font = Font(italic=True)
     ws.merge_cells("A2:H2")
 
