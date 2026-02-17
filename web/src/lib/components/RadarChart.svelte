@@ -15,7 +15,8 @@
 		ml: 'Machine Learning',
 		ops: 'Data Ops',
 		compliance: 'Compliance',
-		business: 'Business'
+		business: 'Business',
+		soft_skills: 'Soft Skills'
 	};
 
 	onMount(() => {
