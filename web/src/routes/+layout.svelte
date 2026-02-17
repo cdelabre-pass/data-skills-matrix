@@ -4,11 +4,13 @@
 	import { browser } from '$app/environment';
 	import { assessmentStore } from '$lib/stores/assessment';
 	import { theme } from '$lib/stores/theme';
+	import { exportTemplate } from '$lib/excel/template';
 	import { onMount } from 'svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
 	let hasResults = false;
 	let mobileMenuOpen = false;
+	let isDownloadingTemplate = false;
 
 	$: currentPath = $page.url.pathname;
 
@@ -18,6 +20,20 @@
 			theme.init();
 		}
 	});
+
+	async function downloadTemplate() {
+		if (isDownloadingTemplate) return;
+		isDownloadingTemplate = true;
+		try {
+			const res = await fetch('/data/skills-data.json');
+			const skillsData = await res.json();
+			await exportTemplate(skillsData);
+		} catch (err) {
+			console.error('Template download failed:', err);
+		} finally {
+			isDownloadingTemplate = false;
+		}
+	}
 
 	// Check if assessment is in progress (has skills loaded AND user has set it up)
 	$: hasActiveAssessment = $assessmentStore.skills.length > 0 && ($assessmentStore.role !== null || $assessmentStore.categories.length > 0);
@@ -79,6 +95,19 @@
 							Résultats
 						</a>
 					{/if}
+
+					<!-- Template download -->
+					<button
+						on:click={downloadTemplate}
+						class="nav-link flex items-center gap-1"
+						disabled={isDownloadingTemplate}
+						title="Télécharger le template Excel vierge"
+					>
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+						</svg>
+						Template
+					</button>
 
 					<!-- Theme toggle -->
 					<div class="ml-2 pl-2 border-l border-theme">
@@ -158,6 +187,16 @@
 							<span>Résultats</span>
 						</a>
 					{/if}
+					<button
+						class="mobile-nav-link"
+						on:click={() => { closeMobileMenu(); downloadTemplate(); }}
+						disabled={isDownloadingTemplate}
+					>
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+						</svg>
+						<span>Template Excel</span>
+					</button>
 				</div>
 			</nav>
 		{/if}
