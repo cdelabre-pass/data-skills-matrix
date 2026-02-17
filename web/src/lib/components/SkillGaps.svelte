@@ -4,8 +4,7 @@
 	export let answers: Record<string, SkillAnswer>;
 	export let skills: any[];
 	export let role: string | null;
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	export let skillsData: any; // Passed for potential future use
+	export let careerLevelIndex: number = 1;
 
 	interface SkillGap {
 		skill: any;
@@ -17,6 +16,7 @@
 	}
 
 	// Find skills where user is below expected level for a confirmed role
+	let gapsFallback = false;
 	$: gaps = calculateGaps();
 
 	function calculateGaps(): SkillGap[] {
@@ -33,8 +33,8 @@
 				const expectedLevels = skill.levels?.[role];
 				if (!expectedLevels) continue;
 
-				const expectedLevel = expectedLevels[1]; // Confirmed level
-				if (expectedLevel === 'NC' || expectedLevel === null) continue;
+				const expectedLevel = expectedLevels[careerLevelIndex];
+				if (expectedLevel === 'NC' || expectedLevel === null || expectedLevel === undefined) continue;
 
 				const gap = expectedLevel - currentLevel;
 
@@ -54,7 +54,29 @@
 					result.push({
 						skill,
 						currentLevel,
-						expectedLevel: 2, // Use level 2 as baseline for "competent"
+						expectedLevel: 2,
+						gap: 2 - currentLevel,
+						inferred: answer.inferred,
+						sourceSkill: answer.sourceSkill
+					});
+				}
+			}
+		}
+
+		// Fallback: if role-specific gaps are empty, show skills below Intermédiaire (2)
+		gapsFallback = false;
+		if (role && result.length === 0) {
+			gapsFallback = true;
+			for (const skill of skills) {
+				const answer = answers[skill.id];
+				if (!answer || answer.level === 'nc') continue;
+
+				const currentLevel = answer.level as number;
+				if (currentLevel < 2) {
+					result.push({
+						skill,
+						currentLevel,
+						expectedLevel: 2,
 						gap: 2 - currentLevel,
 						inferred: answer.inferred,
 						sourceSkill: answer.sourceSkill
@@ -87,8 +109,8 @@
 					const expectedLevels = skill.levels?.[role];
 					if (!expectedLevels) return false;
 
-					const expected = expectedLevels[1]; // Confirmed level
-					if (expected === 'NC' || expected === null) return false;
+					const expected = expectedLevels[careerLevelIndex];
+					if (expected === 'NC' || expected === null || expected === undefined) return false;
 
 					return (answer.level as number) >= expected;
 				})
@@ -217,9 +239,12 @@
 				<div class="text-center py-8 text-base-400">
 					<span class="text-4xl mb-2 block">🎉</span>
 					<p>Aucun écart identifié !</p>
-					<p class="text-sm text-base-500">Vous atteignez ou dépassez les attentes.</p>
+					<p class="text-sm text-base-500">Vous atteignez ou dépassez les attentes, y compris le niveau Intermédiaire.</p>
 				</div>
 			{:else}
+				{#if gapsFallback}
+					<p class="text-sm text-base-400 mb-3">Vous atteignez les attentes pour votre niveau. Voici les compétences à amener à Intermédiaire (2) :</p>
+				{/if}
 				<div class="space-y-3">
 					{#each gaps.slice(0, 8) as { skill, currentLevel, expectedLevel, gap }}
 						<div class="p-3 bg-base-800/50 rounded-xl border border-base-700/50">
@@ -243,7 +268,7 @@
 								<svg class="w-4 h-4 text-base-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
 								</svg>
-								<span class="text-xs text-base-500">{role ? 'Attendu' : 'Cible'}:</span>
+								<span class="text-xs text-base-500">{role && !gapsFallback ? 'Attendu' : 'Cible'}:</span>
 								<span class="w-6 h-6 rounded bg-accent-500/20 text-accent-400 flex items-center justify-center text-xs font-medium">
 									{expectedLevel}
 								</span>

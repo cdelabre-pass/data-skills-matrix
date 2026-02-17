@@ -109,6 +109,9 @@
 
 	$: categoryAverages = ready ? getCategoryAverages($assessmentStore) : {};
 	$: suggestedLevel = ready && skillsData && $assessmentStore.role ? suggestCareerLevel($assessmentStore, skillsData) : null;
+	$: suggestedLevelIdx = suggestedLevel
+		? skillsData.levels.findIndex((l: any) => l.id === suggestedLevel.level)
+		: 1;
 	$: roleData = skillsData?.roles?.find((r: any) => r.id === $assessmentStore.role);
 	$: isRoleAgnostic = !$assessmentStore.role;
 
@@ -245,13 +248,14 @@
 			answers={$assessmentStore.answers}
 			skills={$assessmentStore.skills}
 			role={$assessmentStore.role}
-			{skillsData}
+			careerLevelIndex={suggestedLevelIdx}
 		/>
 
 		<div class="mt-8">
 			<ExportButtons
 				assessmentState={$assessmentStore}
 				{skillsData}
+				suggestedLevelIndex={suggestedLevelIdx}
 			/>
 		</div>
 

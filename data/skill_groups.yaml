@@ -27,7 +27,7 @@ core_skills_by_role:
     - dashboard_design      # Key deliverable
     - data_preparation      # Foundation
     - git_github            # Essential
-    - technical_communication  # Soft skill
+    - technical_scoping        # Soft skill
     - problem_solving       # Soft skill
     - ab_testing            # Analytics
     - firebase_analytics    # Product analytics
@@ -63,7 +63,7 @@ core_skills_by_role:
     - feature_engineering   # ML skill
     - ab_testing            # Experimentation
     - git_github            # Essential
-    - technical_communication  # Soft skill
+    - technical_scoping        # Soft skill
     - problem_solving       # Soft skill
     - data_preparation      # Foundation
     - dashboard_design      # Visualization
@@ -76,12 +76,11 @@ core_skills_by_role:
     - bigquery_advanced     # Data warehouse
     - python_data           # Tool
     - git_github            # Essential
-    - looker                # BI semantic layer
     - data_quality_testing  # Quality
     - medallion_architecture  # Architecture
     - airflow               # Orchestration
     - github_actions        # CI/CD
-    - technical_communication  # Soft skill
+    - technical_scoping        # Soft skill
     - problem_solving       # Soft skill
     - data_contracts        # Modern data
 
@@ -117,7 +116,7 @@ core_skills_by_role:
     - precommit_quality     # Quality
     - data_modeling         # Architecture
     - problem_solving       # Soft skill
-    - technical_communication  # Soft skill
+    - technical_scoping        # Soft skill
 
 # Skill groups for visual grouping in assessment UI
 # Skills in the same group are shown together
@@ -242,12 +241,15 @@ groups:
     icon: "users"
     description: "Communication et leadership"
     skills:
-      - technical_communication
+      - technical_scoping
+      - communication
       - problem_solving
       - stakeholder_management
       - mentoring_leadership
-      - presentation_vulgarization
       - project_management
+      - posture
+      - adaptability
+      - teamwork
 
 # Inference rules: auto-suggest levels based on related skills
 # Format: if skill_a >= threshold, suggest skill_b = suggested_level
@@ -504,11 +506,11 @@ inference_rules:
             confidence: 0.7
 
   # Soft skills (less inference, more independent)
-  - source: technical_communication
+  - source: communication
     rules:
       - condition: ">= 3"
         targets:
-          - skill: presentation_vulgarization
+          - skill: technical_scoping
             suggestion: 2
             confidence: 0.7
           - skill: stakeholder_management

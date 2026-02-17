@@ -4,6 +4,8 @@
 	import RoleSelector from '$lib/components/RoleSelector.svelte';
 	import CategoryPicker from '$lib/components/CategoryPicker.svelte';
 
+	function autoFocus(node: HTMLElement) { node.focus(); }
+
 	let skillsData: any = null;
 	let step: 'welcome' | 'name' | 'role' | 'categories' | 'mode' | 'ready' = 'welcome';
 	let userName: string = '';
@@ -266,7 +268,7 @@
 								bind:value={userName}
 								placeholder="Ex: Marie Dupont"
 								class="input text-lg"
-								autofocus
+								use:autoFocus
 							/>
 						</div>
 
@@ -505,11 +507,3 @@
 		{/if}
 	</div>
 </div>
-
-<style>
-	.bg-level-0 { background-color: #fecaca; }
-	.bg-level-1 { background-color: #fde68a; }
-	.bg-level-2 { background-color: #bef264; }
-	.bg-level-3 { background-color: #4ade80; }
-	.bg-level-4 { background-color: #059669; }
-</style>

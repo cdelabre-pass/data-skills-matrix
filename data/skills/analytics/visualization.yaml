@@ -72,23 +72,23 @@ skills:
       "3→4": "Optimisez les performances des questions lentes. Mettez en place les bonnes pratiques de cache."
 
   - id: looker
-    name: "Looker/LookML"
-    description: "Utiliser Looker et écrire du LookML pour la modélisation BI"
-    core_roles: [data_analyst, analytics_eng]
+    name: "Looker"
+    description: "Utiliser Looker pour l'exploration de données et les dashboards BI"
+    core_roles: [data_analyst]
     levels:
       data_analyst: [1, 2, 3, 4]
-      data_engineer: [1, 1, 2, 3]
-      data_scientist: [1, 1, 2, 3]
-      analytics_eng: [1, 2, 3, 4]
-      ml_engineer: [NC, NC, 1, 2]
-      backend: [NC, NC, NC, 1]
+      data_engineer: [NC, NC, NC, NC]
+      data_scientist: [NC, NC, NC, NC]
+      analytics_eng: [NC, NC, NC, NC]
+      ml_engineer: [NC, NC, NC, NC]
+      backend: [NC, NC, NC, NC]
     level_descriptions:
       0: "Aucune connaissance Looker"
       1: "Peut utiliser les Explores et dashboards existants"
-      2: "Peut créer des Looks, dashboards, comprend les bases LookML"
-      3: "Peut écrire du LookML, concevoir des modèles de données"
-      4: "Expert en architecture Looker et LookML"
-      5: "Architecte Looker, certifié LookML Developer"
+      2: "Peut créer des Looks et dashboards personnalisés"
+      3: "Conçoit des dashboards complexes, maîtrise les Explores avancés"
+      4: "Expert Looker, optimise les performances et forme les utilisateurs"
+      5: "Référent Looker de l'organisation"
       6: "Expert Looker reconnu, speaker Looker events"
     behavioral_indicators:
       1:
@@ -99,27 +99,22 @@ skills:
         - "Je crée des Looks avec dimensions et mesures"
         - "J'assemble des dashboards avec des tiles"
         - "Je comprends la notion de dimension vs measure"
-        - "Je sais lire du LookML basique"
       3:
-        - "J'écris des views LookML avec dimensions et measures"
-        - "Je définis des joins entre tables"
-        - "Je crée des explores personnalisés"
+        - "Je crée des explores personnalisés avec filtres avancés"
+        - "Je conçois des dashboards interactifs avec drill-down"
         - "J'utilise les derived tables pour les cas complexes"
       4:
-        - "Je conçois l'architecture LookML complète d'un domaine"
         - "J'optimise les performances des explores"
-        - "Je suis certifié LookML Developer"
         - "Je forme les analystes à utiliser Looker efficacement"
+        - "J'administre et configure l'instance Looker"
       5:
-        - "Je suis le référent Looker/LookML de l'organisation"
-        - "J'ai défini les standards et bonnes pratiques LookML pour l'entreprise"
+        - "Je suis le référent Looker de l'organisation"
+        - "J'ai défini les standards et bonnes pratiques Looker pour l'entreprise"
         - "Je forme et mentor les équipes sur Looker"
-        - "J'ai créé des modèles LookML réutilisables et documentés"
       6:
         - "Je contribue à la communauté Looker (forums, plugins)"
         - "J'ai présenté sur Looker à des conférences externes ou Google events"
         - "Je suis reconnu comme expert Looker en dehors de l'entreprise"
-        - "J'ai publié des articles ou cas d'études sur Looker/LookML"
     resources:
       - url: "https://cloud.google.com/looker/docs"
         title: "Looker Documentation"
@@ -127,16 +122,13 @@ skills:
       - url: "https://www.cloudskillsboost.google/paths/28"
         title: "Looker Learning Path (Google Cloud)"
         type: "course"
-      - url: "https://looker.com/blog/best-practices-lookml"
-        title: "LookML Best Practices"
-        type: "documentation"
       - url: "https://www.youtube.com/playlist?list=PL6nfYkMvvs4l7r_6JYdH0fwvw8bsKPzDl"
         title: "Looker YouTube Tutorials"
         type: "video"
     improvement_tips:
       "1→2": "Créez des Looks et dashboards pour votre équipe. Explorez les différentes visualisations disponibles."
-      "2→3": "Apprenez LookML en créant une view simple. Comprenez les dimensions, measures et joins."
-      "3→4": "Concevez l'architecture LookML d'un domaine métier complet. Passez la certification LookML Developer."
+      "2→3": "Maîtrisez les filtres avancés et le drill-down. Créez des dashboards interactifs."
+      "3→4": "Optimisez les performances des explores. Formez les utilisateurs et définissez les bonnes pratiques."
 
   - id: dashboard_design
     name: "Design de Dashboards"
