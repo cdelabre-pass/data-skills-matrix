@@ -1,8 +1,10 @@
 <script lang="ts">
 	import ExcelJS from 'exceljs';
+	import JSZip from 'jszip';
 
 	export let assessmentState: any;
 	export let skillsData: any;
+	export let suggestedLevelIndex: number = 1;
 
 	let showMergeModal = false;
 	let mergeError = '';
@@ -32,14 +34,13 @@
 			'6': '8B5CF6',     // Purple (bonus)
 		},
 		categories: {
-			'analytics': 'DBEAFE',
-			'engineering': 'DCFCE7',
-			'data_management': 'FEF3C7',
-			'business': 'FCE7F3',
-			'cloud': 'E0E7FF',
-			'machine_learning': 'F3E8FF',
-			'visualization': 'FFEDD5',
-			'soft_skills': 'F1F5F9',
+			'analytics': 'DBEAFE',     // Blue light
+			'business': 'FCE7F3',      // Pink light
+			'compliance': 'FEF3C7',    // Yellow light
+			'engineering': 'DCFCE7',   // Green light
+			'ml': 'F3E8FF',            // Purple light
+			'ops': 'E0E7FF',           // Indigo light
+			'soft_skills': 'F1F5F9',   // Slate light
 		},
 		core: 'DCFCE7',        // Green light
 		secondary: 'F3F4F6',   // Gray light
@@ -74,10 +75,10 @@
 		return skill.core_roles?.includes(roleId) ?? false;
 	}
 
-	function getExpectedLevel(skill: any, roleId: string): number | string {
+	function getExpectedLevel(skill: any, roleId: string, levelIndex: number = suggestedLevelIndex): number | string {
 		const levels = skill.levels?.[roleId];
-		if (!levels || levels.length < 2) return 'NC';
-		const level = levels[1];
+		if (!levels || levels.length <= levelIndex) return 'NC';
+		const level = levels[levelIndex];
 		return level === 'NC' || level === null ? 'NC' : level;
 	}
 
@@ -383,6 +384,56 @@
 		ws.views = [{ state: 'frozen', xSplit: 2, ySplit: 1 }];
 	}
 
+	function createReferenceSheet(wb: ExcelJS.Workbook) {
+		const ws = wb.addWorksheet('Ref');
+		ws.state = 'veryHidden';
+
+		// Row 1: Role names in B1:G1
+		skillsData.roles.forEach((role: any, i: number) => {
+			ws.getCell(1, i + 2).value = role.name;
+		});
+
+		// Row 2: Career level names in B2:E2
+		skillsData.levels.forEach((level: any, i: number) => {
+			ws.getCell(2, i + 2).value = level.name;
+		});
+
+		// Row 3: empty (separator)
+		// Row 4: header
+		ws.getCell(4, 1).value = 'Compétence';
+		skillsData.roles.forEach((role: any, ri: number) => {
+			const baseCol = 2 + ri * 5;
+			ws.getCell(4, baseCol).value = `${role.name} C/S`;
+			ws.getCell(4, baseCol + 1).value = `${role.name} Jr`;
+			ws.getCell(4, baseCol + 2).value = `${role.name} Cf`;
+			ws.getCell(4, baseCol + 3).value = `${role.name} Sr`;
+			ws.getCell(4, baseCol + 4).value = `${role.name} Ex`;
+		});
+
+		// Row 5+: skill data (same order as Mon Évaluation)
+		let rowIdx = 5;
+		for (const category of skillsData.categories) {
+			const categorySkills = skillsData.skills.filter((s: any) => s.category === category.id);
+			for (const skill of categorySkills) {
+				ws.getCell(rowIdx, 1).value = skill.name;
+
+				skillsData.roles.forEach((role: any, ri: number) => {
+					const baseCol = 2 + ri * 5;
+					const isCore = skill.core_roles?.includes(role.id);
+					ws.getCell(rowIdx, baseCol).value = isCore ? 'C' : 'S';
+
+					const levels = skill.levels?.[role.id] || ['NC', 'NC', 'NC', 'NC'];
+					for (let li = 0; li < 4; li++) {
+						const level = levels[li];
+						ws.getCell(rowIdx, baseCol + 1 + li).value = (level === null || level === undefined) ? 'NC' : level;
+					}
+				});
+
+				rowIdx++;
+			}
+		}
+	}
+
 	function createAssessmentSheet(wb: ExcelJS.Workbook) {
 		const ws = wb.addWorksheet('Mon Évaluation');
 		const role = skillsData.roles.find((r: any) => r.id === assessmentState.role);
@@ -409,7 +460,7 @@
 		};
 
 		ws.getCell('C3').value = 'Mon Niveau:';
-		ws.getCell('D3').value = '';
+		ws.getCell('D3').value = skillsData.levels[suggestedLevelIndex]?.name || '';
 		ws.getCell('D3').dataValidation = {
 			type: 'list',
 			allowBlank: true,
@@ -428,17 +479,19 @@
 		// Skills data
 		let rowIdx = 6;
 		const skillRows: number[] = [];
+		const totalSkills = skillsData.skills.length;
+		const lastRefRow = 4 + totalSkills; // Ref data starts at row 5
+		// Ref layout: col A = skill name, then per role: 5 cols [C/S, Jr, Cf, Sr, Ex]
+		// Last data column in Ref = 1 + roles.length * 5 = 31 (col AE)
+		const refLastCol = 'AE';
 
 		for (const category of skillsData.categories) {
 			const categorySkills = skillsData.skills.filter((s: any) => s.category === category.id);
 
 			for (const skill of categorySkills) {
 				const row = ws.getRow(rowIdx);
-				const isCore = isSkillCore(skill, assessmentState.role);
-				const expectedLevel = getExpectedLevel(skill, assessmentState.role);
 				const answer = assessmentState.answers[skill.id];
 				const currentLevel = answer ? (answer.level === 'nc' ? 'NC' : answer.level) : '';
-				const gap = answer ? calculateGap(answer.level, expectedLevel) : '';
 
 				row.getCell(1).value = category.name;
 				row.getCell(1).fill = getCategoryFill(category.id);
@@ -447,12 +500,13 @@
 				row.getCell(2).value = skill.name;
 				row.getCell(2).border = BORDERS_ALL;
 
-				row.getCell(3).value = isCore ? 'C' : 'S';
+				// Core/Sec formula - INDEX/MATCH on Ref sheet
+				row.getCell(3).value = { formula: `IFERROR(INDEX(Ref!B$5:${refLastCol}$${lastRefRow},MATCH(B${rowIdx},Ref!A$5:A$${lastRefRow},0),(MATCH(B$3,Ref!B$1:G$1,0)-1)*5+1),"S")` };
 				row.getCell(3).alignment = { horizontal: 'center' };
-				row.getCell(3).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: isCore ? COLORS.core : COLORS.secondary } };
 				row.getCell(3).border = BORDERS_ALL;
 
-				row.getCell(4).value = expectedLevel === 'NC' ? 'NC' : expectedLevel;
+				// Niveau Attendu formula - INDEX/MATCH on Ref sheet
+				row.getCell(4).value = { formula: `IFERROR(INDEX(Ref!B$5:${refLastCol}$${lastRefRow},MATCH(B${rowIdx},Ref!A$5:A$${lastRefRow},0),(MATCH(B$3,Ref!B$1:G$1,0)-1)*5+1+MATCH(D$3,Ref!B$2:E$2,0)),"NC")` };
 				row.getCell(4).alignment = { horizontal: 'center' };
 				row.getCell(4).border = BORDERS_ALL;
 
@@ -484,9 +538,9 @@
 				ws.getCell(`E${r}`).dataValidation = {
 					type: 'list',
 					allowBlank: true,
-					formulae: ['"0,1,2,3,4,NC"'],
+					formulae: ['"0,1,2,3,4,5,6,NC"'],
 					errorTitle: 'Niveau invalide',
-					error: 'Veuillez entrer un niveau valide (0-4 ou NC)'
+					error: 'Veuillez entrer un niveau valide (0-6 ou NC)'
 				};
 			}
 		}
@@ -505,49 +559,50 @@
 		ws.views = [{ state: 'frozen', xSplit: 0, ySplit: 5 }];
 	}
 
-	function createRadarDataSheet(wb: ExcelJS.Workbook) {
-		const ws = wb.addWorksheet('Profil Radar');
-		const role = skillsData.roles.find((r: any) => r.id === assessmentState.role);
-		const roleName = role?.name || assessmentState.role;
+	function createProfilsParRoleSheet(wb: ExcelJS.Workbook) {
+		const ws = wb.addWorksheet('Profils par Rôle');
+		const levelName = skillsData.levels[suggestedLevelIndex]?.name || 'Confirmé';
+		const totalCols = 2 + skillsData.roles.length + 1; // Cat + Skill + roles + Mon Niveau
+		const monNiveauCol = totalCols; // Last column = Mon Niveau
 
 		// Title
-		ws.mergeCells('A1:D1');
+		ws.mergeCells(1, 1, 1, totalCols);
 		const titleCell = ws.getCell('A1');
-		titleCell.value = `Mon Profil de Compétences - ${roleName}`;
+		titleCell.value = `Profils par Rôle - Niveaux Attendus (${levelName})`;
 		titleCell.fill = getHeaderFill();
 		titleCell.font = { bold: true, size: 14, color: { argb: 'FFFFFF' } };
 
-		// Subtitle with user name
-		ws.mergeCells('A2:D2');
+		// Note
+		ws.mergeCells(2, 1, 2, totalCols);
 		ws.getCell('A2').value = assessmentState.name || 'Non renseigné';
 		ws.getCell('A2').font = { italic: true };
 
+		ws.mergeCells(3, 1, 3, totalCols);
+		ws.getCell('A3').value = `Niveau de carrière affiché : ${levelName}. Cellules vertes = compétence core pour ce rôle.`;
+		ws.getCell('A3').font = { italic: true, size: 10 };
+
 		// Headers
-		const headers = ['Catégorie', 'Compétence', 'Niveau Attendu', 'Mon Niveau'];
-		const headerRow = ws.getRow(4);
+		const headers = ['Catégorie', 'Compétence'];
+		for (const role of skillsData.roles) {
+			headers.push(role.name);
+		}
+		headers.push('Mon Niveau');
+
+		const headerRow = ws.getRow(5);
 		headers.forEach((h, i) => {
 			const cell = headerRow.getCell(i + 1);
 			cell.value = h;
 			applyHeaderStyle(cell);
 		});
 
-		// Get skills for user's role, grouped by category (max 3 per category for radar readability)
-		let rowIdx = 5;
+		// Data - skills in same order as Mon Évaluation (both iterate categories then skills)
+		let rowIdx = 6;
+		const evalLastRow = 5 + skillsData.skills.length; // Mon Évaluation data ends here
 		for (const category of skillsData.categories) {
-			const categorySkills = skillsData.skills
-				.filter((s: any) => s.category === category.id)
-				.filter((s: any) => {
-					const hasLevels = s.levels && s.levels[assessmentState.role];
-					const isCore = s.core_roles?.includes(assessmentState.role);
-					return hasLevels || isCore;
-				})
-				.slice(0, 3); // Max 3 skills per category for radar chart
+			const categorySkills = skillsData.skills.filter((s: any) => s.category === category.id);
 
 			for (const skill of categorySkills) {
 				const row = ws.getRow(rowIdx);
-				const expectedLevel = getExpectedLevel(skill, assessmentState.role);
-				const answer = assessmentState.answers[skill.id];
-				const currentLevel = answer ? (answer.level === 'nc' ? 0 : answer.level) : '';
 
 				row.getCell(1).value = category.name;
 				row.getCell(1).fill = getCategoryFill(category.id);
@@ -556,108 +611,479 @@
 				row.getCell(2).value = skill.name;
 				row.getCell(2).border = BORDERS_ALL;
 
-				row.getCell(3).value = expectedLevel === 'NC' ? 0 : expectedLevel;
-				row.getCell(3).alignment = { horizontal: 'center' };
-				row.getCell(3).border = BORDERS_ALL;
-
-				row.getCell(4).value = currentLevel;
-				row.getCell(4).alignment = { horizontal: 'center' };
-				row.getCell(4).border = BORDERS_ALL;
-				if (currentLevel !== '') {
-					row.getCell(4).fill = getLevelFill(currentLevel);
+				// Expected level per role
+				let col = 3;
+				for (const role of skillsData.roles) {
+					const expected = getExpectedLevel(skill, role.id, suggestedLevelIndex);
+					const isCore = skill.core_roles?.includes(role.id);
+					const cell = row.getCell(col);
+					cell.value = expected === 'NC' ? 'NC' : expected;
+					cell.alignment = { horizontal: 'center' };
+					cell.border = BORDERS_ALL;
+					if (isCore && expected !== 'NC') {
+						cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.core } };
+						cell.font = { bold: true };
+					} else if (expected !== 'NC' && typeof expected === 'number') {
+						cell.fill = getLevelFill(expected);
+					}
+					col++;
 				}
+
+				// Mon Niveau - formula referencing Mon Évaluation column E
+				const myCell = row.getCell(monNiveauCol);
+				myCell.value = { formula: `'Mon Évaluation'!E${rowIdx}` };
+				myCell.alignment = { horizontal: 'center' };
+				myCell.border = BORDERS_ALL;
 
 				rowIdx++;
 			}
 		}
+		const lastDataRow = rowIdx - 1;
 
-		// Instructions
-		rowIdx += 2;
-		ws.getCell(`A${rowIdx}`).value = 'Comment créer un graphique radar:';
-		ws.getCell(`A${rowIdx}`).font = { bold: true };
-		rowIdx++;
-		ws.getCell(`A${rowIdx}`).value = '1. Sélectionnez les colonnes B, C et D (Compétence, Attendu, Mon Niveau)';
-		rowIdx++;
-		ws.getCell(`A${rowIdx}`).value = '2. Insertion → Graphique → Radar';
-		rowIdx++;
-		ws.getCell(`A${rowIdx}`).value = '3. Le graphique compare votre niveau actuel vs attendu';
+		// --- Radar chart summary section (AVERAGEIF formulas) ---
+		const summaryStart = lastDataRow + 3;
+		ws.getCell(summaryStart, 1).value = 'Données du graphique radar';
+		ws.getCell(summaryStart, 1).font = { bold: true, size: 11 };
+
+		const summaryHeaderRow = summaryStart + 1;
+		['Catégorie', 'Niveau Attendu', 'Mon Niveau'].forEach((h, i) => {
+			const cell = ws.getCell(summaryHeaderRow, i + 1);
+			cell.value = h;
+			applyHeaderStyle(cell);
+		});
+
+		const summaryDataStart = summaryHeaderRow + 1;
+		skillsData.categories.forEach((cat: any, i: number) => {
+			const r = summaryDataStart + i;
+			ws.getCell(r, 1).value = cat.name;
+			ws.getCell(r, 1).fill = getCategoryFill(cat.id);
+			ws.getCell(r, 1).border = BORDERS_ALL;
+			// Average expected level (from Mon Évaluation col D, skips "NC" text automatically)
+			ws.getCell(r, 2).value = { formula: `AVERAGEIF('Mon Évaluation'!$A$6:$A$${evalLastRow},A${r},'Mon Évaluation'!$D$6:$D$${evalLastRow})` };
+			ws.getCell(r, 2).alignment = { horizontal: 'center' };
+			ws.getCell(r, 2).numFmt = '0.0';
+			ws.getCell(r, 2).border = BORDERS_ALL;
+			// Average Mon Niveau (from Mon Évaluation col E, skips empty/NC automatically)
+			ws.getCell(r, 3).value = { formula: `AVERAGEIF('Mon Évaluation'!$A$6:$A$${evalLastRow},A${r},'Mon Évaluation'!$E$6:$E$${evalLastRow})` };
+			ws.getCell(r, 3).alignment = { horizontal: 'center' };
+			ws.getCell(r, 3).numFmt = '0.0';
+			ws.getCell(r, 3).border = BORDERS_ALL;
+		});
+		const summaryDataEnd = summaryDataStart + skillsData.categories.length - 1;
 
 		// Column widths
 		ws.getColumn(1).width = 25;
 		ws.getColumn(2).width = 35;
-		ws.getColumn(3).width = 15;
-		ws.getColumn(4).width = 15;
+		for (let i = 3; i <= totalCols; i++) {
+			ws.getColumn(i).width = 15;
+		}
+
+		// Freeze panes
+		ws.views = [{ state: 'frozen', xSplit: 2, ySplit: 5 }];
+
+		return { ws, lastDataRow, summaryHeaderRow, summaryDataStart, summaryDataEnd };
 	}
+
+	// ============================================
+	// Native Excel Radar Chart Injection (via OOXML)
+	// ============================================
+
+	async function injectNativeRadarChart(
+		xlsxBuffer: ArrayBuffer,
+		sheetName: string,
+		summaryHeaderRow: number,
+		summaryDataStart: number,
+		summaryDataEnd: number
+	): Promise<ArrayBuffer> {
+		const zip = await JSZip.loadAsync(xlsxBuffer);
+
+		// 1. Find the worksheet file for the target sheet
+		const workbookXml = await zip.file('xl/workbook.xml')!.async('string');
+		const sheetMatch = workbookXml.match(new RegExp(`name="${sheetName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*r:id="(rId\\d+)"`));
+		if (!sheetMatch) return xlsxBuffer;
+		const sheetRId = sheetMatch[1];
+
+		const workbookRels = await zip.file('xl/_rels/workbook.xml.rels')!.async('string');
+		const targetMatch = workbookRels.match(new RegExp(`Id="${sheetRId}"[^>]*Target="([^"]+)"`));
+		if (!targetMatch) return xlsxBuffer;
+		const sheetFile = targetMatch[1]; // e.g., "worksheets/sheet6.xml"
+		const sheetFileName = sheetFile.split('/').pop()!; // e.g., "sheet6.xml"
+
+		// Escaped sheet name for formulas
+		const sn = `'${sheetName}'`;
+
+		// 2. Generate chart XML
+		const chartXml = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+<c:chart>
+<c:title><c:tx><c:rich><a:bodyPr/><a:lstStyle/><a:p><a:pPr><a:defRPr sz="1200" b="1"/></a:pPr><a:r><a:rPr lang="fr-FR" sz="1200" b="1"/><a:t>Profil de Compétences</a:t></a:r></a:p></c:rich></c:tx><c:overlay val="0"/></c:title>
+<c:autoTitleDeleted val="0"/>
+<c:plotArea>
+<c:layout/>
+<c:radarChart>
+<c:radarStyle val="marker"/>
+<c:varyColors val="0"/>
+<c:ser>
+<c:idx val="0"/><c:order val="0"/>
+<c:tx><c:strRef><c:f>${sn}!$B$${summaryHeaderRow}</c:f></c:strRef></c:tx>
+<c:spPr><a:ln w="28575"><a:solidFill><a:srgbClr val="6366F1"/></a:solidFill></a:ln><a:effectLst/></c:spPr>
+<c:marker><c:symbol val="circle"/><c:size val="5"/><c:spPr><a:solidFill><a:srgbClr val="6366F1"/></a:solidFill></c:spPr></c:marker>
+<c:cat><c:strRef><c:f>${sn}!$A$${summaryDataStart}:$A$${summaryDataEnd}</c:f></c:strRef></c:cat>
+<c:val><c:numRef><c:f>${sn}!$B$${summaryDataStart}:$B$${summaryDataEnd}</c:f></c:numRef></c:val>
+</c:ser>
+<c:ser>
+<c:idx val="1"/><c:order val="1"/>
+<c:tx><c:strRef><c:f>${sn}!$C$${summaryHeaderRow}</c:f></c:strRef></c:tx>
+<c:spPr><a:ln w="28575"><a:solidFill><a:srgbClr val="22C55E"/></a:solidFill></a:ln><a:effectLst/></c:spPr>
+<c:marker><c:symbol val="circle"/><c:size val="5"/><c:spPr><a:solidFill><a:srgbClr val="22C55E"/></a:solidFill></c:spPr></c:marker>
+<c:cat><c:strRef><c:f>${sn}!$A$${summaryDataStart}:$A$${summaryDataEnd}</c:f></c:strRef></c:cat>
+<c:val><c:numRef><c:f>${sn}!$C$${summaryDataStart}:$C$${summaryDataEnd}</c:f></c:numRef></c:val>
+</c:ser>
+<c:axId val="111111111"/><c:axId val="222222222"/>
+</c:radarChart>
+<c:catAx><c:axId val="111111111"/><c:scaling><c:orientation val="minMax"/></c:scaling><c:delete val="0"/><c:axPos val="b"/><c:crossAx val="222222222"/></c:catAx>
+<c:valAx><c:axId val="222222222"/><c:scaling><c:orientation val="minMax"/><c:max val="4"/><c:min val="0"/></c:scaling><c:delete val="0"/><c:axPos val="l"/><c:crossAx val="111111111"/><c:numFmt formatCode="0" sourceLinked="0"/></c:valAx>
+</c:plotArea>
+<c:legend><c:legendPos val="b"/></c:legend>
+<c:plotVisOnly val="1"/>
+</c:chart>
+</c:chartSpace>`;
+
+		// 3. Generate drawing XML (positions the chart on the sheet)
+		const chartCol = 2 + skillsData.roles.length + 2; // After Mon Niveau + 1 gap col
+		const drawingXml = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xdr:wsDr xmlns:xdr="http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+<xdr:twoCellAnchor>
+<xdr:from><xdr:col>${chartCol}</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>4</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:from>
+<xdr:to><xdr:col>${chartCol + 8}</xdr:col><xdr:colOff>0</xdr:colOff><xdr:row>28</xdr:row><xdr:rowOff>0</xdr:rowOff></xdr:to>
+<xdr:graphicFrame macro="">
+<xdr:nvGraphicFramePr><xdr:cNvPr id="2" name="Chart 1"/><xdr:cNvGraphicFramePr><a:graphicFrameLocks noGrp="1"/></xdr:cNvGraphicFramePr></xdr:nvGraphicFramePr>
+<xdr:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/></xdr:xfrm>
+<a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/chart"><c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" r:id="rId1"/></a:graphicData></a:graphic>
+</xdr:graphicFrame>
+<xdr:clientData/>
+</xdr:twoCellAnchor>
+</xdr:wsDr>`;
+
+		// 4. Add files to zip
+		zip.file('xl/charts/chart1.xml', chartXml);
+		zip.file('xl/drawings/drawing1.xml', drawingXml);
+		zip.file('xl/drawings/_rels/drawing1.xml.rels',
+			`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart" Target="../charts/chart1.xml"/>
+</Relationships>`);
+
+		// 5. Add/update sheet relationships (link sheet to drawing)
+		const sheetRelsPath = `xl/worksheets/_rels/${sheetFileName}.rels`;
+		const existingRels = zip.file(sheetRelsPath);
+		let sheetRelsXml: string;
+		let drawingRId = 'rId1';
+		if (existingRels) {
+			sheetRelsXml = await existingRels.async('string');
+			// Find highest existing rId
+			const rIdMatches = [...sheetRelsXml.matchAll(/Id="rId(\d+)"/g)];
+			const maxId = rIdMatches.reduce((max, m) => Math.max(max, parseInt(m[1])), 0);
+			drawingRId = `rId${maxId + 1}`;
+			sheetRelsXml = sheetRelsXml.replace('</Relationships>',
+				`<Relationship Id="${drawingRId}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing" Target="../drawings/drawing1.xml"/></Relationships>`);
+		} else {
+			sheetRelsXml = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="${drawingRId}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing" Target="../drawings/drawing1.xml"/>
+</Relationships>`;
+		}
+		zip.file(sheetRelsPath, sheetRelsXml);
+
+		// 6. Add <drawing> element to the sheet XML
+		let sheetXml = await zip.file(`xl/${sheetFile}`)!.async('string');
+		sheetXml = sheetXml.replace('</worksheet>', `<drawing r:id="${drawingRId}"/></worksheet>`);
+		zip.file(`xl/${sheetFile}`, sheetXml);
+
+		// 7. Update [Content_Types].xml
+		let contentTypes = await zip.file('[Content_Types].xml')!.async('string');
+		contentTypes = contentTypes.replace('</Types>',
+			`<Override PartName="/xl/charts/chart1.xml" ContentType="application/vnd.openxmlformats-officedocument.drawingml.chart+xml"/>` +
+			`<Override PartName="/xl/drawings/drawing1.xml" ContentType="application/vnd.openxmlformats-officedocument.drawing+xml"/>` +
+			`</Types>`);
+		zip.file('[Content_Types].xml', contentTypes);
+
+		return await zip.generateAsync({ type: 'arraybuffer' });
+	}
+
+	interface GapItem {
+		skill: any;
+		category: any;
+		currentLevel: number;
+		expectedLevel: number;
+		gap: number;
+		isCore: boolean;
+		tip: string;
+		priority: 'Haute' | 'Moyenne' | 'Basse';
+	}
+
+	function getExhaustiveGaps(): { currentLevelGaps: GapItem[]; nextLevelGaps: GapItem[] } {
+		const roleId = assessmentState.role;
+		const currentLevelGaps: GapItem[] = [];
+		const nextLevelGaps: GapItem[] = [];
+		const currentLevelGapSkillIds = new Set<string>();
+
+		for (const category of skillsData.categories) {
+			const categorySkills = skillsData.skills.filter((s: any) => s.category === category.id);
+
+			for (const skill of categorySkills) {
+				const answer = assessmentState.answers[skill.id];
+				if (!answer || answer.level === 'nc') continue;
+
+				const currentLevel = answer.level as number;
+				const levels = skill.levels?.[roleId];
+				if (!levels) continue;
+
+				const isCore = skill.core_roles?.includes(roleId) ?? false;
+				const expected = levels[suggestedLevelIndex];
+
+				// Section 1: current < expected at suggestedLevelIndex
+				if (expected !== 'NC' && expected !== null && expected !== undefined && typeof expected === 'number' && currentLevel < expected) {
+					const gap = expected - currentLevel;
+					const nextTransition = `${currentLevel}\u2192${currentLevel + 1}`;
+					const tip = skill.improvement_tips?.[nextTransition] || '';
+					const priority = getPriority(isCore, gap);
+
+					currentLevelGaps.push({
+						skill,
+						category,
+						currentLevel,
+						expectedLevel: expected,
+						gap,
+						isCore,
+						tip,
+						priority
+					});
+					currentLevelGapSkillIds.add(skill.id);
+				}
+
+				// Section 2: meets current level but gap at next level (no duplicates)
+				if (!currentLevelGapSkillIds.has(skill.id) && suggestedLevelIndex + 1 < levels.length) {
+					const nextExpected = levels[suggestedLevelIndex + 1];
+					if (nextExpected !== 'NC' && nextExpected !== null && nextExpected !== undefined && typeof nextExpected === 'number' && currentLevel < nextExpected) {
+						const gap = nextExpected - currentLevel;
+						const nextTransition = `${currentLevel}\u2192${currentLevel + 1}`;
+						const tip = skill.improvement_tips?.[nextTransition] || '';
+						const priority = getPriority(isCore, gap);
+
+						nextLevelGaps.push({
+							skill,
+							category,
+							currentLevel,
+							expectedLevel: nextExpected,
+							gap,
+							isCore,
+							tip,
+							priority
+						});
+					}
+				}
+			}
+		}
+
+		// Sort: core first, then by gap descending
+		const sortGaps = (a: GapItem, b: GapItem) => {
+			if (a.isCore !== b.isCore) return a.isCore ? -1 : 1;
+			return b.gap - a.gap;
+		};
+		currentLevelGaps.sort(sortGaps);
+		nextLevelGaps.sort(sortGaps);
+
+		return { currentLevelGaps, nextLevelGaps };
+	}
+
+	function getPriority(isCore: boolean, gap: number): 'Haute' | 'Moyenne' | 'Basse' {
+		if ((isCore && gap >= 2) || gap >= 3) return 'Haute';
+		if ((isCore && gap === 1) || gap === 2) return 'Moyenne';
+		return 'Basse';
+	}
+
+	const PRIORITY_COLORS: Record<string, string> = {
+		'Haute': 'FECACA',    // red light
+		'Moyenne': 'FED7AA',  // orange light
+		'Basse': 'FEF08A',    // yellow light
+	};
 
 	function createPlanDeveloppementSheet(wb: ExcelJS.Workbook) {
 		const ws = wb.addWorksheet('Plan Développement');
+		const role = skillsData.roles.find((r: any) => r.id === assessmentState.role);
+		const roleName = role?.name || assessmentState.role;
+		const levelName = skillsData.levels[suggestedLevelIndex]?.name || 'Confirmé';
+		const nextLevelName = skillsData.levels[suggestedLevelIndex + 1]?.name || '';
+
+		const headers = ['Priorité', 'Core/Sec', 'Compétence', 'Catégorie', 'Niveau Actuel', 'Niveau Cible', 'Écart', 'Conseils Progression', 'Actions Planifiées', 'Trimestre', 'Statut'];
+		const totalCols = headers.length;
 
 		// Title
-		ws.mergeCells('A1:H1');
+		ws.mergeCells(1, 1, 1, totalCols);
 		const titleCell = ws.getCell('A1');
 		titleCell.value = 'Plan de Développement Annuel';
 		titleCell.fill = getHeaderFill();
 		titleCell.font = { bold: true, size: 14, color: { argb: 'FFFFFF' } };
 
-		// Instructions
-		ws.mergeCells('A2:H2');
-		ws.getCell('A2').value = "Choisissez un maximum de 4 compétences à développer sur l'année (privilégier les compétences Core)";
-		ws.getCell('A2').font = { italic: true };
+		// Subtitle
+		ws.mergeCells(2, 1, 2, totalCols);
+		ws.getCell('A2').value = `Rôle: ${roleName} | Niveau: ${levelName}`;
+		ws.getCell('A2').font = { italic: true, size: 11 };
+
+		const { currentLevelGaps, nextLevelGaps } = getExhaustiveGaps();
+
+		let rowIdx = 4;
+
+		// === SECTION 1 ===
+		ws.mergeCells(rowIdx, 1, rowIdx, totalCols);
+		const sec1Cell = ws.getCell(rowIdx, 1);
+		sec1Cell.value = `=== SECTION 1 : Écarts au niveau actuel (${levelName}) ===`;
+		sec1Cell.font = { bold: true, size: 12, color: { argb: '1E40AF' } };
+		sec1Cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'DBEAFE' } };
+		rowIdx++;
 
 		// Headers
-		const headers = ['Compétence à Développer', 'Niveau Actuel', 'Niveau Cible', 'Formation / Actions', 'Résultat Attendu', 'Mesure de Succès', 'Trimestre', 'Statut'];
-		const headerRow = ws.getRow(4);
+		const headerRow1 = ws.getRow(rowIdx);
 		headers.forEach((h, i) => {
-			const cell = headerRow.getCell(i + 1);
+			const cell = headerRow1.getCell(i + 1);
 			cell.value = h;
 			applyHeaderStyle(cell);
 		});
+		rowIdx++;
 
-		// Pre-fill with top 4 gaps
-		const allSkillsForRole = getAllSkillsForRole(skillsData, assessmentState.role);
-		const topGaps = getTopGaps(allSkillsForRole, assessmentState.answers, assessmentState.role, 4);
+		// Data section 1
+		rowIdx = writeGapRows(ws, currentLevelGaps, rowIdx, headers.length);
 
-		for (let i = 0; i < 4; i++) {
-			const row = ws.getRow(5 + i);
-			const gap = topGaps[i];
+		if (currentLevelGaps.length === 0) {
+			ws.mergeCells(rowIdx, 1, rowIdx, totalCols);
+			ws.getCell(rowIdx, 1).value = 'Aucun écart identifié à ce niveau.';
+			ws.getCell(rowIdx, 1).font = { italic: true };
+			rowIdx++;
+		}
 
-			if (gap) {
-				row.getCell(1).value = gap.skill.name;
-				row.getCell(2).value = gap.currentLevel;
-				row.getCell(3).value = gap.expectedLevel;
-				row.getCell(4).value = gap.tip || '';
-				row.getCell(8).value = 'Non démarré';
+		rowIdx += 3; // Blank rows between sections
+
+		// === SECTION 2 ===
+		if (nextLevelName) {
+			ws.mergeCells(rowIdx, 1, rowIdx, totalCols);
+			const sec2Cell = ws.getCell(rowIdx, 1);
+			sec2Cell.value = `=== SECTION 2 : Progression vers ${nextLevelName} ===`;
+			sec2Cell.font = { bold: true, size: 12, color: { argb: '7C3AED' } };
+			sec2Cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'F3E8FF' } };
+			rowIdx++;
+
+			// Headers
+			const headerRow2 = ws.getRow(rowIdx);
+			headers.forEach((h, i) => {
+				const cell = headerRow2.getCell(i + 1);
+				cell.value = h;
+				applyHeaderStyle(cell);
+			});
+			rowIdx++;
+
+			// Data section 2
+			rowIdx = writeGapRows(ws, nextLevelGaps, rowIdx, headers.length);
+
+			if (nextLevelGaps.length === 0) {
+				ws.mergeCells(rowIdx, 1, rowIdx, totalCols);
+				ws.getCell(rowIdx, 1).value = 'Aucun écart identifié pour ce niveau.';
+				ws.getCell(rowIdx, 1).font = { italic: true };
+				rowIdx++;
 			}
+		}
 
-			// Apply borders and validation
-			for (let c = 1; c <= 8; c++) {
-				row.getCell(c).border = BORDERS_ALL;
-			}
+		// Column widths
+		ws.getColumn(1).width = 12;  // Priorité
+		ws.getColumn(2).width = 10;  // Core/Sec
+		ws.getColumn(3).width = 35;  // Compétence
+		ws.getColumn(4).width = 20;  // Catégorie
+		ws.getColumn(5).width = 12;  // Niveau Actuel
+		ws.getColumn(6).width = 12;  // Niveau Cible
+		ws.getColumn(7).width = 8;   // Écart
+		ws.getColumn(8).width = 50;  // Conseils
+		ws.getColumn(9).width = 40;  // Actions
+		ws.getColumn(10).width = 12; // Trimestre
+		ws.getColumn(11).width = 15; // Statut
+	}
 
-			// Quarter validation
-			row.getCell(7).dataValidation = {
+	function writeGapRows(ws: ExcelJS.Worksheet, gaps: GapItem[], startRow: number, colCount: number): number {
+		let rowIdx = startRow;
+
+		for (const item of gaps) {
+			const row = ws.getRow(rowIdx);
+
+			// A: Priorité
+			row.getCell(1).value = item.priority;
+			row.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: PRIORITY_COLORS[item.priority] } };
+			row.getCell(1).alignment = { horizontal: 'center' };
+			row.getCell(1).font = { bold: true };
+			row.getCell(1).border = BORDERS_ALL;
+
+			// B: Core/Sec
+			row.getCell(2).value = item.isCore ? 'C' : 'S';
+			row.getCell(2).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: item.isCore ? COLORS.core : COLORS.secondary } };
+			row.getCell(2).alignment = { horizontal: 'center' };
+			if (item.isCore) row.getCell(2).font = { bold: true };
+			row.getCell(2).border = BORDERS_ALL;
+
+			// C: Compétence
+			row.getCell(3).value = item.skill.name;
+			row.getCell(3).border = BORDERS_ALL;
+
+			// D: Catégorie
+			row.getCell(4).value = item.category.name;
+			row.getCell(4).fill = getCategoryFill(item.category.id);
+			row.getCell(4).border = BORDERS_ALL;
+
+			// E: Niveau Actuel
+			row.getCell(5).value = item.currentLevel;
+			row.getCell(5).fill = getLevelFill(item.currentLevel);
+			row.getCell(5).alignment = { horizontal: 'center' };
+			row.getCell(5).border = BORDERS_ALL;
+
+			// F: Niveau Cible
+			row.getCell(6).value = item.expectedLevel;
+			row.getCell(6).alignment = { horizontal: 'center' };
+			row.getCell(6).border = BORDERS_ALL;
+
+			// G: Écart
+			row.getCell(7).value = item.gap;
+			row.getCell(7).alignment = { horizontal: 'center' };
+			row.getCell(7).font = { bold: true, color: { argb: item.gap >= 2 ? 'DC2626' : 'F59E0B' } };
+			row.getCell(7).border = BORDERS_ALL;
+
+			// H: Conseils
+			row.getCell(8).value = item.tip;
+			row.getCell(8).alignment = { wrapText: true, vertical: 'top' };
+			row.getCell(8).border = BORDERS_ALL;
+
+			// I: Actions Planifiées (empty)
+			row.getCell(9).value = '';
+			row.getCell(9).border = BORDERS_ALL;
+
+			// J: Trimestre
+			row.getCell(10).value = '';
+			row.getCell(10).dataValidation = {
 				type: 'list',
 				allowBlank: true,
 				formulae: ['"Q1,Q2,Q3,Q4"']
 			};
+			row.getCell(10).border = BORDERS_ALL;
 
-			// Status validation
-			row.getCell(8).dataValidation = {
+			// K: Statut
+			row.getCell(11).value = 'Non démarré';
+			row.getCell(11).dataValidation = {
 				type: 'list',
 				allowBlank: true,
 				formulae: ['"Non démarré,En cours,Complété"']
 			};
+			row.getCell(11).border = BORDERS_ALL;
+
+			rowIdx++;
 		}
 
-		// Column widths
-		ws.getColumn(1).width = 35;
-		ws.getColumn(2).width = 12;
-		ws.getColumn(3).width = 12;
-		ws.getColumn(4).width = 45;
-		ws.getColumn(5).width = 35;
-		ws.getColumn(6).width = 30;
-		ws.getColumn(7).width = 12;
-		ws.getColumn(8).width = 15;
+		return rowIdx;
 	}
 
 	function createHistoriqueSheet(wb: ExcelJS.Workbook) {
@@ -743,19 +1169,34 @@
 		wb.creator = 'Skills Matrix';
 		wb.created = new Date();
 
-		// Create sheets in Python order
+		// Create sheets in order
 		createNiveauxSheet(wb);
 		createMatriceSheet(wb);
 		createDescriptionsSheet(wb);
+		createReferenceSheet(wb);
 		createAssessmentSheet(wb);
-		createRadarDataSheet(wb);
+		const profilResult = createProfilsParRoleSheet(wb);
 		createPlanDeveloppementSheet(wb);
 		createHistoriqueSheet(wb);
 
 		// Generate and download
 		const role = skillsData.roles.find((r: any) => r.id === assessmentState.role);
 		const roleAbbr = role?.abbreviation || assessmentState.role;
-		const buffer = await wb.xlsx.writeBuffer();
+		let buffer = await wb.xlsx.writeBuffer();
+
+		// Inject native Excel radar chart into the xlsx
+		try {
+			buffer = await injectNativeRadarChart(
+				buffer as ArrayBuffer,
+				'Profils par Rôle',
+				profilResult.summaryHeaderRow,
+				profilResult.summaryDataStart,
+				profilResult.summaryDataEnd
+			);
+		} catch (e) {
+			console.warn('Could not inject radar chart:', e);
+		}
+
 		const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
 		const url = URL.createObjectURL(blob);
 		const a = document.createElement('a');
@@ -861,17 +1302,11 @@
 					const skill = skillsData.skills.find((s: any) => s.name === skillName);
 					if (!skill) return;
 
-					const isCore = isSkillCore(skill, assessmentState.role);
-					const expectedLevel = getExpectedLevel(skill, assessmentState.role);
 					const answer = assessmentState.answers[skill.id];
 					const currentLevel = answer ? (answer.level === 'nc' ? 'NC' : answer.level) : '';
 
-					// Update columns (preserve 7 and 8: proofs and manager comments)
-					row.getCell(3).value = isCore ? 'C' : 'S';
-					row.getCell(4).value = expectedLevel === 'NC' ? 'NC' : expectedLevel;
+					// Only update Mon Niveau (col E) - preserve C and D formulas, 7 and 8 (proofs/manager)
 					row.getCell(5).value = currentLevel;
-					// Update formula - handle NC case
-					row.getCell(6).value = { formula: `IF(OR(E${rowNumber}="",D${rowNumber}="NC",E${rowNumber}="NC"),"",E${rowNumber}-D${rowNumber})` };
 				});
 			}
 

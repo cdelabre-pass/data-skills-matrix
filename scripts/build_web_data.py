@@ -49,21 +49,29 @@ def build_web_data():
     categories = {}
     all_skills = []
 
+    # Display names for category directories
+    category_display_names = {
+        "analytics": "Analytics",
+        "business": "Business",
+        "compliance": "Compliance",
+        "engineering": "Engineering",
+        "ml": "Machine Learning",
+        "ops": "Data Ops",
+        "soft_skills": "Soft Skills",
+    }
+
     for category_dir in sorted(skills_dir.iterdir()):
         if not category_dir.is_dir():
             continue
 
         category_dir_name = category_dir.name
+        # Use explicit display name, or fall back to title-cased directory name
+        display_name = category_display_names.get(
+            category_dir_name, category_dir_name.replace("_", " ").title()
+        )
 
         for skill_file in sorted(category_dir.glob("*.yaml")):
             file_data = load_yaml_file(skill_file)
-
-            # Get category info from the file
-            category_info = file_data.get("category", {})
-            category_id = category_info.get("id", skill_file.stem)
-            category_name = category_info.get(
-                "name", category_id.replace("_", " ").title()
-            )
 
             # Extract skills from the file
             skills_list = file_data.get("skills", [])
@@ -71,14 +79,14 @@ def build_web_data():
             for skill in skills_list:
                 # Add category to each skill
                 skill["category"] = category_dir_name
-                skill["category_name"] = category_name
+                skill["category_name"] = display_name
                 all_skills.append(skill)
 
             # Track category with skill count
             if category_dir_name not in categories:
                 categories[category_dir_name] = {
                     "id": category_dir_name,
-                    "name": category_dir_name.replace("_", " ").title(),
+                    "name": display_name,
                     "skill_count": 0,
                 }
             categories[category_dir_name]["skill_count"] += len(skills_list)

@@ -1,5 +1,5 @@
 {
-  "_source_hash": "e483ad9b5a9de54f",
+  "_source_hash": "0c2a4786763ea874",
   "roles": [
     {
       "id": "data_analyst",
@@ -144,7 +144,7 @@
     {
       "id": "business",
       "name": "Business",
-      "skill_count": 11
+      "skill_count": 4
     },
     {
       "id": "compliance",
@@ -158,13 +158,18 @@
     },
     {
       "id": "ml",
-      "name": "Ml",
+      "name": "Machine Learning",
       "skill_count": 7
     },
     {
       "id": "ops",
-      "name": "Ops",
+      "name": "Data Ops",
       "skill_count": 11
+    },
+    {
+      "id": "soft_skills",
+      "name": "Soft Skills",
+      "skill_count": 9
     }
   ],
   "skills": [
@@ -289,7 +294,7 @@
         "3→4": "Menez un projet de refonte de modèle de données. Documentez vos choix de partitionnement et clustering pour l'équipe."
       },
       "category": "analytics",
-      "category_name": "Analyse de Données"
+      "category_name": "Analytics"
     },
     {
       "id": "statistical_analysis",
@@ -411,7 +416,7 @@
         "3→4": "Explorez les méthodes avancées (analyse bayésienne, modèles mixtes). Menez une analyse complexe de bout en bout."
       },
       "category": "analytics",
-      "category_name": "Analyse de Données"
+      "category_name": "Analytics"
     },
     {
       "id": "insight_generation",
@@ -533,7 +538,7 @@
         "3→4": "Menez des projets d'impact stratégique. Présentez régulièrement au COMEX ou équivalent."
       },
       "category": "analytics",
-      "category_name": "Analyse de Données"
+      "category_name": "Analytics"
     },
     {
       "id": "ml_fundamentals",
@@ -656,7 +661,7 @@
         "3→4": "Développez un projet ML complet en production. Maîtrisez le monitoring et le retraining des modèles."
       },
       "category": "analytics",
-      "category_name": "Analyse de Données"
+      "category_name": "Analytics"
     },
     {
       "id": "ab_testing",
@@ -778,7 +783,7 @@
         "3→4": "Formez les équipes produit à l'expérimentation. Mettez en place un framework d'expérimentation."
       },
       "category": "analytics",
-      "category_name": "Product Analytics"
+      "category_name": "Analytics"
     },
     {
       "id": "firebase_analytics",
@@ -900,7 +905,7 @@
         "3→4": "Devenez le référent Firebase. Formez les développeurs aux bonnes pratiques de tracking."
       },
       "category": "analytics",
-      "category_name": "Product Analytics"
+      "category_name": "Analytics"
     },
     {
       "id": "product_metrics",
@@ -1021,7 +1026,7 @@
         "3→4": "Créez un framework de métriques pour toute l'organisation. Présentez les insights produit au COMEX."
       },
       "category": "analytics",
-      "category_name": "Product Analytics"
+      "category_name": "Analytics"
     },
     {
       "id": "behavioral_analysis",
@@ -1143,7 +1148,7 @@
         "3→4": "Développez des modèles prédictifs de churn. Automatisez les alertes sur les changements de comportement."
       },
       "category": "analytics",
-      "category_name": "Product Analytics"
+      "category_name": "Analytics"
     },
     {
       "id": "attribution_marketing",
@@ -1264,7 +1269,7 @@
         "3→4": "Définissez la stratégie de mesure marketing complète. Optimisez l'allocation budgétaire data-driven."
       },
       "category": "analytics",
-      "category_name": "Product Analytics"
+      "category_name": "Analytics"
     },
     {
       "id": "tracking_design",
@@ -1386,7 +1391,7 @@
         "3→4": "Implémentez des data contracts avec les équipes produit. Automatisez la validation du tracking."
       },
       "category": "analytics",
-      "category_name": "Product Analytics"
+      "category_name": "Analytics"
     },
     {
       "id": "metabase",
@@ -1507,15 +1512,14 @@
         "3→4": "Optimisez les performances des questions lentes. Mettez en place les bonnes pratiques de cache."
       },
       "category": "analytics",
-      "category_name": "Visualisation"
+      "category_name": "Analytics"
     },
     {
       "id": "looker",
-      "name": "Looker/LookML",
-      "description": "Utiliser Looker et écrire du LookML pour la modélisation BI",
+      "name": "Looker",
+      "description": "Utiliser Looker pour l'exploration de données et les dashboards BI",
       "core_roles": [
-        "data_analyst",
-        "analytics_eng"
+        "data_analyst"
       ],
       "levels": {
         "data_analyst": [
@@ -1525,43 +1529,43 @@
           4
         ],
         "data_engineer": [
-          1,
-          1,
-          2,
-          3
+          "NC",
+          "NC",
+          "NC",
+          "NC"
         ],
         "data_scientist": [
-          1,
-          1,
-          2,
-          3
+          "NC",
+          "NC",
+          "NC",
+          "NC"
         ],
         "analytics_eng": [
-          1,
-          2,
-          3,
-          4
+          "NC",
+          "NC",
+          "NC",
+          "NC"
         ],
         "ml_engineer": [
           "NC",
           "NC",
-          1,
-          2
+          "NC",
+          "NC"
         ],
         "backend": [
           "NC",
           "NC",
           "NC",
-          1
+          "NC"
         ]
       },
       "level_descriptions": {
         "0": "Aucune connaissance Looker",
         "1": "Peut utiliser les Explores et dashboards existants",
-        "2": "Peut créer des Looks, dashboards, comprend les bases LookML",
-        "3": "Peut écrire du LookML, concevoir des modèles de données",
-        "4": "Expert en architecture Looker et LookML",
-        "5": "Architecte Looker, certifié LookML Developer",
+        "2": "Peut créer des Looks et dashboards personnalisés",
+        "3": "Conçoit des dashboards complexes, maîtrise les Explores avancés",
+        "4": "Expert Looker, optimise les performances et forme les utilisateurs",
+        "5": "Référent Looker de l'organisation",
         "6": "Expert Looker reconnu, speaker Looker events"
       },
       "behavioral_indicators": {
@@ -1573,32 +1577,27 @@
         "2": [
           "Je crée des Looks avec dimensions et mesures",
           "J'assemble des dashboards avec des tiles",
-          "Je comprends la notion de dimension vs measure",
-          "Je sais lire du LookML basique"
+          "Je comprends la notion de dimension vs measure"
         ],
         "3": [
-          "J'écris des views LookML avec dimensions et measures",
-          "Je définis des joins entre tables",
-          "Je crée des explores personnalisés",
+          "Je crée des explores personnalisés avec filtres avancés",
+          "Je conçois des dashboards interactifs avec drill-down",
           "J'utilise les derived tables pour les cas complexes"
         ],
         "4": [
-          "Je conçois l'architecture LookML complète d'un domaine",
           "J'optimise les performances des explores",
-          "Je suis certifié LookML Developer",
-          "Je forme les analystes à utiliser Looker efficacement"
+          "Je forme les analystes à utiliser Looker efficacement",
+          "J'administre et configure l'instance Looker"
         ],
         "5": [
-          "Je suis le référent Looker/LookML de l'organisation",
-          "J'ai défini les standards et bonnes pratiques LookML pour l'entreprise",
-          "Je forme et mentor les équipes sur Looker",
-          "J'ai créé des modèles LookML réutilisables et documentés"
+          "Je suis le référent Looker de l'organisation",
+          "J'ai défini les standards et bonnes pratiques Looker pour l'entreprise",
+          "Je forme et mentor les équipes sur Looker"
         ],
         "6": [
           "Je contribue à la communauté Looker (forums, plugins)",
           "J'ai présenté sur Looker à des conférences externes ou Google events",
-          "Je suis reconnu comme expert Looker en dehors de l'entreprise",
-          "J'ai publié des articles ou cas d'études sur Looker/LookML"
+          "Je suis reconnu comme expert Looker en dehors de l'entreprise"
         ]
       },
       "resources": [
@@ -1613,11 +1612,6 @@
           "type": "course"
         },
         {
-          "url": "https://looker.com/blog/best-practices-lookml",
-          "title": "LookML Best Practices",
-          "type": "documentation"
-        },
-        {
           "url": "https://www.youtube.com/playlist?list=PL6nfYkMvvs4l7r_6JYdH0fwvw8bsKPzDl",
           "title": "Looker YouTube Tutorials",
           "type": "video"
@@ -1625,11 +1619,11 @@
       ],
       "improvement_tips": {
         "1→2": "Créez des Looks et dashboards pour votre équipe. Explorez les différentes visualisations disponibles.",
-        "2→3": "Apprenez LookML en créant une view simple. Comprenez les dimensions, measures et joins.",
-        "3→4": "Concevez l'architecture LookML d'un domaine métier complet. Passez la certification LookML Developer."
+        "2→3": "Maîtrisez les filtres avancés et le drill-down. Créez des dashboards interactifs.",
+        "3→4": "Optimisez les performances des explores. Formez les utilisateurs et définissez les bonnes pratiques."
       },
       "category": "analytics",
-      "category_name": "Visualisation"
+      "category_name": "Analytics"
     },
     {
       "id": "dashboard_design",
@@ -1750,12 +1744,12 @@
         "3→4": "Développez un style guide de dataviz pour votre organisation. Formez les équipes aux bonnes pratiques."
       },
       "category": "analytics",
-      "category_name": "Visualisation"
+      "category_name": "Analytics"
     },
     {
       "id": "pass_culture_knowledge",
       "name": "Connaissance Pass Culture",
-      "description": "Comprendre le dispositif Pass Culture: crédit jeunes 15-20 ans, parcours utilisateur, catalogue d'offres, objectifs de diversification culturelle",
+      "description": "Comprendre le dispositif Pass Culture (crédit jeunes 15-20 ans, parcours utilisateur, catalogue d'offres, objectifs de diversification culturelle) et les domaines culturels (Livres, Cinéma, Musique, Spectacle vivant, Musées/Patrimoine, Festivals, Pratiques artistiques)",
       "core_roles": [
         "data_analyst",
         "data_scientist",
@@ -1801,48 +1795,48 @@
       },
       "level_descriptions": {
         "0": "Aucune connaissance du Pass Culture",
-        "1": "Comprend le dispositif (crédit jeunes 15-20 ans, objectifs de démocratisation culturelle)",
-        "2": "Maîtrise les entités métier (offres, réservations, lieux, utilisateurs, acteurs culturels)",
-        "3": "Expert des parcours utilisateurs, mécaniques de crédit et cycle de vie bénéficiaire",
-        "4": "Référent métier, analyse les cohortes et mesure l'impact du dispositif",
-        "5": "Expert domaine, influence la stratégie produit et les politiques publiques",
-        "6": "Reconnu comme expert Pass Culture en externe, publications institutionnelles"
+        "1": "Comprend le dispositif (crédit jeunes 15-20 ans, objectifs de démocratisation) et les grandes catégories d'offres culturelles (livres, cinéma, musique, spectacle vivant, musées)",
+        "2": "Maîtrise les entités métier (offres, réservations, lieux, utilisateurs) et les spécificités de chaque domaine culturel (poids dans les réservations, offres physiques vs numériques)",
+        "3": "Expert des parcours utilisateurs, mécaniques de crédit, et des tendances de consommation par domaine culturel et par cohorte",
+        "4": "Référent métier, analyse les cohortes, mesure l'impact du dispositif et identifie les leviers de diversification par domaine",
+        "5": "Expert domaine, influence la stratégie produit, les politiques publiques et la stratégie d'enrichissement du catalogue",
+        "6": "Reconnu comme expert Pass Culture en externe, publications institutionnelles et études sectorielles"
       },
       "behavioral_indicators": {
         "1": [
-          "Je comprends les objectifs du Pass Culture",
-          "Je connais les tranches d'âge et les montants de crédit",
-          "Je sais ce qu'est une offre et une réservation"
+          "Je comprends les objectifs du Pass Culture et la démocratisation culturelle",
+          "Je connais les tranches d'âge, les montants de crédit et les grandes catégories d'offres",
+          "Je sais ce qu'est une offre, une réservation, et la différence entre offres physiques et numériques"
         ],
         "2": [
-          "Je maîtrise le modèle de données Pass Culture",
-          "Je comprends les différents types d'offres et de lieux",
-          "Je connais le parcours utilisateur de A à Z",
-          "Je sais calculer les KPIs principaux"
+          "Je maîtrise le modèle de données Pass Culture et les KPIs principaux",
+          "Je comprends les différents types d'offres, de lieux et les spécificités de chaque domaine culturel",
+          "Je connais le parcours utilisateur de A à Z et la répartition des réservations par domaine",
+          "Je sais quels domaines sont surreprésentés ou sous-représentés dans les réservations"
         ],
         "3": [
-          "J'analyse les cohortes de bénéficiaires",
-          "Je comprends les mécaniques de crédit par âge",
-          "J'identifie les leviers de diversification culturelle",
-          "Je connais l'écosystème des acteurs culturels"
+          "J'analyse les cohortes de bénéficiaires et l'évolution de la consommation par domaine",
+          "Je comprends les mécaniques de crédit par âge et les facteurs de diversification",
+          "J'identifie les tendances émergentes par domaine culturel et les leviers de diversification",
+          "Je connais l'écosystème des acteurs culturels et leurs enjeux sectoriels"
         ],
         "4": [
-          "Je suis référent métier pour les équipes data",
-          "Je mesure l'impact du dispositif",
-          "Je contribue aux rapports institutionnels",
-          "Je forme les nouveaux arrivants au métier"
+          "Je suis référent métier pour les équipes data sur le dispositif et les domaines culturels",
+          "Je mesure l'impact du dispositif et contribue aux rapports institutionnels",
+          "Je contribue aux stratégies d'enrichissement du catalogue par domaine",
+          "Je forme les nouveaux arrivants au métier et aux spécificités des domaines culturels"
         ],
         "5": [
-          "Je définis les orientations stratégiques du produit data",
-          "Je suis consulté par la direction sur les sujets métier",
-          "Je contribue aux réflexions de politique publique",
-          "Je forme les équipes produit et direction aux enjeux métier"
+          "Je définis les orientations stratégiques du produit data et de l'offre culturelle",
+          "Je suis consulté par la direction sur les sujets métier et les partenariats sectoriels",
+          "Je contribue aux réflexions de politique publique et à la stratégie d'enrichissement",
+          "Je forme les équipes produit et direction aux enjeux métier et sectoriels"
         ],
         "6": [
-          "Je publie des études institutionnelles sur le Pass Culture",
+          "Je publie des études institutionnelles sur le Pass Culture et les pratiques culturelles",
           "Je suis sollicité par le ministère ou des institutions externes",
-          "Je donne des conférences sur le dispositif Pass Culture",
-          "Je suis reconnu comme expert de référence en externe"
+          "Je donne des conférences sur le dispositif Pass Culture et les politiques culturelles",
+          "Je suis reconnu comme expert de référence en externe sur le dispositif et les domaines culturels"
         ]
       },
       "resources": [
@@ -1868,134 +1862,12 @@
         }
       ],
       "improvement_tips": {
-        "1→2": "Explorez les données métier (offres, réservations). Comprenez le modèle de données.",
-        "2→3": "Analysez les parcours utilisateurs complets. Étudiez les cohortes sortantes.",
-        "3→4": "Contribuez aux études d'impact. Présentez les résultats aux parties prenantes institutionnelles."
+        "1→2": "Explorez les données métier (offres, réservations par domaine). Comprenez le modèle de données et la répartition par catégorie.",
+        "2→3": "Analysez les parcours utilisateurs et les tendances de consommation par cohorte et par domaine. Étudiez les facteurs de diversification.",
+        "3→4": "Contribuez aux études d'impact et aux stratégies de diversification par domaine. Présentez les résultats aux parties prenantes institutionnelles."
       },
       "category": "business",
-      "category_name": "Domaine Métier"
-    },
-    {
-      "id": "cultural_domains",
-      "name": "Domaines Culturels Pass Culture",
-      "description": "Connaître les catégories d'offres culturelles: Livres, Cinéma, Musique live, Spectacle vivant, Musées/Patrimoine, Festivals, Pratiques artistiques",
-      "core_roles": [
-        "data_analyst",
-        "analytics_eng"
-      ],
-      "levels": {
-        "data_analyst": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "data_engineer": [
-          "NC",
-          "NC",
-          1,
-          2
-        ],
-        "data_scientist": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "analytics_eng": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "ml_engineer": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "backend": [
-          "NC",
-          "NC",
-          1,
-          2
-        ]
-      },
-      "level_descriptions": {
-        "0": "Aucune connaissance des domaines culturels",
-        "1": "Connaît les grandes catégories (livres, cinéma, musique, spectacle vivant, musées)",
-        "2": "Comprend les spécificités de chaque domaine et leur poids dans les réservations",
-        "3": "Analyse les tendances de consommation par domaine et les évolutions entre cohortes",
-        "4": "Expert des dynamiques de chaque secteur, identifie les leviers de diversification",
-        "5": "Définit les stratégies d'enrichissement du catalogue par domaine",
-        "6": "Expert reconnu des politiques culturelles sectorielles"
-      },
-      "behavioral_indicators": {
-        "1": [
-          "Je connais les grandes catégories d'offres (livre, cinéma, musique...)",
-          "Je sais que le livre représente une part importante des réservations",
-          "Je comprends la différence entre offres physiques et numériques"
-        ],
-        "2": [
-          "J'analyse la répartition des réservations par domaine",
-          "Je comprends les spécificités de chaque secteur culturel",
-          "Je connais les sous-catégories détaillées",
-          "Je sais quels domaines sont surreprésentés ou sous-représentés"
-        ],
-        "3": [
-          "J'analyse l'évolution de la consommation par cohorte",
-          "J'identifie les tendances émergentes par domaine",
-          "Je comprends les facteurs de diversification",
-          "Je propose des actions pour équilibrer les domaines"
-        ],
-        "4": [
-          "Je suis expert d'un ou plusieurs domaines culturels",
-          "Je connais les acteurs clés de chaque secteur",
-          "Je contribue aux stratégies d'enrichissement du catalogue",
-          "Je forme les équipes aux spécificités de chaque domaine"
-        ],
-        "5": [
-          "Je définis la stratégie d'enrichissement du catalogue",
-          "Je suis référent pour les partenariats sectoriels",
-          "Je forme les équipes produit aux enjeux de chaque domaine",
-          "Je contribue aux décisions stratégiques sur l'offre culturelle"
-        ],
-        "6": [
-          "Je suis reconnu comme expert des politiques culturelles",
-          "Je publie des études sur les pratiques culturelles par secteur",
-          "Je suis sollicité par des institutions culturelles externes",
-          "Je donne des conférences sur les enjeux sectoriels culturels"
-        ]
-      },
-      "resources": [
-        {
-          "url": "https://www.culture.gouv.fr/Thematiques",
-          "title": "Ministère de la Culture - Thématiques",
-          "type": "documentation"
-        },
-        {
-          "url": "https://www.observatoire-culture.net/",
-          "title": "Observatoire des politiques culturelles",
-          "type": "documentation"
-        },
-        {
-          "url": "https://www.deps.fr/",
-          "title": "DEPS - Études et statistiques culturelles",
-          "type": "documentation"
-        },
-        {
-          "url": "https://www.culturecommunication.gouv.fr/Etudes-et-statistiques",
-          "title": "Études culturelles officielles",
-          "type": "documentation"
-        }
-      ],
-      "improvement_tips": {
-        "1→2": "Analysez la répartition des réservations par catégorie. Comprenez les spécificités de chaque domaine.",
-        "2→3": "Étudiez les tendances de consommation par cohorte. Identifiez les facteurs de diversification.",
-        "3→4": "Devenez expert d'un domaine spécifique. Contribuez aux stratégies de diversification."
-      },
-      "category": "business",
-      "category_name": "Domaine Métier"
+      "category_name": "Business"
     },
     {
       "id": "cultural_recommendation",
@@ -2117,7 +1989,7 @@
         "3→4": "Publiez vos recherches. Contribuez aux discussions académiques sur la recommandation culturelle."
       },
       "category": "business",
-      "category_name": "Domaine Métier"
+      "category_name": "Business"
     },
     {
       "id": "cultural_ecosystem",
@@ -2238,7 +2110,7 @@
         "3→4": "Contribuez aux discussions avec les partenaires institutionnels. Publiez des analyses sectorielles."
       },
       "category": "business",
-      "category_name": "Domaine Métier"
+      "category_name": "Business"
     },
     {
       "id": "cultural_impact_measurement",
@@ -2360,740 +2232,7 @@
         "3→4": "Menez une étude d'impact de bout en bout. Présentez aux instances institutionnelles."
       },
       "category": "business",
-      "category_name": "Domaine Métier"
-    },
-    {
-      "id": "technical_communication",
-      "name": "Communication Technique",
-      "description": "Communiquer efficacement les insights data et les concepts techniques",
-      "core_roles": [
-        "data_analyst",
-        "data_scientist"
-      ],
-      "levels": {
-        "data_analyst": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "data_engineer": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "data_scientist": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "analytics_eng": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "ml_engineer": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "backend": [
-          1,
-          2,
-          3,
-          4
-        ]
-      },
-      "level_descriptions": {
-        "0": "Communication technique faible",
-        "1": "Peut expliquer des concepts basiques à une audience technique",
-        "2": "Présente clairement les insights à des audiences mixtes",
-        "3": "Crée des data stories compelling, influence les décisions",
-        "4": "Expert communicateur, drive le changement organisationnel",
-        "5": "Référent communication de l'organisation",
-        "6": "Speaker reconnu, formateur externe"
-      },
-      "behavioral_indicators": {
-        "1": [
-          "Je peux expliquer mon travail à mes collègues techniques",
-          "Je documente mes analyses avec des commentaires clairs",
-          "Je sais présenter mes résultats en réunion d'équipe"
-        ],
-        "2": [
-          "J'adapte mon discours à mon audience (tech vs business)",
-          "Mes présentations sont comprises par les non-techniques",
-          "Je reçois du feedback positif sur la clarté de mes explications",
-          "Je sais synthétiser une analyse complexe en points clés"
-        ],
-        "3": [
-          "J'ai influencé une décision business avec mes insights",
-          "Je crée des data stories avec un fil conducteur",
-          "Je suis sollicité pour présenter les résultats importants",
-          "J'ai formé d'autres personnes à la communication data"
-        ],
-        "4": [
-          "Je présente régulièrement au COMEX ou équivalent",
-          "Je suis reconnu comme un excellent communicateur",
-          "J'ai créé des templates de communication pour l'équipe",
-          "Je drive le changement organisationnel par les données"
-        ],
-        "5": [
-          "Je définis les standards de communication data de l'organisation",
-          "Je forme les équipes à la communication technique",
-          "Je suis le référent pour les présentations stratégiques",
-          "J'ai créé un programme de formation à la communication data"
-        ],
-        "6": [
-          "Je donne des conférences externes sur la communication data",
-          "Je suis sollicité comme formateur externe par d'autres entreprises",
-          "J'ai publié des articles ou livres sur la communication technique",
-          "Je suis reconnu comme expert communication data dans l'industrie"
-        ]
-      },
-      "resources": [
-        {
-          "url": "https://www.storytellingwithdata.com/",
-          "title": "Storytelling with Data",
-          "type": "book"
-        },
-        {
-          "url": "https://www.ted.com/talks",
-          "title": "TED Talks",
-          "type": "video"
-        },
-        {
-          "url": "https://www.coursera.org/learn/data-visualization",
-          "title": "Data Visualization and Communication",
-          "type": "course"
-        },
-        {
-          "url": "https://hbr.org/2013/09/make-data-come-alive",
-          "title": "HBR - Make Data Come Alive",
-          "type": "documentation"
-        }
-      ],
-      "improvement_tips": {
-        "1→2": "Présentez régulièrement vos analyses à l'équipe. Demandez du feedback.",
-        "2→3": "Créez une data story avec un fil conducteur clair. Influencez une décision business.",
-        "3→4": "Présentez au COMEX ou équivalent. Formez les autres à la communication data."
-      },
-      "category": "business",
-      "category_name": "Soft Skills"
-    },
-    {
-      "id": "problem_solving",
-      "name": "Résolution de Problèmes",
-      "description": "Approcher les problèmes complexes de manière systématique",
-      "core_roles": [
-        "data_analyst",
-        "data_engineer",
-        "data_scientist",
-        "analytics_eng",
-        "ml_engineer",
-        "backend"
-      ],
-      "levels": {
-        "data_analyst": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "data_engineer": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "data_scientist": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "analytics_eng": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "ml_engineer": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "backend": [
-          1,
-          2,
-          3,
-          4
-        ]
-      },
-      "level_descriptions": {
-        "0": "Ne peut pas structurer les problèmes",
-        "1": "Peut décomposer des problèmes simples",
-        "2": "Approche les problèmes complexes systématiquement",
-        "3": "Résout des problèmes ambigus, crée des frameworks",
-        "4": "Expert problem solver, guide les décisions stratégiques",
-        "5": "Référent résolution de problèmes de l'organisation",
-        "6": "Expert reconnu, consultant externe"
-      },
-      "behavioral_indicators": {
-        "1": [
-          "Je décompose un problème en sous-problèmes",
-          "Je cherche des solutions similaires avant de réinventer",
-          "Je sais poser les bonnes questions pour clarifier un problème"
-        ],
-        "2": [
-          "J'utilise une approche structurée (5 whys, issue trees)",
-          "Je documente mes hypothèses et les valide",
-          "Je priorise les problèmes par impact et urgence",
-          "Je sais quand demander de l'aide vs persévérer seul"
-        ],
-        "3": [
-          "Je crée des frameworks réutilisables pour résoudre des classes de problèmes",
-          "Je gère l'ambiguïté et avance malgré l'incertitude",
-          "J'ai résolu des problèmes impliquant plusieurs équipes",
-          "Je challenge les hypothèses implicites"
-        ],
-        "4": [
-          "Je guide des décisions stratégiques par la résolution de problèmes",
-          "Je forme les autres à structurer leurs problèmes",
-          "Je suis sollicité pour les problèmes complexes de l'organisation",
-          "Je transforme les problèmes en opportunités"
-        ],
-        "5": [
-          "Je définis la méthodologie de résolution de problèmes de l'organisation",
-          "Je forme les managers et leads à la résolution de problèmes",
-          "Je suis le référent pour les problèmes stratégiques cross-équipes",
-          "J'ai institutionnalisé des pratiques de problem solving"
-        ],
-        "6": [
-          "Je suis consultant externe en résolution de problèmes",
-          "Je donne des conférences sur les méthodologies de problem solving",
-          "J'ai publié des articles ou livres sur la résolution de problèmes",
-          "Je suis reconnu comme expert problem solving dans l'industrie"
-        ]
-      },
-      "resources": [
-        {
-          "url": "https://www.coursera.org/learn/problem-solving",
-          "title": "Problem Solving Skills (Coursera)",
-          "type": "course"
-        },
-        {
-          "url": "https://www.mindtools.com/pages/main/newMN_TMC.htm",
-          "title": "Mind Tools - Problem Solving",
-          "type": "documentation"
-        },
-        {
-          "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-problem-with-problem-solving",
-          "title": "McKinsey - Problem Solving",
-          "type": "documentation"
-        },
-        {
-          "url": "https://bulletproofproblemsolving.com/",
-          "title": "Bulletproof Problem Solving",
-          "type": "book"
-        }
-      ],
-      "improvement_tips": {
-        "1→2": "Utilisez une approche structurée (5 whys, issue trees). Documentez votre processus.",
-        "2→3": "Créez des frameworks réutilisables. Résolvez un problème cross-équipes.",
-        "3→4": "Guidez des décisions stratégiques. Formez les autres à la résolution de problèmes."
-      },
-      "category": "business",
-      "category_name": "Soft Skills"
-    },
-    {
-      "id": "stakeholder_management",
-      "name": "Gestion des Stakeholders",
-      "description": "Travailler efficacement avec les stakeholders (product, business, tech)",
-      "core_roles": [
-        "data_analyst",
-        "analytics_eng"
-      ],
-      "levels": {
-        "data_analyst": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "data_engineer": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "data_scientist": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "analytics_eng": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "ml_engineer": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "backend": [
-          1,
-          1,
-          2,
-          3
-        ]
-      },
-      "level_descriptions": {
-        "0": "Ne peut pas gérer les stakeholders",
-        "1": "Travaille avec les stakeholders directs",
-        "2": "Gère plusieurs stakeholders, gère les conflits",
-        "3": "Influence les stakeholders seniors, drive l'alignement",
-        "4": "Expert en gestion des stakeholders",
-        "5": "Référent relations inter-équipes de l'organisation",
-        "6": "Expert influence reconnu"
-      },
-      "behavioral_indicators": {
-        "1": [
-          "Je communique régulièrement avec mon PM/manager direct",
-          "Je comprends les besoins de mes stakeholders directs",
-          "Je livre mes résultats dans les délais attendus"
-        ],
-        "2": [
-          "Je gère plusieurs stakeholders avec des besoins différents",
-          "J'ai priorisé des demandes conflictuelles avec succès",
-          "Je communique proactivement les blocages et retards",
-          "Je sais dire non de manière constructive"
-        ],
-        "3": [
-          "J'influence les décisions au niveau senior",
-          "Je suis sollicité pour des sujets stratégiques",
-          "J'ai aligné des priorités divergentes entre équipes",
-          "Je suis reconnu comme un partenaire de confiance"
-        ],
-        "4": [
-          "Je suis le point de contact data pour plusieurs équipes",
-          "Je forme les autres à la gestion des stakeholders",
-          "J'ai établi des rituels de communication efficaces",
-          "Je gère les escalades de manière constructive"
-        ],
-        "5": [
-          "Je définis les processus de collaboration inter-équipes",
-          "Je forme les managers à la gestion des stakeholders",
-          "Je suis médiateur pour les conflits inter-équipes",
-          "J'ai créé des frameworks de priorisation organisationnels"
-        ],
-        "6": [
-          "Je suis consultant externe en gestion des stakeholders",
-          "Je donne des formations externes sur l'influence et la négociation",
-          "J'ai publié sur les techniques de stakeholder management",
-          "Je suis reconnu comme expert en influence dans l'industrie"
-        ]
-      },
-      "resources": [
-        {
-          "url": "https://www.pmi.org/learning/library/stakeholder-management-task-project-success-7736",
-          "title": "PMI Stakeholder Management",
-          "type": "documentation"
-        },
-        {
-          "url": "https://www.coursera.org/learn/stakeholder-management",
-          "title": "Stakeholder Management (Coursera)",
-          "type": "course"
-        },
-        {
-          "url": "https://hbr.org/2014/03/manage-your-stakeholders",
-          "title": "HBR - Manage Your Stakeholders",
-          "type": "documentation"
-        },
-        {
-          "url": "https://www.mindtools.com/pages/article/newPPM_07.htm",
-          "title": "Stakeholder Analysis",
-          "type": "documentation"
-        }
-      ],
-      "improvement_tips": {
-        "1→2": "Identifiez tous vos stakeholders et leurs attentes. Communiquez régulièrement.",
-        "2→3": "Gérez un conflit entre stakeholders. Alignez des priorités divergentes.",
-        "3→4": "Influencez les décisions au niveau senior. Devenez un point de contact clé."
-      },
-      "category": "business",
-      "category_name": "Soft Skills"
-    },
-    {
-      "id": "mentoring_leadership",
-      "name": "Mentorat & Leadership",
-      "description": "Accompagner et faire grandir les membres de l'équipe",
-      "core_roles": [],
-      "levels": {
-        "data_analyst": [
-          "NC",
-          1,
-          2,
-          3
-        ],
-        "data_engineer": [
-          "NC",
-          1,
-          2,
-          3
-        ],
-        "data_scientist": [
-          "NC",
-          1,
-          2,
-          3
-        ],
-        "analytics_eng": [
-          "NC",
-          1,
-          2,
-          3
-        ],
-        "ml_engineer": [
-          "NC",
-          1,
-          2,
-          3
-        ],
-        "backend": [
-          "NC",
-          1,
-          2,
-          3
-        ]
-      },
-      "level_descriptions": {
-        "0": "Pas de compétence en mentorat",
-        "1": "Peut aider ponctuellement un collègue sur un sujet maîtrisé",
-        "2": "Mentor régulier, fait des code reviews constructives",
-        "3": "Accompagne la montée en compétence de plusieurs personnes",
-        "4": "Leader reconnu, développe les talents de l'équipe",
-        "5": "Définit le programme de mentorat de l'organisation",
-        "6": "Coach/mentor reconnu externement"
-      },
-      "behavioral_indicators": {
-        "1": [
-          "J'aide mes collègues quand ils ont des questions",
-          "Je partage des ressources utiles avec l'équipe",
-          "Je peux expliquer un sujet que je maîtrise"
-        ],
-        "2": [
-          "Je fais des code reviews constructives régulièrement",
-          "J'ai mentoré au moins une personne sur un sujet spécifique",
-          "Je donne du feedback actionnable et bienveillant",
-          "J'organise des sessions de pair programming"
-        ],
-        "3": [
-          "Je suis le mentor officiel d'un ou plusieurs juniors",
-          "J'organise des sessions de partage de connaissances",
-          "J'ai accompagné quelqu'un dans sa montée en compétence",
-          "Je crée de la documentation pour faciliter l'onboarding"
-        ],
-        "4": [
-          "Je développe un programme de mentorat structuré",
-          "Je suis reconnu comme un leader technique",
-          "J'ai aidé plusieurs personnes à progresser significativement",
-          "Je contribue aux décisions de promotion et évaluation"
-        ],
-        "5": [
-          "Je définis le programme de mentorat de l'organisation",
-          "Je forme les mentors et managers au coaching",
-          "Je mesure l'efficacité du programme de mentorat",
-          "J'ai créé des parcours de développement de carrière"
-        ],
-        "6": [
-          "Je suis coach ou mentor externe pour d'autres entreprises",
-          "Je donne des conférences sur le leadership et le mentorat",
-          "J'ai publié sur les techniques de coaching et développement",
-          "Je suis reconnu comme expert en leadership dans l'industrie"
-        ]
-      },
-      "resources": [
-        {
-          "url": "https://www.coursera.org/learn/leadership-and-emotional-intelligence",
-          "title": "Leadership and Emotional Intelligence",
-          "type": "course"
-        },
-        {
-          "url": "https://hbr.org/2015/12/everyone-deserves-a-great-manager",
-          "title": "HBR - Great Manager",
-          "type": "documentation"
-        },
-        {
-          "url": "https://www.amazon.com/Radical-Candor-Revised-Kick-Ass-Humanity/dp/1250235375",
-          "title": "Radical Candor",
-          "type": "book"
-        },
-        {
-          "url": "https://www.atlassian.com/team-playbook/plays/retrospective",
-          "title": "Atlassian Retrospectives",
-          "type": "documentation"
-        }
-      ],
-      "improvement_tips": {
-        "1→2": "Mentorez un junior sur un sujet spécifique. Faites des code reviews constructives.",
-        "2→3": "Accompagnez plusieurs personnes dans leur développement. Organisez des sessions de partage.",
-        "3→4": "Développez un programme de mentorat. Mesurez la progression de vos mentorés."
-      },
-      "category": "business",
-      "category_name": "Soft Skills"
-    },
-    {
-      "id": "presentation_vulgarization",
-      "name": "Présentation & Vulgarisation",
-      "description": "Présenter des sujets techniques de manière accessible",
-      "core_roles": [
-        "data_analyst",
-        "data_scientist"
-      ],
-      "levels": {
-        "data_analyst": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "data_engineer": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "data_scientist": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "analytics_eng": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "ml_engineer": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "backend": [
-          1,
-          1,
-          2,
-          3
-        ]
-      },
-      "level_descriptions": {
-        "0": "Ne peut pas présenter efficacement",
-        "1": "Peut présenter à une petite audience technique",
-        "2": "Présente clairement à des audiences non-techniques",
-        "3": "Excellent présentateur, vulgarise des concepts complexes",
-        "4": "Speaker reconnu, peut présenter en externe",
-        "5": "Speaker régulier en conférences",
-        "6": "Keynote speaker, formateur reconnu"
-      },
-      "behavioral_indicators": {
-        "1": [
-          "Je présente mes travaux en réunion d'équipe",
-          "Je peux expliquer mon travail à mes collègues",
-          "Je prépare des slides basiques pour mes présentations"
-        ],
-        "2": [
-          "Je présente à des audiences non-techniques avec succès",
-          "J'utilise des analogies pour expliquer des concepts complexes",
-          "Je reçois du feedback positif sur mes présentations",
-          "Je crée des visuels clairs et impactants"
-        ],
-        "3": [
-          "J'ai présenté dans un brown bag ou meetup interne",
-          "Je vulgarise des concepts complexes avec aisance",
-          "Je suis sollicité pour présenter les sujets importants",
-          "J'ai formé d'autres personnes à la présentation"
-        ],
-        "4": [
-          "J'ai présenté dans une conférence externe",
-          "Je suis reconnu comme un excellent présentateur",
-          "J'ai créé des templates de présentation pour l'équipe",
-          "Je forme les autres à la vulgarisation technique"
-        ],
-        "5": [
-          "Je suis speaker régulier dans des conférences tech",
-          "Je définis les standards de présentation de l'organisation",
-          "Je coache les speakers avant les présentations importantes",
-          "J'organise des sessions de formation à la prise de parole"
-        ],
-        "6": [
-          "Je suis keynote speaker dans des conférences majeures",
-          "Je suis formateur externe en prise de parole publique",
-          "J'ai publié des contenus reconnus sur la vulgarisation",
-          "Je suis sollicité comme expert pour des événements externes"
-        ]
-      },
-      "resources": [
-        {
-          "url": "https://www.ted.com/talks/chris_anderson_ted_s_secret_to_great_public_speaking",
-          "title": "TED - Secret to Great Speaking",
-          "type": "video"
-        },
-        {
-          "url": "https://www.toastmasters.org/",
-          "title": "Toastmasters",
-          "type": "course"
-        },
-        {
-          "url": "https://www.presentationzen.com/",
-          "title": "Presentation Zen",
-          "type": "book"
-        },
-        {
-          "url": "https://www.coursera.org/learn/public-speaking",
-          "title": "Public Speaking (Coursera)",
-          "type": "course"
-        }
-      ],
-      "improvement_tips": {
-        "1→2": "Présentez un sujet technique à une audience non-technique. Demandez du feedback.",
-        "2→3": "Présentez dans un meetup ou brown bag interne. Créez des supports visuels impactants.",
-        "3→4": "Proposez un talk à une conférence. Formez les autres à la présentation."
-      },
-      "category": "business",
-      "category_name": "Soft Skills"
-    },
-    {
-      "id": "project_management",
-      "name": "Gestion de Projet Data",
-      "description": "Piloter un projet data de bout en bout",
-      "core_roles": [
-        "data_analyst",
-        "analytics_eng"
-      ],
-      "levels": {
-        "data_analyst": [
-          "NC",
-          1,
-          2,
-          3
-        ],
-        "data_engineer": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "data_scientist": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "analytics_eng": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "ml_engineer": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "backend": [
-          1,
-          1,
-          2,
-          3
-        ]
-      },
-      "level_descriptions": {
-        "0": "Aucune expérience en gestion de projet",
-        "1": "Peut gérer ses propres tâches, respecte les deadlines",
-        "2": "Peut piloter un petit projet data avec quelques dépendances",
-        "3": "Gère des projets complexes multi-équipes",
-        "4": "Expert en gestion de projet, méthodologies adaptées au data",
-        "5": "Définit les méthodologies projet de l'organisation",
-        "6": "Expert gestion de projet (conférences, formateur)"
-      },
-      "behavioral_indicators": {
-        "1": [
-          "Je gère mes tâches dans un outil (Jira, Linear, etc.)",
-          "Je respecte les deadlines communiquées",
-          "Je sais estimer le temps nécessaire pour mes tâches"
-        ],
-        "2": [
-          "J'ai piloté un projet data de bout en bout",
-          "Je découpe un projet en tâches avec des livrables clairs",
-          "Je communique l'avancement régulièrement aux stakeholders",
-          "Je gère les risques et les blocages proactivement"
-        ],
-        "3": [
-          "Je gère des projets avec des dépendances multi-équipes",
-          "J'ai livré des projets impliquant 3+ personnes",
-          "Je coordonne les travaux entre équipes",
-          "J'ai géré un projet avec des contraintes fortes"
-        ],
-        "4": [
-          "J'ai défini une méthodologie de gestion de projet data",
-          "Je forme les autres à la gestion de projet",
-          "Je suis sollicité pour les projets complexes",
-          "J'ai un track record de projets livrés avec succès"
-        ],
-        "5": [
-          "Je définis les méthodologies projet de l'organisation",
-          "Je forme les chefs de projet et tech leads",
-          "Je suis référent pour les projets stratégiques",
-          "J'ai mis en place des outils et processus projet"
-        ],
-        "6": [
-          "Je suis consultant externe en gestion de projet data",
-          "Je donne des conférences sur la gestion de projet",
-          "J'ai publié sur les méthodologies de projet data",
-          "Je suis certifié et reconnu comme expert (PMP, etc.)"
-        ]
-      },
-      "resources": [
-        {
-          "url": "https://www.coursera.org/learn/project-management-foundations",
-          "title": "Project Management Foundations",
-          "type": "course"
-        },
-        {
-          "url": "https://www.atlassian.com/agile/project-management",
-          "title": "Atlassian Agile Project Management",
-          "type": "documentation"
-        },
-        {
-          "url": "https://www.pmi.org/learning/library",
-          "title": "PMI Learning Library",
-          "type": "documentation"
-        },
-        {
-          "url": "https://asana.com/resources/project-management-basics",
-          "title": "Project Management Basics",
-          "type": "documentation"
-        }
-      ],
-      "improvement_tips": {
-        "1→2": "Pilotez un petit projet data avec des livrables clairs. Utilisez un outil de suivi.",
-        "2→3": "Gérez un projet avec plusieurs dépendances. Communiquez régulièrement sur l'avancement.",
-        "3→4": "Définissez une méthodologie de gestion de projet data. Formez les équipes."
-      },
-      "category": "business",
-      "category_name": "Soft Skills"
+      "category_name": "Business"
     },
     {
       "id": "rgpd",
@@ -3215,7 +2354,7 @@
         "3→4": "Devenez référent RGPD de l'équipe. Formez les autres aux bonnes pratiques."
       },
       "category": "compliance",
-      "category_name": "Sécurité & Conformité"
+      "category_name": "Compliance"
     },
     {
       "id": "data_security",
@@ -3337,7 +2476,7 @@
         "3→4": "Concevez l'architecture de sécurité data. Passez une certification sécurité."
       },
       "category": "compliance",
-      "category_name": "Sécurité & Conformité"
+      "category_name": "Compliance"
     },
     {
       "id": "data_preparation",
@@ -3460,7 +2599,7 @@
         "3→4": "Automatisez la validation de la qualité des données. Définissez les standards de l'équipe."
       },
       "category": "engineering",
-      "category_name": "Modélisation de Données"
+      "category_name": "Engineering"
     },
     {
       "id": "data_modeling",
@@ -3582,7 +2721,7 @@
         "3→4": "Concevez l'architecture data warehouse de l'organisation. Formez les équipes aux bonnes pratiques."
       },
       "category": "engineering",
-      "category_name": "Modélisation de Données"
+      "category_name": "Engineering"
     },
     {
       "id": "dbt",
@@ -3707,7 +2846,7 @@
         "3→4": "Mettez en place le CI/CD dbt. Contribuez à un package open-source. Présentez à Coalesce."
       },
       "category": "engineering",
-      "category_name": "Modélisation de Données"
+      "category_name": "Engineering"
     },
     {
       "id": "dbt_advanced",
@@ -3829,7 +2968,7 @@
         "3→4": "Créez une materialisation custom. Contribuez à dbt-utils ou créez votre propre package public."
       },
       "category": "engineering",
-      "category_name": "Modélisation de Données"
+      "category_name": "Engineering"
     },
     {
       "id": "data_mesh",
@@ -3951,7 +3090,7 @@
         "3→4": "Guidez la transformation Data Mesh de l'organisation. Partagez votre expérience en conférence."
       },
       "category": "engineering",
-      "category_name": "Modélisation de Données"
+      "category_name": "Engineering"
     },
     {
       "id": "medallion_architecture",
@@ -4073,7 +3212,7 @@
         "3→4": "Optimisez les performances et coûts par couche. Partagez vos patterns en interne."
       },
       "category": "engineering",
-      "category_name": "Modélisation de Données"
+      "category_name": "Engineering"
     },
     {
       "id": "gcp_fundamentals",
@@ -4196,7 +3335,7 @@
         "3→4": "Passez une certification GCP Professional. Optimisez les coûts d'un projet existant."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Infrastructure"
+      "category_name": "Engineering"
     },
     {
       "id": "bigquery_advanced",
@@ -4318,7 +3457,7 @@
         "3→4": "Explorez BigQuery ML et le streaming. Optimisez les coûts à l'échelle de l'organisation."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Infrastructure"
+      "category_name": "Engineering"
     },
     {
       "id": "kubernetes",
@@ -4441,7 +3580,7 @@
         "3→4": "Passez la certification CKA ou CKAD. Concevez une architecture K8s production-ready."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Infrastructure"
+      "category_name": "Engineering"
     },
     {
       "id": "vertex_ai",
@@ -4563,7 +3702,7 @@
         "3→4": "Implémentez un workflow MLOps complet. Passez la certification ML Engineer."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Infrastructure"
+      "category_name": "Engineering"
     },
     {
       "id": "clickhouse",
@@ -4684,7 +3823,7 @@
         "3→4": "Gérez un cluster ClickHouse en production. Contribuez aux meetups."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Infrastructure"
+      "category_name": "Engineering"
     },
     {
       "id": "airflow",
@@ -4810,7 +3949,7 @@
         "3→4": "Optimisez les performances d'Airflow à l'échelle. Contribuez aux discussions de la communauté."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Orchestration"
+      "category_name": "Engineering"
     },
     {
       "id": "airflow_custom_operators",
@@ -4931,7 +4070,7 @@
         "3→4": "Contribuez un provider à la communauté Apache Airflow. Partagez vos patterns en conférence."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Orchestration"
+      "category_name": "Engineering"
     },
     {
       "id": "python_data",
@@ -5060,7 +4199,7 @@
         "3→4": "Contribuez aux standards de code de l'équipe. Écrivez des packages Python internes documentés."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Programmation"
+      "category_name": "Engineering"
     },
     {
       "id": "python_backend",
@@ -5182,7 +4321,7 @@
         "3→4": "Concevez une architecture API complète. Implémentez le monitoring et les métriques de performance."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Programmation"
+      "category_name": "Engineering"
     },
     {
       "id": "rest_api_integration",
@@ -5304,7 +4443,7 @@
         "3→4": "Définissez les standards d'API de votre équipe. Implémentez une gateway API."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Programmation"
+      "category_name": "Engineering"
     },
     {
       "id": "etl_connectors",
@@ -5425,7 +4564,7 @@
         "3→4": "Contribuez à Airbyte ou Singer. Créez un framework de connecteurs réutilisable."
       },
       "category": "engineering",
-      "category_name": "Stack Data - Programmation"
+      "category_name": "Engineering"
     },
     {
       "id": "recommendation_systems",
@@ -6163,8 +5302,8 @@
       "name": "Entity Resolution & Linkage",
       "description": "Résoudre les entités et relier les données (déduplication, matching)",
       "core_roles": [
-        "ml_engineer",
-        "data_engineer"
+        "data_scientist",
+        "ml_engineer"
       ],
       "levels": {
         "data_analyst": [
@@ -7145,7 +6284,7 @@
         "3→4": "Concevez la stratégie data quality de l'organisation. Partagez en conférence."
       },
       "category": "ops",
-      "category_name": "Data Quality & Gouvernance"
+      "category_name": "Data Ops"
     },
     {
       "id": "data_contracts",
@@ -7267,7 +6406,7 @@
         "3→4": "Définissez le framework de data contracts de l'organisation. Évangélisez l'approche."
       },
       "category": "ops",
-      "category_name": "Data Quality & Gouvernance"
+      "category_name": "Data Ops"
     },
     {
       "id": "data_catalog_lineage",
@@ -7388,7 +6527,7 @@
         "3→4": "Concevez l'architecture du data catalog. Intégrez avec tous les outils de la stack."
       },
       "category": "ops",
-      "category_name": "Data Quality & Gouvernance"
+      "category_name": "Data Ops"
     },
     {
       "id": "cost_optimization",
@@ -7509,7 +6648,7 @@
         "3→4": "Définissez la stratégie FinOps de l'organisation. Passez la certification FinOps."
       },
       "category": "ops",
-      "category_name": "Optimisation & Performance"
+      "category_name": "Data Ops"
     },
     {
       "id": "query_performance",
@@ -7631,7 +6770,1121 @@
         "3→4": "Auditez les performances des pipelines de l'organisation. Formez les équipes."
       },
       "category": "ops",
-      "category_name": "Optimisation & Performance"
+      "category_name": "Data Ops"
+    },
+    {
+      "id": "technical_scoping",
+      "name": "Cadrage Technique",
+      "description": "Appréhender les enjeux techniques d'un projet, effectuer un découpage fonctionnel et évaluer la faisabilité et la complexité des solutions",
+      "core_roles": [
+        "data_analyst",
+        "data_scientist",
+        "analytics_eng",
+        "backend"
+      ],
+      "levels": {
+        "data_analyst": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "data_engineer": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "data_scientist": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "analytics_eng": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "ml_engineer": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "backend": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "level_descriptions": {
+        "0": "Aucune capacité de cadrage technique",
+        "1": "Comprend les enjeux techniques d'un projet simple et peut identifier les grandes étapes",
+        "2": "Découpe un projet en tâches fonctionnelles, estime la complexité et identifie les dépendances",
+        "3": "Cadre des projets complexes multi-équipes, anticipe les risques techniques et propose des alternatives",
+        "4": "Expert en cadrage, arbitre les choix d'architecture et guide la stratégie technique",
+        "5": "Définit les méthodologies de cadrage technique de l'organisation",
+        "6": "Référent cadrage reconnu en externe, consultant ou formateur"
+      },
+      "behavioral_indicators": {
+        "1": [
+          "Je comprends le besoin fonctionnel derrière une demande technique",
+          "Je sais identifier les grandes étapes d'un projet simple",
+          "Je pose des questions pour clarifier le périmètre d'un sujet"
+        ],
+        "2": [
+          "Je découpe un projet en tâches avec des livrables clairs",
+          "J'estime la complexité relative des tâches (S/M/L)",
+          "J'identifie les dépendances techniques entre composants",
+          "Je rédige des spécifications fonctionnelles pour mes tâches"
+        ],
+        "3": [
+          "Je cadre des projets impliquant plusieurs équipes",
+          "J'anticipe les risques techniques et propose des plans de mitigation",
+          "Je compare plusieurs approches techniques avec leurs trade-offs",
+          "Je produis des documents de cadrage structurés (ADR, RFC)"
+        ],
+        "4": [
+          "J'arbitre les choix d'architecture sur les projets complexes",
+          "Je guide la stratégie technique de l'équipe",
+          "Je forme les autres au cadrage et à l'estimation",
+          "Je suis sollicité pour les cadrages stratégiques de l'organisation"
+        ],
+        "5": [
+          "Je définis les méthodologies de cadrage technique de l'organisation",
+          "Je forme les tech leads au cadrage de projets complexes",
+          "Je suis référent pour les décisions d'architecture structurantes",
+          "J'ai mis en place des processus de cadrage reproductibles"
+        ],
+        "6": [
+          "Je suis consultant externe en cadrage et architecture technique",
+          "Je donne des conférences sur le cadrage et la planification technique",
+          "J'ai publié des articles sur les méthodologies de cadrage",
+          "Je suis reconnu comme expert en cadrage technique dans l'industrie"
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://www.atlassian.com/agile/project-management/estimation",
+          "title": "Atlassian - Estimation Agile",
+          "type": "documentation"
+        },
+        {
+          "url": "https://adr.github.io/",
+          "title": "Architecture Decision Records",
+          "type": "documentation"
+        },
+        {
+          "url": "https://www.coursera.org/learn/software-architecture",
+          "title": "Software Architecture (Coursera)",
+          "type": "course"
+        },
+        {
+          "url": "https://martinfowler.com/articles/writingPatterns.html",
+          "title": "Martin Fowler - Writing Patterns",
+          "type": "documentation"
+        }
+      ],
+      "improvement_tips": {
+        "1→2": "Découpez un projet en tâches avec des estimations. Rédigez vos premières spécifications fonctionnelles.",
+        "2→3": "Cadrez un projet multi-équipes. Rédigez un ADR ou RFC pour documenter vos choix techniques.",
+        "3→4": "Arbitrez les choix d'architecture sur un projet stratégique. Formez les juniors au cadrage."
+      },
+      "category": "soft_skills",
+      "category_name": "Soft Skills"
+    },
+    {
+      "id": "problem_solving",
+      "name": "Résolution de Problèmes",
+      "description": "Approcher les problèmes complexes de manière systématique",
+      "core_roles": [
+        "data_analyst",
+        "data_engineer",
+        "data_scientist",
+        "analytics_eng",
+        "ml_engineer",
+        "backend"
+      ],
+      "levels": {
+        "data_analyst": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "data_engineer": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "data_scientist": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "analytics_eng": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "ml_engineer": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "backend": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "level_descriptions": {
+        "0": "Ne peut pas structurer les problèmes",
+        "1": "Peut décomposer des problèmes simples",
+        "2": "Approche les problèmes complexes systématiquement",
+        "3": "Résout des problèmes ambigus, crée des frameworks",
+        "4": "Expert problem solver, guide les décisions stratégiques",
+        "5": "Référent résolution de problèmes de l'organisation",
+        "6": "Expert reconnu, consultant externe"
+      },
+      "behavioral_indicators": {
+        "1": [
+          "Je décompose un problème en sous-problèmes",
+          "Je cherche des solutions similaires avant de réinventer",
+          "Je sais poser les bonnes questions pour clarifier un problème"
+        ],
+        "2": [
+          "J'utilise une approche structurée (5 whys, issue trees)",
+          "Je documente mes hypothèses et les valide",
+          "Je priorise les problèmes par impact et urgence",
+          "Je sais quand demander de l'aide vs persévérer seul"
+        ],
+        "3": [
+          "Je crée des frameworks réutilisables pour résoudre des classes de problèmes",
+          "Je gère l'ambiguïté et avance malgré l'incertitude",
+          "J'ai résolu des problèmes impliquant plusieurs équipes",
+          "Je challenge les hypothèses implicites"
+        ],
+        "4": [
+          "Je guide des décisions stratégiques par la résolution de problèmes",
+          "Je forme les autres à structurer leurs problèmes",
+          "Je suis sollicité pour les problèmes complexes de l'organisation",
+          "Je transforme les problèmes en opportunités"
+        ],
+        "5": [
+          "Je définis la méthodologie de résolution de problèmes de l'organisation",
+          "Je forme les managers et leads à la résolution de problèmes",
+          "Je suis le référent pour les problèmes stratégiques cross-équipes",
+          "J'ai institutionnalisé des pratiques de problem solving"
+        ],
+        "6": [
+          "Je suis consultant externe en résolution de problèmes",
+          "Je donne des conférences sur les méthodologies de problem solving",
+          "J'ai publié des articles ou livres sur la résolution de problèmes",
+          "Je suis reconnu comme expert problem solving dans l'industrie"
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://www.coursera.org/learn/problem-solving",
+          "title": "Problem Solving Skills (Coursera)",
+          "type": "course"
+        },
+        {
+          "url": "https://www.mindtools.com/pages/main/newMN_TMC.htm",
+          "title": "Mind Tools - Problem Solving",
+          "type": "documentation"
+        },
+        {
+          "url": "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-problem-with-problem-solving",
+          "title": "McKinsey - Problem Solving",
+          "type": "documentation"
+        },
+        {
+          "url": "https://bulletproofproblemsolving.com/",
+          "title": "Bulletproof Problem Solving",
+          "type": "book"
+        }
+      ],
+      "improvement_tips": {
+        "1→2": "Utilisez une approche structurée (5 whys, issue trees). Documentez votre processus.",
+        "2→3": "Créez des frameworks réutilisables. Résolvez un problème cross-équipes.",
+        "3→4": "Guidez des décisions stratégiques. Formez les autres à la résolution de problèmes."
+      },
+      "category": "soft_skills",
+      "category_name": "Soft Skills"
+    },
+    {
+      "id": "stakeholder_management",
+      "name": "Gestion des Stakeholders",
+      "description": "Travailler efficacement avec les stakeholders (product, business, tech)",
+      "core_roles": [
+        "data_analyst",
+        "analytics_eng"
+      ],
+      "levels": {
+        "data_analyst": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "data_engineer": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "data_scientist": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "analytics_eng": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "ml_engineer": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "backend": [
+          1,
+          1,
+          2,
+          3
+        ]
+      },
+      "level_descriptions": {
+        "0": "Ne peut pas gérer les stakeholders",
+        "1": "Travaille avec les stakeholders directs",
+        "2": "Gère plusieurs stakeholders, gère les conflits",
+        "3": "Influence les stakeholders seniors, drive l'alignement",
+        "4": "Expert en gestion des stakeholders",
+        "5": "Référent relations inter-équipes de l'organisation",
+        "6": "Expert influence reconnu"
+      },
+      "behavioral_indicators": {
+        "1": [
+          "Je communique régulièrement avec mon PM/manager direct",
+          "Je comprends les besoins de mes stakeholders directs",
+          "Je livre mes résultats dans les délais attendus"
+        ],
+        "2": [
+          "Je gère plusieurs stakeholders avec des besoins différents",
+          "J'ai priorisé des demandes conflictuelles avec succès",
+          "Je communique proactivement les blocages et retards",
+          "Je sais dire non de manière constructive"
+        ],
+        "3": [
+          "J'influence les décisions au niveau senior",
+          "Je suis sollicité pour des sujets stratégiques",
+          "J'ai aligné des priorités divergentes entre équipes",
+          "Je suis reconnu comme un partenaire de confiance"
+        ],
+        "4": [
+          "Je suis le point de contact data pour plusieurs équipes",
+          "Je forme les autres à la gestion des stakeholders",
+          "J'ai établi des rituels de communication efficaces",
+          "Je gère les escalades de manière constructive"
+        ],
+        "5": [
+          "Je définis les processus de collaboration inter-équipes",
+          "Je forme les managers à la gestion des stakeholders",
+          "Je suis médiateur pour les conflits inter-équipes",
+          "J'ai créé des frameworks de priorisation organisationnels"
+        ],
+        "6": [
+          "Je suis consultant externe en gestion des stakeholders",
+          "Je donne des formations externes sur l'influence et la négociation",
+          "J'ai publié sur les techniques de stakeholder management",
+          "Je suis reconnu comme expert en influence dans l'industrie"
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://www.pmi.org/learning/library/stakeholder-management-task-project-success-7736",
+          "title": "PMI Stakeholder Management",
+          "type": "documentation"
+        },
+        {
+          "url": "https://www.coursera.org/learn/stakeholder-management",
+          "title": "Stakeholder Management (Coursera)",
+          "type": "course"
+        },
+        {
+          "url": "https://hbr.org/2014/03/manage-your-stakeholders",
+          "title": "HBR - Manage Your Stakeholders",
+          "type": "documentation"
+        },
+        {
+          "url": "https://www.mindtools.com/pages/article/newPPM_07.htm",
+          "title": "Stakeholder Analysis",
+          "type": "documentation"
+        }
+      ],
+      "improvement_tips": {
+        "1→2": "Identifiez tous vos stakeholders et leurs attentes. Communiquez régulièrement.",
+        "2→3": "Gérez un conflit entre stakeholders. Alignez des priorités divergentes.",
+        "3→4": "Influencez les décisions au niveau senior. Devenez un point de contact clé."
+      },
+      "category": "soft_skills",
+      "category_name": "Soft Skills"
+    },
+    {
+      "id": "mentoring_leadership",
+      "name": "Mentorat & Leadership",
+      "description": "Accompagner et faire grandir les membres de l'équipe",
+      "core_roles": [],
+      "levels": {
+        "data_analyst": [
+          "NC",
+          1,
+          2,
+          3
+        ],
+        "data_engineer": [
+          "NC",
+          1,
+          2,
+          3
+        ],
+        "data_scientist": [
+          "NC",
+          1,
+          2,
+          3
+        ],
+        "analytics_eng": [
+          "NC",
+          1,
+          2,
+          3
+        ],
+        "ml_engineer": [
+          "NC",
+          1,
+          2,
+          3
+        ],
+        "backend": [
+          "NC",
+          1,
+          2,
+          3
+        ]
+      },
+      "level_descriptions": {
+        "0": "Pas de compétence en mentorat",
+        "1": "Peut aider ponctuellement un collègue sur un sujet maîtrisé",
+        "2": "Mentor régulier, fait des code reviews constructives",
+        "3": "Accompagne la montée en compétence de plusieurs personnes",
+        "4": "Leader reconnu, développe les talents de l'équipe",
+        "5": "Définit le programme de mentorat de l'organisation",
+        "6": "Coach/mentor reconnu externement"
+      },
+      "behavioral_indicators": {
+        "1": [
+          "J'aide mes collègues quand ils ont des questions",
+          "Je partage des ressources utiles avec l'équipe",
+          "Je peux expliquer un sujet que je maîtrise"
+        ],
+        "2": [
+          "Je fais des code reviews constructives régulièrement",
+          "J'ai mentoré au moins une personne sur un sujet spécifique",
+          "Je donne du feedback actionnable et bienveillant",
+          "J'organise des sessions de pair programming"
+        ],
+        "3": [
+          "Je suis le mentor officiel d'un ou plusieurs juniors",
+          "J'organise des sessions de partage de connaissances",
+          "J'ai accompagné quelqu'un dans sa montée en compétence",
+          "Je crée de la documentation pour faciliter l'onboarding"
+        ],
+        "4": [
+          "Je développe un programme de mentorat structuré",
+          "Je suis reconnu comme un leader technique",
+          "J'ai aidé plusieurs personnes à progresser significativement",
+          "Je contribue aux décisions de promotion et évaluation"
+        ],
+        "5": [
+          "Je définis le programme de mentorat de l'organisation",
+          "Je forme les mentors et managers au coaching",
+          "Je mesure l'efficacité du programme de mentorat",
+          "J'ai créé des parcours de développement de carrière"
+        ],
+        "6": [
+          "Je suis coach ou mentor externe pour d'autres entreprises",
+          "Je donne des conférences sur le leadership et le mentorat",
+          "J'ai publié sur les techniques de coaching et développement",
+          "Je suis reconnu comme expert en leadership dans l'industrie"
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://www.coursera.org/learn/leadership-and-emotional-intelligence",
+          "title": "Leadership and Emotional Intelligence",
+          "type": "course"
+        },
+        {
+          "url": "https://hbr.org/2015/12/everyone-deserves-a-great-manager",
+          "title": "HBR - Great Manager",
+          "type": "documentation"
+        },
+        {
+          "url": "https://www.amazon.com/Radical-Candor-Revised-Kick-Ass-Humanity/dp/1250235375",
+          "title": "Radical Candor",
+          "type": "book"
+        },
+        {
+          "url": "https://www.atlassian.com/team-playbook/plays/retrospective",
+          "title": "Atlassian Retrospectives",
+          "type": "documentation"
+        }
+      ],
+      "improvement_tips": {
+        "1→2": "Mentorez un junior sur un sujet spécifique. Faites des code reviews constructives.",
+        "2→3": "Accompagnez plusieurs personnes dans leur développement. Organisez des sessions de partage.",
+        "3→4": "Développez un programme de mentorat. Mesurez la progression de vos mentorés."
+      },
+      "category": "soft_skills",
+      "category_name": "Soft Skills"
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "description": "Communiquer efficacement à l'écrit et à l'oral, vulgariser les concepts techniques, informer proactivement et représenter l'équipe",
+      "core_roles": [
+        "data_analyst",
+        "data_scientist",
+        "analytics_eng"
+      ],
+      "levels": {
+        "data_analyst": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "data_engineer": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "data_scientist": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "analytics_eng": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "ml_engineer": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "backend": [
+          1,
+          1,
+          2,
+          3
+        ]
+      },
+      "level_descriptions": {
+        "0": "Ne communique pas efficacement",
+        "1": "Explique son code et son travail à ses collègues proches",
+        "2": "Pédagogue, informe proactivement son équipe, fait des démos",
+        "3": "Vulgarise des sujets complexes, documente, représente l'équipe en externe",
+        "4": "Communique avec toutes les parties prenantes (tech, produit, direction, institutions)",
+        "5": "Définit les standards de communication de l'organisation",
+        "6": "Speaker reconnu, formateur externe en communication technique"
+      },
+      "behavioral_indicators": {
+        "1": [
+          "J'explique mon code de manière claire lors des code reviews",
+          "Je documente mes travaux avec des commentaires compréhensibles",
+          "Je sais présenter mes résultats en réunion d'équipe"
+        ],
+        "2": [
+          "Je fais des démos régulières de mon travail à l'équipe",
+          "J'informe proactivement des avancées, blocages et décisions",
+          "J'adapte mon discours à mon audience (tech vs non-tech)",
+          "Je rédige des messages clairs et structurés (Slack, email, PR)"
+        ],
+        "3": [
+          "Je vulgarise des concepts techniques complexes avec aisance",
+          "Je produis de la documentation claire et à jour",
+          "Je représente l'équipe data lors de réunions transverses",
+          "J'ai présenté dans un brown bag, meetup interne ou conférence"
+        ],
+        "4": [
+          "Je communique efficacement avec toutes les parties prenantes",
+          "Je présente à la direction ou aux partenaires institutionnels",
+          "Je crée des supports de communication pour l'équipe (templates, guides)",
+          "Je forme les autres à la communication technique"
+        ],
+        "5": [
+          "Je définis les standards de communication de l'organisation",
+          "Je coache les speakers et rédacteurs",
+          "Je suis référent pour les présentations stratégiques",
+          "J'organise des sessions de formation à la communication"
+        ],
+        "6": [
+          "Je suis speaker reconnu dans des conférences externes",
+          "Je suis formateur externe en communication technique",
+          "J'ai publié des contenus reconnus sur la vulgarisation technique",
+          "Je suis sollicité comme expert en communication par d'autres organisations"
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://www.storytellingwithdata.com/",
+          "title": "Storytelling with Data",
+          "type": "book"
+        },
+        {
+          "url": "https://www.ted.com/talks/chris_anderson_ted_s_secret_to_great_public_speaking",
+          "title": "TED - Secret to Great Speaking",
+          "type": "video"
+        },
+        {
+          "url": "https://www.coursera.org/learn/public-speaking",
+          "title": "Public Speaking (Coursera)",
+          "type": "course"
+        },
+        {
+          "url": "https://www.writethedocs.org/guide/",
+          "title": "Write the Docs - Documentation Guide",
+          "type": "documentation"
+        }
+      ],
+      "improvement_tips": {
+        "1→2": "Faites des démos régulières de votre travail. Informez proactivement votre équipe des avancées et blocages.",
+        "2→3": "Vulgarisez un sujet complexe lors d'un brown bag. Documentez un projet de bout en bout.",
+        "3→4": "Présentez aux parties prenantes non-techniques. Formez les autres à la communication."
+      },
+      "category": "soft_skills",
+      "category_name": "Soft Skills"
+    },
+    {
+      "id": "project_management",
+      "name": "Gestion de Projet Data",
+      "description": "Piloter un projet data de bout en bout",
+      "core_roles": [
+        "data_analyst",
+        "analytics_eng"
+      ],
+      "levels": {
+        "data_analyst": [
+          "NC",
+          1,
+          2,
+          3
+        ],
+        "data_engineer": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "data_scientist": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "analytics_eng": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "ml_engineer": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "backend": [
+          1,
+          1,
+          2,
+          3
+        ]
+      },
+      "level_descriptions": {
+        "0": "Aucune expérience en gestion de projet",
+        "1": "Peut gérer ses propres tâches, respecte les deadlines",
+        "2": "Peut piloter un petit projet data avec quelques dépendances",
+        "3": "Gère des projets complexes multi-équipes",
+        "4": "Expert en gestion de projet, méthodologies adaptées au data",
+        "5": "Définit les méthodologies projet de l'organisation",
+        "6": "Expert gestion de projet (conférences, formateur)"
+      },
+      "behavioral_indicators": {
+        "1": [
+          "Je gère mes tâches dans un outil (Jira, Linear, etc.)",
+          "Je respecte les deadlines communiquées",
+          "Je sais estimer le temps nécessaire pour mes tâches"
+        ],
+        "2": [
+          "J'ai piloté un projet data de bout en bout",
+          "Je découpe un projet en tâches avec des livrables clairs",
+          "Je communique l'avancement régulièrement aux stakeholders",
+          "Je gère les risques et les blocages proactivement"
+        ],
+        "3": [
+          "Je gère des projets avec des dépendances multi-équipes",
+          "J'ai livré des projets impliquant 3+ personnes",
+          "Je coordonne les travaux entre équipes",
+          "J'ai géré un projet avec des contraintes fortes"
+        ],
+        "4": [
+          "J'ai défini une méthodologie de gestion de projet data",
+          "Je forme les autres à la gestion de projet",
+          "Je suis sollicité pour les projets complexes",
+          "J'ai un track record de projets livrés avec succès"
+        ],
+        "5": [
+          "Je définis les méthodologies projet de l'organisation",
+          "Je forme les chefs de projet et tech leads",
+          "Je suis référent pour les projets stratégiques",
+          "J'ai mis en place des outils et processus projet"
+        ],
+        "6": [
+          "Je suis consultant externe en gestion de projet data",
+          "Je donne des conférences sur la gestion de projet",
+          "J'ai publié sur les méthodologies de projet data",
+          "Je suis certifié et reconnu comme expert (PMP, etc.)"
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://www.coursera.org/learn/project-management-foundations",
+          "title": "Project Management Foundations",
+          "type": "course"
+        },
+        {
+          "url": "https://www.atlassian.com/agile/project-management",
+          "title": "Atlassian Agile Project Management",
+          "type": "documentation"
+        },
+        {
+          "url": "https://www.pmi.org/learning/library",
+          "title": "PMI Learning Library",
+          "type": "documentation"
+        },
+        {
+          "url": "https://asana.com/resources/project-management-basics",
+          "title": "Project Management Basics",
+          "type": "documentation"
+        }
+      ],
+      "improvement_tips": {
+        "1→2": "Pilotez un petit projet data avec des livrables clairs. Utilisez un outil de suivi.",
+        "2→3": "Gérez un projet avec plusieurs dépendances. Communiquez régulièrement sur l'avancement.",
+        "3→4": "Définissez une méthodologie de gestion de projet data. Formez les équipes."
+      },
+      "category": "soft_skills",
+      "category_name": "Soft Skills"
+    },
+    {
+      "id": "posture",
+      "name": "Posture",
+      "description": "Curiosité intellectuelle, egoless programming, esprit critique, humilité, pédagogie, facilitation et vision",
+      "core_roles": [
+        "data_analyst",
+        "data_engineer",
+        "data_scientist",
+        "analytics_eng",
+        "ml_engineer",
+        "backend"
+      ],
+      "levels": {
+        "data_analyst": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "data_engineer": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "data_scientist": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "analytics_eng": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "ml_engineer": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "backend": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "level_descriptions": {
+        "0": "Posture professionnelle insuffisante",
+        "1": "Curieux, ouvert au feedback, accepte ses erreurs",
+        "2": "Esprit critique constructif, humble, pédagogue avec ses pairs",
+        "3": "Facilitateur, challenge les idées avec bienveillance, fait progresser les autres",
+        "4": "Visionnaire, inspire par l'exemple, crée une culture d'apprentissage",
+        "5": "Définit la culture et les valeurs techniques de l'organisation",
+        "6": "Reconnu comme modèle de posture professionnelle en externe"
+      },
+      "behavioral_indicators": {
+        "1": [
+          "Je suis curieux et je cherche à comprendre avant de critiquer",
+          "J'accepte le feedback et je remets en question mes choix",
+          "Je reconnais quand je me trompe et j'en tire des leçons"
+        ],
+        "2": [
+          "Je pratique l'egoless programming : mon code n'est pas mon identité",
+          "Je fais preuve d'esprit critique constructif en code review",
+          "J'explique mes raisonnements avec pédagogie à mes collègues",
+          "Je suis humble face à la complexité et je demande de l'aide quand nécessaire"
+        ],
+        "3": [
+          "Je facilite les discussions techniques et aide à converger",
+          "Je challenge les idées avec bienveillance, en apportant des alternatives",
+          "Je fais progresser les juniors par mon exemple et mon accompagnement",
+          "Je suis reconnu pour ma posture constructive dans les débats techniques"
+        ],
+        "4": [
+          "J'inspire une culture d'apprentissage continu dans l'équipe",
+          "Je crée un environnement psychologiquement sûr pour l'expérimentation",
+          "Je porte une vision technique ambitieuse et la partage avec enthousiasme",
+          "Je suis un modèle de posture professionnelle pour l'organisation"
+        ],
+        "5": [
+          "Je définis la culture et les valeurs techniques de l'organisation",
+          "Je mets en place des rituels favorisant la bonne posture (retros, blameless post-mortems)",
+          "Je forme les managers et leads à la facilitation et au leadership bienveillant",
+          "Je suis référent pour résoudre les tensions liées à la posture"
+        ],
+        "6": [
+          "Je suis reconnu en externe pour ma posture et mon leadership technique",
+          "Je donne des conférences sur la culture engineering et l'egoless programming",
+          "J'ai publié sur les bonnes pratiques de posture en équipe tech",
+          "Je suis sollicité comme coach ou mentor par d'autres organisations"
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://blog.codinghorror.com/the-ten-commandments-of-egoless-programming/",
+          "title": "The Ten Commandments of Egoless Programming",
+          "type": "documentation"
+        },
+        {
+          "url": "https://www.coursera.org/learn/emotional-intelligence",
+          "title": "Emotional Intelligence (Coursera)",
+          "type": "course"
+        },
+        {
+          "url": "https://www.radicalcandor.com/",
+          "title": "Radical Candor",
+          "type": "book"
+        },
+        {
+          "url": "https://psychsafety.co.uk/psychological-safety/",
+          "title": "Psychological Safety Resources",
+          "type": "documentation"
+        }
+      ],
+      "improvement_tips": {
+        "1→2": "Pratiquez l'egoless programming en code review. Demandez du feedback régulièrement et agissez dessus.",
+        "2→3": "Facilitez une discussion technique. Mentorez un junior en vous concentrant sur la posture.",
+        "3→4": "Instaurez des pratiques de blameless post-mortem. Créez un environnement sûr pour l'expérimentation."
+      },
+      "category": "soft_skills",
+      "category_name": "Soft Skills"
+    },
+    {
+      "id": "adaptability",
+      "name": "Environnement & Adaptabilité",
+      "description": "S'adapter aux changements de roadmap, tenir ses engagements, faire preuve de flexibilité face à l'incertitude et aux contraintes",
+      "core_roles": [
+        "data_analyst",
+        "data_engineer",
+        "data_scientist",
+        "analytics_eng",
+        "ml_engineer",
+        "backend"
+      ],
+      "levels": {
+        "data_analyst": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "data_engineer": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "data_scientist": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "analytics_eng": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "ml_engineer": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "backend": [
+          1,
+          1,
+          2,
+          3
+        ]
+      },
+      "level_descriptions": {
+        "0": "Difficulté à s'adapter aux changements",
+        "1": "Accepte les changements de priorité, tient ses engagements sur des tâches simples",
+        "2": "S'adapte aux changements de roadmap, gère les imprévus, reste fiable sous pression",
+        "3": "Anticipe les changements, propose des plans B, accompagne l'équipe dans les transitions",
+        "4": "Pilote le changement, transforme les contraintes en opportunités, guide l'organisation",
+        "5": "Définit les processus d'adaptation et de résilience de l'organisation",
+        "6": "Expert reconnu en conduite du changement, consultant externe"
+      },
+      "behavioral_indicators": {
+        "1": [
+          "J'accepte les changements de priorité sans résistance",
+          "Je tiens mes engagements et je communique quand je suis en difficulté",
+          "Je m'adapte à un nouvel outil ou une nouvelle méthode de travail"
+        ],
+        "2": [
+          "Je gère les changements de roadmap en repriorisant mes tâches",
+          "Je reste fiable et productif face aux imprévus",
+          "Je fais preuve de flexibilité dans mes choix techniques quand le contexte change",
+          "Je communique proactivement les impacts des changements sur mes livrables"
+        ],
+        "3": [
+          "J'anticipe les changements et je prépare des plans de contingence",
+          "J'accompagne l'équipe lors des transitions (reorg, changement de stack, pivot)",
+          "Je propose des alternatives quand un plan initial devient impossible",
+          "Je reste serein et constructif face à l'incertitude"
+        ],
+        "4": [
+          "Je pilote des transformations à l'échelle de l'équipe ou de l'organisation",
+          "Je transforme les contraintes en opportunités d'amélioration",
+          "Je guide les équipes dans les périodes de changement intense",
+          "Je suis reconnu pour ma résilience et ma capacité d'adaptation"
+        ],
+        "5": [
+          "Je définis les processus d'adaptation et de résilience de l'organisation",
+          "Je forme les managers à la conduite du changement",
+          "Je mets en place des pratiques de rétrospective et d'amélioration continue",
+          "Je suis référent pour les transformations organisationnelles"
+        ],
+        "6": [
+          "Je suis consultant externe en conduite du changement",
+          "Je donne des conférences sur l'adaptabilité et la résilience en contexte tech",
+          "J'ai publié sur les stratégies d'adaptation organisationnelle",
+          "Je suis reconnu comme expert en transformation d'organisations tech"
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://www.coursera.org/learn/managing-change",
+          "title": "Managing Change (Coursera)",
+          "type": "course"
+        },
+        {
+          "url": "https://hbr.org/topic/change-management",
+          "title": "HBR - Change Management",
+          "type": "documentation"
+        },
+        {
+          "url": "https://www.atlassian.com/agile/agile-at-scale",
+          "title": "Atlassian - Agile at Scale",
+          "type": "documentation"
+        },
+        {
+          "url": "https://basecamp.com/shapeup",
+          "title": "Shape Up (Basecamp)",
+          "type": "book"
+        }
+      ],
+      "improvement_tips": {
+        "1→2": "Gérez un changement de priorité en repriorisant vos tâches. Communiquez proactivement les impacts.",
+        "2→3": "Anticipez un changement et préparez un plan B. Accompagnez un collègue dans une transition.",
+        "3→4": "Pilotez une transformation à l'échelle de l'équipe. Transformez une contrainte en opportunité."
+      },
+      "category": "soft_skills",
+      "category_name": "Soft Skills"
+    },
+    {
+      "id": "teamwork",
+      "name": "Travailler en Équipe",
+      "description": "Collaborer efficacement: dire 'je ne sais pas', partager ses idées, faciliter, animer la communauté technique et gérer les conflits",
+      "core_roles": [
+        "data_analyst",
+        "data_engineer",
+        "data_scientist",
+        "analytics_eng",
+        "ml_engineer",
+        "backend"
+      ],
+      "levels": {
+        "data_analyst": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "data_engineer": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "data_scientist": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "analytics_eng": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "ml_engineer": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "backend": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "level_descriptions": {
+        "0": "Travaille de manière isolée",
+        "1": "Collabore avec ses collègues proches, ose dire 'je ne sais pas' et partage ses idées",
+        "2": "Contribue activement aux rituels d'équipe, facilite les échanges, fait du pair programming",
+        "3": "Anime la communauté technique, facilite les décisions collectives, gère les désaccords",
+        "4": "Leader collaboratif, crée les conditions du travail d'équipe efficace, résout les conflits",
+        "5": "Définit les pratiques collaboratives de l'organisation",
+        "6": "Expert reconnu en collaboration et facilitation, formateur externe"
+      },
+      "behavioral_indicators": {
+        "1": [
+          "Je dis 'je ne sais pas' quand c'est le cas, sans honte",
+          "Je partage mes idées et mes doutes avec l'équipe",
+          "Je participe activement aux réunions et aux discussions d'équipe"
+        ],
+        "2": [
+          "Je contribue activement aux code reviews, retros et rituels d'équipe",
+          "Je fais du pair programming régulièrement",
+          "J'aide mes collègues quand ils sont bloqués, sans attendre qu'on me le demande",
+          "Je donne et reçois du feedback de manière constructive"
+        ],
+        "3": [
+          "J'anime des sessions de partage de connaissances (brown bags, tech talks)",
+          "Je facilite les décisions collectives lors de débats techniques",
+          "Je gère les désaccords avec diplomatie et en cherchant le consensus",
+          "Je crée des espaces d'échange (guildes, communautés de pratique)"
+        ],
+        "4": [
+          "Je crée les conditions pour que chacun puisse s'exprimer et contribuer",
+          "Je résous les conflits au sein de l'équipe de manière constructive",
+          "Je suis reconnu comme un catalyseur de collaboration dans l'organisation",
+          "Je forme les autres à la facilitation et au travail collaboratif"
+        ],
+        "5": [
+          "Je définis les pratiques collaboratives de l'organisation",
+          "Je forme les managers et leads à la facilitation d'équipe",
+          "Je mets en place des rituels de collaboration inter-équipes",
+          "Je suis référent pour les situations de conflit complexes"
+        ],
+        "6": [
+          "Je suis consultant externe en collaboration et facilitation d'équipe",
+          "Je donne des conférences sur le travail d'équipe en contexte tech",
+          "J'ai publié sur les pratiques collaboratives en engineering",
+          "Je suis reconnu comme expert en dynamique d'équipe dans l'industrie"
+        ]
+      },
+      "resources": [
+        {
+          "url": "https://www.atlassian.com/team-playbook",
+          "title": "Atlassian Team Playbook",
+          "type": "documentation"
+        },
+        {
+          "url": "https://www.coursera.org/learn/teamwork-skills",
+          "title": "Teamwork Skills (Coursera)",
+          "type": "course"
+        },
+        {
+          "url": "https://martinfowler.com/articles/on-pair-programming.html",
+          "title": "Martin Fowler - On Pair Programming",
+          "type": "documentation"
+        },
+        {
+          "url": "https://www.amazon.com/Five-Dysfunctions-Team-Leadership-Fable/dp/0787960756",
+          "title": "The Five Dysfunctions of a Team",
+          "type": "book"
+        }
+      ],
+      "improvement_tips": {
+        "1→2": "Faites du pair programming régulièrement. Participez activement aux code reviews et retros.",
+        "2→3": "Animez un brown bag ou un tech talk. Facilitez une décision collective lors d'un débat technique.",
+        "3→4": "Créez une communauté de pratique. Résolvez un conflit au sein de l'équipe de manière constructive."
+      },
+      "category": "soft_skills",
+      "category_name": "Soft Skills"
     }
   ],
   "assessment_modes": {
@@ -7658,7 +7911,7 @@
       "dashboard_design",
       "data_preparation",
       "git_github",
-      "technical_communication",
+      "technical_scoping",
       "problem_solving",
       "ab_testing",
       "firebase_analytics",
@@ -7694,7 +7947,7 @@
       "feature_engineering",
       "ab_testing",
       "git_github",
-      "technical_communication",
+      "technical_scoping",
       "problem_solving",
       "data_preparation",
       "dashboard_design"
@@ -7707,12 +7960,11 @@
       "bigquery_advanced",
       "python_data",
       "git_github",
-      "looker",
       "data_quality_testing",
       "medallion_architecture",
       "airflow",
       "github_actions",
-      "technical_communication",
+      "technical_scoping",
       "problem_solving",
       "data_contracts"
     ],
@@ -7748,7 +8000,7 @@
       "precommit_quality",
       "data_modeling",
       "problem_solving",
-      "technical_communication"
+      "technical_scoping"
     ]
   },
   "skill_groups": {
@@ -7884,12 +8136,15 @@
       "icon": "users",
       "description": "Communication et leadership",
       "skills": [
-        "technical_communication",
+        "technical_scoping",
+        "communication",
         "problem_solving",
         "stakeholder_management",
         "mentoring_leadership",
-        "presentation_vulgarization",
-        "project_management"
+        "project_management",
+        "posture",
+        "adaptability",
+        "teamwork"
       ]
     }
   },
@@ -8345,13 +8600,13 @@
       ]
     },
     {
-      "source": "technical_communication",
+      "source": "communication",
       "rules": [
         {
           "condition": ">= 3",
           "targets": [
             {
-              "skill": "presentation_vulgarization",
+              "skill": "technical_scoping",
               "suggestion": 2,
               "confidence": 0.7
             },

@@ -6,7 +6,7 @@ category:
 skills:
   - id: pass_culture_knowledge
     name: "Connaissance Pass Culture"
-    description: "Comprendre le dispositif Pass Culture: crédit jeunes 15-20 ans, parcours utilisateur, catalogue d'offres, objectifs de diversification culturelle"
+    description: "Comprendre le dispositif Pass Culture (crédit jeunes 15-20 ans, parcours utilisateur, catalogue d'offres, objectifs de diversification culturelle) et les domaines culturels (Livres, Cinéma, Musique, Spectacle vivant, Musées/Patrimoine, Festivals, Pratiques artistiques)"
     core_roles: [data_analyst, data_scientist, analytics_eng]
     levels:
       data_analyst: [1, 2, 3, 4]
@@ -17,42 +17,42 @@ skills:
       backend: [1, 1, 2, 3]
     level_descriptions:
       0: "Aucune connaissance du Pass Culture"
-      1: "Comprend le dispositif (crédit jeunes 15-20 ans, objectifs de démocratisation culturelle)"
-      2: "Maîtrise les entités métier (offres, réservations, lieux, utilisateurs, acteurs culturels)"
-      3: "Expert des parcours utilisateurs, mécaniques de crédit et cycle de vie bénéficiaire"
-      4: "Référent métier, analyse les cohortes et mesure l'impact du dispositif"
-      5: "Expert domaine, influence la stratégie produit et les politiques publiques"
-      6: "Reconnu comme expert Pass Culture en externe, publications institutionnelles"
+      1: "Comprend le dispositif (crédit jeunes 15-20 ans, objectifs de démocratisation) et les grandes catégories d'offres culturelles (livres, cinéma, musique, spectacle vivant, musées)"
+      2: "Maîtrise les entités métier (offres, réservations, lieux, utilisateurs) et les spécificités de chaque domaine culturel (poids dans les réservations, offres physiques vs numériques)"
+      3: "Expert des parcours utilisateurs, mécaniques de crédit, et des tendances de consommation par domaine culturel et par cohorte"
+      4: "Référent métier, analyse les cohortes, mesure l'impact du dispositif et identifie les leviers de diversification par domaine"
+      5: "Expert domaine, influence la stratégie produit, les politiques publiques et la stratégie d'enrichissement du catalogue"
+      6: "Reconnu comme expert Pass Culture en externe, publications institutionnelles et études sectorielles"
     behavioral_indicators:
       1:
-        - "Je comprends les objectifs du Pass Culture"
-        - "Je connais les tranches d'âge et les montants de crédit"
-        - "Je sais ce qu'est une offre et une réservation"
+        - "Je comprends les objectifs du Pass Culture et la démocratisation culturelle"
+        - "Je connais les tranches d'âge, les montants de crédit et les grandes catégories d'offres"
+        - "Je sais ce qu'est une offre, une réservation, et la différence entre offres physiques et numériques"
       2:
-        - "Je maîtrise le modèle de données Pass Culture"
-        - "Je comprends les différents types d'offres et de lieux"
-        - "Je connais le parcours utilisateur de A à Z"
-        - "Je sais calculer les KPIs principaux"
+        - "Je maîtrise le modèle de données Pass Culture et les KPIs principaux"
+        - "Je comprends les différents types d'offres, de lieux et les spécificités de chaque domaine culturel"
+        - "Je connais le parcours utilisateur de A à Z et la répartition des réservations par domaine"
+        - "Je sais quels domaines sont surreprésentés ou sous-représentés dans les réservations"
       3:
-        - "J'analyse les cohortes de bénéficiaires"
-        - "Je comprends les mécaniques de crédit par âge"
-        - "J'identifie les leviers de diversification culturelle"
-        - "Je connais l'écosystème des acteurs culturels"
+        - "J'analyse les cohortes de bénéficiaires et l'évolution de la consommation par domaine"
+        - "Je comprends les mécaniques de crédit par âge et les facteurs de diversification"
+        - "J'identifie les tendances émergentes par domaine culturel et les leviers de diversification"
+        - "Je connais l'écosystème des acteurs culturels et leurs enjeux sectoriels"
       4:
-        - "Je suis référent métier pour les équipes data"
-        - "Je mesure l'impact du dispositif"
-        - "Je contribue aux rapports institutionnels"
-        - "Je forme les nouveaux arrivants au métier"
+        - "Je suis référent métier pour les équipes data sur le dispositif et les domaines culturels"
+        - "Je mesure l'impact du dispositif et contribue aux rapports institutionnels"
+        - "Je contribue aux stratégies d'enrichissement du catalogue par domaine"
+        - "Je forme les nouveaux arrivants au métier et aux spécificités des domaines culturels"
       5:
-        - "Je définis les orientations stratégiques du produit data"
-        - "Je suis consulté par la direction sur les sujets métier"
-        - "Je contribue aux réflexions de politique publique"
-        - "Je forme les équipes produit et direction aux enjeux métier"
+        - "Je définis les orientations stratégiques du produit data et de l'offre culturelle"
+        - "Je suis consulté par la direction sur les sujets métier et les partenariats sectoriels"
+        - "Je contribue aux réflexions de politique publique et à la stratégie d'enrichissement"
+        - "Je forme les équipes produit et direction aux enjeux métier et sectoriels"
       6:
-        - "Je publie des études institutionnelles sur le Pass Culture"
+        - "Je publie des études institutionnelles sur le Pass Culture et les pratiques culturelles"
         - "Je suis sollicité par le ministère ou des institutions externes"
-        - "Je donne des conférences sur le dispositif Pass Culture"
-        - "Je suis reconnu comme expert de référence en externe"
+        - "Je donne des conférences sur le dispositif Pass Culture et les politiques culturelles"
+        - "Je suis reconnu comme expert de référence en externe sur le dispositif et les domaines culturels"
     resources:
       - url: "https://pass.culture.fr/"
         title: "Site officiel Pass Culture"
@@ -67,76 +67,9 @@ skills:
         title: "Open Data Pass Culture"
         type: "documentation"
     improvement_tips:
-      "1→2": "Explorez les données métier (offres, réservations). Comprenez le modèle de données."
-      "2→3": "Analysez les parcours utilisateurs complets. Étudiez les cohortes sortantes."
-      "3→4": "Contribuez aux études d'impact. Présentez les résultats aux parties prenantes institutionnelles."
-
-  - id: cultural_domains
-    name: "Domaines Culturels Pass Culture"
-    description: "Connaître les catégories d'offres culturelles: Livres, Cinéma, Musique live, Spectacle vivant, Musées/Patrimoine, Festivals, Pratiques artistiques"
-    core_roles: [data_analyst, analytics_eng]
-    levels:
-      data_analyst: [1, 2, 3, 4]
-      data_engineer: [NC, NC, 1, 2]
-      data_scientist: [1, 1, 2, 3]
-      analytics_eng: [1, 2, 3, 4]
-      ml_engineer: [1, 1, 2, 3]
-      backend: [NC, NC, 1, 2]
-    level_descriptions:
-      0: "Aucune connaissance des domaines culturels"
-      1: "Connaît les grandes catégories (livres, cinéma, musique, spectacle vivant, musées)"
-      2: "Comprend les spécificités de chaque domaine et leur poids dans les réservations"
-      3: "Analyse les tendances de consommation par domaine et les évolutions entre cohortes"
-      4: "Expert des dynamiques de chaque secteur, identifie les leviers de diversification"
-      5: "Définit les stratégies d'enrichissement du catalogue par domaine"
-      6: "Expert reconnu des politiques culturelles sectorielles"
-    behavioral_indicators:
-      1:
-        - "Je connais les grandes catégories d'offres (livre, cinéma, musique...)"
-        - "Je sais que le livre représente une part importante des réservations"
-        - "Je comprends la différence entre offres physiques et numériques"
-      2:
-        - "J'analyse la répartition des réservations par domaine"
-        - "Je comprends les spécificités de chaque secteur culturel"
-        - "Je connais les sous-catégories détaillées"
-        - "Je sais quels domaines sont surreprésentés ou sous-représentés"
-      3:
-        - "J'analyse l'évolution de la consommation par cohorte"
-        - "J'identifie les tendances émergentes par domaine"
-        - "Je comprends les facteurs de diversification"
-        - "Je propose des actions pour équilibrer les domaines"
-      4:
-        - "Je suis expert d'un ou plusieurs domaines culturels"
-        - "Je connais les acteurs clés de chaque secteur"
-        - "Je contribue aux stratégies d'enrichissement du catalogue"
-        - "Je forme les équipes aux spécificités de chaque domaine"
-      5:
-        - "Je définis la stratégie d'enrichissement du catalogue"
-        - "Je suis référent pour les partenariats sectoriels"
-        - "Je forme les équipes produit aux enjeux de chaque domaine"
-        - "Je contribue aux décisions stratégiques sur l'offre culturelle"
-      6:
-        - "Je suis reconnu comme expert des politiques culturelles"
-        - "Je publie des études sur les pratiques culturelles par secteur"
-        - "Je suis sollicité par des institutions culturelles externes"
-        - "Je donne des conférences sur les enjeux sectoriels culturels"
-    resources:
-      - url: "https://www.culture.gouv.fr/Thematiques"
-        title: "Ministère de la Culture - Thématiques"
-        type: "documentation"
-      - url: "https://www.observatoire-culture.net/"
-        title: "Observatoire des politiques culturelles"
-        type: "documentation"
-      - url: "https://www.deps.fr/"
-        title: "DEPS - Études et statistiques culturelles"
-        type: "documentation"
-      - url: "https://www.culturecommunication.gouv.fr/Etudes-et-statistiques"
-        title: "Études culturelles officielles"
-        type: "documentation"
-    improvement_tips:
-      "1→2": "Analysez la répartition des réservations par catégorie. Comprenez les spécificités de chaque domaine."
-      "2→3": "Étudiez les tendances de consommation par cohorte. Identifiez les facteurs de diversification."
-      "3→4": "Devenez expert d'un domaine spécifique. Contribuez aux stratégies de diversification."
+      "1→2": "Explorez les données métier (offres, réservations par domaine). Comprenez le modèle de données et la répartition par catégorie."
+      "2→3": "Analysez les parcours utilisateurs et les tendances de consommation par cohorte et par domaine. Étudiez les facteurs de diversification."
+      "3→4": "Contribuez aux études d'impact et aux stratégies de diversification par domaine. Présentez les résultats aux parties prenantes institutionnelles."
 
   - id: cultural_recommendation
     name: "Recommandation Culturelle"

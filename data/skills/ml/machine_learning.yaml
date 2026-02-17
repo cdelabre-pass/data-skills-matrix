@@ -409,7 +409,7 @@ skills:
   - id: entity_resolution
     name: "Entity Resolution & Linkage"
     description: "Résoudre les entités et relier les données (déduplication, matching)"
-    core_roles: [ml_engineer, data_engineer]
+    core_roles: [data_scientist, ml_engineer]
     levels:
       data_analyst: [NC, NC, NC, 1]
       data_engineer: [1, 1, 2, 3]
