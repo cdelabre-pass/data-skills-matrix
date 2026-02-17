@@ -3,6 +3,7 @@ name = "skills-matrix"
 version = "0.3.0"
 description = "Matrice de competences Analytics"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.11"
 dependencies = [
     "openpyxl>=3.1.0",
