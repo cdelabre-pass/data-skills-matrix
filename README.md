@@ -134,9 +134,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get started.
 
 ## Inspirations
 
-This project is highly inspired from the [Decathlon Analytics Unified Skills Matrix](https://docs.google.com/spreadsheets/d/1LU7rDQ4Qvip1kY2g0LDJKaYCzBIXJTBUoIeWKem-EtU/edit?gid=168785105#gid=168785105).
-
-- [Why Your Analytics Team Desperately Needs a Skills Matrix](https://medium.com/@hugo.hauraix/why-your-analytics-team-desperately-needs-a-skills-matrix-and-how-to-build-one-986f87311756)
+This project is highly inspired from the [Decathlon Analytics Unified Skills Matrix](https://docs.google.com/spreadsheets/d/1LU7rDQ4Qvip1kY2g0LDJKaYCzBIXJTBUoIeWKem-EtU/edit?gid=168785105#gid=168785105) and the article [Why Your Analytics Team Desperately Needs a Skills Matrix](https://medium.com/@hugo.hauraix/why-your-analytics-team-desperately-needs-a-skills-matrix-and-how-to-build-one-986f87311756).
 
 ## License
 
