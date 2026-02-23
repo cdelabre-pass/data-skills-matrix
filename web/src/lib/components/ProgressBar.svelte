@@ -7,7 +7,10 @@
 	export let total: number;
 	export let currentIndex: number;
 	// Optional: group progress data for mini radar preview
-	export let groupProgress: Record<string, { total: number; answered: number; name: string }> = {};
+	export let groupProgress: Record<
+		string,
+		{ total: number; answered: number; name: string }
+	> = {};
 
 	// Animated display values
 	let displayPercentage = 0;
@@ -18,12 +21,20 @@
 	let milestoneType: 25 | 50 | 75 | 100 | null = null;
 	let previousPercentage = -1; // -1 means not initialized yet
 	let initialized = false;
-	let confettiParticles: Array<{ id: number; x: number; y: number; color: string; rotation: number; scale: number }> = [];
+	let confettiParticles: Array<{
+		id: number;
+		x: number;
+		y: number;
+		color: string;
+		rotation: number;
+		scale: number;
+	}> = [];
 
 	// Clamp values to valid ranges to handle edge cases
 	$: rawPercentage = total > 0 ? Math.round((current / total) * 100) : 0;
 	$: percentage = Math.max(0, Math.min(100, rawPercentage));
-	$: positionPercentage = total > 0 ? Math.max(0, Math.min(100, (currentIndex / total) * 100)) : 0;
+	$: positionPercentage =
+		total > 0 ? Math.max(0, Math.min(100, (currentIndex / total) * 100)) : 0;
 
 	// Progress color gradient based on percentage (cool to warm)
 	$: progressColor = getProgressColor(percentage);
@@ -59,22 +70,32 @@
 		}
 
 		// Auto-hide milestone after animation
-		setTimeout(() => {
-			showMilestone = false;
-			milestoneType = null;
-			confettiParticles = [];
-		}, type === 100 ? 3500 : 2500);
+		setTimeout(
+			() => {
+				showMilestone = false;
+				milestoneType = null;
+				confettiParticles = [];
+			},
+			type === 100 ? 3500 : 2500,
+		);
 	}
 
 	function generateConfetti(count: number) {
-		const colors = ['#6366f1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981', '#06b6d4'];
+		const colors = [
+			'#6366f1',
+			'#8b5cf6',
+			'#ec4899',
+			'#f59e0b',
+			'#10b981',
+			'#06b6d4',
+		];
 		confettiParticles = Array.from({ length: count }, (_, i) => ({
 			id: i,
 			x: 50 + (Math.random() - 0.5) * 60,
 			y: 50,
 			color: colors[Math.floor(Math.random() * colors.length)],
 			rotation: Math.random() * 360,
-			scale: 0.5 + Math.random() * 0.5
+			scale: 0.5 + Math.random() * 0.5,
 		}));
 	}
 
@@ -85,7 +106,13 @@
 	let currentAnimFrame: number;
 
 	// Smooth number animation
-	function animateValue(start: number, end: number, duration: number, callback: (v: number) => void, frameRef: 'percentage' | 'current') {
+	function animateValue(
+		start: number,
+		end: number,
+		duration: number,
+		callback: (v: number) => void,
+		frameRef: 'percentage' | 'current',
+	) {
 		const startTime = performance.now();
 
 		function update(currentTime: number) {
@@ -120,7 +147,13 @@
 			}
 			const startVal = displayPercentage;
 			percentageTarget = percentage;
-			animateValue(startVal, percentage, 400, (v) => displayPercentage = v, 'percentage');
+			animateValue(
+				startVal,
+				percentage,
+				400,
+				(v) => (displayPercentage = v),
+				'percentage',
+			);
 		}
 	}
 
@@ -131,7 +164,13 @@
 			}
 			const startVal = displayCurrent;
 			currentTarget = current;
-			animateValue(startVal, current, 400, (v) => displayCurrent = v, 'current');
+			animateValue(
+				startVal,
+				current,
+				400,
+				(v) => (displayCurrent = v),
+				'current',
+			);
 		}
 	}
 
@@ -141,13 +180,18 @@
 		name: group.name,
 		value: group.total > 0 ? group.answered / group.total : 0,
 		total: group.total,
-		answered: group.answered
+		answered: group.answered,
 	}));
 
 	$: hasRadarData = radarData.length > 2;
 
 	// Generate SVG radar chart points
-	function generateRadarPath(data: typeof radarData, radius: number, centerX: number, centerY: number): string {
+	function generateRadarPath(
+		data: typeof radarData,
+		radius: number,
+		centerX: number,
+		centerY: number,
+	): string {
 		if (data.length < 3) return '';
 
 		const angleStep = (2 * Math.PI) / data.length;
@@ -156,28 +200,49 @@
 			const r = d.value * radius;
 			return {
 				x: centerX + r * Math.cos(angle),
-				y: centerY + r * Math.sin(angle)
+				y: centerY + r * Math.sin(angle),
 			};
 		});
 
-		return points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ') + ' Z';
+		return (
+			points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ') +
+			' Z'
+		);
 	}
 
-	function generateRadarGrid(levels: number, radius: number, centerX: number, centerY: number, points: number): string[] {
+	function generateRadarGrid(
+		levels: number,
+		radius: number,
+		centerX: number,
+		centerY: number,
+		points: number,
+	): string[] {
 		const grids: string[] = [];
 		for (let level = 1; level <= levels; level++) {
 			const r = (radius * level) / levels;
 			const angleStep = (2 * Math.PI) / points;
 			const gridPoints = Array.from({ length: points }, (_, i) => {
 				const angle = i * angleStep - Math.PI / 2;
-				return { x: centerX + r * Math.cos(angle), y: centerY + r * Math.sin(angle) };
+				return {
+					x: centerX + r * Math.cos(angle),
+					y: centerY + r * Math.sin(angle),
+				};
 			});
-			grids.push(gridPoints.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ') + ' Z');
+			grids.push(
+				gridPoints
+					.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`)
+					.join(' ') + ' Z',
+			);
 		}
 		return grids;
 	}
 
-	function generateAxisLines(centerX: number, centerY: number, radius: number, points: number): Array<{ x1: number; y1: number; x2: number; y2: number }> {
+	function generateAxisLines(
+		centerX: number,
+		centerY: number,
+		radius: number,
+		points: number,
+	): Array<{ x1: number; y1: number; x2: number; y2: number }> {
 		const angleStep = (2 * Math.PI) / points;
 		return Array.from({ length: points }, (_, i) => {
 			const angle = i * angleStep - Math.PI / 2;
@@ -185,7 +250,7 @@
 				x1: centerX,
 				y1: centerY,
 				x2: centerX + radius * Math.cos(angle),
-				y2: centerY + radius * Math.sin(angle)
+				y2: centerY + radius * Math.sin(angle),
 			};
 		});
 	}
@@ -194,9 +259,10 @@
 	let showAllGroups = false;
 	$: groupCount = Object.keys(groupProgress).length;
 	$: shouldCollapse = groupCount > 6;
-	$: visibleGroups = shouldCollapse && !showAllGroups
-		? Object.entries(groupProgress).slice(0, 4)
-		: Object.entries(groupProgress);
+	$: visibleGroups =
+		shouldCollapse && !showAllGroups
+			? Object.entries(groupProgress).slice(0, 4)
+			: Object.entries(groupProgress);
 
 	onMount(() => {
 		displayPercentage = percentage;
@@ -222,12 +288,22 @@
 	});
 
 	// Milestone messages
-	const milestoneMessages: Record<number, { title: string; subtitle: string }> = {
-		25: { title: 'Bon départ !', subtitle: 'Vous avez complété 25% de l\'évaluation' },
-		50: { title: 'À mi-chemin !', subtitle: 'Continuez, vous y êtes presque' },
-		75: { title: 'Presque terminé !', subtitle: 'Plus que quelques compétences' },
-		100: { title: 'Félicitations !', subtitle: 'Évaluation complète !' }
-	};
+	const milestoneMessages: Record<number, { title: string; subtitle: string }> =
+		{
+			25: {
+				title: 'Bon départ !',
+				subtitle: "Vous avez complété 25% de l'évaluation",
+			},
+			50: {
+				title: 'À mi-chemin !',
+				subtitle: 'Continuez, vous y êtes presque',
+			},
+			75: {
+				title: 'Presque terminé !',
+				subtitle: 'Plus que quelques compétences',
+			},
+			100: { title: 'Félicitations !', subtitle: 'Évaluation complète !' },
+		};
 </script>
 
 <div class="card p-3 sm:p-4 border-base-700/50 relative overflow-hidden">
@@ -284,9 +360,15 @@
 	<div class="flex items-center justify-between mb-2">
 		<div class="flex items-center gap-2 sm:gap-3">
 			<!-- Percentage display with animated counter -->
-			<div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br {progressColor} p-[2px] transition-all duration-500">
-				<div class="w-full h-full rounded-[7px] bg-base-900 flex items-center justify-center">
-					<span class="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-br {progressColor} text-sm sm:text-base tabular-nums">
+			<div
+				class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br {progressColor} p-[2px] transition-all duration-500"
+			>
+				<div
+					class="w-full h-full rounded-[7px] bg-base-900 flex items-center justify-center"
+				>
+					<span
+						class="font-mono font-bold text-transparent bg-clip-text bg-gradient-to-br {progressColor} text-sm sm:text-base tabular-nums"
+					>
 						{Math.max(0, Math.min(100, displayPercentage))}%
 					</span>
 				</div>
@@ -294,7 +376,10 @@
 			<div>
 				<p class="text-xs sm:text-sm font-medium text-base-100">Progression</p>
 				<p class="text-xs text-base-500">
-					<span class="font-mono tabular-nums">{Math.max(0, Math.min(total, displayCurrent))}</span> / {total} compétences évaluées
+					<span class="font-mono tabular-nums"
+						>{Math.max(0, Math.min(total, displayCurrent))}</span
+					>
+					/ {total} compétences évaluées
 				</p>
 			</div>
 		</div>
@@ -346,8 +431,12 @@
 				</svg>
 
 				<!-- Tooltip on hover -->
-				<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-30">
-					<div class="bg-base-800 border border-base-700 rounded-lg px-2 py-1 text-xs whitespace-nowrap shadow-lg">
+				<div
+					class="absolute -bottom-2 left-1/2 -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-30"
+				>
+					<div
+						class="bg-base-800 border border-base-700 rounded-lg px-2 py-1 text-xs whitespace-nowrap shadow-lg"
+					>
 						<span class="text-base-400">Aperçu profil</span>
 					</div>
 				</div>
@@ -357,7 +446,9 @@
 		<!-- Mini stats -->
 		<div class="hidden sm:flex items-center gap-4 text-xs">
 			<div class="text-center">
-				<p class="font-mono font-bold text-base-100 tabular-nums">{Math.max(0, total - current)}</p>
+				<p class="font-mono font-bold text-base-100 tabular-nums">
+					{Math.max(0, total - current)}
+				</p>
 				<p class="text-base-500">restantes</p>
 			</div>
 		</div>
@@ -396,7 +487,9 @@
 				class="absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white shadow-lg transition-all duration-300 ease-out flex items-center justify-center"
 				style="left: calc({positionPercentage}% - 8px)"
 			>
-				<div class="w-1.5 h-1.5 rounded-full bg-gradient-to-br {progressColor}"></div>
+				<div
+					class="w-1.5 h-1.5 rounded-full bg-gradient-to-br {progressColor}"
+				></div>
 			</div>
 		{/if}
 	</div>
@@ -406,10 +499,15 @@
 		<div class="flex flex-wrap gap-1.5 mt-2 justify-center items-center">
 			{#each visibleGroups as [groupId, group]}
 				{@const isComplete = group.answered === group.total}
-				{@const groupPct = group.total > 0 ? Math.round((group.answered / group.total) * 100) : 0}
+				{@const groupPct =
+					group.total > 0
+						? Math.round((group.answered / group.total) * 100)
+						: 0}
 				<div
 					class="relative flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium transition-all duration-300 border overflow-hidden
-						{isComplete ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : 'bg-base-800/50 text-base-400 border-base-700/50'}"
+						{isComplete
+						? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50'
+						: 'bg-base-800/50 text-base-400 border-base-700/50'}"
 					class:group-pill-complete={isComplete}
 					title={group.name}
 				>
@@ -422,20 +520,26 @@
 					<span class="relative z-10">
 						{#if isComplete}
 							<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+								<path
+									d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"
+								/>
 							</svg>
 						{:else}
-							<span class="font-mono tabular-nums">{group.answered}/{group.total}</span>
+							<span class="font-mono tabular-nums"
+								>{group.answered}/{group.total}</span
+							>
 						{/if}
 					</span>
-					<span class="relative z-10 hidden sm:inline truncate max-w-[70px]">{group.name}</span>
+					<span class="relative z-10 hidden sm:inline truncate max-w-[70px]"
+						>{group.name}</span
+					>
 				</div>
 			{/each}
 
 			<!-- Expand/collapse button when many groups -->
 			{#if shouldCollapse}
 				<button
-					on:click={() => showAllGroups = !showAllGroups}
+					on:click={() => (showAllGroups = !showAllGroups)}
 					class="px-2.5 py-1 rounded-full text-xs font-medium bg-base-700/50 text-base-400 hover:bg-base-600/50 hover:text-base-300 border border-base-600/50 transition-colors"
 				>
 					{#if showAllGroups}
@@ -463,7 +567,8 @@
 		}
 		100% {
 			opacity: 0;
-			transform: translateY(var(--y-end, 100px)) translateX(var(--x-end, 0)) rotate(var(--rotation-end, 360deg)) scale(0);
+			transform: translateY(var(--y-end, 100px)) translateX(var(--x-end, 0))
+				rotate(var(--rotation-end, 360deg)) scale(0);
 		}
 	}
 
@@ -482,7 +587,8 @@
 		0% {
 			transform: translateX(-100%);
 		}
-		50%, 100% {
+		50%,
+		100% {
 			transform: translateX(100%);
 		}
 	}

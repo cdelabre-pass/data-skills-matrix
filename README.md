@@ -26,7 +26,7 @@ All skill definitions live in `data/skills/` as YAML files, organized by categor
 
 - **Readable** — non-engineers can review and contribute to skill definitions
 - **Versionable** — track how expectations evolve over time via git history
-- **Reusable** — the same YAML sources feed both the web app and the CLI/Excel export
+- **Reusable** — the same YAML sources feed the web app and the Excel export
 - **Extensible** — add a skill, a role, or a career level by editing YAML, no code changes needed
 
 ```yaml
@@ -56,8 +56,8 @@ During self-assessment, expected levels are hidden. You evaluate yourself honest
 ## What's Inside
 
 - **Web App** — interactive self-assessment with personalized results, gap analysis, and development plans
-- **CLI Tool** — generate comprehensive Excel workbooks for offline use and team reviews
-- **YAML Data** — 63 skills across 6 categories, 6 roles, 4 career levels
+- **Excel Export** — downloadable workbook for offline use and team reviews (generated in-browser)
+- **YAML Data** — 63 skills across 7 categories, 6 roles, 4 career levels
 
 ### Roles
 
@@ -83,29 +83,49 @@ During self-assessment, expected levels are hidden. You evaluate yourself honest
 
 ## Quick Start
 
-### Web App
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 20+
+
+### Setup
 
 ```bash
-cd web
-npm install
-npm run dev          # http://localhost:5173
+git clone https://github.com/cdelabre-pass/data-skills-matrix.git
+cd data-skills-matrix
+make install     # installs root + web dependencies
 ```
 
-### CLI
+### Run the web app
 
 ```bash
-uv sync
-skills-matrix generate              # Generate Excel matrix
-skills-matrix list-skills            # List all skills
-skills-matrix validate               # Validate YAML config
+make dev         # http://localhost:5173
 ```
 
-### Data Sync
+### Rebuild skills data
 
-YAML sources are compiled to JSON for the web app. A pre-commit hook keeps them in sync:
+After editing YAML files, regenerate the JSON used by the web app:
 
 ```bash
-uv run python scripts/build_web_data.py
+make build-data
+```
+
+A pre-commit hook will catch it if you forget.
+
+### All available commands
+
+```
+make help
+```
+
+```
+  help            Show this help
+  install         Install all dependencies
+  dev             Start web dev server (http://localhost:5173)
+  build           Build everything (data + web)
+  build-data      Regenerate skills-data.json from YAML sources
+  check-data      Verify skills-data.json is in sync with YAML
+  test            Run web app tests
+  hooks           Install pre-commit hooks
 ```
 
 ## Project Structure
@@ -113,19 +133,24 @@ uv run python scripts/build_web_data.py
 ```
 skills-matrix/
 ├── data/                       # YAML skill definitions (the source of truth)
-│   ├── config.yaml             # Roles and global config
-│   ├── skill_groups.yaml       # Assessment modes
-│   └── skills/                 # Skills by category
+│   ├── config.yaml             # Roles, career levels, global config
+│   ├── skill_groups.yaml       # Assessment modes and core skill groupings
+│   └── skills/                 # Skills organized by category
 │       ├── analytics/
 │       ├── engineering/
 │       ├── ml/
 │       ├── ops/
 │       ├── compliance/
-│       └── business/
+│       ├── business/
+│       └── soft_skills/
+├── scripts/                    # Build and validation scripts (JS)
+│   ├── build-data.mjs          # YAML → JSON compiler
+│   └── check-data.mjs          # Sync validator (used by pre-commit)
 ├── web/                        # SvelteKit web application
-├── src/skills_matrix/          # Python CLI package
-├── scripts/                    # Build and validation scripts
-└── tests/                      # Python tests
+│   ├── src/
+│   └── static/data/            # Generated skills-data.json (committed)
+├── Makefile                    # Developer shortcuts
+└── package.json                # Root package (js-yaml for build script)
 ```
 
 ## Contributing

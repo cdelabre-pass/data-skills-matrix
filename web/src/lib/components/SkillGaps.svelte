@@ -34,7 +34,12 @@
 				if (!expectedLevels) continue;
 
 				const expectedLevel = expectedLevels[careerLevelIndex];
-				if (expectedLevel === 'NC' || expectedLevel === null || expectedLevel === undefined) continue;
+				if (
+					expectedLevel === 'NC' ||
+					expectedLevel === null ||
+					expectedLevel === undefined
+				)
+					continue;
 
 				const gap = expectedLevel - currentLevel;
 
@@ -45,7 +50,7 @@
 						expectedLevel,
 						gap,
 						inferred: answer.inferred,
-						sourceSkill: answer.sourceSkill
+						sourceSkill: answer.sourceSkill,
 					});
 				}
 			} else {
@@ -57,7 +62,7 @@
 						expectedLevel: 2,
 						gap: 2 - currentLevel,
 						inferred: answer.inferred,
-						sourceSkill: answer.sourceSkill
+						sourceSkill: answer.sourceSkill,
 					});
 				}
 			}
@@ -79,7 +84,7 @@
 						expectedLevel: 2,
 						gap: 2 - currentLevel,
 						inferred: answer.inferred,
-						sourceSkill: answer.sourceSkill
+						sourceSkill: answer.sourceSkill,
 					});
 				}
 			}
@@ -102,7 +107,7 @@
 		if (role) {
 			// Role-specific: strengths are skills meeting/exceeding expectations
 			return skills
-				.filter(skill => {
+				.filter((skill) => {
 					const answer = answers[skill.id];
 					if (!answer || answer.level === 'nc') return false;
 
@@ -110,31 +115,32 @@
 					if (!expectedLevels) return false;
 
 					const expected = expectedLevels[careerLevelIndex];
-					if (expected === 'NC' || expected === null || expected === undefined) return false;
+					if (expected === 'NC' || expected === null || expected === undefined)
+						return false;
 
 					return (answer.level as number) >= expected;
 				})
-				.map(skill => ({
+				.map((skill) => ({
 					skill,
 					level: answers[skill.id].level as number,
 					inferred: answers[skill.id].inferred,
-					sourceSkill: answers[skill.id].sourceSkill
+					sourceSkill: answers[skill.id].sourceSkill,
 				}))
 				.sort((a, b) => b.level - a.level)
 				.slice(0, 5);
 		} else {
 			// Role-agnostic: strengths are highest-scored skills (>= 3)
 			return skills
-				.filter(skill => {
+				.filter((skill) => {
 					const answer = answers[skill.id];
 					if (!answer || answer.level === 'nc') return false;
 					return (answer.level as number) >= 3;
 				})
-				.map(skill => ({
+				.map((skill) => ({
 					skill,
 					level: answers[skill.id].level as number,
 					inferred: answers[skill.id].inferred,
-					sourceSkill: answers[skill.id].sourceSkill
+					sourceSkill: answers[skill.id].sourceSkill,
 				}))
 				.sort((a, b) => b.level - a.level)
 				.slice(0, 8);
@@ -166,7 +172,7 @@
 					skill,
 					currentLevel,
 					targetLevel: 5,
-					targetLabel: 'Mentor'
+					targetLabel: 'Mentor',
 				});
 			}
 			// Avancé (level 3) can become Expert (4) then Mentor
@@ -175,7 +181,7 @@
 					skill,
 					currentLevel,
 					targetLevel: 5,
-					targetLabel: 'Mentor'
+					targetLabel: 'Mentor',
 				});
 			}
 			// Mentor (level 5) can become Expert Externe (6)
@@ -184,7 +190,7 @@
 					skill,
 					currentLevel,
 					targetLevel: 6,
-					targetLabel: 'Expert Externe'
+					targetLabel: 'Expert Externe',
 				});
 			}
 		}
@@ -196,7 +202,7 @@
 	// Get name of source skill for inference display
 	function getSourceSkillName(sourceSkillId: string | undefined): string {
 		if (!sourceSkillId) return '';
-		const skill = skills.find(s => s.id === sourceSkillId);
+		const skill = skills.find((s) => s.id === sourceSkillId);
 		return skill?.name || sourceSkillId;
 	}
 
@@ -207,7 +213,7 @@
 		3: 'bg-level-3',
 		4: 'bg-level-4',
 		5: 'bg-level-5',
-		6: 'bg-level-6'
+		6: 'bg-level-6',
 	};
 
 	let showTips = false;
@@ -239,19 +245,29 @@
 				<div class="text-center py-8 text-base-400">
 					<span class="text-4xl mb-2 block">🎉</span>
 					<p>Aucun écart identifié !</p>
-					<p class="text-sm text-base-500">Vous atteignez ou dépassez les attentes, y compris le niveau Intermédiaire.</p>
+					<p class="text-sm text-base-500">
+						Vous atteignez ou dépassez les attentes, y compris le niveau
+						Intermédiaire.
+					</p>
 				</div>
 			{:else}
 				{#if gapsFallback}
-					<p class="text-sm text-base-400 mb-3">Vous atteignez les attentes pour votre niveau. Voici les compétences à amener à Intermédiaire (2) :</p>
+					<p class="text-sm text-base-400 mb-3">
+						Vous atteignez les attentes pour votre niveau. Voici les compétences
+						à amener à Intermédiaire (2) :
+					</p>
 				{/if}
 				<div class="space-y-3">
 					{#each gaps.slice(0, 8) as { skill, currentLevel, expectedLevel, gap }}
-						<div class="p-3 bg-base-800/50 rounded-xl border border-base-700/50">
+						<div
+							class="p-3 bg-base-800/50 rounded-xl border border-base-700/50"
+						>
 							<div class="flex items-start justify-between gap-2">
 								<div class="flex-1">
 									<p class="font-medium text-base-100">{skill.name}</p>
-									<p class="text-xs text-base-500">{skill.category.replace('_', ' ')}</p>
+									<p class="text-xs text-base-500">
+										{skill.category.replace('_', ' ')}
+									</p>
 								</div>
 								<button
 									on:click={() => openTips(skill)}
@@ -262,17 +278,40 @@
 							</div>
 							<div class="flex items-center gap-2 mt-2">
 								<span class="text-xs text-base-500">Actuel:</span>
-								<span class="w-6 h-6 rounded {levelColors[currentLevel]} flex items-center justify-center text-xs font-medium {currentLevel >= 3 ? 'text-white' : 'text-base-900'}">
+								<span
+									class="w-6 h-6 rounded {levelColors[
+										currentLevel
+									]} flex items-center justify-center text-xs font-medium {currentLevel >=
+									3
+										? 'text-white'
+										: 'text-base-900'}"
+								>
 									{currentLevel}
 								</span>
-								<svg class="w-4 h-4 text-base-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+								<svg
+									class="w-4 h-4 text-base-600"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M13 7l5 5m0 0l-5 5m5-5H6"
+									/>
 								</svg>
-								<span class="text-xs text-base-500">{role && !gapsFallback ? 'Attendu' : 'Cible'}:</span>
-								<span class="w-6 h-6 rounded bg-accent-500/20 text-accent-400 flex items-center justify-center text-xs font-medium">
+								<span class="text-xs text-base-500"
+									>{role && !gapsFallback ? 'Attendu' : 'Cible'}:</span
+								>
+								<span
+									class="w-6 h-6 rounded bg-accent-500/20 text-accent-400 flex items-center justify-center text-xs font-medium"
+								>
 									{expectedLevel}
 								</span>
-								<span class="ml-auto text-xs text-red-400 font-medium">-{gap}</span>
+								<span class="ml-auto text-xs text-red-400 font-medium"
+									>-{gap}</span
+								>
 							</div>
 						</div>
 					{/each}
@@ -291,7 +330,9 @@
 			<h2 class="text-xl font-semibold text-base-100 mb-4">
 				Points forts
 				{#if strengths.length > 0}
-					<span class="text-sm font-normal text-base-500">({strengths.length})</span>
+					<span class="text-sm font-normal text-base-500"
+						>({strengths.length})</span
+					>
 				{/if}
 			</h2>
 
@@ -302,13 +343,24 @@
 			{:else}
 				<div class="space-y-3">
 					{#each strengths as { skill, level }}
-						<div class="p-3 bg-green-500/10 rounded-xl border border-green-500/20 flex items-center gap-3">
-							<span class="w-8 h-8 rounded-full {levelColors[level]} flex items-center justify-center text-sm font-bold {level >= 3 ? 'text-white' : 'text-base-900'}">
+						<div
+							class="p-3 bg-green-500/10 rounded-xl border border-green-500/20 flex items-center gap-3"
+						>
+							<span
+								class="w-8 h-8 rounded-full {levelColors[
+									level
+								]} flex items-center justify-center text-sm font-bold {level >=
+								3
+									? 'text-white'
+									: 'text-base-900'}"
+							>
 								{level}
 							</span>
 							<div>
 								<p class="font-medium text-base-100">{skill.name}</p>
-								<p class="text-xs text-base-500">{skill.category.replace('_', ' ')}</p>
+								<p class="text-xs text-base-500">
+									{skill.category.replace('_', ' ')}
+								</p>
 							</div>
 						</div>
 					{/each}
@@ -321,20 +373,38 @@
 	{#if growthOpportunities.length > 0}
 		<div class="card p-6">
 			<div class="flex items-center gap-3 mb-4">
-				<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/20 to-fuchsia-500/20 flex items-center justify-center">
-					<svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+				<div
+					class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/20 to-fuchsia-500/20 flex items-center justify-center"
+				>
+					<svg
+						class="w-5 h-5 text-purple-400"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+						/>
 					</svg>
 				</div>
 				<div>
-					<h2 class="text-xl font-semibold text-base-100">Potentiel d'évolution</h2>
-					<p class="text-sm text-base-400">Compétences où vous pouvez devenir référent</p>
+					<h2 class="text-xl font-semibold text-base-100">
+						Potentiel d'évolution
+					</h2>
+					<p class="text-sm text-base-400">
+						Compétences où vous pouvez devenir référent
+					</p>
 				</div>
 			</div>
 
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
 				{#each growthOpportunities as { skill, currentLevel, targetLevel, targetLabel }}
-					<div class="p-4 bg-gradient-to-br from-purple-500/5 to-fuchsia-500/5 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-colors">
+					<div
+						class="p-4 bg-gradient-to-br from-purple-500/5 to-fuchsia-500/5 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-colors"
+					>
 						<div class="flex items-start justify-between gap-2 mb-3">
 							<p class="font-medium text-base-100 text-sm">{skill.name}</p>
 							<button
@@ -345,13 +415,34 @@
 							</button>
 						</div>
 						<div class="flex items-center gap-2">
-							<span class="w-7 h-7 rounded-lg {levelColors[currentLevel]} flex items-center justify-center text-xs font-bold {currentLevel >= 3 ? 'text-white' : 'text-base-900'}">
+							<span
+								class="w-7 h-7 rounded-lg {levelColors[
+									currentLevel
+								]} flex items-center justify-center text-xs font-bold {currentLevel >=
+								3
+									? 'text-white'
+									: 'text-base-900'}"
+							>
 								{currentLevel}
 							</span>
-							<svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+							<svg
+								class="w-4 h-4 text-purple-500"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M13 7l5 5m0 0l-5 5m5-5H6"
+								/>
 							</svg>
-							<span class="w-7 h-7 rounded-lg {levelColors[targetLevel]} flex items-center justify-center text-xs font-bold text-white">
+							<span
+								class="w-7 h-7 rounded-lg {levelColors[
+									targetLevel
+								]} flex items-center justify-center text-xs font-bold text-white"
+							>
 								{targetLevel}
 							</span>
 							<span class="text-xs text-purple-400 ml-1">{targetLabel}</span>
@@ -371,6 +462,7 @@
 		role="dialog"
 		aria-modal="true"
 		aria-labelledby="modal-title"
+		tabindex="-1"
 		on:click={closeTips}
 		on:keydown={(e) => e.key === 'Escape' && closeTips()}
 	>
@@ -387,24 +479,45 @@
 
 			<div class="p-4 sm:p-6">
 				<div class="flex items-start justify-between mb-4 gap-4">
-					<h3 id="modal-title" class="text-lg sm:text-xl font-semibold text-base-100">{selectedSkill.name}</h3>
+					<h3
+						id="modal-title"
+						class="text-lg sm:text-xl font-semibold text-base-100"
+					>
+						{selectedSkill.name}
+					</h3>
 					<button
 						on:click={closeTips}
 						class="flex-shrink-0 w-10 h-10 sm:w-8 sm:h-8 flex items-center justify-center rounded-lg sm:rounded bg-base-800 sm:bg-transparent text-base-400 hover:text-base-200 transition-colors"
 						aria-label="Fermer"
 					>
-						<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+						<svg
+							class="w-6 h-6"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M6 18L18 6M6 6l12 12"
+							/>
 						</svg>
 					</button>
 				</div>
 
 				{#if selectedSkill.improvement_tips && Object.keys(selectedSkill.improvement_tips).length > 0}
 					<div class="space-y-3 sm:space-y-4">
-						<h4 class="font-medium text-base-300 text-sm sm:text-base">Conseils pour progresser</h4>
+						<h4 class="font-medium text-base-300 text-sm sm:text-base">
+							Conseils pour progresser
+						</h4>
 						{#each Object.entries(selectedSkill.improvement_tips) as [transition, tip]}
-							<div class="p-3 bg-base-800/50 rounded-xl border border-base-700/50">
-								<p class="text-xs font-medium text-accent-400 mb-1">Niveau {transition}</p>
+							<div
+								class="p-3 bg-base-800/50 rounded-xl border border-base-700/50"
+							>
+								<p class="text-xs font-medium text-accent-400 mb-1">
+									Niveau {transition}
+								</p>
 								<p class="text-xs sm:text-sm text-base-300">{tip}</p>
 							</div>
 						{/each}
@@ -413,7 +526,9 @@
 
 				{#if selectedSkill.resources && selectedSkill.resources.length > 0}
 					<div class="mt-4 sm:mt-6">
-						<h4 class="font-medium text-base-300 mb-3 text-sm sm:text-base">Ressources</h4>
+						<h4 class="font-medium text-base-300 mb-3 text-sm sm:text-base">
+							Ressources
+						</h4>
 						<div class="space-y-1 sm:space-y-2">
 							{#each selectedSkill.resources as resource}
 								<a
@@ -430,11 +545,23 @@
 										{:else}📄
 										{/if}
 									</span>
-									<span class="flex-1 text-sm text-base-300 group-hover:text-accent-400 transition-colors">
+									<span
+										class="flex-1 text-sm text-base-300 group-hover:text-accent-400 transition-colors"
+									>
 										{resource.title}
 									</span>
-									<svg class="w-4 h-4 text-base-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+									<svg
+										class="w-4 h-4 text-base-500 flex-shrink-0"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+										/>
 									</svg>
 								</a>
 							{/each}

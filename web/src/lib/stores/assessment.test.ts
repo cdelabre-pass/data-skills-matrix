@@ -1,6 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { get } from 'svelte/store';
-import { assessmentStore, assessmentProgress, currentSkill } from './assessment';
+import {
+	assessmentStore,
+	assessmentProgress,
+	currentSkill,
+} from './assessment';
 
 // Mock localStorage
 const localStorageMock = {
@@ -14,7 +18,7 @@ const localStorageMock = {
 	}),
 	clear: vi.fn(() => {
 		localStorageMock.store = {};
-	})
+	}),
 };
 
 Object.defineProperty(global, 'localStorage', { value: localStorageMock });
@@ -28,7 +32,7 @@ const mockSkillsData = {
 			description: 'Basic SQL queries',
 			category: 'technical',
 			levels: { data_analyst: { 1: 'Basic', 2: 'Intermediate' } },
-			level_descriptions: { '1': 'Basic', '2': 'Intermediate' }
+			level_descriptions: { '1': 'Basic', '2': 'Intermediate' },
 		},
 		{
 			id: 'python_basics',
@@ -36,7 +40,7 @@ const mockSkillsData = {
 			description: 'Basic Python programming',
 			category: 'technical',
 			levels: { data_analyst: { 1: 'Basic', 2: 'Intermediate' } },
-			level_descriptions: { '1': 'Basic', '2': 'Intermediate' }
+			level_descriptions: { '1': 'Basic', '2': 'Intermediate' },
 		},
 		{
 			id: 'communication',
@@ -44,19 +48,33 @@ const mockSkillsData = {
 			description: 'Communication skills',
 			category: 'soft_skills',
 			levels: { data_analyst: { 1: 'Basic', 2: 'Intermediate' } },
-			level_descriptions: { '1': 'Basic', '2': 'Intermediate' }
-		}
+			level_descriptions: { '1': 'Basic', '2': 'Intermediate' },
+		},
 	],
 	core_skills_by_role: {
-		data_analyst: ['sql_basics']
+		data_analyst: ['sql_basics'],
 	},
 	skill_groups: {
 		data_fundamentals: {
 			name: 'Data Fundamentals',
-			skills: ['sql_basics', 'python_basics']
-		}
+			skills: ['sql_basics', 'python_basics'],
+		},
 	},
-	inference_rules: []
+	inference_rules: [
+		{
+			source: 'sql_basics',
+			rules: [
+				{
+					condition: '>= 3',
+					targets: [{ skill: 'python_basics', suggestion: 2, confidence: 0.8 }],
+				},
+				{
+					condition: '<= 1',
+					targets: [{ skill: 'python_basics', suggestion: 0, confidence: 0.9 }],
+				},
+			],
+		},
+	],
 };
 
 describe('assessmentStore', () => {
@@ -75,7 +93,13 @@ describe('assessmentStore', () => {
 		});
 
 		it('initializes assessment with provided data', () => {
-			assessmentStore.init('Test User', 'data_analyst', ['technical'], mockSkillsData, 'standard');
+			assessmentStore.init(
+				'Test User',
+				'data_analyst',
+				['technical'],
+				mockSkillsData,
+				'standard',
+			);
 
 			const state = get(assessmentStore);
 			expect(state.name).toBe('Test User');
@@ -87,7 +111,13 @@ describe('assessmentStore', () => {
 		});
 
 		it('filters skills by category', () => {
-			assessmentStore.init('Test User', 'data_analyst', ['soft_skills'], mockSkillsData, 'standard');
+			assessmentStore.init(
+				'Test User',
+				'data_analyst',
+				['soft_skills'],
+				mockSkillsData,
+				'standard',
+			);
 
 			const state = get(assessmentStore);
 			expect(state.skills.length).toBe(1);
@@ -109,7 +139,13 @@ describe('assessmentStore', () => {
 
 	describe('answering skills', () => {
 		beforeEach(() => {
-			assessmentStore.init('Test User', 'data_analyst', ['technical'], mockSkillsData, 'standard');
+			assessmentStore.init(
+				'Test User',
+				'data_analyst',
+				['technical'],
+				mockSkillsData,
+				'standard',
+			);
 		});
 
 		it('records skill answer', () => {
@@ -141,7 +177,13 @@ describe('assessmentStore', () => {
 
 	describe('navigation', () => {
 		beforeEach(() => {
-			assessmentStore.init('Test User', 'data_analyst', ['technical'], mockSkillsData, 'standard');
+			assessmentStore.init(
+				'Test User',
+				'data_analyst',
+				['technical'],
+				mockSkillsData,
+				'standard',
+			);
 		});
 
 		it('starts at first skill', () => {
@@ -173,7 +215,13 @@ describe('assessmentStore', () => {
 
 	describe('progress tracking', () => {
 		beforeEach(() => {
-			assessmentStore.init('Test User', 'data_analyst', ['technical'], mockSkillsData, 'standard');
+			assessmentStore.init(
+				'Test User',
+				'data_analyst',
+				['technical'],
+				mockSkillsData,
+				'standard',
+			);
 		});
 
 		it('calculates progress correctly', () => {
@@ -203,7 +251,13 @@ describe('assessmentStore', () => {
 
 	describe('completion', () => {
 		beforeEach(() => {
-			assessmentStore.init('Test User', 'data_analyst', ['technical'], mockSkillsData, 'standard');
+			assessmentStore.init(
+				'Test User',
+				'data_analyst',
+				['technical'],
+				mockSkillsData,
+				'standard',
+			);
 		});
 
 		it('marks assessment as complete', () => {
@@ -216,7 +270,13 @@ describe('assessmentStore', () => {
 
 	describe('clear', () => {
 		it('resets state to initial values', () => {
-			assessmentStore.init('Test User', 'data_analyst', ['technical'], mockSkillsData, 'standard');
+			assessmentStore.init(
+				'Test User',
+				'data_analyst',
+				['technical'],
+				mockSkillsData,
+				'standard',
+			);
 			assessmentStore.clear();
 
 			const state = get(assessmentStore);
@@ -226,7 +286,13 @@ describe('assessmentStore', () => {
 		});
 
 		it('removes from localStorage', () => {
-			assessmentStore.init('Test User', 'data_analyst', ['technical'], mockSkillsData, 'standard');
+			assessmentStore.init(
+				'Test User',
+				'data_analyst',
+				['technical'],
+				mockSkillsData,
+				'standard',
+			);
 			assessmentStore.clear();
 
 			expect(localStorageMock.removeItem).toHaveBeenCalled();
@@ -238,7 +304,13 @@ describe('derived stores', () => {
 	beforeEach(() => {
 		localStorageMock.clear();
 		assessmentStore.clear();
-		assessmentStore.init('Test User', 'data_analyst', ['technical'], mockSkillsData, 'standard');
+		assessmentStore.init(
+			'Test User',
+			'data_analyst',
+			['technical'],
+			mockSkillsData,
+			'standard',
+		);
 	});
 
 	describe('currentSkill', () => {
@@ -266,5 +338,105 @@ describe('derived stores', () => {
 			progress = get(assessmentProgress);
 			expect(progress.percentage).toBe(50);
 		});
+	});
+});
+
+describe('inference rules', () => {
+	beforeEach(() => {
+		localStorageMock.clear();
+		assessmentStore.clear();
+		assessmentStore.init(
+			'Test User',
+			'data_analyst',
+			['technical'],
+			mockSkillsData,
+			'standard',
+		);
+	});
+
+	it('suggests inference when source skill is answered at high level', () => {
+		assessmentStore.answer('sql_basics', 3);
+		const state = get(assessmentStore);
+		expect(state.inferences['python_basics']).toBeDefined();
+		expect(state.inferences['python_basics'].suggestedLevel).toBe(2);
+		expect(state.inferences['python_basics'].confidence).toBe(0.8);
+	});
+
+	it('suggests inference when source skill is answered at low level', () => {
+		assessmentStore.answer('sql_basics', 1);
+		const state = get(assessmentStore);
+		expect(state.inferences['python_basics']).toBeDefined();
+		expect(state.inferences['python_basics'].suggestedLevel).toBe(0);
+	});
+
+	it('does not infer when source skill is nc', () => {
+		assessmentStore.answer('sql_basics', 'nc');
+		const state = get(assessmentStore);
+		expect(state.inferences['python_basics']).toBeUndefined();
+	});
+
+	it('does not override manually answered target skill', () => {
+		assessmentStore.answer('python_basics', 4, false);
+		assessmentStore.answer('sql_basics', 3);
+		const state = get(assessmentStore);
+		// Manual answer should not be overridden by inference
+		expect(state.answers['python_basics'].level).toBe(4);
+		expect(state.answers['python_basics'].inferred).toBe(false);
+	});
+
+	it('inferred answers are reflected in progress', () => {
+		assessmentStore.answer('sql_basics', 3);
+		// The inference should auto-apply
+		const progress = assessmentStore.getProgress();
+		// sql_basics is manually answered
+		expect(progress.manualCount).toBeGreaterThanOrEqual(1);
+	});
+});
+
+describe('quick mode', () => {
+	beforeEach(() => {
+		localStorageMock.clear();
+		assessmentStore.clear();
+	});
+
+	it('in quick mode, only includes core skills', () => {
+		assessmentStore.init(
+			'Test User',
+			'data_analyst',
+			['technical'],
+			mockSkillsData,
+			'quick',
+		);
+		const state = get(assessmentStore);
+		// Only sql_basics is core for data_analyst
+		expect(state.skills.every((s) => s.isCore)).toBe(true);
+	});
+});
+
+describe('role-agnostic mode (null role)', () => {
+	beforeEach(() => {
+		localStorageMock.clear();
+		assessmentStore.clear();
+	});
+
+	it('includes all skills when role is null', () => {
+		assessmentStore.init(null, null, ['technical'], mockSkillsData, 'standard');
+		const state = get(assessmentStore);
+		expect(state.skills.length).toBe(2); // both technical skills
+	});
+});
+
+describe('localStorage persistence', () => {
+	it('saves state to localStorage when answering', () => {
+		assessmentStore.clear();
+		assessmentStore.init(
+			'Test User',
+			'data_analyst',
+			['technical'],
+			mockSkillsData,
+			'standard',
+		);
+		assessmentStore.answer('sql_basics', 3);
+		expect(localStorageMock.setItem).toHaveBeenCalled();
 	});
 });

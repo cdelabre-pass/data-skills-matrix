@@ -8,18 +8,25 @@ repos:
       - id: check-added-large-files
       - id: check-merge-conflict
 
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.14
-    hooks:
-      - id: ruff
-        args: [--fix, --exit-non-zero-on-fix]
-      - id: ruff-format
-
   - repo: local
     hooks:
+      - id: validate-data
+        name: Validate YAML data structure
+        entry: node scripts/validate-data.mjs
+        language: system
+        files: ^data/.*\.yaml$
+        pass_filenames: false
+
       - id: check-web-data
         name: Check web data is up-to-date
-        entry: python scripts/check_web_data.py
-        language: python
+        entry: node scripts/check-data.mjs
+        language: system
         files: ^data/.*\.yaml$
+        pass_filenames: false
+
+      - id: lint-web
+        name: Lint web app (ESLint + Prettier)
+        entry: bash -c 'cd web && npm run lint && npm run format:check'
+        language: system
+        files: \.(ts|svelte)$
         pass_filenames: false

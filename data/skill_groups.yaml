@@ -45,7 +45,7 @@ core_skills_by_role:
     - docker                # DevOps
     - gcp_fundamentals      # Cloud
     - github_actions        # CI/CD
-    - data_quality_testing  # Quality
+    - data_quality_management  # Quality
     - terraform             # IaC
     - monitoring            # Ops
     - medallion_architecture  # Architecture
@@ -57,9 +57,9 @@ core_skills_by_role:
     - statistical_analysis  # Foundation
     - ml_fundamentals       # Core
     - insight_generation    # Deliverable
-    - tensorflow_pytorch    # ML tools
-    - embeddings_llm        # Modern ML
-    - mlflow_experiment     # MLOps
+    - ml_deployment    # ML tools
+    - embeddings        # Modern ML
+    - mlflow     # MLOps
     - feature_engineering   # ML skill
     - ab_testing            # Experimentation
     - git_github            # Essential
@@ -76,7 +76,7 @@ core_skills_by_role:
     - bigquery_advanced     # Data warehouse
     - python_data           # Tool
     - git_github            # Essential
-    - data_quality_testing  # Quality
+    - data_quality_management  # Quality
     - medallion_architecture  # Architecture
     - airflow               # Orchestration
     - github_actions        # CI/CD
@@ -87,8 +87,8 @@ core_skills_by_role:
   ml_engineer:
     - python_data           # Foundation
     - ml_fundamentals       # Core
-    - tensorflow_pytorch    # ML tools
-    - mlflow_experiment     # MLOps
+    - ml_deployment    # ML tools
+    - mlflow     # MLOps
     - vertex_ai             # GCP ML
     - docker                # Deployment
     - kubernetes            # Orchestration
@@ -96,7 +96,7 @@ core_skills_by_role:
     - git_github            # Essential
     - github_actions        # CI/CD
     - feature_engineering   # ML skill
-    - embeddings_llm        # Modern ML
+    - embeddings        # Modern ML
     - monitoring            # Ops
     - python_backend        # APIs
     - problem_solving       # Soft skill
@@ -194,10 +194,10 @@ groups:
     description: "Analytics produit"
     skills:
       - firebase_analytics
-      - funnel_analysis
-      - cohort_analysis
-      - user_journey
-      - event_tracking
+      - behavioral_analysis
+      - product_metrics
+      - attribution_marketing
+      - tracking_design
 
   bi_visualization:
     name: "BI & Visualisation"
@@ -214,7 +214,7 @@ groups:
     description: "ML et deep learning"
     skills:
       - ml_fundamentals
-      - tensorflow_pytorch
+      - ml_deployment
       - feature_engineering
 
   ml_advanced:
@@ -222,17 +222,17 @@ groups:
     icon: "brain"
     description: "Embeddings, recommandation, MLOps"
     skills:
-      - embeddings_llm
+      - embeddings
       - recommendation_systems
       - entity_resolution
-      - mlflow_experiment
+      - mlflow
 
   data_quality:
     name: "Qualité des Données"
     icon: "shield"
     description: "Tests, contrats, gouvernance"
     skills:
-      - data_quality_testing
+      - data_quality_management
       - data_contracts
       - data_mesh
 
@@ -409,13 +409,13 @@ inference_rules:
     rules:
       - condition: ">= 3"
         targets:
-          - skill: tensorflow_pytorch
+          - skill: ml_deployment
             suggestion: 2
             confidence: 0.7
           - skill: feature_engineering
             suggestion: 2
             confidence: 0.8
-          - skill: mlflow_experiment
+          - skill: mlflow
             suggestion: 1
             confidence: 0.6
       - condition: ">= 2"
@@ -425,21 +425,21 @@ inference_rules:
             confidence: 0.7
       - condition: "<= 1"
         targets:
-          - skill: tensorflow_pytorch
+          - skill: ml_deployment
             suggestion: 0
             confidence: 0.9
-          - skill: embeddings_llm
+          - skill: embeddings
             suggestion: 0
             confidence: 0.9
           - skill: recommendation_systems
             suggestion: 0
             confidence: 0.9
 
-  - source: tensorflow_pytorch
+  - source: ml_deployment
     rules:
       - condition: ">= 3"
         targets:
-          - skill: embeddings_llm
+          - skill: embeddings
             suggestion: 2
             confidence: 0.7
           - skill: vertex_ai
@@ -447,7 +447,7 @@ inference_rules:
             confidence: 0.6
       - condition: "<= 1"
         targets:
-          - skill: embeddings_llm
+          - skill: embeddings
             suggestion: 0
             confidence: 0.8
 
@@ -490,18 +490,18 @@ inference_rules:
     rules:
       - condition: ">= 2"
         targets:
-          - skill: event_tracking
+          - skill: tracking_design
             suggestion: 1
             confidence: 0.7
-          - skill: funnel_analysis
+          - skill: behavioral_analysis
             suggestion: 1
             confidence: 0.6
       - condition: "<= 1"
         targets:
-          - skill: funnel_analysis
+          - skill: behavioral_analysis
             suggestion: 0
             confidence: 0.7
-          - skill: cohort_analysis
+          - skill: product_metrics
             suggestion: 0
             confidence: 0.7
 

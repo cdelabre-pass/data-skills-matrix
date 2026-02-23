@@ -9,14 +9,11 @@ Thanks for your interest in improving the Skills Matrix! Whether you want to fix
 git clone <repo-url>
 cd skills-matrix
 
-# Install Python dependencies (with dev tools)
-uv sync --dev
+# Install all dependencies
+make install
 
 # Install pre-commit hooks
-uv run pre-commit install
-
-# Install web dependencies
-cd web && npm install
+make hooks
 ```
 
 ## Adding or Editing Skills
@@ -27,8 +24,7 @@ Skills are defined as YAML files in `data/skills/<category>/`. This is the most 
 
 1. Find the file in `data/skills/` (organized by category)
 2. Update the fields you want to change (descriptions, levels, tips, resources)
-3. Run `uv run skills-matrix validate` to check your changes
-4. Rebuild the web data: `uv run python scripts/build_web_data.py`
+3. Rebuild the web data: `make build-data`
 
 ### Add a new skill
 
@@ -69,23 +65,19 @@ skills:
 
 ## Development
 
-### Python / CLI
-
-```bash
-uv run pytest                              # Run tests
-uv run pytest --cov=src/skills_matrix      # With coverage
-uv run ruff check src/ tests/              # Lint
-uv run ruff format src/ tests/             # Format
-```
-
 ### Web App
 
 ```bash
+make dev         # Dev server with hot reload (http://localhost:5173)
+make test        # Run tests (vitest)
+make build       # Production build
+```
+
+```bash
+# Or directly via npm from web/
 cd web
-npm run dev          # Dev server with hot reload
-npm run check        # Type checking
-npm run test         # Tests (vitest)
-npm run build        # Production build
+npm run check    # Type checking
+npm run test     # Tests
 ```
 
 ### Data sync
@@ -93,20 +85,27 @@ npm run build        # Production build
 After editing YAML files, rebuild the JSON used by the web app:
 
 ```bash
-uv run python scripts/build_web_data.py
+make build-data
 ```
 
-A pre-commit hook will catch it if you forget.
+To verify the JSON is in sync without rebuilding:
+
+```bash
+make check-data
+```
+
+The pre-commit hook runs `check-data` automatically on YAML changes.
 
 ## Pull Requests
 
 1. Create a branch from `main`
 2. Make your changes
-3. Ensure tests pass and linting is clean
-4. Open a PR with a clear description of what and why
+3. Run `make build-data` if you edited YAML files
+4. Ensure tests pass: `make test`
+5. Open a PR with a clear description of what and why
 
 ## Code Style
 
-- **Python**: formatted with ruff, tested with pytest
-- **Svelte**: uses tabs for indentation
+- **Svelte/TypeScript**: uses tabs for indentation
 - **YAML**: 2-space indentation, follow existing file patterns
+- **JavaScript**: ES modules (`.mjs`), no build step for scripts

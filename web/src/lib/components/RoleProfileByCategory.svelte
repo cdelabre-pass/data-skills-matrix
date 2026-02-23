@@ -16,21 +16,21 @@
 	}
 
 	const categoryNames: Record<string, string> = {
-		'analytics': 'Analytics',
-		'engineering': 'Engineering',
-		'ml': 'Machine Learning',
-		'ops': 'Data Ops',
-		'compliance': 'Compliance',
-		'business': 'Business'
+		analytics: 'Analytics',
+		engineering: 'Engineering',
+		ml: 'Machine Learning',
+		ops: 'Data Ops',
+		compliance: 'Compliance',
+		business: 'Business',
 	};
 
 	const categoryIcons: Record<string, string> = {
-		'analytics': '📊',
-		'engineering': '⚙️',
-		'ml': '🤖',
-		'ops': '🔧',
-		'compliance': '🔒',
-		'business': '💼'
+		analytics: '📊',
+		engineering: '⚙️',
+		ml: '🤖',
+		ops: '🔧',
+		compliance: '🔒',
+		business: '💼',
 	};
 
 	function calculateCategoryProfiles(): CategoryProfile[] {
@@ -48,7 +48,9 @@
 
 		const profiles: CategoryProfile[] = [];
 
-		for (const [categoryId, categorySkills] of Object.entries(skillsByCategory)) {
+		for (const [categoryId, categorySkills] of Object.entries(
+			skillsByCategory,
+		)) {
 			// Calculate average score for this category
 			let totalScore = 0;
 			let answeredCount = 0;
@@ -126,7 +128,7 @@
 				suggestedLevel,
 				suggestedLevelName,
 				avgScore: Math.round(avgScore * 10) / 10,
-				skillCount: answeredCount
+				skillCount: answeredCount,
 			});
 		}
 
@@ -141,47 +143,69 @@
 
 <div class="card p-6 animate-fade-in">
 	<div class="flex items-center gap-3 mb-6">
-		<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-500/20 to-purple-500/20 flex items-center justify-center">
+		<div
+			class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-500/20 to-purple-500/20 flex items-center justify-center"
+		>
 			<span class="text-lg">🎯</span>
 		</div>
 		<div>
 			<h2 class="text-xl font-semibold text-base-100">Profil par domaine</h2>
-			<p class="text-sm text-base-400">Votre profil de rôle le plus proche dans chaque domaine</p>
+			<p class="text-sm text-base-400">
+				Votre profil de rôle le plus proche dans chaque domaine
+			</p>
 		</div>
 	</div>
 
 	{#if categoryProfiles.length === 0}
-		<p class="text-base-400 text-center py-8">Pas assez de données pour calculer les profils.</p>
+		<p class="text-base-400 text-center py-8">
+			Pas assez de données pour calculer les profils.
+		</p>
 	{:else}
 		<div class="space-y-4">
 			{#each categoryProfiles as profile}
-				<div class="p-4 rounded-xl bg-base-800/50 border border-base-700/50 hover:border-base-600/50 transition-colors">
+				<div
+					class="p-4 rounded-xl bg-base-800/50 border border-base-700/50 hover:border-base-600/50 transition-colors"
+				>
 					<div class="flex items-start gap-4">
 						<!-- Category icon -->
-						<div class="w-12 h-12 rounded-xl bg-base-700/50 flex items-center justify-center flex-shrink-0">
-							<span class="text-xl">{categoryIcons[profile.categoryId] || '📁'}</span>
+						<div
+							class="w-12 h-12 rounded-xl bg-base-700/50 flex items-center justify-center flex-shrink-0"
+						>
+							<span class="text-xl"
+								>{categoryIcons[profile.categoryId] || '📁'}</span
+							>
 						</div>
 
 						<div class="flex-1 min-w-0">
 							<!-- Category name and match -->
 							<div class="flex items-center justify-between gap-2 mb-2">
-								<h3 class="font-semibold text-base-100">{profile.categoryName}</h3>
-								<span class="text-xs text-base-500">{profile.skillCount} compétences</span>
+								<h3 class="font-semibold text-base-100">
+									{profile.categoryName}
+								</h3>
+								<span class="text-xs text-base-500"
+									>{profile.skillCount} compétences</span
+								>
 							</div>
 
 							<!-- Role and level -->
 							<div class="flex flex-wrap items-center gap-2 mb-3">
-								<span class="px-3 py-1 rounded-full text-sm font-medium bg-accent-500/20 text-accent-400">
+								<span
+									class="px-3 py-1 rounded-full text-sm font-medium bg-accent-500/20 text-accent-400"
+								>
 									{profile.bestRoleName}
 								</span>
-								<span class="px-3 py-1 rounded-full text-sm font-medium bg-base-700 text-base-300">
+								<span
+									class="px-3 py-1 rounded-full text-sm font-medium bg-base-700 text-base-300"
+								>
 									{profile.suggestedLevelName}
 								</span>
 							</div>
 
 							<!-- Score bar -->
 							<div class="flex items-center gap-3">
-								<div class="flex-1 h-2 bg-base-700 rounded-full overflow-hidden">
+								<div
+									class="flex-1 h-2 bg-base-700 rounded-full overflow-hidden"
+								>
 									<div
 										class="h-full bg-gradient-to-r from-accent-600 to-accent-400 transition-all duration-500"
 										style="width: {profile.matchScore}%"
@@ -200,7 +224,8 @@
 		<!-- Legend -->
 		<div class="mt-6 pt-4 border-t border-base-700/50">
 			<p class="text-xs text-base-500 text-center">
-				Le rôle affiché correspond au profil dont les attentes sont les plus proches de vos réponses pour ce domaine.
+				Le rôle affiché correspond au profil dont les attentes sont les plus
+				proches de vos réponses pour ce domaine.
 			</p>
 		</div>
 	{/if}

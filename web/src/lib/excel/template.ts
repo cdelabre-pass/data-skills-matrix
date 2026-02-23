@@ -7,7 +7,7 @@ import ExcelJS from 'exceljs';
 const COLORS = {
 	header: '3943B4',
 	levels: {
-		'NC': 'E5E7EB',
+		NC: 'E5E7EB',
 		'0': 'FEE2E2',
 		'1': 'FED7AA',
 		'2': 'FEF08A',
@@ -17,14 +17,14 @@ const COLORS = {
 		'6': '8B5CF6',
 	} as Record<string, string>,
 	categories: {
-		'analytics': 'DBEAFE',
-		'engineering': 'DCFCE7',
-		'data_management': 'FEF3C7',
-		'business': 'FCE7F3',
-		'cloud': 'E0E7FF',
-		'machine_learning': 'F3E8FF',
-		'visualization': 'FFEDD5',
-		'soft_skills': 'F1F5F9',
+		analytics: 'DBEAFE',
+		engineering: 'DCFCE7',
+		data_management: 'FEF3C7',
+		business: 'FCE7F3',
+		cloud: 'E0E7FF',
+		machine_learning: 'F3E8FF',
+		visualization: 'FFEDD5',
+		soft_skills: 'F1F5F9',
 	} as Record<string, string>,
 	core: 'DCFCE7',
 	secondary: 'F3F4F6',
@@ -33,14 +33,14 @@ const COLORS = {
 
 const BORDER_THIN: Partial<ExcelJS.Border> = {
 	style: 'thin',
-	color: { argb: COLORS.border }
+	color: { argb: COLORS.border },
 };
 
 const BORDERS_ALL: Partial<ExcelJS.Borders> = {
 	top: BORDER_THIN,
 	left: BORDER_THIN,
 	bottom: BORDER_THIN,
-	right: BORDER_THIN
+	right: BORDER_THIN,
 };
 
 // ============================================
@@ -58,7 +58,11 @@ function getCategoryFill(categoryId: string): ExcelJS.Fill {
 }
 
 function getHeaderFill(): ExcelJS.Fill {
-	return { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.header } };
+	return {
+		type: 'pattern',
+		pattern: 'solid',
+		fgColor: { argb: COLORS.header },
+	};
 }
 
 function applyHeaderStyle(cell: ExcelJS.Cell) {
@@ -90,7 +94,10 @@ function createNiveauxSheet(wb: ExcelJS.Workbook, skillsData: any) {
 		applyHeaderStyle(cell);
 	});
 
-	const allLevels = [...skillsData.skill_levels.standard, ...skillsData.skill_levels.bonus];
+	const allLevels = [
+		...skillsData.skill_levels.standard,
+		...skillsData.skill_levels.bonus,
+	];
 	let rowIdx = 4;
 
 	for (const sl of allLevels) {
@@ -138,7 +145,8 @@ function createNiveauxSheet(wb: ExcelJS.Workbook, skillsData: any) {
 		row.getCell(2).border = BORDERS_ALL;
 		const coreRange = `${cl.core_expected[0]}-${cl.core_expected[1]}`;
 		const secRange = `${cl.secondary_expected[0]}-${cl.secondary_expected[1]}`;
-		row.getCell(3).value = `Compétences core: Niveau ${coreRange} | Secondaires: Niveau ${secRange}`;
+		row.getCell(3).value =
+			`Compétences core: Niveau ${coreRange} | Secondaires: Niveau ${secRange}`;
 		row.getCell(3).border = BORDERS_ALL;
 		rowIdx++;
 	}
@@ -151,15 +159,24 @@ function createNiveauxSheet(wb: ExcelJS.Workbook, skillsData: any) {
 
 	const coreRow = ws.getRow(rowIdx);
 	coreRow.getCell(1).value = 'C';
-	coreRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.core } };
+	coreRow.getCell(1).fill = {
+		type: 'pattern',
+		pattern: 'solid',
+		fgColor: { argb: COLORS.core },
+	};
 	coreRow.getCell(1).font = { bold: true };
 	coreRow.getCell(1).alignment = { horizontal: 'center' };
-	coreRow.getCell(2).value = 'Core Skill - Compétence fondamentale pour le rôle';
+	coreRow.getCell(2).value =
+		'Core Skill - Compétence fondamentale pour le rôle';
 	rowIdx++;
 
 	const secRow = ws.getRow(rowIdx);
 	secRow.getCell(1).value = 'S';
-	secRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: COLORS.secondary } };
+	secRow.getCell(1).fill = {
+		type: 'pattern',
+		pattern: 'solid',
+		fgColor: { argb: COLORS.secondary },
+	};
 	secRow.getCell(1).alignment = { horizontal: 'center' };
 	secRow.getCell(2).value = 'Secondary Skill - Compétence complémentaire';
 
@@ -173,7 +190,13 @@ function createMatriceSheet(wb: ExcelJS.Workbook, skillsData: any) {
 
 	const headers = ['Catégorie', 'Compétence', 'Description'];
 	for (const role of skillsData.roles) {
-		headers.push(`${role.name} C/S`, `${role.name} Jr`, `${role.name} Cf`, `${role.name} Sr`, `${role.name} Ex`);
+		headers.push(
+			`${role.name} C/S`,
+			`${role.name} Jr`,
+			`${role.name} Cf`,
+			`${role.name} Sr`,
+			`${role.name} Ex`,
+		);
 	}
 
 	const headerRow = ws.getRow(1);
@@ -183,13 +206,20 @@ function createMatriceSheet(wb: ExcelJS.Workbook, skillsData: any) {
 		cell.value = h;
 		applyHeaderStyle(cell);
 		if (i >= 3) {
-			cell.alignment = { horizontal: 'center', vertical: 'bottom', textRotation: 90, wrapText: true };
+			cell.alignment = {
+				horizontal: 'center',
+				vertical: 'bottom',
+				textRotation: 90,
+				wrapText: true,
+			};
 		}
 	});
 
 	let rowIdx = 2;
 	for (const category of skillsData.categories) {
-		const categorySkills = skillsData.skills.filter((s: any) => s.category === category.id);
+		const categorySkills = skillsData.skills.filter(
+			(s: any) => s.category === category.id,
+		);
 
 		for (const skill of categorySkills) {
 			const row = ws.getRow(rowIdx);
@@ -210,14 +240,19 @@ function createMatriceSheet(wb: ExcelJS.Workbook, skillsData: any) {
 				const csCell = row.getCell(col);
 				csCell.value = isCore ? 'C' : 'S';
 				csCell.alignment = { horizontal: 'center' };
-				csCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: isCore ? COLORS.core : COLORS.secondary } };
+				csCell.fill = {
+					type: 'pattern',
+					pattern: 'solid',
+					fgColor: { argb: isCore ? COLORS.core : COLORS.secondary },
+				};
 				if (isCore) csCell.font = { bold: true };
 				csCell.border = BORDERS_ALL;
 				col++;
 
 				const levels = skill.levels?.[role.id] || ['NC', 'NC', 'NC', 'NC'];
 				for (let i = 0; i < 4; i++) {
-					const level = levels[i] === null || levels[i] === undefined ? 'NC' : levels[i];
+					const level =
+						levels[i] === null || levels[i] === undefined ? 'NC' : levels[i];
 					const cell = row.getCell(col);
 					cell.value = String(level);
 					cell.alignment = { horizontal: 'center' };
@@ -246,7 +281,16 @@ function createMatriceSheet(wb: ExcelJS.Workbook, skillsData: any) {
 function createDescriptionsSheet(wb: ExcelJS.Workbook, skillsData: any) {
 	const ws = wb.addWorksheet('Descriptions par Niveau');
 
-	const headers = ['Catégorie', 'Compétence', 'Niveau 0', 'Niveau 1', 'Niveau 2', 'Niveau 3', 'Niveau 4', 'Ressources Internes'];
+	const headers = [
+		'Catégorie',
+		'Compétence',
+		'Niveau 0',
+		'Niveau 1',
+		'Niveau 2',
+		'Niveau 3',
+		'Niveau 4',
+		'Ressources Internes',
+	];
 	const headerRow = ws.getRow(1);
 	headers.forEach((h, i) => {
 		const cell = headerRow.getCell(i + 1);
@@ -256,7 +300,9 @@ function createDescriptionsSheet(wb: ExcelJS.Workbook, skillsData: any) {
 
 	let rowIdx = 2;
 	for (const category of skillsData.categories) {
-		const categorySkills = skillsData.skills.filter((s: any) => s.category === category.id);
+		const categorySkills = skillsData.skills.filter(
+			(s: any) => s.category === category.id,
+		);
 
 		for (const skill of categorySkills) {
 			const row = ws.getRow(rowIdx);
@@ -270,7 +316,10 @@ function createDescriptionsSheet(wb: ExcelJS.Workbook, skillsData: any) {
 			row.getCell(2).border = BORDERS_ALL;
 
 			for (let level = 0; level <= 4; level++) {
-				const desc = skill.level_descriptions?.[level] || skill.level_descriptions?.[String(level)] || '';
+				const desc =
+					skill.level_descriptions?.[level] ||
+					skill.level_descriptions?.[String(level)] ||
+					'';
 				const cell = row.getCell(3 + level);
 				cell.value = desc;
 				cell.alignment = { wrapText: true, vertical: 'top' };
@@ -282,9 +331,9 @@ function createDescriptionsSheet(wb: ExcelJS.Workbook, skillsData: any) {
 			}
 
 			const resources = skill.resources
-				? (Array.isArray(skill.resources)
+				? Array.isArray(skill.resources)
 					? skill.resources.map((r: any) => `• ${r.title}: ${r.url}`).join('\n')
-					: skill.resources)
+					: skill.resources
 				: '';
 			row.getCell(8).value = resources;
 			row.getCell(8).alignment = { wrapText: true, vertical: 'top' };
@@ -330,7 +379,9 @@ function createReferenceSheet(wb: ExcelJS.Workbook, skillsData: any) {
 	// Row 5+: skill data (same category/skill order as Mon Évaluation)
 	let rowIdx = 5;
 	for (const category of skillsData.categories) {
-		const categorySkills = skillsData.skills.filter((s: any) => s.category === category.id);
+		const categorySkills = skillsData.skills.filter(
+			(s: any) => s.category === category.id,
+		);
 		for (const skill of categorySkills) {
 			ws.getCell(rowIdx, 1).value = skill.name;
 
@@ -342,7 +393,8 @@ function createReferenceSheet(wb: ExcelJS.Workbook, skillsData: any) {
 				const levels = skill.levels?.[role.id] || ['NC', 'NC', 'NC', 'NC'];
 				for (let li = 0; li < 4; li++) {
 					const level = levels[li];
-					ws.getCell(rowIdx, baseCol + 1 + li).value = (level === null || level === undefined) ? 'NC' : level;
+					ws.getCell(rowIdx, baseCol + 1 + li).value =
+						level === null || level === undefined ? 'NC' : level;
 				}
 			});
 
@@ -366,7 +418,8 @@ function createAssessmentSheet(wb: ExcelJS.Workbook, skillsData: any) {
 
 	// Instructions
 	ws.mergeCells('A2:H2');
-	ws.getCell('A2').value = 'Instructions: Choisissez votre rôle et niveau ci-dessous, puis évaluez chaque compétence (0-4 ou NC)';
+	ws.getCell('A2').value =
+		'Instructions: Choisissez votre rôle et niveau ci-dessous, puis évaluez chaque compétence (0-4 ou NC)';
 	ws.getCell('A2').font = { italic: true };
 
 	// Role selection (blank — user picks)
@@ -376,7 +429,7 @@ function createAssessmentSheet(wb: ExcelJS.Workbook, skillsData: any) {
 	ws.getCell('B3').dataValidation = {
 		type: 'list',
 		allowBlank: true,
-		formulae: [`"${skillsData.roles.map((r: any) => r.name).join(',')}"`]
+		formulae: [`"${skillsData.roles.map((r: any) => r.name).join(',')}"`],
 	};
 
 	ws.getCell('C3').value = 'Mon Niveau:';
@@ -385,7 +438,7 @@ function createAssessmentSheet(wb: ExcelJS.Workbook, skillsData: any) {
 	ws.getCell('D3').dataValidation = {
 		type: 'list',
 		allowBlank: true,
-		formulae: [`"${skillsData.levels.map((l: any) => l.name).join(',')}"`]
+		formulae: [`"${skillsData.levels.map((l: any) => l.name).join(',')}"`],
 	};
 
 	ws.getCell('E3').value = 'Nom:';
@@ -393,7 +446,16 @@ function createAssessmentSheet(wb: ExcelJS.Workbook, skillsData: any) {
 	ws.getCell('F3').value = '';
 
 	// Headers
-	const headers = ['Catégorie', 'Compétence', 'Core/Sec', 'Niveau Attendu', 'Mon Niveau', 'Écart', 'Preuves/Exemples', 'Commentaires Manager'];
+	const headers = [
+		'Catégorie',
+		'Compétence',
+		'Core/Sec',
+		'Niveau Attendu',
+		'Mon Niveau',
+		'Écart',
+		'Preuves/Exemples',
+		'Commentaires Manager',
+	];
 	const headerRow = ws.getRow(5);
 	headers.forEach((h, i) => {
 		const cell = headerRow.getCell(i + 1);
@@ -406,7 +468,9 @@ function createAssessmentSheet(wb: ExcelJS.Workbook, skillsData: any) {
 	const skillRows: number[] = [];
 
 	for (const category of skillsData.categories) {
-		const categorySkills = skillsData.skills.filter((s: any) => s.category === category.id);
+		const categorySkills = skillsData.skills.filter(
+			(s: any) => s.category === category.id,
+		);
 
 		for (const skill of categorySkills) {
 			const row = ws.getRow(rowIdx);
@@ -419,12 +483,16 @@ function createAssessmentSheet(wb: ExcelJS.Workbook, skillsData: any) {
 			row.getCell(2).border = BORDERS_ALL;
 
 			// Core/Sec formula — INDEX/MATCH on Ref sheet
-			row.getCell(3).value = { formula: `IFERROR(INDEX(Ref!B$5:${refLastCol}$${lastRefRow},MATCH(B${rowIdx},Ref!A$5:A$${lastRefRow},0),(MATCH(B$3,Ref!B$1:G$1,0)-1)*5+1),"")` };
+			row.getCell(3).value = {
+				formula: `IFERROR(INDEX(Ref!B$5:${refLastCol}$${lastRefRow},MATCH(B${rowIdx},Ref!A$5:A$${lastRefRow},0),(MATCH(B$3,Ref!B$1:G$1,0)-1)*5+1),"")`,
+			};
 			row.getCell(3).alignment = { horizontal: 'center' };
 			row.getCell(3).border = BORDERS_ALL;
 
 			// Niveau Attendu formula — INDEX/MATCH on Ref sheet
-			row.getCell(4).value = { formula: `IFERROR(INDEX(Ref!B$5:${refLastCol}$${lastRefRow},MATCH(B${rowIdx},Ref!A$5:A$${lastRefRow},0),(MATCH(B$3,Ref!B$1:G$1,0)-1)*5+1+MATCH(D$3,Ref!B$2:E$2,0)),"")` };
+			row.getCell(4).value = {
+				formula: `IFERROR(INDEX(Ref!B$5:${refLastCol}$${lastRefRow},MATCH(B${rowIdx},Ref!A$5:A$${lastRefRow},0),(MATCH(B$3,Ref!B$1:G$1,0)-1)*5+1+MATCH(D$3,Ref!B$2:E$2,0)),"")`,
+			};
 			row.getCell(4).alignment = { horizontal: 'center' };
 			row.getCell(4).border = BORDERS_ALL;
 
@@ -434,7 +502,9 @@ function createAssessmentSheet(wb: ExcelJS.Workbook, skillsData: any) {
 			row.getCell(5).border = BORDERS_ALL;
 
 			// Gap formula
-			row.getCell(6).value = { formula: `IF(OR(E${rowIdx}="",D${rowIdx}="NC",D${rowIdx}="",E${rowIdx}="NC"),"",E${rowIdx}-D${rowIdx})` };
+			row.getCell(6).value = {
+				formula: `IF(OR(E${rowIdx}="",D${rowIdx}="NC",D${rowIdx}="",E${rowIdx}="NC"),"",E${rowIdx}-D${rowIdx})`,
+			};
 			row.getCell(6).alignment = { horizontal: 'center' };
 			row.getCell(6).border = BORDERS_ALL;
 
@@ -459,7 +529,7 @@ function createAssessmentSheet(wb: ExcelJS.Workbook, skillsData: any) {
 				allowBlank: true,
 				formulae: ['"0,1,2,3,4,NC"'],
 				errorTitle: 'Niveau invalide',
-				error: 'Veuillez entrer un niveau valide (0-4 ou NC)'
+				error: 'Veuillez entrer un niveau valide (0-4 ou NC)',
 			};
 		}
 	}
@@ -494,7 +564,8 @@ function createProfilsParRoleSheet(wb: ExcelJS.Workbook, skillsData: any) {
 
 	// Instructions
 	ws.mergeCells(2, 1, 2, totalCols);
-	ws.getCell('A2').value = 'Changez le niveau de carrière et le rôle ci-dessous pour comparer les profils. Mon Niveau vient de la feuille Mon Évaluation.';
+	ws.getCell('A2').value =
+		'Changez le niveau de carrière et le rôle ci-dessous pour comparer les profils. Mon Niveau vient de la feuille Mon Évaluation.';
 	ws.getCell('A2').font = { italic: true, size: 10 };
 
 	// Dropdowns for career level and role highlight
@@ -504,7 +575,7 @@ function createProfilsParRoleSheet(wb: ExcelJS.Workbook, skillsData: any) {
 	ws.getCell('B3').dataValidation = {
 		type: 'list',
 		allowBlank: false,
-		formulae: [`"${skillsData.levels.map((l: any) => l.name).join(',')}"`]
+		formulae: [`"${skillsData.levels.map((l: any) => l.name).join(',')}"`],
 	};
 
 	ws.getCell('C3').value = 'Mon Rôle:';
@@ -513,7 +584,7 @@ function createProfilsParRoleSheet(wb: ExcelJS.Workbook, skillsData: any) {
 	ws.getCell('D3').dataValidation = {
 		type: 'list',
 		allowBlank: true,
-		formulae: [`"${skillsData.roles.map((r: any) => r.name).join(',')}"`]
+		formulae: [`"${skillsData.roles.map((r: any) => r.name).join(',')}"`],
 	};
 
 	// Headers row 5
@@ -533,7 +604,9 @@ function createProfilsParRoleSheet(wb: ExcelJS.Workbook, skillsData: any) {
 	// Data rows with INDEX/MATCH formulas
 	let rowIdx = 6;
 	for (const category of skillsData.categories) {
-		const categorySkills = skillsData.skills.filter((s: any) => s.category === category.id);
+		const categorySkills = skillsData.skills.filter(
+			(s: any) => s.category === category.id,
+		);
 
 		for (const skill of categorySkills) {
 			const row = ws.getRow(rowIdx);
@@ -552,7 +625,9 @@ function createProfilsParRoleSheet(wb: ExcelJS.Workbook, skillsData: any) {
 				// Formula: look up skill in Ref, get the level for this role at the selected career level
 				// Role offset in Ref: ri*5+1 = C/S col, +MATCH(B$3,Ref!B$2:E$2,0) = career level offset
 				const roleOffset = ri * 5 + 1;
-				cell.value = { formula: `IFERROR(INDEX(Ref!B$5:${refLastCol}$${lastRefRow},MATCH(B${rowIdx},Ref!A$5:A$${lastRefRow},0),${roleOffset}+MATCH(B$3,Ref!B$2:E$2,0)),"NC")` };
+				cell.value = {
+					formula: `IFERROR(INDEX(Ref!B$5:${refLastCol}$${lastRefRow},MATCH(B${rowIdx},Ref!A$5:A$${lastRefRow},0),${roleOffset}+MATCH(B$3,Ref!B$2:E$2,0)),"NC")`,
+				};
 				cell.alignment = { horizontal: 'center' };
 				cell.border = BORDERS_ALL;
 				col++;
@@ -571,15 +646,18 @@ function createProfilsParRoleSheet(wb: ExcelJS.Workbook, skillsData: any) {
 
 	// Radar summary section
 	const summaryStart = lastDataRow + 3;
-	ws.getCell(summaryStart, 1).value = 'Résumé par catégorie (pour graphique radar)';
+	ws.getCell(summaryStart, 1).value =
+		'Résumé par catégorie (pour graphique radar)';
 	ws.getCell(summaryStart, 1).font = { bold: true, size: 11 };
 
 	const summaryHeaderRow = summaryStart + 1;
-	['Catégorie', 'Niveau Attendu (moy.)', 'Mon Niveau (moy.)'].forEach((h, i) => {
-		const cell = ws.getCell(summaryHeaderRow, i + 1);
-		cell.value = h;
-		applyHeaderStyle(cell);
-	});
+	['Catégorie', 'Niveau Attendu (moy.)', 'Mon Niveau (moy.)'].forEach(
+		(h, i) => {
+			const cell = ws.getCell(summaryHeaderRow, i + 1);
+			cell.value = h;
+			applyHeaderStyle(cell);
+		},
+	);
 
 	const evalLastRow = 5 + totalSkills;
 	const summaryDataStart = summaryHeaderRow + 1;
@@ -589,12 +667,16 @@ function createProfilsParRoleSheet(wb: ExcelJS.Workbook, skillsData: any) {
 		ws.getCell(r, 1).fill = getCategoryFill(cat.id);
 		ws.getCell(r, 1).border = BORDERS_ALL;
 
-		ws.getCell(r, 2).value = { formula: `IFERROR(AVERAGEIF('Mon Évaluation'!$A$6:$A$${evalLastRow},A${r},'Mon Évaluation'!$D$6:$D$${evalLastRow}),"")` };
+		ws.getCell(r, 2).value = {
+			formula: `IFERROR(AVERAGEIF('Mon Évaluation'!$A$6:$A$${evalLastRow},A${r},'Mon Évaluation'!$D$6:$D$${evalLastRow}),"")`,
+		};
 		ws.getCell(r, 2).alignment = { horizontal: 'center' };
 		ws.getCell(r, 2).numFmt = '0.0';
 		ws.getCell(r, 2).border = BORDERS_ALL;
 
-		ws.getCell(r, 3).value = { formula: `IFERROR(AVERAGEIF('Mon Évaluation'!$A$6:$A$${evalLastRow},A${r},'Mon Évaluation'!$E$6:$E$${evalLastRow}),"")` };
+		ws.getCell(r, 3).value = {
+			formula: `IFERROR(AVERAGEIF('Mon Évaluation'!$A$6:$A$${evalLastRow},A${r},'Mon Évaluation'!$E$6:$E$${evalLastRow}),"")`,
+		};
 		ws.getCell(r, 3).alignment = { horizontal: 'center' };
 		ws.getCell(r, 3).numFmt = '0.0';
 		ws.getCell(r, 3).border = BORDERS_ALL;
@@ -622,11 +704,21 @@ function createPlanDeveloppementSheet(wb: ExcelJS.Workbook) {
 
 	// Instructions
 	ws.mergeCells('A2:H2');
-	ws.getCell('A2').value = "Choisissez un maximum de 4 compétences à développer sur l'année (privilégier les compétences Core)";
+	ws.getCell('A2').value =
+		"Choisissez un maximum de 4 compétences à développer sur l'année (privilégier les compétences Core)";
 	ws.getCell('A2').font = { italic: true };
 
 	// Headers
-	const headers = ['Compétence à Développer', 'Niveau Actuel', 'Niveau Cible', 'Formation / Actions', 'Résultat Attendu', 'Mesure de Succès', 'Trimestre', 'Statut'];
+	const headers = [
+		'Compétence à Développer',
+		'Niveau Actuel',
+		'Niveau Cible',
+		'Formation / Actions',
+		'Résultat Attendu',
+		'Mesure de Succès',
+		'Trimestre',
+		'Statut',
+	];
 	const headerRow = ws.getRow(4);
 	headers.forEach((h, i) => {
 		const cell = headerRow.getCell(i + 1);
@@ -647,14 +739,14 @@ function createPlanDeveloppementSheet(wb: ExcelJS.Workbook) {
 		row.getCell(7).dataValidation = {
 			type: 'list',
 			allowBlank: true,
-			formulae: ['"Q1,Q2,Q3,Q4"']
+			formulae: ['"Q1,Q2,Q3,Q4"'],
 		};
 
 		// Status validation
 		row.getCell(8).dataValidation = {
 			type: 'list',
 			allowBlank: true,
-			formulae: ['"Non démarré,En cours,Complété"']
+			formulae: ['"Non démarré,En cours,Complété"'],
 		};
 	}
 
@@ -681,11 +773,20 @@ function createHistoriqueSheet(wb: ExcelJS.Workbook, skillsData: any) {
 
 	// Headers
 	const headers = [
-		'Catégorie', 'Compétence',
-		'Éval 1 Date', 'Éval 1 Score', 'Éval 1 Commentaires',
-		'Éval 2 Date', 'Éval 2 Score', 'Éval 2 Commentaires',
-		'Éval 3 Date', 'Éval 3 Score', 'Éval 3 Commentaires',
-		'Éval 4 Date', 'Éval 4 Score', 'Éval 4 Commentaires',
+		'Catégorie',
+		'Compétence',
+		'Éval 1 Date',
+		'Éval 1 Score',
+		'Éval 1 Commentaires',
+		'Éval 2 Date',
+		'Éval 2 Score',
+		'Éval 2 Commentaires',
+		'Éval 3 Date',
+		'Éval 3 Score',
+		'Éval 3 Commentaires',
+		'Éval 4 Date',
+		'Éval 4 Score',
+		'Éval 4 Commentaires',
 	];
 	const headerRow = ws.getRow(3);
 	headers.forEach((h, i) => {
@@ -697,7 +798,9 @@ function createHistoriqueSheet(wb: ExcelJS.Workbook, skillsData: any) {
 	// All skills — empty rows
 	let rowIdx = 4;
 	for (const category of skillsData.categories) {
-		const categorySkills = skillsData.skills.filter((s: any) => s.category === category.id);
+		const categorySkills = skillsData.skills.filter(
+			(s: any) => s.category === category.id,
+		);
 
 		for (const skill of categorySkills) {
 			const row = ws.getRow(rowIdx);
@@ -747,7 +850,9 @@ export async function exportTemplate(skillsData: any) {
 	createHistoriqueSheet(wb, skillsData);
 
 	const buffer = await wb.xlsx.writeBuffer();
-	const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+	const blob = new Blob([buffer], {
+		type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+	});
 	const url = URL.createObjectURL(blob);
 	const a = document.createElement('a');
 	a.href = url;

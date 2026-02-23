@@ -9,7 +9,9 @@
 <button
 	on:click={toggleTheme}
 	class="theme-toggle group w-11 h-11 flex items-center justify-center"
-	aria-label={$theme === 'dark' ? 'Activer le mode clair' : 'Activer le mode sombre'}
+	aria-label={$theme === 'dark'
+		? 'Activer le mode clair'
+		: 'Activer le mode sombre'}
 	title={$theme === 'dark' ? 'Mode clair' : 'Mode sombre'}
 >
 	{#if $theme === 'dark'}
