@@ -14,7 +14,7 @@
 	let userName: string = '';
 	let selectedRole: string | null = null;
 	let selectedCategories: string[] = [];
-	let selectedMode: AssessmentMode = 'quick';
+	let selectedMode: AssessmentMode = 'standard';
 	let mounted = false;
 	let hasSavedSession = false;
 	let savedSessionInfo: {
@@ -561,7 +561,7 @@
 								<div class="flex items-center gap-2 mb-1">
 									<h3 class="font-bold text-lg text-base-100">Mode Rapide</h3>
 									<span
-										class="px-2 py-0.5 text-xs font-medium bg-base-600 text-base-300 rounded-full"
+										class="px-2 py-0.5 text-xs font-medium bg-base-700/60 text-base-400 rounded-full"
 										>Revue trimestrielle</span
 									>
 								</div>

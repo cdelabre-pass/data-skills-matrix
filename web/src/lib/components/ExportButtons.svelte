@@ -965,15 +965,17 @@
 			applyHeaderStyle(cell);
 		});
 
+		const monRoleExpLetter = colToLetter(monRoleExpCol);
 		const summaryDataStart = summaryHeaderRow + 1;
 		skillsData.categories.forEach((cat: any, i: number) => {
 			const r = summaryDataStart + i;
 			ws.getCell(r, 1).value = cat.name;
 			ws.getCell(r, 1).fill = getCategoryFill(cat.id);
 			ws.getCell(r, 1).border = BORDERS_ALL;
-			// Average expected level (from Mon Évaluation col D, skips "NC" text automatically)
+			// Average expected level from the local "Niveau Attendu (Mon Rôle)" column,
+			// which is driven by the E4 role selector — so the radar updates when role changes.
 			ws.getCell(r, 2).value = {
-				formula: `AVERAGEIF('Mon Évaluation'!$A$6:$A$${evalLastRow},A${r},'Mon Évaluation'!$D$6:$D$${evalLastRow})`,
+				formula: `IFERROR(AVERAGEIF($A$6:$A$${lastDataRow},A${r},${monRoleExpLetter}$6:${monRoleExpLetter}$${lastDataRow}),"")`,
 			};
 			ws.getCell(r, 2).alignment = { horizontal: 'center' };
 			ws.getCell(r, 2).numFmt = '0.0';
@@ -1881,6 +1883,7 @@
 		const wb = new ExcelJS.Workbook();
 		wb.creator = 'Skills Matrix';
 		wb.created = new Date();
+		wb.calcProperties = { fullCalcOnLoad: true };
 
 		// Create sheets in order
 		createNiveauxSheet(wb);

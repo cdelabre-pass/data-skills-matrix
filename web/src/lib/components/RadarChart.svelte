@@ -63,13 +63,22 @@
 					r: {
 						beginAtZero: true,
 						max: 4,
+						grid: {
+							color: 'rgba(255, 255, 255, 0.1)',
+						},
+						angleLines: {
+							color: 'rgba(255, 255, 255, 0.15)',
+						},
 						ticks: {
 							stepSize: 1,
+							color: 'rgba(255, 255, 255, 0.5)',
+							backdropColor: 'transparent',
 							font: {
 								size: 10,
 							},
 						},
 						pointLabels: {
+							color: 'rgba(255, 255, 255, 0.8)',
 							font: {
 								size: 12,
 							},
