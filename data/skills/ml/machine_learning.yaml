@@ -6,20 +6,20 @@ category:
 skills:
   - id: recommendation_systems
     name: "Systèmes de Recommandation"
-    description: "Concevoir et implémenter des systèmes de recommandation (collaborative, content-based, two-tower)"
+    description: "Concevoir et implémenter des systèmes de recommandation" 
     core_roles: [ml_engineer, data_scientist]
     levels:
       data_analyst: [NC, NC, NC, 1]
       data_engineer: [NC, NC, 1, 2]
-      data_scientist: [1, 1, 2, 3]
+      data_scientist: [1, 1, 2, 4]
       analytics_eng: [NC, NC, 1, 2]
-      ml_engineer: [1, 2, 3, 4]
+      ml_engineer: [1, 2, 2, 3]
       backend: [NC, NC, 1, 2]
     level_descriptions:
       0: "Aucune connaissance des systèmes de recommandation"
       1: "Comprend les types de systèmes de recommandation"
-      2: "Peut implémenter des recos basiques (collaborative filtering)"
-      3: "Conçoit des systèmes two-tower et recos hybrides"
+      2: "Peut entrainer, déployer et AB tester un modèle de recommandations en production"
+      3: "Développe des systèmes et des features de recommandation pour le two-tower et recos hybrides"
       4: "Expert en architectures de recommandation avancées"
       5: "Architecte recommandation de l'organisation"
       6: "Expert RecSys reconnu, publications, speaker RecSys"
@@ -32,7 +32,8 @@ skills:
         - "J'ai implémenté un collaborative filtering basique"
         - "Je calcule les métriques de recommandation (precision, recall, MRR)"
         - "Je comprends les factorisations matricielles"
-        - "J'utilise des bibliothèques comme Surprise ou implicit"
+        - "J'ai déployé un modèle de recommandation simple en production"
+        - "J'ai réalisé un AB test pour évaluer une feature de recommandation"
       3:
         - "J'ai conçu un système two-tower avec embeddings"
         - "Je combine plusieurs signaux (collaborative + content)"
@@ -72,8 +73,8 @@ skills:
       "3→4": "Concevez un système de recommandation à l'échelle. Publiez vos learnings."
 
   - id: embeddings
-    name: "Embeddings & Retrieval Vectoriel"
-    description: "Générer des embeddings et implémenter la recherche sémantique"
+    name: "Embeddings & Base de données Vectorielles"
+    description: "Générer des embeddings et implémenter des bases de données vectorielles"
     core_roles: [ml_engineer, data_scientist]
     levels:
       data_analyst: [NC, NC, NC, 1]
@@ -138,72 +139,6 @@ skills:
       "2→3": "Construisez un pipeline d'embeddings avec un vector store. Fine-tunez un modèle pour votre domaine."
       "3→4": "Optimisez les performances à grande échelle. Contribuez à la communauté vector search."
 
-  - id: deep_learning
-    name: "TensorFlow/PyTorch"
-    description: "Utiliser les frameworks de deep learning"
-    core_roles: [ml_engineer, data_scientist]
-    levels:
-      data_analyst: [NC, NC, NC, 1]
-      data_engineer: [NC, NC, 1, 2]
-      data_scientist: [1, 1, 2, 3]
-      analytics_eng: [NC, NC, NC, 1]
-      ml_engineer: [1, 2, 3, 4]
-      backend: [NC, NC, 1, 2]
-    level_descriptions:
-      0: "Aucune connaissance DL"
-      1: "Comprend les concepts de base, peut exécuter des modèles existants"
-      2: "Peut construire et entraîner des réseaux de neurones basiques"
-      3: "Conçoit des architectures custom, optimise le training"
-      4: "Expert en frameworks DL, peut construire des systèmes complexes"
-      5: "Architecte DL de l'organisation"
-      6: "Contributeur TensorFlow/PyTorch, publications NeurIPS/ICML"
-    behavioral_indicators:
-      1:
-        - "Je comprends les concepts de neurones, layers, activation"
-        - "Je peux exécuter un modèle pré-entraîné"
-        - "Je connais la différence entre PyTorch et TensorFlow"
-      2:
-        - "J'ai entraîné un CNN ou RNN de base"
-        - "Je comprends la backpropagation et les optimizers"
-        - "J'utilise les dataloaders et augmentation"
-        - "Je peux fine-tuner un modèle pré-entraîné"
-      3:
-        - "Je conçois des architectures custom pour un problème"
-        - "J'optimise le training (learning rate scheduling, regularization)"
-        - "J'utilise le training distribué (multi-GPU)"
-        - "J'ai déployé un modèle DL en production"
-      4:
-        - "Je maîtrise les architectures avancées (Transformers, etc.)"
-        - "J'optimise les performances de training à l'échelle"
-        - "Je contribue à la recherche DL"
-        - "Je forme les équipes au deep learning"
-      5:
-        - "Je définis les standards et patterns deep learning de l'organisation"
-        - "Je suis la référence interne pour les architectures DL complexes"
-        - "Je mentore les équipes sur les techniques de training avancées"
-        - "J'ai mis en place l'infrastructure de training à l'échelle"
-      6:
-        - "Je suis speaker à des conférences NeurIPS, ICML ou similaires"
-        - "J'ai publié des papers de recherche en deep learning"
-        - "Je contribue aux frameworks TensorFlow ou PyTorch"
-        - "Je suis reconnu comme expert externe en deep learning"
-    resources:
-      - url: "https://www.deeplearning.ai/"
-        title: "DeepLearning.AI Courses"
-        type: "course"
-      - url: "https://pytorch.org/tutorials/"
-        title: "PyTorch Tutorials"
-        type: "tutorial"
-      - url: "https://www.tensorflow.org/tutorials"
-        title: "TensorFlow Tutorials"
-        type: "tutorial"
-      - url: "https://d2l.ai/"
-        title: "Dive into Deep Learning"
-        type: "book"
-    improvement_tips:
-      "1→2": "Suivez le cours DeepLearning.AI. Implémentez un CNN et un RNN de base."
-      "2→3": "Construisez une architecture custom. Maîtrisez les techniques d'optimisation."
-      "3→4": "Contribuez à un framework. Publiez vos recherches."
 
   - id: mlflow
     name: "MLFlow & Experiment Tracking"
@@ -407,24 +342,24 @@ skills:
       "3→4": "Implémentez un feature store pour l'organisation. Automatisez la feature discovery."
 
   - id: entity_resolution
-    name: "Entity Resolution & Linkage"
-    description: "Résoudre les entités et relier les données (déduplication, matching)"
+    name: "Linkage & Matching"
+    description: "Construire des concepts métier et relier les données (déduplication, matching)"
     core_roles: [data_scientist, ml_engineer]
     levels:
       data_analyst: [NC, NC, NC, 1]
       data_engineer: [1, 1, 2, 3]
-      data_scientist: [1, 1, 2, 3]
+      data_scientist: [1, 1, 2, 4]
       analytics_eng: [NC, NC, 1, 2]
       ml_engineer: [1, 2, 3, 4]
       backend: [1, 1, 2, 3]
     level_descriptions:
-      0: "Aucune connaissance entity resolution"
-      1: "Comprend les problèmes de déduplication et matching"
+      0: "Aucune connaissance"
+      1: "Comprend les problèmes de déduplication et de matching"
       2: "Peut implémenter des solutions de matching basiques"
-      3: "Conçoit des systèmes d'entity resolution à grande échelle"
-      4: "Expert en algorithmes d'entity resolution"
-      5: "Architecte MDM de l'organisation"
-      6: "Expert entity resolution reconnu, publications"
+      3: "Conçoit des systèmes de linkage et matching à grande échelle"
+      4: "Expert en algorithmes de linkage et matching"
+      5: "Architecte de l'organisation"
+      6: "Expert linkage et matching reconnu, publications"
     behavioral_indicators:
       1:
         - "Je comprends le problème de déduplication de données"
@@ -441,18 +376,18 @@ skills:
         - "J'implémente des modèles ML pour le matching"
         - "J'ai géré un projet de déduplication complet"
       4:
-        - "J'ai conçu l'architecture MDM de l'organisation"
+        - "J'ai conçu l'architecture de l'organisation"
         - "Je gère des millions de records à matcher"
         - "J'optimise la précision et le recall du matching"
-        - "Je forme les équipes à l'entity resolution"
+        - "Je forme les équipes"
       5:
-        - "Je définis les standards MDM et entity resolution de l'organisation"
+        - "Je définis les standards de l'organisation"
         - "Je suis la référence interne pour les architectures de déduplication"
         - "Je mentore les équipes sur les techniques de matching avancées"
-        - "J'ai mis en place la stratégie de qualité des données maître"
+        - "J'ai mis en place la stratégie de qualité des données"
       6:
-        - "Je suis speaker à des conférences MDM ou Data Quality"
-        - "J'ai publié des articles sur l'entity resolution à l'échelle"
+        - "Je suis speaker à des conférences"
+        - "J'ai publié des articles"
         - "Je contribue à des projets open-source (dedupe, Zingg)"
         - "Je suis reconnu comme expert externe en Master Data Management"
     resources:
@@ -471,4 +406,51 @@ skills:
     improvement_tips:
       "1→2": "Implémentez une déduplication simple avec fuzzy matching. Utilisez dedupe.io."
       "2→3": "Construisez un pipeline de matching à grande échelle. Combinez plusieurs techniques."
-      "3→4": "Concevez un système MDM pour l'organisation. Publiez vos algorithmes."
+      "3→4": "Concevez un système de qualité de la donnée pour l'organisation. Publiez vos algorithmes."
+  - id: microservices_ml
+    name: "Micro services ML"
+    description: "Concervoir et implémenter des systèmes de ML en interne (Conformité, Finance, Editorialisation Semantique) "
+    core_roles: [data_scientist, ml_engineer]
+    levels:
+      data_analyst: [NC, NC, NC, 1]
+      data_engineer: [1, 1, 2, 2]
+      data_scientist: [1, 1, 2, 4]
+      analytics_eng: [NC, NC, 1, 1]
+      ml_engineer: [1, 2, 3, 3]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance des services ML internes"
+      1: "Comprend les problèmes de Finance, Conformité et Editorialisation Semantique"
+      2: "Peut implémenter des solutions basiques sur l'un des sujets"
+      3: "Conçoit le systèmes à grande échelle sur l'un des sujets"
+      4: "Maitrise tous les sujets et conçoit les systèmes associés"
+      5: "Architecte de l'organisation sur les systèmes ML internes"
+      6: "Expert ML reconnu, publications sur l'un des sujets internes"
+    behavioral_indicators:
+      1:
+        - "Je comprends les enjeux de la Finance, Conformité et Editorialisation Semantique"
+        - "Je connais les techniques de base pour ces problématiques"
+        - "Je sais ce qu'est un service ML interne"
+      2:
+        - "J'ai implémenté des solutions basiques pour ces problématiques"
+        - "Je calcule des métriques de performance pour ces services"
+        - "J'ai géré un projet de ML interne de taille moyenne"
+      3:
+        - "Je conçois des systèmes de ML internes à grande échelle"
+        - "J'optimise les performances de ces services"
+        - "J'ai géré un projet de ML interne complet"
+      4:
+        - "J'ai conçu l'architecture de ces services ML internes"
+        - "Je gère des millions de requêtes pour ces services"
+        - "J'optimise la précision et le recall de ces services"
+        - "Je forme les équipes à la conception de services ML internes"
+      5:
+        - "Je définis les standards de l'organisation en matière de services ML internes"
+        - "Je suis la référence interne pour les architectures de ces services"
+        - "Je mentore les équipes sur les techniques avancées pour ces problématiques"
+        - "J'ai mis en place la stratégie de développement de ces services ML internes"
+      6:
+        - "Je suis speaker à des conférences sur une des problématiques des services ML internes"
+        - "J'ai publié des articles sur les services ML internes à l'échelle"
+        - "Je contribue à des projets open-source dans ce domaine"
+        - "Je suis reconnu comme expert externe en services ML internes"
