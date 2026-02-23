@@ -1,13 +1,28 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { Chart, RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip } from 'chart.js';
+	import {
+		Chart,
+		RadarController,
+		RadialLinearScale,
+		PointElement,
+		LineElement,
+		Filler,
+		Tooltip,
+	} from 'chart.js';
 
 	export let data: Record<string, number>;
 
 	let canvas: HTMLCanvasElement;
 	let chart: Chart | null = null;
 
-	Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip);
+	Chart.register(
+		RadarController,
+		RadialLinearScale,
+		PointElement,
+		LineElement,
+		Filler,
+		Tooltip,
+	);
 
 	const categoryNames: Record<string, string> = {
 		analytics: 'Analytics',
@@ -16,28 +31,30 @@
 		ops: 'Data Ops',
 		compliance: 'Compliance',
 		business: 'Business',
-		soft_skills: 'Soft Skills'
+		soft_skills: 'Soft Skills',
 	};
 
 	onMount(() => {
-		const labels = Object.keys(data).map(k => categoryNames[k] || k);
+		const labels = Object.keys(data).map((k) => categoryNames[k] || k);
 		const values = Object.values(data);
 
 		chart = new Chart(canvas, {
 			type: 'radar',
 			data: {
 				labels,
-				datasets: [{
-					label: 'Niveau moyen',
-					data: values,
-					backgroundColor: 'rgba(57, 67, 180, 0.2)',
-					borderColor: 'rgba(57, 67, 180, 1)',
-					borderWidth: 2,
-					pointBackgroundColor: 'rgba(57, 67, 180, 1)',
-					pointBorderColor: '#fff',
-					pointHoverBackgroundColor: '#fff',
-					pointHoverBorderColor: 'rgba(57, 67, 180, 1)'
-				}]
+				datasets: [
+					{
+						label: 'Niveau moyen',
+						data: values,
+						backgroundColor: 'rgba(57, 67, 180, 0.2)',
+						borderColor: 'rgba(57, 67, 180, 1)',
+						borderWidth: 2,
+						pointBackgroundColor: 'rgba(57, 67, 180, 1)',
+						pointBorderColor: '#fff',
+						pointHoverBackgroundColor: '#fff',
+						pointHoverBorderColor: 'rgba(57, 67, 180, 1)',
+					},
+				],
 			},
 			options: {
 				responsive: true,
@@ -46,27 +63,37 @@
 					r: {
 						beginAtZero: true,
 						max: 4,
+						grid: {
+							color: 'rgba(255, 255, 255, 0.1)',
+						},
+						angleLines: {
+							color: 'rgba(255, 255, 255, 0.15)',
+						},
 						ticks: {
 							stepSize: 1,
+							color: 'rgba(255, 255, 255, 0.5)',
+							backdropColor: 'transparent',
 							font: {
-								size: 10
-							}
+								size: 10,
+							},
 						},
 						pointLabels: {
+							color: 'rgba(255, 255, 255, 0.8)',
 							font: {
-								size: 12
-							}
-						}
-					}
+								size: 12,
+							},
+						},
+					},
 				},
 				plugins: {
 					tooltip: {
 						callbacks: {
-							label: (context) => `Niveau: ${(context.raw as number)?.toFixed(1)}`
-						}
-					}
-				}
-			}
+							label: (context) =>
+								`Niveau: ${(context.raw as number)?.toFixed(1)}`,
+						},
+					},
+				},
+			},
 		});
 
 		return () => {
@@ -75,7 +102,7 @@
 	});
 
 	$: if (chart && data) {
-		const labels = Object.keys(data).map(k => categoryNames[k] || k);
+		const labels = Object.keys(data).map((k) => categoryNames[k] || k);
 		const values = Object.values(data);
 		chart.data.labels = labels;
 		chart.data.datasets[0].data = values;

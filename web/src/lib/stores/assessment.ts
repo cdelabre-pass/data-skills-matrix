@@ -55,20 +55,26 @@ function evaluateCondition(condition: string, level: number): boolean {
 	const [, operator, valueStr] = match;
 	const value = parseInt(valueStr, 10);
 	switch (operator) {
-		case '>=': return level >= value;
-		case '<=': return level <= value;
-		case '>': return level > value;
-		case '<': return level < value;
+		case '>=':
+			return level >= value;
+		case '<=':
+			return level <= value;
+		case '>':
+			return level > value;
+		case '<':
+			return level < value;
 		case '=':
-		case '==': return level === value;
-		default: return false;
+		case '==':
+			return level === value;
+		default:
+			return false;
 	}
 }
 
 // Calculate inferences based on current answers
 function calculateInferences(
 	answers: Record<string, SkillAnswer>,
-	inferenceRules: any[]
+	inferenceRules: any[],
 ): Record<string, InferredSuggestion> {
 	const inferences: Record<string, InferredSuggestion> = {};
 
@@ -87,7 +93,8 @@ function calculateInferences(
 				const targetSkillId = target.skill;
 
 				// Don't override manually answered skills
-				if (answers[targetSkillId] && !answers[targetSkillId].inferred) continue;
+				if (answers[targetSkillId] && !answers[targetSkillId].inferred)
+					continue;
 
 				// Keep highest confidence inference
 				const existing = inferences[targetSkillId];
@@ -97,7 +104,7 @@ function calculateInferences(
 						suggestedLevel: target.suggestion,
 						confidence: target.confidence,
 						sourceSkill: sourceSkillId,
-						sourceLevel
+						sourceLevel,
 					};
 				}
 			}
@@ -108,7 +115,10 @@ function calculateInferences(
 }
 
 // Find which group a skill belongs to
-function findSkillGroup(skillId: string, skillGroups: Record<string, any>): { groupId: string; groupName: string } | null {
+function findSkillGroup(
+	skillId: string,
+	skillGroups: Record<string, any>,
+): { groupId: string; groupName: string } | null {
 	for (const [groupId, group] of Object.entries(skillGroups)) {
 		if (group.skills?.includes(skillId)) {
 			return { groupId, groupName: group.name };
@@ -122,7 +132,7 @@ function orderSkillsByGroups(
 	skills: any[],
 	skillGroups: Record<string, any>,
 	coreSkillIds: string[],
-	mode: AssessmentMode
+	mode: AssessmentMode,
 ): { orderedSkills: SkillWithGroup[]; groupOrder: string[] } {
 	// Create a map of skills by their group
 	const skillsByGroup: Record<string, any[]> = {};
@@ -138,7 +148,7 @@ function orderSkillsByGroups(
 			...skill,
 			groupId: groupInfo?.groupId || 'other',
 			groupName: groupInfo?.groupName || 'Autres compétences',
-			isCore
+			isCore,
 		};
 
 		if (groupInfo) {
@@ -171,7 +181,7 @@ function orderSkillsByGroups(
 		const groupSkills = skillsByGroup[groupId];
 		if (mode === 'quick') {
 			// In quick mode, only add core skills
-			orderedSkills.push(...groupSkills.filter(s => s.isCore));
+			orderedSkills.push(...groupSkills.filter((s) => s.isCore));
 		} else {
 			// In standard mode, add all skills
 			orderedSkills.push(...groupSkills);
@@ -187,12 +197,12 @@ function orderSkillsByGroups(
 		});
 
 		if (mode === 'quick') {
-			orderedSkills.push(...ungroupedSkills.filter(s => s.isCore));
+			orderedSkills.push(...ungroupedSkills.filter((s) => s.isCore));
 		} else {
 			orderedSkills.push(...ungroupedSkills);
 		}
 
-		if (ungroupedSkills.some(s => mode === 'standard' || s.isCore)) {
+		if (ungroupedSkills.some((s) => mode === 'standard' || s.isCore)) {
 			groupOrder.push('other');
 		}
 	}
@@ -212,7 +222,7 @@ function createAssessmentStore() {
 		skills: [],
 		skillGroups: [],
 		startedAt: null,
-		completedAt: null
+		completedAt: null,
 	};
 
 	const store = writable<AssessmentState>(initialState);
@@ -225,11 +235,17 @@ function createAssessmentStore() {
 		subscribe,
 
 		setName(name: string) {
-			update(state => ({ ...state, name }));
+			update((state) => ({ ...state, name }));
 			this.save();
 		},
 
-		init(name: string, role: string | null, categories: string[], skillsData: any, mode: AssessmentMode = 'standard') {
+		init(
+			name: string,
+			role: string | null,
+			categories: string[],
+			skillsData: any,
+			mode: AssessmentMode = 'standard',
+		) {
 			_skillsData = skillsData;
 
 			// Get skill groups configuration
@@ -243,9 +259,11 @@ function createAssessmentStore() {
 				coreSkillIds = skillsData.core_skills_by_role?.[role] || [];
 
 				filteredSkills = skillsData.skills.filter((skill: any) => {
-					if (!categories.includes(skill.category)) return false;
 					const hasLevels = skill.levels && skill.levels[role];
 					const isCore = skill.core_roles?.includes(role);
+					// In quick mode, always include core skills regardless of selected categories
+					if (mode === 'quick' && isCore) return true;
+					if (!categories.includes(skill.category)) return false;
 					return hasLevels || isCore;
 				});
 			} else {
@@ -253,18 +271,23 @@ function createAssessmentStore() {
 				// Collect all core skills across all roles
 				const allCoreSkillIds = new Set<string>();
 				const coreSkillsByRole = skillsData.core_skills_by_role || {};
-				for (const roleSkills of Object.values(coreSkillsByRole) as string[][]) {
+				for (const roleSkills of Object.values(
+					coreSkillsByRole,
+				) as string[][]) {
 					for (const skillId of roleSkills) {
 						allCoreSkillIds.add(skillId);
 					}
 				}
 				coreSkillIds = Array.from(allCoreSkillIds);
 
-				// Include all skills in selected categories
 				filteredSkills = skillsData.skills.filter((skill: any) => {
+					const isCore = allCoreSkillIds.has(skill.id);
+					// In quick mode, always include core skills regardless of selected categories
+					if (mode === 'quick' && isCore) return true;
 					if (!categories.includes(skill.category)) return false;
 					// In role-agnostic mode, include skill if it has levels for ANY role
-					const hasAnyLevels = skill.levels && Object.keys(skill.levels).length > 0;
+					const hasAnyLevels =
+						skill.levels && Object.keys(skill.levels).length > 0;
 					return hasAnyLevels;
 				});
 			}
@@ -274,7 +297,7 @@ function createAssessmentStore() {
 				filteredSkills,
 				skillGroups,
 				coreSkillIds,
-				mode
+				mode,
 			);
 
 			const state: AssessmentState = {
@@ -288,15 +311,21 @@ function createAssessmentStore() {
 				skills: orderedSkills,
 				skillGroups: groupOrder,
 				startedAt: Date.now(),
-				completedAt: null
+				completedAt: null,
 			};
 
 			set(state);
 			this.save();
 		},
 
-		answer(skillId: string, level: number | 'nc', inferred: boolean = false, confidence?: number, sourceSkill?: string) {
-			update(state => {
+		answer(
+			skillId: string,
+			level: number | 'nc',
+			inferred: boolean = false,
+			confidence?: number,
+			sourceSkill?: string,
+		) {
+			update((state) => {
 				const newAnswers = {
 					...state.answers,
 					[skillId]: {
@@ -305,8 +334,8 @@ function createAssessmentStore() {
 						timestamp: Date.now(),
 						inferred,
 						confidence,
-						sourceSkill
-					}
+						sourceSkill,
+					},
 				};
 
 				// Recalculate inferences based on new answers
@@ -315,9 +344,14 @@ function createAssessmentStore() {
 
 				// Auto-apply high-confidence inferences (>= 0.85) as answers
 				// This allows skipping those skills during assessment
-				for (const [inferredSkillId, inference] of Object.entries(newInferences)) {
+				for (const [inferredSkillId, inference] of Object.entries(
+					newInferences,
+				)) {
 					// Only auto-apply if not already answered manually
-					if (!newAnswers[inferredSkillId] || newAnswers[inferredSkillId].inferred) {
+					if (
+						!newAnswers[inferredSkillId] ||
+						newAnswers[inferredSkillId].inferred
+					) {
 						// Only auto-apply high confidence inferences
 						if (inference.confidence >= 0.85) {
 							newAnswers[inferredSkillId] = {
@@ -326,7 +360,7 @@ function createAssessmentStore() {
 								timestamp: Date.now(),
 								inferred: true,
 								confidence: inference.confidence,
-								sourceSkill: inference.sourceSkill
+								sourceSkill: inference.sourceSkill,
 							};
 						}
 					}
@@ -335,7 +369,7 @@ function createAssessmentStore() {
 				return {
 					...state,
 					answers: newAnswers,
-					inferences: newInferences
+					inferences: newInferences,
 				};
 			});
 			this.save();
@@ -346,7 +380,12 @@ function createAssessmentStore() {
 			const state = get(store);
 			const inference = state.inferences[skillId];
 			if (inference) {
-				this.answer(skillId, inference.suggestedLevel, true, inference.confidence);
+				this.answer(
+					skillId,
+					inference.suggestedLevel,
+					true,
+					inference.confidence,
+				);
 			}
 		},
 
@@ -368,7 +407,7 @@ function createAssessmentStore() {
 		},
 
 		nextSkill() {
-			update(state => {
+			update((state) => {
 				// Find next non-inferred skill after current position
 				let newIndex = state.currentSkillIndex + 1;
 
@@ -391,7 +430,7 @@ function createAssessmentStore() {
 		},
 
 		previousSkill() {
-			update(state => {
+			update((state) => {
 				// Find previous non-inferred skill
 				let newIndex = state.currentSkillIndex - 1;
 
@@ -414,7 +453,7 @@ function createAssessmentStore() {
 		},
 
 		goToSkill(index: number) {
-			update(state => {
+			update((state) => {
 				const newIndex = Math.max(0, Math.min(index, state.skills.length - 1));
 				return { ...state, currentSkillIndex: newIndex };
 			});
@@ -431,9 +470,9 @@ function createAssessmentStore() {
 		},
 
 		complete() {
-			update(state => ({
+			update((state) => ({
 				...state,
-				completedAt: Date.now()
+				completedAt: Date.now(),
 			}));
 			this.save();
 		},
@@ -472,19 +511,21 @@ function createAssessmentStore() {
 			const state = get({ subscribe });
 			const total = state.skills.length;
 			// Only count answers for skills in the current assessment
-			const skillIds = new Set(state.skills.map(s => s.id));
-			const relevantAnswers = Object.values(state.answers).filter(a => skillIds.has(a.skillId));
+			const skillIds = new Set(state.skills.map((s) => s.id));
+			const relevantAnswers = Object.values(state.answers).filter((a) =>
+				skillIds.has(a.skillId),
+			);
 			const answered = relevantAnswers.length;
-			const inferredCount = relevantAnswers.filter(a => a.inferred).length;
+			const inferredCount = relevantAnswers.filter((a) => a.inferred).length;
 			const manualCount = answered - inferredCount;
 			return {
 				answered,
 				total,
 				percentage: total > 0 ? Math.round((answered / total) * 100) : 0,
 				inferredCount,
-				manualCount
+				manualCount,
 			};
-		}
+		},
 	};
 }
 
@@ -493,75 +534,76 @@ export const assessmentStore = createAssessmentStore();
 // Derived store for current skill
 export const currentSkill = derived(
 	assessmentStore,
-	$state => $state.skills[$state.currentSkillIndex] || null
+	($state) => $state.skills[$state.currentSkillIndex] || null,
 );
 
 // Derived store for current skill group info
-export const currentSkillGroup = derived(
-	assessmentStore,
-	$state => {
-		const skill = $state.skills[$state.currentSkillIndex];
-		if (!skill) return null;
+export const currentSkillGroup = derived(assessmentStore, ($state) => {
+	const skill = $state.skills[$state.currentSkillIndex];
+	if (!skill) return null;
 
-		const prevSkill = $state.currentSkillIndex > 0
+	const prevSkill =
+		$state.currentSkillIndex > 0
 			? $state.skills[$state.currentSkillIndex - 1]
 			: null;
 
-		const isNewGroup = !prevSkill || prevSkill.groupId !== skill.groupId;
+	const isNewGroup = !prevSkill || prevSkill.groupId !== skill.groupId;
 
-		// Count skills in this group
-		const groupSkills = $state.skills.filter(s => s.groupId === skill.groupId);
-		const currentInGroup = groupSkills.findIndex(s => s.id === skill.id) + 1;
+	// Count skills in this group
+	const groupSkills = $state.skills.filter((s) => s.groupId === skill.groupId);
+	const currentInGroup = groupSkills.findIndex((s) => s.id === skill.id) + 1;
 
-		return {
-			groupId: skill.groupId,
-			groupName: skill.groupName,
-			isNewGroup,
-			currentInGroup,
-			totalInGroup: groupSkills.length,
-			isCore: skill.isCore
-		};
-	}
-);
+	return {
+		groupId: skill.groupId,
+		groupName: skill.groupName,
+		isNewGroup,
+		currentInGroup,
+		totalInGroup: groupSkills.length,
+		isCore: skill.isCore,
+	};
+});
 
 // Derived store for progress
-export const assessmentProgress = derived(
-	assessmentStore,
-	$state => {
-		const total = $state.skills.length;
-		// Only count answers for skills in the current assessment
-		const skillIds = new Set($state.skills.map(s => s.id));
-		const relevantAnswers = Object.values($state.answers).filter(a => skillIds.has(a.skillId));
-		const answered = relevantAnswers.length;
-		const inferredCount = relevantAnswers.filter(a => a.inferred).length;
-		const manualCount = answered - inferredCount;
-		return {
-			answered,
-			total,
-			percentage: total > 0 ? Math.round((answered / total) * 100) : 0,
-			inferredCount,
-			manualCount
-		};
-	}
-);
+export const assessmentProgress = derived(assessmentStore, ($state) => {
+	const total = $state.skills.length;
+	// Only count answers for skills in the current assessment
+	const skillIds = new Set($state.skills.map((s) => s.id));
+	const relevantAnswers = Object.values($state.answers).filter((a) =>
+		skillIds.has(a.skillId),
+	);
+	const answered = relevantAnswers.length;
+	const inferredCount = relevantAnswers.filter((a) => a.inferred).length;
+	const manualCount = answered - inferredCount;
+	return {
+		answered,
+		total,
+		percentage: total > 0 ? Math.round((answered / total) * 100) : 0,
+		inferredCount,
+		manualCount,
+	};
+});
 
 // Derived store for progress by group
-export const groupProgress = derived(
-	assessmentStore,
-	$state => {
-		const groups: Record<string, { total: number; answered: number; name: string }> = {};
+export const groupProgress = derived(assessmentStore, ($state) => {
+	const groups: Record<
+		string,
+		{ total: number; answered: number; name: string }
+	> = {};
 
-		for (const skill of $state.skills) {
-			const groupId = skill.groupId || 'other';
-			if (!groups[groupId]) {
-				groups[groupId] = { total: 0, answered: 0, name: skill.groupName || 'Autres' };
-			}
-			groups[groupId].total++;
-			if ($state.answers[skill.id]) {
-				groups[groupId].answered++;
-			}
+	for (const skill of $state.skills) {
+		const groupId = skill.groupId || 'other';
+		if (!groups[groupId]) {
+			groups[groupId] = {
+				total: 0,
+				answered: 0,
+				name: skill.groupName || 'Autres',
+			};
 		}
-
-		return groups;
+		groups[groupId].total++;
+		if ($state.answers[skill.id]) {
+			groups[groupId].answered++;
+		}
 	}
-);
+
+	return groups;
+});

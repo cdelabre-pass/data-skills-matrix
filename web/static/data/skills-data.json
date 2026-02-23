@@ -1,5 +1,5 @@
 {
-  "_source_hash": "9b31a3e7c40804fc",
+  "_source_hash": "1e923d214d37376a",
   "roles": [
     {
       "id": "data_analyst",
@@ -5347,10 +5347,10 @@
       "level_descriptions": {
         "0": "Aucune connaissance des services ML internes",
         "1": "Comprend les problèmes de Finance, Conformité et Editorialisation Semantique",
-        "2": "Peut implémenter des solutions basiques",
-        "3": "Conçoit des systèmes de ML à grande échelle",
-        "4": "Expert en algorithmes de ML ",
-        "5": "Architecte de l'organisation",
+        "2": "Peut implémenter des solutions basiques sur l'un des sujets",
+        "3": "Conçoit le systèmes à grande échelle sur l'un des sujets",
+        "4": "Maitrise tous les sujets et conçoit les systèmes associés",
+        "5": "Architecte de l'organisation sur les systèmes ML internes",
         "6": "Expert ML reconnu, publications sur l'un des sujets internes"
       },
       "behavioral_indicators": {
@@ -7901,7 +7901,7 @@
       "docker",
       "gcp_fundamentals",
       "github_actions",
-      "data_quality_testing",
+      "data_quality_management",
       "terraform",
       "monitoring",
       "medallion_architecture",
@@ -7913,9 +7913,9 @@
       "statistical_analysis",
       "ml_fundamentals",
       "insight_generation",
-      "tensorflow_pytorch",
-      "embeddings_llm",
-      "mlflow_experiment",
+      "ml_deployment",
+      "embeddings",
+      "mlflow",
       "feature_engineering",
       "ab_testing",
       "git_github",
@@ -7932,7 +7932,7 @@
       "bigquery_advanced",
       "python_data",
       "git_github",
-      "data_quality_testing",
+      "data_quality_management",
       "medallion_architecture",
       "airflow",
       "github_actions",
@@ -7943,8 +7943,8 @@
     "ml_engineer": [
       "python_data",
       "ml_fundamentals",
-      "tensorflow_pytorch",
-      "mlflow_experiment",
+      "ml_deployment",
+      "mlflow",
       "vertex_ai",
       "docker",
       "kubernetes",
@@ -7952,7 +7952,7 @@
       "git_github",
       "github_actions",
       "feature_engineering",
-      "embeddings_llm",
+      "embeddings",
       "monitoring",
       "python_backend",
       "problem_solving"
@@ -8056,10 +8056,10 @@
       "description": "Analytics produit",
       "skills": [
         "firebase_analytics",
-        "funnel_analysis",
-        "cohort_analysis",
-        "user_journey",
-        "event_tracking"
+        "behavioral_analysis",
+        "product_metrics",
+        "attribution_marketing",
+        "tracking_design"
       ]
     },
     "bi_visualization": {
@@ -8078,7 +8078,7 @@
       "description": "ML et deep learning",
       "skills": [
         "ml_fundamentals",
-        "tensorflow_pytorch",
+        "ml_deployment",
         "feature_engineering"
       ]
     },
@@ -8087,10 +8087,10 @@
       "icon": "brain",
       "description": "Embeddings, recommandation, MLOps",
       "skills": [
-        "embeddings_llm",
+        "embeddings",
         "recommendation_systems",
         "entity_resolution",
-        "mlflow_experiment"
+        "mlflow"
       ]
     },
     "data_quality": {
@@ -8098,7 +8098,7 @@
       "icon": "shield",
       "description": "Tests, contrats, gouvernance",
       "skills": [
-        "data_quality_testing",
+        "data_quality_management",
         "data_contracts",
         "data_mesh"
       ]
@@ -8398,7 +8398,7 @@
           "condition": ">= 3",
           "targets": [
             {
-              "skill": "tensorflow_pytorch",
+              "skill": "ml_deployment",
               "suggestion": 2,
               "confidence": 0.7
             },
@@ -8408,7 +8408,7 @@
               "confidence": 0.8
             },
             {
-              "skill": "mlflow_experiment",
+              "skill": "mlflow",
               "suggestion": 1,
               "confidence": 0.6
             }
@@ -8428,12 +8428,12 @@
           "condition": "<= 1",
           "targets": [
             {
-              "skill": "tensorflow_pytorch",
+              "skill": "ml_deployment",
               "suggestion": 0,
               "confidence": 0.9
             },
             {
-              "skill": "embeddings_llm",
+              "skill": "embeddings",
               "suggestion": 0,
               "confidence": 0.9
             },
@@ -8447,13 +8447,13 @@
       ]
     },
     {
-      "source": "tensorflow_pytorch",
+      "source": "ml_deployment",
       "rules": [
         {
           "condition": ">= 3",
           "targets": [
             {
-              "skill": "embeddings_llm",
+              "skill": "embeddings",
               "suggestion": 2,
               "confidence": 0.7
             },
@@ -8468,7 +8468,7 @@
           "condition": "<= 1",
           "targets": [
             {
-              "skill": "embeddings_llm",
+              "skill": "embeddings",
               "suggestion": 0,
               "confidence": 0.8
             }
@@ -8543,12 +8543,12 @@
           "condition": ">= 2",
           "targets": [
             {
-              "skill": "event_tracking",
+              "skill": "tracking_design",
               "suggestion": 1,
               "confidence": 0.7
             },
             {
-              "skill": "funnel_analysis",
+              "skill": "behavioral_analysis",
               "suggestion": 1,
               "confidence": 0.6
             }
@@ -8558,12 +8558,12 @@
           "condition": "<= 1",
           "targets": [
             {
-              "skill": "funnel_analysis",
+              "skill": "behavioral_analysis",
               "suggestion": 0,
               "confidence": 0.7
             },
             {
-              "skill": "cohort_analysis",
+              "skill": "product_metrics",
               "suggestion": 0,
               "confidence": 0.7
             }

@@ -29,7 +29,7 @@ function createThemeStore() {
 		subscribe,
 
 		toggle() {
-			update(current => {
+			update((current) => {
 				const next = current === 'dark' ? 'light' : 'dark';
 				if (browser) {
 					localStorage.setItem(STORAGE_KEY, next);
@@ -54,15 +54,17 @@ function createThemeStore() {
 				set(theme);
 
 				// Listen for system preference changes
-				window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-					if (!localStorage.getItem(STORAGE_KEY)) {
-						const newTheme = e.matches ? 'light' : 'dark';
-						applyTheme(newTheme);
-						set(newTheme);
-					}
-				});
+				window
+					.matchMedia('(prefers-color-scheme: light)')
+					.addEventListener('change', (e) => {
+						if (!localStorage.getItem(STORAGE_KEY)) {
+							const newTheme = e.matches ? 'light' : 'dark';
+							applyTheme(newTheme);
+							set(newTheme);
+						}
+					});
 			}
-		}
+		},
 	};
 }
 

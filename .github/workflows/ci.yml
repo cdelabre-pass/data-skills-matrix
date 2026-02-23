@@ -7,36 +7,6 @@ on:
     branches: [main]
 
 jobs:
-  python-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v4
-        with:
-          version: "latest"
-
-      - name: Set up Python
-        run: uv python install 3.11
-
-      - name: Install dependencies
-        run: uv sync --dev
-
-      - name: Lint with ruff
-        run: |
-          uv run ruff check src/ tests/
-          uv run ruff format --check src/ tests/
-
-      - name: Run tests with coverage
-        run: uv run pytest --cov=src/skills_matrix --cov-report=xml
-
-      - name: Upload coverage
-        uses: codecov/codecov-action@v4
-        with:
-          files: coverage.xml
-        continue-on-error: true
-
   web-tests:
     runs-on: ubuntu-latest
     defaults:
@@ -58,8 +28,14 @@ jobs:
       - name: Type check
         run: npm run check
 
-      - name: Run tests
-        run: npm run test
+      - name: Lint
+        run: npm run lint
+
+      - name: Format check
+        run: npm run format:check
+
+      - name: Run tests with coverage
+        run: npm run test:coverage
 
       - name: Build
         run: npm run build:web
@@ -69,17 +45,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v4
-
-      - name: Set up Python
-        run: uv python install 3.11
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Install dependencies
-        run: uv sync
+        run: npm install
+
+      - name: Validate YAML data structure
+        run: node scripts/validate-data.mjs
 
       - name: Build skills data
-        run: uv run python scripts/build_web_data.py
+        run: node scripts/build-data.mjs
 
-      - name: Verify JSON output
-        run: test -f web/static/data/skills-data.json
+      - name: Verify JSON is up-to-date
+        run: |
+          git diff --exit-code web/static/data/skills-data.json || \
+          (echo "ERROR: skills-data.json is out of sync with YAML. Run: npm run build:data" && exit 1)
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: web
+
+      - name: Audit dependencies
+        run: npm run audit
+        working-directory: web
