@@ -420,7 +420,7 @@ describe('role-agnostic mode (null role)', () => {
 	});
 
 	it('includes all skills when role is null', () => {
-		assessmentStore.init(null, null, ['technical'], mockSkillsData, 'standard');
+		assessmentStore.init('', null, ['technical'], mockSkillsData, 'standard');
 		const state = get(assessmentStore);
 		expect(state.skills.length).toBe(2); // both technical skills
 	});
