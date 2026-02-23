@@ -6,7 +6,7 @@ category:
 skills:
   - id: recommendation_systems
     name: "Systèmes de Recommandation"
-    description: "Concevoir et implémenter des systèmes de recommandation (collaborative, content-based, two-tower)"
+    description: "Concevoir et implémenter des systèmes de recommandation" 
     core_roles: [ml_engineer, data_scientist]
     levels:
       data_analyst: [NC, NC, NC, 1]
@@ -74,7 +74,7 @@ skills:
 
   - id: embeddings
     name: "Embeddings & Base de données Vectorielles"
-    description: "Générer des embeddings et implémenter la recherche sémantique"
+    description: "Générer des embeddings et implémenter des bases de données vectorielles"
     core_roles: [ml_engineer, data_scientist]
     levels:
       data_analyst: [NC, NC, NC, 1]
@@ -343,7 +343,7 @@ skills:
 
   - id: entity_resolution
     name: "Linkage & Matching"
-    description: "Résoudre les entités et relier les données (déduplication, matching)"
+    description: "Construire des concepts métier et relier les données (déduplication, matching)"
     core_roles: [data_scientist, ml_engineer]
     levels:
       data_analyst: [NC, NC, NC, 1]
@@ -353,13 +353,13 @@ skills:
       ml_engineer: [1, 2, 3, 4]
       backend: [1, 1, 2, 3]
     level_descriptions:
-      0: "Aucune connaissance entity resolution"
-      1: "Comprend les problèmes de déduplication et matching"
+      0: "Aucune connaissance"
+      1: "Comprend les problèmes de déduplication et de matching"
       2: "Peut implémenter des solutions de matching basiques"
-      3: "Conçoit des systèmes d'entity resolution à grande échelle"
-      4: "Expert en algorithmes d'entity resolution"
+      3: "Conçoit des systèmes de linkage et matching à grande échelle"
+      4: "Expert en algorithmes de linkage et matching"
       5: "Architecte de l'organisation"
-      6: "Expert entity resolution reconnu, publications"
+      6: "Expert linkage et matching reconnu, publications"
     behavioral_indicators:
       1:
         - "Je comprends le problème de déduplication de données"
@@ -379,15 +379,15 @@ skills:
         - "J'ai conçu l'architecture de l'organisation"
         - "Je gère des millions de records à matcher"
         - "J'optimise la précision et le recall du matching"
-        - "Je forme les équipes à l'entity resolution"
+        - "Je forme les équipes"
       5:
-        - "Je définis les standards de l'organisation en matière d'entity resolution"
+        - "Je définis les standards de l'organisation"
         - "Je suis la référence interne pour les architectures de déduplication"
         - "Je mentore les équipes sur les techniques de matching avancées"
-        - "J'ai mis en place la stratégie de qualité des données maître"
+        - "J'ai mis en place la stratégie de qualité des données"
       6:
-        - "Je suis speaker à des conférences sur l'entity resolution ou la qualité des données"
-        - "J'ai publié des articles sur l'entity resolution à l'échelle"
+        - "Je suis speaker à des conférences"
+        - "J'ai publié des articles"
         - "Je contribue à des projets open-source (dedupe, Zingg)"
         - "Je suis reconnu comme expert externe en Master Data Management"
     resources:
@@ -406,8 +406,8 @@ skills:
     improvement_tips:
       "1→2": "Implémentez une déduplication simple avec fuzzy matching. Utilisez dedupe.io."
       "2→3": "Construisez un pipeline de matching à grande échelle. Combinez plusieurs techniques."
-      "3→4": "Concevez un système MDM pour l'organisation. Publiez vos algorithmes."
-- id: microservices_ml
+      "3→4": "Concevez un système de qualité de la donnée pour l'organisation. Publiez vos algorithmes."
+  - id: microservices_ml
     name: "Micro services ML"
     description: "Concervoir et implémenter des systèmes de ML en interne (Conformité, Finance, Editorialisation Semantique) "
     core_roles: [data_scientist, ml_engineer]
@@ -421,11 +421,11 @@ skills:
     level_descriptions:
       0: "Aucune connaissance des services ML internes"
       1: "Comprend les problèmes de Finance, Conformité et Editorialisation Semantique"
-      2: "Peut implémenter des solutions de Finance, Conformité et Editorialisation Semantique basiques"
-      3: "Conçoit des systèmes de ML internes à grande échelle"
-      4: "Expert en algorithmes de ML internes"
-      5: "Architecte de l'organisation"
-      6: "Expert ML interne reconnu, publications"
+      2: "Peut implémenter des solutions basiques sur l'un des sujets"
+      3: "Conçoit le systèmes à grande échelle sur l'un des sujets"
+      4: "Maitrise tous les sujets et conçoit les systèmes associés"
+      5: "Architecte de l'organisation sur les systèmes ML internes"
+      6: "Expert ML reconnu, publications sur l'un des sujets internes"
     behavioral_indicators:
       1:
         - "Je comprends les enjeux de la Finance, Conformité et Editorialisation Semantique"
