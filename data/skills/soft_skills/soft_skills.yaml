@@ -17,12 +17,12 @@ skills:
       backend: [1, 2, 3, 4]
     level_descriptions:
       0: "Aucune capacité de cadrage technique"
-      1: "Comprend les enjeux techniques d'un projet simple et peut identifier les grandes étapes"
-      2: "Découpe un projet en tâches fonctionnelles, estime la complexité et identifie les dépendances"
-      3: "Cadre des projets complexes multi-équipes, anticipe les risques techniques et propose des alternatives"
-      4: "Expert en cadrage, arbitre les choix d'architecture et guide la stratégie technique"
-      5: "Définit les méthodologies de cadrage technique de l'organisation"
-      6: "Référent cadrage reconnu en externe, consultant ou formateur"
+      1: "Je comprends les enjeux techniques d'un projet simple et j'identifie les grandes étapes"
+      2: "Je découpe un projet en tâches fonctionnelles, j'estime la complexité et j'identifie les dépendances"
+      3: "Je cadre des projets complexes multi-équipes, j'anticipe les risques techniques et je propose des alternatives"
+      4: "J'arbitre les choix d'architecture sur les projets complexes et je guide la stratégie technique"
+      5: "Je définis les méthodologies de cadrage technique pour l'entreprise et je forme les tech leads au cadrage de projets complexes"
+      6: "Expert en cadrage technique reconnu en externe, consultant ou formateur"
     behavioral_indicators:
       1:
         - "Je comprends le besoin fonctionnel derrière une demande technique"
@@ -42,11 +42,11 @@ skills:
         - "J'arbitre les choix d'architecture sur les projets complexes"
         - "Je guide la stratégie technique de l'équipe"
         - "Je forme les autres au cadrage et à l'estimation"
-        - "Je suis sollicité pour les cadrages stratégiques de l'organisation"
+        - "Je pilote les cadrages stratégiques de l'organisation"
       5:
-        - "Je définis les méthodologies de cadrage technique de l'organisation"
+        - "Je définis les méthodologies de cadrage technique pour l'entreprise"
         - "Je forme les tech leads au cadrage de projets complexes"
-        - "Je suis référent pour les décisions d'architecture structurantes"
+        - "J'arbitre les décisions d'architecture structurantes"
         - "J'ai mis en place des processus de cadrage reproductibles"
       6:
         - "Je suis consultant externe en cadrage et architecture technique"
@@ -84,12 +84,12 @@ skills:
       backend: [1, 2, 3, 4]
     level_descriptions:
       0: "Ne peut pas structurer les problèmes"
-      1: "Peut décomposer des problèmes simples"
-      2: "Approche les problèmes complexes systématiquement"
-      3: "Résout des problèmes ambigus, crée des frameworks"
-      4: "Expert problem solver, guide les décisions stratégiques"
-      5: "Référent résolution de problèmes de l'organisation"
-      6: "Expert reconnu, consultant externe"
+      1: "Je décompose des problèmes simples en sous-problèmes et je cherche des solutions existantes"
+      2: "J'approche les problèmes complexes de manière structurée (5 whys, issue trees) et je priorise par impact"
+      3: "Je résous des problèmes ambigus, je crée des frameworks réutilisables et je gère l'incertitude"
+      4: "Je guide les décisions stratégiques par la résolution de problèmes et je forme les autres"
+      5: "Je définis la méthodologie de résolution de problèmes pour l'entreprise et je forme les managers"
+      6: "Expert reconnu en résolution de problèmes, consultant externe"
     behavioral_indicators:
       1:
         - "Je décompose un problème en sous-problèmes"
@@ -108,12 +108,12 @@ skills:
       4:
         - "Je guide des décisions stratégiques par la résolution de problèmes"
         - "Je forme les autres à structurer leurs problèmes"
-        - "Je suis sollicité pour les problèmes complexes de l'organisation"
+        - "J'interviens sur les problèmes complexes de l'organisation"
         - "Je transforme les problèmes en opportunités"
       5:
-        - "Je définis la méthodologie de résolution de problèmes de l'organisation"
+        - "Je définis la méthodologie de résolution de problèmes pour l'entreprise"
         - "Je forme les managers et leads à la résolution de problèmes"
-        - "Je suis le référent pour les problèmes stratégiques cross-équipes"
+        - "Je conduis la résolution des problèmes stratégiques cross-équipes"
         - "J'ai institutionnalisé des pratiques de problem solving"
       6:
         - "Je suis consultant externe en résolution de problèmes"
@@ -124,8 +124,8 @@ skills:
       - url: "https://www.coursera.org/learn/problem-solving"
         title: "Problem Solving Skills (Coursera)"
         type: "course"
-      - url: "https://www.mindtools.com/pages/main/newMN_TMC.htm"
-        title: "Mind Tools - Problem Solving"
+      - url: "https://untools.co/"
+        title: "Untools - Problem Solving Tools"
         type: "documentation"
       - url: "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/the-problem-with-problem-solving"
         title: "McKinsey - Problem Solving"
@@ -137,73 +137,6 @@ skills:
       "1→2": "Utilisez une approche structurée (5 whys, issue trees). Documentez votre processus."
       "2→3": "Créez des frameworks réutilisables. Résolvez un problème cross-équipes."
       "3→4": "Guidez des décisions stratégiques. Formez les autres à la résolution de problèmes."
-
-  - id: stakeholder_management
-    name: "Gestion des Stakeholders"
-    description: "Travailler efficacement avec les stakeholders (product, business, tech)"
-    core_roles: [data_analyst, analytics_eng]
-    levels:
-      data_analyst: [1, 1, 2, 3]
-      data_engineer: [1, 1, 2, 3]
-      data_scientist: [1, 1, 2, 3]
-      analytics_eng: [1, 1, 2, 3]
-      ml_engineer: [1, 1, 2, 3]
-      backend: [1, 1, 2, 3]
-    level_descriptions:
-      0: "Ne peut pas gérer les stakeholders"
-      1: "Travaille avec les stakeholders directs"
-      2: "Gère plusieurs stakeholders, gère les conflits"
-      3: "Influence les stakeholders seniors, drive l'alignement"
-      4: "Expert en gestion des stakeholders"
-      5: "Référent relations inter-équipes de l'organisation"
-      6: "Expert influence reconnu"
-    behavioral_indicators:
-      1:
-        - "Je communique régulièrement avec mon PM/manager direct"
-        - "Je comprends les besoins de mes stakeholders directs"
-        - "Je livre mes résultats dans les délais attendus"
-      2:
-        - "Je gère plusieurs stakeholders avec des besoins différents"
-        - "J'ai priorisé des demandes conflictuelles avec succès"
-        - "Je communique proactivement les blocages et retards"
-        - "Je sais dire non de manière constructive"
-      3:
-        - "J'influence les décisions au niveau senior"
-        - "Je suis sollicité pour des sujets stratégiques"
-        - "J'ai aligné des priorités divergentes entre équipes"
-        - "Je suis reconnu comme un partenaire de confiance"
-      4:
-        - "Je suis le point de contact data pour plusieurs équipes"
-        - "Je forme les autres à la gestion des stakeholders"
-        - "J'ai établi des rituels de communication efficaces"
-        - "Je gère les escalades de manière constructive"
-      5:
-        - "Je définis les processus de collaboration inter-équipes"
-        - "Je forme les managers à la gestion des stakeholders"
-        - "Je suis médiateur pour les conflits inter-équipes"
-        - "J'ai créé des frameworks de priorisation organisationnels"
-      6:
-        - "Je suis consultant externe en gestion des stakeholders"
-        - "Je donne des formations externes sur l'influence et la négociation"
-        - "J'ai publié sur les techniques de stakeholder management"
-        - "Je suis reconnu comme expert en influence dans l'industrie"
-    resources:
-      - url: "https://www.pmi.org/learning/library/stakeholder-management-task-project-success-7736"
-        title: "PMI Stakeholder Management"
-        type: "documentation"
-      - url: "https://www.coursera.org/learn/stakeholder-management"
-        title: "Stakeholder Management (Coursera)"
-        type: "course"
-      - url: "https://hbr.org/2014/03/manage-your-stakeholders"
-        title: "HBR - Manage Your Stakeholders"
-        type: "documentation"
-      - url: "https://www.mindtools.com/pages/article/newPPM_07.htm"
-        title: "Stakeholder Analysis"
-        type: "documentation"
-    improvement_tips:
-      "1→2": "Identifiez tous vos stakeholders et leurs attentes. Communiquez régulièrement."
-      "2→3": "Gérez un conflit entre stakeholders. Alignez des priorités divergentes."
-      "3→4": "Influencez les décisions au niveau senior. Devenez un point de contact clé."
 
   - id: mentoring_leadership
     name: "Mentorat & Leadership"
@@ -218,21 +151,21 @@ skills:
       backend: [NC, 1, 2, 3]
     level_descriptions:
       0: "Pas de compétence en mentorat"
-      1: "Peut aider ponctuellement un collègue sur un sujet maîtrisé"
-      2: "Mentor régulier, fait des code reviews constructives"
-      3: "Accompagne la montée en compétence de plusieurs personnes"
-      4: "Leader reconnu, développe les talents de l'équipe"
-      5: "Définit le programme de mentorat de l'organisation"
-      6: "Coach/mentor reconnu externement"
+      1: "J'aide ponctuellement un collègue sur un sujet que je maîtrise"
+      2: "Je mentor régulièrement, je fais des code reviews constructives et j'organise du pair programming"
+      3: "J'accompagne la montée en compétence de plusieurs personnes et j'organise des sessions de partage"
+      4: "Je développe un programme de mentorat structuré et je contribue aux évaluations"
+      5: "Je définis le programme de mentorat pour l'entreprise et je forme les mentors et managers au coaching"
+      6: "Coach et mentor reconnu en externe, formateur"
     behavioral_indicators:
       1:
         - "J'aide mes collègues quand ils ont des questions"
         - "Je partage des ressources utiles avec l'équipe"
         - "Je peux expliquer un sujet que je maîtrise"
       2:
-        - "Je fais des code reviews constructives régulièrement"
+        - "Je fais des code reviews pédagogiques en expliquant le 'pourquoi' de mes retours"
         - "J'ai mentoré au moins une personne sur un sujet spécifique"
-        - "Je donne du feedback actionnable et bienveillant"
+        - "Je donne du feedback de progression à mes mentorés avec des actions concrètes"
         - "J'organise des sessions de pair programming"
       3:
         - "Je suis le mentor officiel d'un ou plusieurs juniors"
@@ -245,7 +178,7 @@ skills:
         - "J'ai aidé plusieurs personnes à progresser significativement"
         - "Je contribue aux décisions de promotion et évaluation"
       5:
-        - "Je définis le programme de mentorat de l'organisation"
+        - "Je définis le programme de mentorat pour l'entreprise"
         - "Je forme les mentors et managers au coaching"
         - "Je mesure l'efficacité du programme de mentorat"
         - "J'ai créé des parcours de développement de carrière"
@@ -273,8 +206,8 @@ skills:
       "3→4": "Développez un programme de mentorat. Mesurez la progression de vos mentorés."
 
   - id: communication
-    name: "Communication"
-    description: "Communiquer efficacement à l'écrit et à l'oral, vulgariser les concepts techniques, informer proactivement et représenter l'équipe"
+    name: "Communication & Stakeholders"
+    description: "Communiquer efficacement à l'écrit et à l'oral, vulgariser les concepts techniques, gérer les stakeholders et représenter l'équipe"
     core_roles: [data_analyst, data_scientist, analytics_eng]
     levels:
       data_analyst: [1, 2, 3, 4]
@@ -285,49 +218,49 @@ skills:
       backend: [1, 1, 2, 3]
     level_descriptions:
       0: "Ne communique pas efficacement"
-      1: "Explique son code et son travail à ses collègues proches"
-      2: "Pédagogue, informe proactivement son équipe, fait des démos"
-      3: "Vulgarise des sujets complexes, documente, représente l'équipe en externe"
-      4: "Communique avec toutes les parties prenantes (tech, produit, direction, institutions)"
-      5: "Définit les standards de communication de l'organisation"
+      1: "J'explique mon travail à mes collègues proches et je travaille avec mes stakeholders directs"
+      2: "Je fais des démos régulières, j'adapte mon discours à mon audience et je gère plusieurs stakeholders"
+      3: "Je vulgarise des sujets complexes, je représente l'équipe et j'influence les décisions au niveau senior"
+      4: "Je communique avec toutes les parties prenantes (tech, produit, direction) et je forme les autres"
+      5: "Je définis les standards de communication et de collaboration pour l'entreprise"
       6: "Speaker reconnu, formateur externe en communication technique"
     behavioral_indicators:
       1:
-        - "J'explique mon code de manière claire lors des code reviews"
-        - "Je documente mes travaux avec des commentaires compréhensibles"
-        - "Je sais présenter mes résultats en réunion d'équipe"
+        - "J'explique mon code et mes résultats de manière claire"
+        - "Je communique régulièrement avec mon PM/manager direct"
+        - "Je comprends les besoins de mes stakeholders directs"
       2:
         - "Je fais des démos régulières de mon travail à l'équipe"
-        - "J'informe proactivement des avancées, blocages et décisions"
         - "J'adapte mon discours à mon audience (tech vs non-tech)"
-        - "Je rédige des messages clairs et structurés (Slack, email, PR)"
+        - "Je gère plusieurs stakeholders avec des besoins différents"
+        - "Je communique proactivement les blocages et retards"
       3:
         - "Je vulgarise des concepts techniques complexes avec aisance"
-        - "Je produis de la documentation claire et à jour"
         - "Je représente l'équipe data lors de réunions transverses"
+        - "J'influence les décisions au niveau senior et j'aligne des priorités divergentes"
         - "J'ai présenté dans un brown bag, meetup interne ou conférence"
       4:
-        - "Je communique efficacement avec toutes les parties prenantes"
-        - "Je présente à la direction ou aux partenaires institutionnels"
+        - "Je communique efficacement avec toutes les parties prenantes (tech, produit, direction)"
+        - "Je suis le point de contact data pour plusieurs équipes"
         - "Je crée des supports de communication pour l'équipe (templates, guides)"
-        - "Je forme les autres à la communication technique"
+        - "Je forme les autres à la communication et à la gestion des stakeholders"
       5:
-        - "Je définis les standards de communication de l'organisation"
+        - "Je définis les standards de communication et de collaboration inter-équipes pour l'entreprise"
         - "Je coache les speakers et rédacteurs"
-        - "Je suis référent pour les présentations stratégiques"
-        - "J'organise des sessions de formation à la communication"
+        - "J'interviens comme médiateur pour les conflits inter-équipes"
+        - "J'ai créé des frameworks de priorisation et communication organisationnels"
       6:
         - "Je suis speaker reconnu dans des conférences externes"
         - "Je suis formateur externe en communication technique"
-        - "J'ai publié des contenus reconnus sur la vulgarisation technique"
-        - "Je suis sollicité comme expert en communication par d'autres organisations"
+        - "J'ai publié des contenus reconnus sur la communication et l'influence"
+        - "J'ai conseillé d'autres organisations sur leur communication"
     resources:
       - url: "https://www.storytellingwithdata.com/"
         title: "Storytelling with Data"
         type: "book"
-      - url: "https://www.ted.com/talks/chris_anderson_ted_s_secret_to_great_public_speaking"
-        title: "TED - Secret to Great Speaking"
-        type: "video"
+      - url: "https://hbr.org/2014/03/manage-your-stakeholders"
+        title: "HBR - Manage Your Stakeholders"
+        type: "documentation"
       - url: "https://www.coursera.org/learn/public-speaking"
         title: "Public Speaking (Coursera)"
         type: "course"
@@ -335,9 +268,9 @@ skills:
         title: "Write the Docs - Documentation Guide"
         type: "documentation"
     improvement_tips:
-      "1→2": "Faites des démos régulières de votre travail. Informez proactivement votre équipe des avancées et blocages."
-      "2→3": "Vulgarisez un sujet complexe lors d'un brown bag. Documentez un projet de bout en bout."
-      "3→4": "Présentez aux parties prenantes non-techniques. Formez les autres à la communication."
+      "1→2": "Faites des démos régulières. Identifiez tous vos stakeholders et adaptez votre discours à chacun."
+      "2→3": "Vulgarisez un sujet complexe lors d'un brown bag. Gérez un conflit entre stakeholders."
+      "3→4": "Présentez aux parties prenantes non-techniques. Devenez le point de contact data clé."
 
   - id: project_management
     name: "Gestion de Projet Data"
@@ -352,11 +285,11 @@ skills:
       backend: [1, 1, 2, 3]
     level_descriptions:
       0: "Aucune expérience en gestion de projet"
-      1: "Peut gérer ses propres tâches, respecte les deadlines"
-      2: "Peut piloter un petit projet data avec quelques dépendances"
-      3: "Gère des projets complexes multi-équipes"
-      4: "Expert en gestion de projet, méthodologies adaptées au data"
-      5: "Définit les méthodologies projet de l'organisation"
+      1: "Je gère mes propres tâches et je respecte les deadlines"
+      2: "Je pilote un petit projet data avec des livrables clairs et quelques dépendances"
+      3: "Je gère des projets complexes multi-équipes avec des contraintes fortes"
+      4: "Je définis des méthodologies de gestion de projet data et je forme les équipes"
+      5: "Je définis les méthodologies projet pour l'entreprise et je forme les chefs de projet et tech leads"
       6: "Expert gestion de projet (conférences, formateur)"
     behavioral_indicators:
       1:
@@ -376,12 +309,12 @@ skills:
       4:
         - "J'ai défini une méthodologie de gestion de projet data"
         - "Je forme les autres à la gestion de projet"
-        - "Je suis sollicité pour les projets complexes"
+        - "Je pilote les projets complexes"
         - "J'ai un track record de projets livrés avec succès"
       5:
-        - "Je définis les méthodologies projet de l'organisation"
+        - "Je définis les méthodologies projet pour l'entreprise"
         - "Je forme les chefs de projet et tech leads"
-        - "Je suis référent pour les projets stratégiques"
+        - "Je pilote les projets stratégiques"
         - "J'ai mis en place des outils et processus projet"
       6:
         - "Je suis consultant externe en gestion de projet data"
@@ -407,8 +340,8 @@ skills:
       "3→4": "Définissez une méthodologie de gestion de projet data. Formez les équipes."
 
   - id: posture
-    name: "Posture"
-    description: "Curiosité intellectuelle, egoless programming, esprit critique, humilité, pédagogie, facilitation et vision"
+    name: "Collaboration & Posture"
+    description: "Collaborer efficacement, esprit critique, humilité, pédagogie, facilitation, animer la communauté technique et gérer les conflits"
     core_roles: [data_analyst, data_engineer, data_scientist, analytics_eng, ml_engineer, backend]
     levels:
       data_analyst: [1, 2, 3, 4]
@@ -418,131 +351,64 @@ skills:
       ml_engineer: [1, 2, 3, 4]
       backend: [1, 2, 3, 4]
     level_descriptions:
-      0: "Posture professionnelle insuffisante"
-      1: "Curieux, ouvert au feedback, accepte ses erreurs"
-      2: "Esprit critique constructif, humble, pédagogue avec ses pairs"
-      3: "Facilitateur, challenge les idées avec bienveillance, fait progresser les autres"
-      4: "Visionnaire, inspire par l'exemple, crée une culture d'apprentissage"
-      5: "Définit la culture et les valeurs techniques de l'organisation"
-      6: "Reconnu comme modèle de posture professionnelle en externe"
+      0: "Posture professionnelle insuffisante et travail isolé"
+      1: "Je suis curieux, ouvert au feedback, j'ose dire 'je ne sais pas' et je partage mes idées"
+      2: "Je fais preuve d'esprit critique constructif, je fais du pair programming et je contribue aux rituels d'équipe"
+      3: "Je facilite les discussions techniques, j'anime la communauté et je gère les désaccords avec bienveillance"
+      4: "J'inspire une culture d'apprentissage continu, je crée un environnement sûr et je résous les conflits"
+      5: "Je définis la culture et les valeurs techniques pour l'entreprise et je forme les managers"
+      6: "Reconnu comme modèle de collaboration et posture en externe"
     behavioral_indicators:
       1:
         - "Je suis curieux et je cherche à comprendre avant de critiquer"
-        - "J'accepte le feedback et je remets en question mes choix"
-        - "Je reconnais quand je me trompe et j'en tire des leçons"
+        - "Je dis 'je ne sais pas' quand c'est le cas, sans honte"
+        - "Je partage mes idées et mes doutes avec l'équipe"
       2:
         - "Je pratique l'egoless programming : mon code n'est pas mon identité"
-        - "Je fais preuve d'esprit critique constructif en code review"
-        - "J'explique mes raisonnements avec pédagogie à mes collègues"
+        - "Je fais du pair programming régulièrement et je contribue aux code reviews"
+        - "Je partage mes apprentissages et mes erreurs pour faire progresser le collectif"
         - "Je suis humble face à la complexité et je demande de l'aide quand nécessaire"
       3:
-        - "Je facilite les discussions techniques et aide à converger"
+        - "J'anime des sessions de partage (brown bags, tech talks)"
+        - "Je facilite les décisions collectives et je gère les désaccords avec diplomatie"
         - "Je challenge les idées avec bienveillance, en apportant des alternatives"
-        - "Je fais progresser les juniors par mon exemple et mon accompagnement"
-        - "Je suis reconnu pour ma posture constructive dans les débats techniques"
+        - "Je crée des espaces d'échange (guildes, communautés de pratique)"
       4:
         - "J'inspire une culture d'apprentissage continu dans l'équipe"
-        - "Je crée un environnement psychologiquement sûr pour l'expérimentation"
-        - "Je porte une vision technique ambitieuse et la partage avec enthousiasme"
-        - "Je suis un modèle de posture professionnelle pour l'organisation"
+        - "Je crée un climat de confiance où l'équipe ose expérimenter et échouer"
+        - "Je résous les conflits au sein de l'équipe de manière constructive"
+        - "Je forme les autres à la facilitation et au travail collaboratif"
       5:
-        - "Je définis la culture et les valeurs techniques de l'organisation"
+        - "Je définis la culture et les valeurs techniques pour l'entreprise"
         - "Je mets en place des rituels favorisant la bonne posture (retros, blameless post-mortems)"
         - "Je forme les managers et leads à la facilitation et au leadership bienveillant"
-        - "Je suis référent pour résoudre les tensions liées à la posture"
+        - "Je mets en place des rituels de collaboration inter-équipes"
       6:
         - "Je suis reconnu en externe pour ma posture et mon leadership technique"
-        - "Je donne des conférences sur la culture engineering et l'egoless programming"
+        - "Je donne des conférences sur la culture engineering et la collaboration"
         - "J'ai publié sur les bonnes pratiques de posture en équipe tech"
-        - "Je suis sollicité comme coach ou mentor par d'autres organisations"
+        - "Je suis consultant externe en collaboration et facilitation d'équipe"
     resources:
       - url: "https://blog.codinghorror.com/the-ten-commandments-of-egoless-programming/"
         title: "The Ten Commandments of Egoless Programming"
         type: "documentation"
-      - url: "https://www.coursera.org/learn/emotional-intelligence"
-        title: "Emotional Intelligence (Coursera)"
-        type: "course"
+      - url: "https://martinfowler.com/articles/on-pair-programming.html"
+        title: "Martin Fowler - On Pair Programming"
+        type: "documentation"
       - url: "https://www.radicalcandor.com/"
         title: "Radical Candor"
         type: "book"
-      - url: "https://psychsafety.co.uk/psychological-safety/"
-        title: "Psychological Safety Resources"
-        type: "documentation"
-    improvement_tips:
-      "1→2": "Pratiquez l'egoless programming en code review. Demandez du feedback régulièrement et agissez dessus."
-      "2→3": "Facilitez une discussion technique. Mentorez un junior en vous concentrant sur la posture."
-      "3→4": "Instaurez des pratiques de blameless post-mortem. Créez un environnement sûr pour l'expérimentation."
-
-  - id: adaptability
-    name: "Environnement & Adaptabilité"
-    description: "S'adapter aux changements de roadmap, tenir ses engagements, faire preuve de flexibilité face à l'incertitude et aux contraintes"
-    core_roles: [data_analyst, data_engineer, data_scientist, analytics_eng, ml_engineer, backend]
-    levels:
-      data_analyst: [1, 2, 3, 4]
-      data_engineer: [1, 1, 2, 3]
-      data_scientist: [1, 2, 3, 4]
-      analytics_eng: [1, 2, 3, 4]
-      ml_engineer: [1, 1, 2, 3]
-      backend: [1, 1, 2, 3]
-    level_descriptions:
-      0: "Difficulté à s'adapter aux changements"
-      1: "Accepte les changements de priorité, tient ses engagements sur des tâches simples"
-      2: "S'adapte aux changements de roadmap, gère les imprévus, reste fiable sous pression"
-      3: "Anticipe les changements, propose des plans B, accompagne l'équipe dans les transitions"
-      4: "Pilote le changement, transforme les contraintes en opportunités, guide l'organisation"
-      5: "Définit les processus d'adaptation et de résilience de l'organisation"
-      6: "Expert reconnu en conduite du changement, consultant externe"
-    behavioral_indicators:
-      1:
-        - "J'accepte les changements de priorité sans résistance"
-        - "Je tiens mes engagements et je communique quand je suis en difficulté"
-        - "Je m'adapte à un nouvel outil ou une nouvelle méthode de travail"
-      2:
-        - "Je gère les changements de roadmap en repriorisant mes tâches"
-        - "Je reste fiable et productif face aux imprévus"
-        - "Je fais preuve de flexibilité dans mes choix techniques quand le contexte change"
-        - "Je communique proactivement les impacts des changements sur mes livrables"
-      3:
-        - "J'anticipe les changements et je prépare des plans de contingence"
-        - "J'accompagne l'équipe lors des transitions (reorg, changement de stack, pivot)"
-        - "Je propose des alternatives quand un plan initial devient impossible"
-        - "Je reste serein et constructif face à l'incertitude"
-      4:
-        - "Je pilote des transformations à l'échelle de l'équipe ou de l'organisation"
-        - "Je transforme les contraintes en opportunités d'amélioration"
-        - "Je guide les équipes dans les périodes de changement intense"
-        - "Je suis reconnu pour ma résilience et ma capacité d'adaptation"
-      5:
-        - "Je définis les processus d'adaptation et de résilience de l'organisation"
-        - "Je forme les managers à la conduite du changement"
-        - "Je mets en place des pratiques de rétrospective et d'amélioration continue"
-        - "Je suis référent pour les transformations organisationnelles"
-      6:
-        - "Je suis consultant externe en conduite du changement"
-        - "Je donne des conférences sur l'adaptabilité et la résilience en contexte tech"
-        - "J'ai publié sur les stratégies d'adaptation organisationnelle"
-        - "Je suis reconnu comme expert en transformation d'organisations tech"
-    resources:
-      - url: "https://www.coursera.org/learn/managing-change"
-        title: "Managing Change (Coursera)"
-        type: "course"
-      - url: "https://hbr.org/topic/change-management"
-        title: "HBR - Change Management"
-        type: "documentation"
-      - url: "https://www.atlassian.com/agile/agile-at-scale"
-        title: "Atlassian - Agile at Scale"
-        type: "documentation"
-      - url: "https://basecamp.com/shapeup"
-        title: "Shape Up (Basecamp)"
+      - url: "https://www.amazon.com/Five-Dysfunctions-Team-Leadership-Fable/dp/0787960756"
+        title: "The Five Dysfunctions of a Team"
         type: "book"
     improvement_tips:
-      "1→2": "Gérez un changement de priorité en repriorisant vos tâches. Communiquez proactivement les impacts."
-      "2→3": "Anticipez un changement et préparez un plan B. Accompagnez un collègue dans une transition."
-      "3→4": "Pilotez une transformation à l'échelle de l'équipe. Transformez une contrainte en opportunité."
+      "1→2": "Pratiquez l'egoless programming en code review. Faites du pair programming régulièrement."
+      "2→3": "Animez un brown bag ou un tech talk. Facilitez une décision collective lors d'un débat technique."
+      "3→4": "Instaurez des pratiques de blameless post-mortem. Créez un environnement sûr pour l'expérimentation."
 
-  - id: teamwork
-    name: "Travailler en Équipe"
-    description: "Collaborer efficacement: dire 'je ne sais pas', partager ses idées, faciliter, animer la communauté technique et gérer les conflits"
+  - id: culture_feedback
+    name: "Culture du Feedback"
+    description: "Donner et recevoir du feedback de manière constructive, instaurer une culture de feedback continu au sein de l'équipe et de l'organisation"
     core_roles: [data_analyst, data_engineer, data_scientist, analytics_eng, ml_engineer, backend]
     levels:
       data_analyst: [1, 2, 3, 4]
@@ -552,57 +418,191 @@ skills:
       ml_engineer: [1, 2, 3, 4]
       backend: [1, 2, 3, 4]
     level_descriptions:
-      0: "Travaille de manière isolée"
-      1: "Collabore avec ses collègues proches, ose dire 'je ne sais pas' et partage ses idées"
-      2: "Contribue activement aux rituels d'équipe, facilite les échanges, fait du pair programming"
-      3: "Anime la communauté technique, facilite les décisions collectives, gère les désaccords"
-      4: "Leader collaboratif, crée les conditions du travail d'équipe efficace, résout les conflits"
-      5: "Définit les pratiques collaboratives de l'organisation"
-      6: "Expert reconnu en collaboration et facilitation, formateur externe"
+      0: "Ne sait pas recevoir ni donner du feedback"
+      1: "Je reçois le feedback avec ouverture et j'en tiens compte"
+      2: "Je donne du feedback constructif à mes pairs et je le sollicite activement"
+      3: "J'instaure une culture du feedback au sein de mon équipe"
+      4: "Je mets en place des processus de feedback à l'échelle de l'organisation"
+      5: "Je transforme la culture de feedback de l'organisation entière"
+      6: "Reconnu en externe comme expert en culture du feedback"
     behavioral_indicators:
       1:
-        - "Je dis 'je ne sais pas' quand c'est le cas, sans honte"
-        - "Je partage mes idées et mes doutes avec l'équipe"
-        - "Je participe activement aux réunions et aux discussions d'équipe"
+        - "Je reçois le feedback sans me braquer et je remercie la personne"
+        - "Je prends en compte les retours pour améliorer mon travail"
+        - "Je demande du feedback à mon manager ou mes collègues proches"
       2:
-        - "Je contribue activement aux code reviews, retros et rituels d'équipe"
-        - "Je fais du pair programming régulièrement"
-        - "J'aide mes collègues quand ils sont bloqués, sans attendre qu'on me le demande"
-        - "Je donne et reçois du feedback de manière constructive"
+        - "Je donne du feedback constructif à mes collègues en utilisant des faits concrets"
+        - "Je sollicite régulièrement du feedback auprès de différentes personnes"
+        - "Je formule mes retours de manière bienveillante et actionnable"
+        - "Je fais la distinction entre feedback sur le travail et feedback sur la personne"
       3:
-        - "J'anime des sessions de partage de connaissances (brown bags, tech talks)"
-        - "Je facilite les décisions collectives lors de débats techniques"
-        - "Je gère les désaccords avec diplomatie et en cherchant le consensus"
-        - "Je crée des espaces d'échange (guildes, communautés de pratique)"
+        - "J'ai instauré des rituels de feedback réguliers dans mon équipe (1:1, retros)"
+        - "Je forme mes collègues à donner et recevoir du feedback efficacement"
+        - "Je crée un environnement psychologiquement sûr pour l'échange de feedback"
+        - "Je donne du feedback ascendant (à mon manager) de manière constructive"
       4:
-        - "Je crée les conditions pour que chacun puisse s'exprimer et contribuer"
-        - "Je résous les conflits au sein de l'équipe de manière constructive"
-        - "Je suis reconnu comme un catalyseur de collaboration dans l'organisation"
-        - "Je forme les autres à la facilitation et au travail collaboratif"
+        - "Je mets en place des processus de feedback structurés (360°, peer reviews)"
+        - "Je mesure l'efficacité des pratiques de feedback dans l'organisation"
+        - "Je forme les managers à la culture du feedback"
+        - "Je résous les situations de feedback difficiles (conflits, tensions)"
       5:
-        - "Je définis les pratiques collaboratives de l'organisation"
-        - "Je forme les managers et leads à la facilitation d'équipe"
-        - "Je mets en place des rituels de collaboration inter-équipes"
-        - "Je suis référent pour les situations de conflit complexes"
+        - "Je transforme la culture de feedback à l'échelle de toute l'organisation"
+        - "J'ai mis en place des outils et processus de feedback à grande échelle"
+        - "Je conduis les situations de feedback sensibles (performance, recadrage)"
+        - "Je mesure l'impact de la culture feedback sur la performance des équipes"
       6:
-        - "Je suis consultant externe en collaboration et facilitation d'équipe"
-        - "Je donne des conférences sur le travail d'équipe en contexte tech"
-        - "J'ai publié sur les pratiques collaboratives en engineering"
-        - "Je suis reconnu comme expert en dynamique d'équipe dans l'industrie"
+        - "Je suis consultant ou formateur externe en culture du feedback"
+        - "Je donne des conférences sur les pratiques de feedback en entreprise"
+        - "J'ai publié des articles ou ouvrages sur la culture du feedback"
+        - "Je suis reconnu comme expert en feedback dans l'industrie tech"
     resources:
-      - url: "https://www.atlassian.com/team-playbook"
-        title: "Atlassian Team Playbook"
-        type: "documentation"
-      - url: "https://www.coursera.org/learn/teamwork-skills"
-        title: "Teamwork Skills (Coursera)"
+      - url: "https://www.radicalcandor.com/"
+        title: "Radical Candor - Kim Scott"
+        type: "book"
+      - url: "https://www.coursera.org/learn/feedback"
+        title: "Giving Helpful Feedback (Coursera)"
         type: "course"
-      - url: "https://martinfowler.com/articles/on-pair-programming.html"
-        title: "Martin Fowler - On Pair Programming"
+      - url: "https://hbr.org/2019/03/the-feedback-fallacy"
+        title: "HBR - The Feedback Fallacy"
         type: "documentation"
-      - url: "https://www.amazon.com/Five-Dysfunctions-Team-Leadership-Fable/dp/0787960756"
-        title: "The Five Dysfunctions of a Team"
+      - url: "https://www.nonviolentcommunication.com/"
+        title: "Communication Non Violente (CNV)"
         type: "book"
     improvement_tips:
-      "1→2": "Faites du pair programming régulièrement. Participez activement aux code reviews et retros."
-      "2→3": "Animez un brown bag ou un tech talk. Facilitez une décision collective lors d'un débat technique."
-      "3→4": "Créez une communauté de pratique. Résolvez un conflit au sein de l'équipe de manière constructive."
+      "1→2": "Donnez du feedback constructif à un collègue en utilisant la méthode SBI (Situation, Comportement, Impact). Sollicitez du feedback après chaque projet."
+      "2→3": "Instaurez un rituel de feedback régulier dans votre équipe. Formez vos collègues aux techniques de feedback constructif."
+      "3→4": "Mettez en place un processus de feedback 360° dans votre organisation. Formez les managers à la culture du feedback."
+
+  - id: proactivity_challenge
+    name: "Proactivité & Challenge"
+    description: "Partager ses opinions, proposer des améliorations de manière proactive, challenger les décisions et les pratiques avec bienveillance à tous les niveaux"
+    core_roles: [data_analyst, data_engineer, data_scientist, analytics_eng, ml_engineer, backend]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Reste passif et n'ose pas partager ses idées"
+      1: "Je partage mon opinion au sein de mon équipe"
+      2: "Je propose des améliorations de manière proactive"
+      3: "Je challenge les décisions et pratiques au-delà de mon équipe"
+      4: "J'influence les décisions au niveau de la direction"
+      5: "J'impulse des changements stratégiques à l'échelle de l'organisation"
+      6: "Reconnu en externe pour sa capacité à challenger et innover"
+    behavioral_indicators:
+      1:
+        - "Je partage mon avis lors des réunions d'équipe, même quand il diffère"
+        - "Je pose des questions quand quelque chose ne me semble pas clair ou optimal"
+        - "J'ose proposer des idées nouvelles dans un cadre bienveillant"
+      2:
+        - "Je propose des améliorations concrètes sur les processus ou le code sans qu'on me le demande"
+        - "Je prends l'initiative de résoudre des problèmes que j'identifie"
+        - "Je challenge les choix techniques de manière constructive en code review"
+        - "Je porte des sujets d'amélioration auprès de mon manager"
+      3:
+        - "Je challenge les décisions et pratiques au-delà de mon équipe"
+        - "Je porte des propositions d'amélioration auprès d'autres équipes"
+        - "Je sais argumenter et défendre une position avec des données et des faits"
+        - "Je crée des espaces pour que les autres puissent aussi challenger (retros, RFC)"
+      4:
+        - "J'influence les décisions stratégiques au niveau du comité de direction"
+        - "Je porte des sujets de transformation auprès du leadership"
+        - "Je challenge les orientations techniques de l'organisation"
+        - "Je forme les autres à oser challenger avec bienveillance"
+      5:
+        - "J'impulse des changements stratégiques à l'échelle de toute l'organisation"
+        - "Je mets en place des processus pour favoriser l'innovation bottom-up (hackathons, RFC)"
+        - "J'arbitre les décisions stratégiques controversées"
+        - "Je crée une culture où le challenge constructif est valorisé"
+      6:
+        - "Je suis reconnu en externe pour ma capacité à challenger et innover"
+        - "Je donne des conférences sur la proactivité et le challenge constructif"
+        - "J'ai publié sur les pratiques de challenge et d'innovation en entreprise"
+        - "J'ai conseillé d'autres organisations sur la transformation de leur culture"
+    resources:
+      - url: "https://www.amazon.com/Think-Again-Power-Knowing-What/dp/1984878107"
+        title: "Think Again - Adam Grant"
+        type: "book"
+      - url: "https://www.coursera.org/learn/creative-thinking-innovation"
+        title: "Creative Thinking and Innovation (Coursera)"
+        type: "course"
+      - url: "https://hbr.org/2017/01/how-to-speak-up-about-ethical-issues-at-work"
+        title: "HBR - How to Speak Up at Work"
+        type: "documentation"
+      - url: "https://oxide.computer/blog/rfd-1-requests-for-discussion"
+        title: "Oxide - Requests for Discussion (RFD)"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Proposez une amélioration concrète sur un processus ou un outil de votre équipe. Prenez l'initiative de résoudre un problème identifié."
+      "2→3": "Challengez une décision technique en dehors de votre équipe avec des arguments factuels. Créez une RFC pour proposer un changement transverse."
+      "3→4": "Portez un sujet de transformation auprès de la direction. Formez vos collègues à oser challenger avec bienveillance."
+
+  - id: strategic_thinking
+    name: "Pensée Stratégique & Priorisation"
+    description: "Aligner le travail data sur les objectifs business, évaluer l'impact potentiel des analyses et prioriser les sujets à fort levier"
+    core_roles: [data_analyst, data_scientist, analytics_eng]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [0, 1, 2, 3]
+      data_scientist: [1, 2, 3, 4]
+      analytics_eng: [1, 2, 3, 3]
+      ml_engineer: [0, 1, 2, 3]
+      backend: [0, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune prise de recul sur l'alignement business du travail"
+      1: "Je comprends les KPIs de mon équipe et je relie mon travail aux objectifs métier"
+      2: "Je priorise mes analyses selon l'impact business attendu et je dimensionne les opportunités"
+      3: "Je construis des roadmaps data alignées sur la stratégie business et je challenge les priorités cross-équipes"
+      4: "Je définis la stratégie data en lien avec la direction et j'arbitre les investissements data à l'échelle de l'organisation"
+      5: "Je définis la vision data stratégique de l'entreprise et j'influence les décisions business à partir des données"
+      6: "Reconnu en externe pour sa vision stratégique data et son impact business"
+    behavioral_indicators:
+      1:
+        - "Je connais les KPIs principaux de mon équipe et leur signification"
+        - "Je comprends comment mon travail contribue aux objectifs de l'équipe"
+        - "Je pose des questions sur le 'pourquoi' avant de me lancer dans une analyse"
+      2:
+        - "J'évalue l'impact business potentiel avant de lancer une analyse (opportunity sizing)"
+        - "Je priorise mes sujets en fonction du levier business, pas seulement de la faisabilité technique"
+        - "Je sais dire non ou 'pas maintenant' à une demande à faible impact"
+        - "Je propose des analyses proactives alignées sur les enjeux business du moment"
+      3:
+        - "Je construis des roadmaps data trimestrielles alignées sur les OKR de l'entreprise"
+        - "Je challenge les priorités des stakeholders avec des arguments data-driven"
+        - "J'identifie des opportunités business que les données peuvent éclairer avant qu'on me le demande"
+        - "Je dimensionne les projets data en termes d'impact business (€, users, conversion)"
+      4:
+        - "Je participe aux décisions stratégiques de l'entreprise en apportant la perspective data"
+        - "J'arbitre les investissements data (infra, outils, équipe) en fonction du ROI"
+        - "Je définis les KPIs stratégiques avec la direction"
+        - "Je forme les managers à utiliser les données pour leurs décisions stratégiques"
+      5:
+        - "Je définis la vision data à long terme alignée sur la stratégie d'entreprise"
+        - "J'éclaire la direction sur les décisions business majeures grâce aux données"
+        - "Je mets en place une culture data-driven à l'échelle de l'organisation"
+        - "J'influence la stratégie produit et business grâce aux insights data"
+      6:
+        - "Je suis reconnu en externe pour ma capacité à créer de la valeur business par la data"
+        - "Je donne des conférences sur la stratégie data et l'alignement business"
+        - "J'ai publié sur les meilleures pratiques de data strategy"
+        - "Je conseille d'autres organisations sur leur stratégie data"
+    resources:
+      - url: "https://www.amazon.com/Lean-Analytics-Better-Startup-Faster/dp/1449335675"
+        title: "Lean Analytics - Alistair Croll & Ben Yoskovitz"
+        type: "book"
+      - url: "https://hbr.org/2020/02/use-this-framework-to-predict-the-success-of-your-big-data-project"
+        title: "HBR - Predicting Big Data Project Success"
+        type: "documentation"
+      - url: "https://www.coursera.org/learn/analytics-business-metrics"
+        title: "Business Metrics for Data-Driven Companies (Coursera)"
+        type: "course"
+      - url: "https://www.reforge.com/blog/scaling-data"
+        title: "Scaling Data Framework (Reforge)"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Avant chaque analyse, estimez l'impact business potentiel. Apprenez à prioriser avec un framework (RICE, ICE) et à dire non aux demandes à faible impact."
+      "2→3": "Construisez une roadmap data alignée sur les OKR. Challengez les priorités de vos stakeholders avec des données d'impact."
+      "3→4": "Participez aux discussions stratégiques de la direction. Mesurez le ROI des projets data pour arbitrer les investissements."

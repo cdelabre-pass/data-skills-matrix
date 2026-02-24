@@ -4,135 +4,9 @@ category:
   name: "Visualisation"
 
 skills:
-  - id: metabase
-    name: "Metabase"
-    description: "Utiliser Metabase pour le BI et les dashboards"
-    core_roles: [data_analyst]
-    levels:
-      data_analyst: [1, 2, 3, 4]
-      data_engineer: [NC, NC, 1, 2]
-      data_scientist: [1, 1, 2, 3]
-      analytics_eng: [1, 1, 2, 3]
-      ml_engineer: [NC, NC, 1, 2]
-      backend: [NC, NC, NC, 1]
-    level_descriptions:
-      0: "Aucune connaissance Metabase"
-      1: "Peut naviguer et utiliser les dashboards existants"
-      2: "Peut créer des questions, dashboards, visualisations basiques"
-      3: "Conçoit des dashboards complexes, utilise variables et filtres"
-      4: "Expert Metabase, peut optimiser les performances"
-      5: "Admin Metabase, définit les standards de l'organisation"
-      6: "Contributeur Metabase community"
-    behavioral_indicators:
-      1:
-        - "Je navigue dans Metabase et utilise les dashboards existants"
-        - "Je sais appliquer des filtres sur un dashboard"
-        - "Je peux exporter des données depuis Metabase"
-      2:
-        - "Je crée des questions (simple et custom)"
-        - "J'assemble des dashboards avec plusieurs visualisations"
-        - "Je choisis le bon type de graphique selon les données"
-        - "J'utilise les filtres de dashboard pour l'interactivité"
-      3:
-        - "J'utilise les variables et SQL natif pour les cas complexes"
-        - "Je crée des dashboards avec drill-down"
-        - "Je configure les alertes et subscriptions"
-        - "Je gère les collections et permissions"
-      4:
-        - "J'optimise les requêtes lentes dans Metabase"
-        - "Je configure le caching pour les performances"
-        - "Je forme les utilisateurs à créer leurs propres dashboards"
-        - "J'administre l'instance Metabase"
-      5:
-        - "Je suis le référent Metabase de l'organisation"
-        - "J'ai défini les standards et bonnes pratiques Metabase pour l'entreprise"
-        - "Je forme et mentor les équipes sur Metabase"
-        - "J'ai créé des templates de dashboards réutilisables"
-      6:
-        - "Je contribue au projet open-source Metabase"
-        - "J'ai présenté sur Metabase à des conférences externes ou meetups"
-        - "Je suis reconnu comme expert Metabase en dehors de l'entreprise"
-        - "J'ai publié des articles ou tutoriels sur Metabase"
-    resources:
-      - url: "https://www.metabase.com/learn/"
-        title: "Metabase Learn"
-        type: "tutorial"
-      - url: "https://www.metabase.com/docs/latest/"
-        title: "Metabase Documentation"
-        type: "documentation"
-      - url: "https://www.metabase.com/blog/dashboard-design-principles"
-        title: "Dashboard Design Principles"
-        type: "documentation"
-      - url: "https://www.youtube.com/c/Metabase/videos"
-        title: "Metabase YouTube Channel"
-        type: "video"
-    improvement_tips:
-      "1→2": "Créez votre premier dashboard avec 3-5 questions liées. Utilisez les filtres pour rendre le dashboard interactif."
-      "2→3": "Maîtrisez les SQL questions et les variables. Créez des dashboards avec drill-down."
-      "3→4": "Optimisez les performances des questions lentes. Mettez en place les bonnes pratiques de cache."
-
-  - id: looker
-    name: "Looker"
-    description: "Utiliser Looker pour l'exploration de données et les dashboards BI"
-    core_roles: [data_analyst]
-    levels:
-      data_analyst: [1, 2, 3, 4]
-      data_engineer: [NC, NC, NC, NC]
-      data_scientist: [NC, NC, NC, NC]
-      analytics_eng: [NC, NC, NC, NC]
-      ml_engineer: [NC, NC, NC, NC]
-      backend: [NC, NC, NC, NC]
-    level_descriptions:
-      0: "Aucune connaissance Looker"
-      1: "Peut utiliser les Explores et dashboards existants"
-      2: "Peut créer des Looks et dashboards personnalisés"
-      3: "Conçoit des dashboards complexes, maîtrise les Explores avancés"
-      4: "Expert Looker, optimise les performances et forme les utilisateurs"
-      5: "Référent Looker de l'organisation"
-      6: "Expert Looker reconnu, speaker Looker events"
-    behavioral_indicators:
-      1:
-        - "Je navigue dans les Explores existants"
-        - "J'applique des filtres et pivots sur les dashboards"
-        - "Je peux sauvegarder un Look pour mon usage"
-      2:
-        - "Je crée des Looks avec dimensions et mesures"
-        - "J'assemble des dashboards avec des tiles"
-        - "Je comprends la notion de dimension vs measure"
-      3:
-        - "Je crée des explores personnalisés avec filtres avancés"
-        - "Je conçois des dashboards interactifs avec drill-down"
-        - "J'utilise les derived tables pour les cas complexes"
-      4:
-        - "J'optimise les performances des explores"
-        - "Je forme les analystes à utiliser Looker efficacement"
-        - "J'administre et configure l'instance Looker"
-      5:
-        - "Je suis le référent Looker de l'organisation"
-        - "J'ai défini les standards et bonnes pratiques Looker pour l'entreprise"
-        - "Je forme et mentor les équipes sur Looker"
-      6:
-        - "Je contribue à la communauté Looker (forums, plugins)"
-        - "J'ai présenté sur Looker à des conférences externes ou Google events"
-        - "Je suis reconnu comme expert Looker en dehors de l'entreprise"
-    resources:
-      - url: "https://cloud.google.com/looker/docs"
-        title: "Looker Documentation"
-        type: "documentation"
-      - url: "https://www.cloudskillsboost.google/paths/28"
-        title: "Looker Learning Path (Google Cloud)"
-        type: "course"
-      - url: "https://www.youtube.com/playlist?list=PL6nfYkMvvs4l7r_6JYdH0fwvw8bsKPzDl"
-        title: "Looker YouTube Tutorials"
-        type: "video"
-    improvement_tips:
-      "1→2": "Créez des Looks et dashboards pour votre équipe. Explorez les différentes visualisations disponibles."
-      "2→3": "Maîtrisez les filtres avancés et le drill-down. Créez des dashboards interactifs."
-      "3→4": "Optimisez les performances des explores. Formez les utilisateurs et définissez les bonnes pratiques."
-
   - id: dashboard_design
-    name: "Design de Dashboards"
-    description: "Concevoir des visualisations de données efficaces et storytelling data"
+    name: "Design de Dashboards & Outils BI"
+    description: "Concevoir des visualisations de données efficaces, maîtriser les outils BI (Metabase, Looker, Tableau) et pratiquer le storytelling data"
     core_roles: [data_analyst]
     levels:
       data_analyst: [1, 2, 3, 4]
@@ -142,38 +16,39 @@ skills:
       ml_engineer: [1, 1, 2, 3]
       backend: [NC, NC, 1, 2]
     level_descriptions:
-      0: "Aucune connaissance en visualisation"
-      1: "Comprend les types de graphiques basiques et leur usage"
-      2: "Conçoit des dashboards clairs suivant les bonnes pratiques"
-      3: "Crée des data stories compelling, dashboards interactifs complexes"
-      4: "Expert en visualisation de données et storytelling"
-      5: "Référent dataviz de l'organisation"
+      0: "Aucune connaissance en visualisation et outils BI"
+      1: "Je navigue dans les dashboards existants et je crée des graphiques simples et lisibles"
+      2: "Je conçois des dashboards clairs dans un outil BI (Metabase, Looker) en suivant les bonnes pratiques"
+      3: "Je crée des data stories convaincantes, des dashboards interactifs complexes et je maîtrise les fonctionnalités avancées des outils BI"
+      4: "Je définis les standards de dataviz et les bonnes pratiques BI pour l'organisation, je forme les équipes"
+      5: "Je conçois un design system dataviz réutilisable et je pilote la stratégie de visualisation à l'échelle de l'organisation"
       6: "Expert dataviz reconnu, publications, formations externes"
     behavioral_indicators:
       1:
         - "Je sais quand utiliser un bar chart vs line chart"
         - "Je comprends l'importance des titres et labels"
-        - "Je peux créer un graphique simple et lisible"
+        - "Je navigue dans les dashboards Metabase/Looker existants et j'applique des filtres"
+        - "Je peux exporter des données depuis un outil BI"
       2:
-        - "Je respecte les bonnes pratiques (pas de 3D, couleurs cohérentes)"
-        - "Mes dashboards ont une hiérarchie visuelle claire"
+        - "Je crée des dashboards dans Metabase/Looker avec des filtres interactifs"
+        - "Je respecte les bonnes pratiques (pas de 3D, couleurs cohérentes, hiérarchie visuelle)"
         - "Je place les KPIs importants en haut du dashboard"
-        - "Je choisis les échelles appropriées (pas de axes tronqués trompeurs)"
+        - "Je choisis les échelles appropriées (pas d'axes tronqués trompeurs)"
       3:
         - "Je crée des data stories avec un fil conducteur"
+        - "J'utilise les fonctionnalités avancées des outils BI (SQL natif, variables, drill-down, derived tables)"
         - "Mes dashboards guident l'utilisateur vers les insights"
-        - "J'utilise l'interactivité (filtres, drill-down) à bon escient"
-        - "J'ai reçu des retours positifs sur mes visualisations"
+        - "Je configure les alertes et subscriptions dans les outils BI"
       4:
         - "J'ai défini un style guide dataviz pour l'équipe"
-        - "Je forme les autres au data storytelling"
-        - "Mes dashboards sont cités en exemple"
+        - "J'ai créé des templates de dashboards et une documentation des bonnes pratiques BI"
+        - "Mes dashboards sont cités en exemple dans l'organisation"
         - "Je maîtrise les techniques avancées (small multiples, annotations)"
       5:
-        - "Je suis le référent dataviz de l'organisation"
-        - "J'ai défini les standards et bonnes pratiques de visualisation pour l'entreprise"
+        - "Je conçois et maintiens un design system dataviz réutilisable"
+        - "Je définis les standards de visualisation et les bonnes pratiques BI pour l'entreprise"
         - "Je forme et mentor les équipes sur le design de dashboards"
-        - "J'ai créé un design system dataviz réutilisable"
+        - "J'administre les outils BI et définis les conventions de gouvernance du contenu"
       6:
         - "Je contribue à des projets open-source de visualisation (D3.js, etc.)"
         - "J'ai présenté sur la dataviz à des conférences externes"
@@ -186,13 +61,13 @@ skills:
       - url: "https://www.data-to-viz.com/"
         title: "From Data to Viz - Chart Selection"
         type: "tutorial"
-      - url: "https://www.tableau.com/learn/articles/data-visualization-tips"
-        title: "Data Visualization Tips (Tableau)"
-        type: "documentation"
+      - url: "https://www.metabase.com/learn/"
+        title: "Metabase Learn"
+        type: "tutorial"
       - url: "https://nightingaledvs.com/"
         title: "Nightingale - Data Visualization Society"
         type: "documentation"
     improvement_tips:
-      "1→2": "Apprenez quand utiliser chaque type de graphique. Refaites un de vos dashboards en appliquant les bonnes pratiques."
-      "2→3": "Créez une data story complète avec un fil conducteur. Utilisez les principes de storytelling."
-      "3→4": "Développez un style guide de dataviz pour votre organisation. Formez les équipes aux bonnes pratiques."
+      "1→2": "Créez votre premier dashboard dans Metabase ou Looker avec des filtres interactifs. Apprenez quand utiliser chaque type de graphique."
+      "2→3": "Créez une data story complète avec un fil conducteur. Maîtrisez les fonctionnalités avancées de votre outil BI (SQL natif, drill-down)."
+      "3→4": "Développez un style guide de dataviz pour votre organisation. Formez les équipes aux bonnes pratiques BI."

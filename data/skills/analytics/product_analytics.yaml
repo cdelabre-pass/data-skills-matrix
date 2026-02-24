@@ -4,196 +4,62 @@ category:
   name: "Product Analytics"
 
 skills:
-  - id: ab_testing
-    name: "A/B Testing & Expérimentation"
-    description: "Conception, implémentation et analyse statistique de tests A/B (puissance, significativité, interprétation)"
+  - id: product_metrics
+    name: "Product & Behavioral Analytics"
+    description: "Définition et suivi des métriques produit (DAU/MAU, rétention, churn, LTV), analyse de cohortes, funnel analysis, parcours utilisateur et segmentation comportementale"
     core_roles: [data_analyst, data_scientist]
     levels:
       data_analyst: [1, 2, 3, 4]
-      data_engineer: [NC, NC, 1, 2]
-      data_scientist: [1, 2, 3, 4]
-      analytics_eng: [1, 1, 2, 3]
-      ml_engineer: [1, 1, 2, 3]
-      backend: [NC, NC, 1, 2]
-    level_descriptions:
-      0: "Aucune connaissance des tests A/B"
-      1: "Comprend le concept de test A/B et son utilité"
-      2: "Peut analyser les résultats d'un test A/B, calcule la significativité statistique"
-      3: "Conçoit des expériences complexes (tests multi-variés, calcul de puissance, segmentation)"
-      4: "Expert en expérimentation, définit la stratégie de testing, gère les biais"
-      5: "Référent expérimentation, évangélise la culture du test"
-      6: "Speaker sur l'expérimentation, publications"
-    behavioral_indicators:
-      1:
-        - "Je comprends pourquoi on fait des tests A/B"
-        - "Je sais que 'statistiquement significatif' ne veut pas dire 'important'"
-        - "Je peux lire les résultats d'un test A/B dans un outil"
-      2:
-        - "Je calcule la significativité statistique d'un test"
-        - "J'interprète correctement les intervalles de confiance"
-        - "J'ai analysé les résultats d'au moins 5 tests A/B"
-        - "Je sais détecter un test arrêté trop tôt"
-      3:
-        - "Je calcule la taille d'échantillon nécessaire avant un test"
-        - "Je conçois des tests multi-variés"
-        - "Je segmente les résultats pour trouver des effets hétérogènes"
-        - "J'ai mis en place un test de bout en bout"
-      4:
-        - "Je forme les PMs à l'expérimentation"
-        - "J'ai défini le framework d'expérimentation de l'équipe"
-        - "Je gère les cas complexes (effet de nouveauté, contamination)"
-        - "Je challenge les interprétations incorrectes"
-      5:
-        - "Je suis le référent expérimentation de l'organisation"
-        - "J'ai défini les standards et méthodologies de tests A/B pour l'entreprise"
-        - "Je forme et mentor les équipes sur l'expérimentation"
-        - "J'ai créé des outils et calculateurs de tests réutilisables"
-      6:
-        - "Je contribue à des outils open-source d'expérimentation"
-        - "J'ai présenté sur l'A/B testing à des conférences externes"
-        - "Je suis reconnu comme expert expérimentation en dehors de l'entreprise"
-        - "J'ai des publications ou articles sur les tests A/B"
-    resources:
-      - url: "https://www.coursera.org/learn/ab-testing-google"
-        title: "A/B Testing by Google (Coursera)"
-        type: "course"
-      - url: "https://www.evanmiller.org/ab-testing/"
-        title: "Evan Miller's A/B Testing Tools"
-        type: "tutorial"
-      - url: "https://www.optimizely.com/optimization-glossary/"
-        title: "Optimizely Experimentation Glossary"
-        type: "documentation"
-      - url: "https://www.exp-platform.com/Documents/2017-08%20ABTestingAtScale.pdf"
-        title: "Online Experiments at Scale (Microsoft)"
-        type: "documentation"
-    improvement_tips:
-      "1→2": "Apprenez à calculer la significativité statistique. Analysez les tests A/B passés de l'entreprise."
-      "2→3": "Maîtrisez le calcul de puissance et de taille d'échantillon. Concevez un test multi-varié."
-      "3→4": "Formez les équipes produit à l'expérimentation. Mettez en place un framework d'expérimentation."
-
-  - id: firebase_analytics
-    name: "Firebase & Mobile Analytics"
-    description: "Configuration Firebase Analytics, event tracking, user properties, funnels, Remote Config"
-    core_roles: [data_analyst, analytics_eng]
-    levels:
-      data_analyst: [1, 2, 3, 4]
-      data_engineer: [1, 1, 2, 3]
-      data_scientist: [1, 1, 2, 3]
-      analytics_eng: [1, 2, 3, 4]
-      ml_engineer: [NC, NC, 1, 2]
-      backend: [1, 1, 2, 3]
-    level_descriptions:
-      0: "Aucune connaissance Firebase Analytics"
-      1: "Comprend les concepts Firebase, peut consulter les rapports basiques"
-      2: "Configure des events custom, user properties, analyse les funnels de conversion"
-      3: "Conçoit le plan de taggage complet, utilise Remote Config, optimise le tracking"
-      4: "Expert Firebase, architecte la stratégie de tracking mobile"
-      5: "Référent tracking mobile de l'organisation"
-      6: "Contributeur Firebase community, expert reconnu"
-    behavioral_indicators:
-      1:
-        - "Je navigue dans la console Firebase Analytics"
-        - "Je consulte les rapports d'audience et d'engagement"
-        - "Je comprends la différence entre events et user properties"
-      2:
-        - "J'ai configuré des events custom dans l'app"
-        - "Je crée des funnels pour analyser les parcours utilisateur"
-        - "J'utilise les user properties pour segmenter l'audience"
-        - "Je sais exporter les données vers BigQuery"
-      3:
-        - "J'ai conçu un plan de taggage complet pour une app"
-        - "J'utilise Remote Config pour les feature flags"
-        - "Je configure les audiences pour le remarketing"
-        - "J'optimise la collecte pour réduire les coûts"
-      4:
-        - "Je définis la stratégie de tracking mobile de l'organisation"
-        - "Je forme les développeurs aux bonnes pratiques Firebase"
-        - "Je gère les problèmes de privacy et consent"
-        - "J'ai mis en place le debug view pour le QA"
-      5:
-        - "Je suis le référent Firebase/tracking mobile de l'organisation"
-        - "J'ai défini les standards et bonnes pratiques Firebase pour l'entreprise"
-        - "Je forme et mentor les équipes sur Firebase Analytics"
-        - "J'ai créé des frameworks de tracking mobile réutilisables"
-      6:
-        - "Je contribue à la communauté Firebase (forums, plugins, exemples)"
-        - "J'ai présenté sur Firebase à des conférences externes ou Google events"
-        - "Je suis reconnu comme expert Firebase en dehors de l'entreprise"
-        - "J'ai des publications ou articles sur le tracking mobile"
-    resources:
-      - url: "https://firebase.google.com/docs/analytics"
-        title: "Firebase Analytics Documentation"
-        type: "documentation"
-      - url: "https://www.youtube.com/playlist?list=PLl-K7zZEsYLnfwBe4WgEw9ao0J0N1LYDR"
-        title: "Firebase YouTube Tutorials"
-        type: "video"
-      - url: "https://firebase.google.com/codelabs/firebase-analytics-android"
-        title: "Firebase Analytics Codelab"
-        type: "tutorial"
-      - url: "https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/"
-        title: "Event Naming Conventions"
-        type: "documentation"
-    improvement_tips:
-      "1→2": "Configurez des events custom pour un feature spécifique. Créez votre premier funnel d'analyse."
-      "2→3": "Concevez un plan de taggage complet. Mettez en place des user properties pour la segmentation."
-      "3→4": "Devenez le référent Firebase. Formez les développeurs aux bonnes pratiques de tracking."
-
-  - id: product_metrics
-    name: "Product Metrics & KPIs"
-    description: "Définition et suivi des métriques produit (DAU/MAU, rétention, churn, LTV, activation, engagement)"
-    core_roles: [data_analyst]
-    levels:
-      data_analyst: [1, 2, 3, 4]
       data_engineer: [1, 1, 2, 3]
       data_scientist: [1, 2, 3, 4]
       analytics_eng: [1, 2, 3, 4]
       ml_engineer: [1, 1, 2, 3]
       backend: [1, 1, 2, 3]
     level_descriptions:
-      0: "Aucune connaissance des métriques produit"
-      1: "Comprend les métriques basiques (DAU, MAU, conversion)"
-      2: "Calcule et analyse les métriques clés, comprend les cohortes de rétention"
-      3: "Définit les KPIs stratégiques, analyse le LTV, segmente par comportement"
-      4: "Expert en métriques produit, guide la stratégie produit basée sur les données"
-      5: "Définit le framework de métriques de l'organisation"
+      0: "Aucune connaissance des métriques produit et de l'analyse comportementale"
+      1: "Je comprends les métriques basiques (DAU, MAU, conversion) et les concepts de funnel et de cohorte"
+      2: "Je calcule les métriques de rétention par cohorte, j'analyse les funnels et je construis des dashboards de suivi"
+      3: "Je définis les KPIs stratégiques, je conçois des segmentations comportementales avancées et je maîtrise les fondements théoriques"
+      4: "Je guide la stratégie produit basée sur les données, je prédis les comportements et je conçois des frameworks de métriques"
+      5: "Je pilote les décisions stratégiques basées sur les données et je forme les équipes sur le product analytics"
       6: "Expert product analytics reconnu, publications"
     behavioral_indicators:
       1:
         - "Je sais ce que signifient DAU, MAU, et taux de conversion"
-        - "Je peux lire un dashboard de métriques produit"
-        - "Je comprends pourquoi la rétention est importante"
+        - "Je comprends ce qu'est un funnel de conversion et une analyse de cohorte"
+        - "Je peux lire un dashboard de métriques produit et identifier les étapes clés d'un parcours"
       2:
         - "Je calcule les cohortes de rétention (D1, D7, D30)"
-        - "J'analyse les taux de conversion par étape du funnel"
+        - "J'analyse les taux de conversion par étape du funnel et j'identifie les points de friction"
         - "Je segmente les métriques par source d'acquisition"
         - "J'ai construit un dashboard de KPIs produit"
       3:
         - "J'ai défini la North Star Metric de mon équipe"
-        - "Je calcule et segmente le LTV par cohorte"
-        - "J'identifie les leading indicators vs lagging indicators"
+        - "Je crée des segments comportementaux (power users, at-risk, dormants)"
+        - "J'analyse les parcours utilisateur complets et j'identifie les comportements prédictifs de la rétention"
         - "Je propose des objectifs quantifiés basés sur les données"
       4:
         - "J'ai défini le framework de métriques de l'organisation"
+        - "Je construis des modèles prédictifs de churn et j'automatise les alertes"
         - "Je présente les KPIs au COMEX régulièrement"
-        - "Je challenge les objectifs irréalistes avec les données"
-        - "Je forme les PMs à définir leurs métriques de succès"
+        - "J'ai créé un guide et des templates pour aider les PMs à définir leurs métriques de succès"
       5:
-        - "Je suis le référent product metrics de l'organisation"
-        - "J'ai défini les standards et frameworks de métriques pour l'entreprise"
-        - "Je forme et mentor les équipes sur les métriques produit"
-        - "J'ai créé des outils et templates de suivi de KPIs réutilisables"
+        - "Je forme et mentore les équipes sur les métriques produit et l'analyse comportementale"
+        - "Je définis les standards et frameworks de métriques pour l'entreprise"
+        - "Je pilote les décisions stratégiques impliquant les KPIs produit"
+        - "J'ai créé des frameworks de segmentation et de suivi de KPIs réutilisables"
       6:
         - "Je contribue à la communauté product analytics (blogs, outils open-source)"
-        - "J'ai présenté sur les métriques produit à des conférences externes"
+        - "J'ai présenté sur le product analytics à des conférences externes"
         - "Je suis reconnu comme expert product analytics en dehors de l'entreprise"
-        - "J'ai des publications ou articles sur les métriques et analytics produit"
+        - "J'ai des publications ou articles sur les métriques et l'analyse comportementale"
     resources:
       - url: "https://amplitude.com/blog/product-metrics"
         title: "Guide to Product Metrics"
         type: "documentation"
-      - url: "https://www.reforge.com/blog/north-star-metric-growth"
-        title: "North Star Metric (Reforge)"
-        type: "documentation"
+      - url: "https://amplitude.com/blog/cohort-analysis"
+        title: "Cohort Analysis Guide"
+        type: "tutorial"
       - url: "https://mixpanel.com/blog/product-analytics-guide/"
         title: "Product Analytics Guide (Mixpanel)"
         type: "tutorial"
@@ -201,76 +67,9 @@ skills:
         title: "What is Good Retention (Lenny's Newsletter)"
         type: "documentation"
     improvement_tips:
-      "1→2": "Calculez les métriques de rétention de votre produit. Construisez un dashboard de suivi des KPIs principaux."
-      "2→3": "Définissez la North Star Metric de votre équipe. Analysez le LTV par segment utilisateur."
-      "3→4": "Créez un framework de métriques pour toute l'organisation. Présentez les insights produit au COMEX."
-
-  - id: behavioral_analysis
-    name: "Analyse Comportementale"
-    description: "Analyse de cohortes, funnel analysis, parcours utilisateur, segmentation comportementale"
-    core_roles: [data_analyst, data_scientist]
-    levels:
-      data_analyst: [1, 2, 3, 4]
-      data_engineer: [NC, NC, 1, 2]
-      data_scientist: [1, 2, 3, 4]
-      analytics_eng: [1, 1, 2, 3]
-      ml_engineer: [1, 1, 2, 3]
-      backend: [NC, NC, 1, 2]
-    level_descriptions:
-      0: "Aucune connaissance de l'analyse comportementale"
-      1: "Comprend les concepts de funnel et cohorte"
-      2: "Réalise des analyses de cohortes, identifie les points de friction dans les funnels"
-      3: "Conçoit des segmentations comportementales avancées, analyse les parcours utilisateur"
-      4: "Expert en analyse comportementale, prédit les comportements et recommande des actions"
-      5: "Référent analyse comportementale, forme les équipes produit"
-      6: "Expert UX analytics reconnu externement"
-    behavioral_indicators:
-      1:
-        - "Je comprends ce qu'est un funnel de conversion"
-        - "Je sais ce qu'est une analyse de cohorte"
-        - "Je peux identifier les étapes principales d'un parcours utilisateur"
-      2:
-        - "J'ai réalisé une analyse de cohorte sur les inscriptions"
-        - "J'identifie les points de friction dans un funnel"
-        - "Je compare les comportements entre segments d'utilisateurs"
-        - "Je sais utiliser un outil comme Amplitude ou Mixpanel"
-      3:
-        - "Je crée des segments comportementaux (power users, at-risk, dormants)"
-        - "J'analyse les parcours utilisateur complets (customer journey)"
-        - "J'identifie les comportements prédictifs de la rétention"
-        - "J'ai influencé une décision produit grâce à mon analyse"
-      4:
-        - "Je construis des modèles prédictifs de churn"
-        - "J'automatise les alertes sur les changements de comportement"
-        - "Je forme les équipes produit à l'analyse comportementale"
-        - "J'ai un track record d'optimisations basées sur mes analyses"
-      5:
-        - "Je suis le référent analyse comportementale de l'organisation"
-        - "J'ai défini les standards et méthodologies d'analyse comportementale pour l'entreprise"
-        - "Je forme et mentor les équipes sur l'analyse de parcours utilisateur"
-        - "J'ai créé des frameworks de segmentation réutilisables"
-      6:
-        - "Je contribue à des outils open-source d'analytics comportemental"
-        - "J'ai présenté sur l'analyse comportementale à des conférences externes"
-        - "Je suis reconnu comme expert UX analytics en dehors de l'entreprise"
-        - "J'ai des publications ou articles sur l'analyse comportementale"
-    resources:
-      - url: "https://amplitude.com/blog/cohort-analysis"
-        title: "Cohort Analysis Guide"
-        type: "tutorial"
-      - url: "https://www.hotjar.com/conversion-rate-optimization/glossary/funnel-analysis/"
-        title: "Funnel Analysis (Hotjar)"
-        type: "documentation"
-      - url: "https://www.nngroup.com/articles/journey-mapping-101/"
-        title: "Journey Mapping 101 (NN Group)"
-        type: "documentation"
-      - url: "https://mixpanel.com/blog/behavioral-analytics/"
-        title: "Behavioral Analytics Guide"
-        type: "tutorial"
-    improvement_tips:
-      "1→2": "Réalisez une analyse de cohorte sur les inscriptions des 12 derniers mois. Identifiez les patterns de rétention."
-      "2→3": "Créez des segments comportementaux (power users, at-risk, etc.). Analysez les parcours menant à la conversion."
-      "3→4": "Développez des modèles prédictifs de churn. Automatisez les alertes sur les changements de comportement."
+      "1→2": "Calculez les métriques de rétention de votre produit par cohorte. Analysez un funnel de conversion et identifiez les points de friction."
+      "2→3": "Définissez la North Star Metric de votre équipe. Créez des segments comportementaux (power users, at-risk)."
+      "3→4": "Créez un framework de métriques pour toute l'organisation. Développez des modèles prédictifs de churn."
 
   - id: attribution_marketing
     name: "Attribution & Marketing Analytics"
@@ -285,11 +84,11 @@ skills:
       backend: [NC, NC, 1, 2]
     level_descriptions:
       0: "Aucune connaissance de l'attribution marketing"
-      1: "Comprend les UTM et le tracking des sources"
-      2: "Analyse les performances par canal, calcule le ROI des campagnes"
-      3: "Implémente des modèles d'attribution multi-touch, optimise les budgets"
-      4: "Expert en attribution, conçoit la stratégie de mesure marketing complète"
-      5: "Définit la stratégie d'attribution de l'organisation"
+      1: "Je comprends les UTM et le tracking des sources d'acquisition"
+      2: "J'analyse les performances par canal et je calcule le ROI des campagnes marketing"
+      3: "J'implémente des modèles d'attribution multi-touch, j'optimise les budgets et je maîtrise les fondements théoriques des différents modèles d'attribution"
+      4: "Je conçois la stratégie de mesure marketing complète, je gère les contraintes de privacy et je comprends les limites théoriques de chaque approche d'attribution"
+      5: "Je pilote les décisions d'allocation budgétaire basées sur les données, je définis les standards d'attribution pour l'entreprise et je forme les équipes sur le marketing analytics"
       6: "Expert marketing analytics reconnu, conférences"
     behavioral_indicators:
       1:
@@ -309,12 +108,12 @@ skills:
       4:
         - "J'ai défini la stratégie de mesure marketing complète"
         - "Je challenge les attributions des agences media"
-        - "Je forme les équipes marketing à l'analyse de performance"
+        - "J'ai créé les dashboards et rapports d'attribution de référence pour le marketing"
         - "Je gère les problèmes de privacy (iOS 14.5, GDPR)"
       5:
-        - "Je suis le référent attribution/marketing analytics de l'organisation"
-        - "J'ai défini les standards et modèles d'attribution pour l'entreprise"
-        - "Je forme et mentor les équipes sur le marketing analytics"
+        - "Je forme et mentore les équipes sur le marketing analytics et l'attribution"
+        - "Je définis les standards et modèles d'attribution pour l'entreprise"
+        - "Je pilote les décisions d'allocation budgétaire et de stratégie d'attribution"
         - "J'ai créé des frameworks d'attribution réutilisables"
       6:
         - "Je contribue à des outils open-source de marketing analytics"
@@ -352,11 +151,11 @@ skills:
       backend: [1, 1, 2, 3]
     level_descriptions:
       0: "Aucune connaissance du design de tracking"
-      1: "Comprend l'importance d'un plan de taggage structuré"
-      2: "Peut documenter les events existants, propose des améliorations"
-      3: "Conçoit des taxonomies d'events cohérentes, définit les data contracts"
-      4: "Expert en architecture de tracking, établit les standards pour toute l'organisation"
-      5: "Référent tracking, forme et audite les équipes"
+      1: "Je comprends l'importance d'un plan de taggage structuré et je sais lire la documentation existante"
+      2: "Je documente les events existants et je propose des améliorations au tracking"
+      3: "Je conçois des taxonomies d'events cohérentes, je définis les data contracts et je maîtrise les principes théoriques de gouvernance des données événementielles"
+      4: "J'établis les standards de tracking pour l'organisation, j'automatise la validation et je comprends les architectures de collecte de données dans leur ensemble"
+      5: "Je conçois l'architecture de tracking de référence, je définis les standards de gouvernance des données pour l'entreprise et je forme les équipes sur le design de tracking"
       6: "Expert data governance reconnu, publications"
     behavioral_indicators:
       1:
@@ -376,12 +175,12 @@ skills:
       4:
         - "J'ai défini les standards de tracking de l'organisation"
         - "J'audite la qualité du tracking des différentes équipes"
-        - "Je forme les développeurs aux bonnes pratiques"
+        - "J'ai créé la documentation et les guidelines de tracking pour les développeurs"
         - "J'automatise la validation et les alertes de qualité"
       5:
-        - "Je suis le référent tracking/data governance de l'organisation"
-        - "J'ai défini les standards et taxonomies de tracking pour l'entreprise"
-        - "Je forme et mentor les équipes sur le design de tracking"
+        - "Je forme et mentore les équipes sur le design de tracking et la gouvernance des données"
+        - "Je définis les standards et taxonomies de tracking pour l'entreprise"
+        - "Je conçois les architectures de tracking et j'arbitre les choix de data governance"
         - "J'ai créé des outils et templates de plan de taggage réutilisables"
       6:
         - "Je contribue à des outils open-source de data governance"
@@ -395,11 +194,11 @@ skills:
       - url: "https://www.avo.app/blog/tracking-plan-best-practices"
         title: "Tracking Plan Best Practices (Avo)"
         type: "documentation"
-      - url: "https://snowplowanalytics.com/blog/2020/01/24/re-thinking-the-structure-of-event-data/"
+      - url: "https://snowplow.io/blog/event-data-structure"
         title: "Event Data Structure (Snowplow)"
         type: "documentation"
-      - url: "https://dataform.co/blog/data-contracts"
-        title: "Data Contracts"
+      - url: "https://datacontract.com/"
+        title: "Data Contract Specification"
         type: "documentation"
     improvement_tips:
       "1→2": "Documentez les events existants dans votre produit. Identifiez les incohérences de nommage."

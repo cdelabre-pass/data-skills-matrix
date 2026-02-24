@@ -6,7 +6,7 @@ category:
 skills:
   - id: data_quality_management
     name: "Data Quality Management"
-    description: "Validation de données, détection d'anomalies, great expectations, dbt tests, alerting qualité"
+    description: "Validation de données, détection d'anomalies, Elementary, dbt tests, alerting qualité, gouvernance de la qualité"
     core_roles: [analytics_eng, data_engineer]
     levels:
       data_analyst: [1, 1, 2, 3]
@@ -17,12 +17,12 @@ skills:
       backend: [1, 1, 2, 3]
     level_descriptions:
       0: "Aucune connaissance de la qualité des données"
-      1: "Comprend l'importance de la qualité des données, identifie les problèmes basiques"
-      2: "Implémente des tests dbt, configure des validations de données"
-      3: "Conçoit des frameworks de qualité, détection d'anomalies automatisée"
-      4: "Expert en data quality, définit les SLAs et stratégie de monitoring"
-      5: "Architecte data quality de l'organisation"
-      6: "Expert data quality reconnu, speaker Data Quality Summit"
+      1: "Je comprends l'importance de la qualité des données et j'identifie les problèmes basiques"
+      2: "J'implémente des tests dbt et des validations, je documente les règles de qualité"
+      3: "Je conçois des frameworks de qualité avec détection d'anomalies automatisée et SLAs"
+      4: "Je définis la stratégie de data quality et la gouvernance de la qualité pour l'organisation"
+      5: "Je pilote le programme de gouvernance data quality à l'échelle de l'organisation"
+      6: "J'ai des résultats mesurables à grande échelle et je contribue à la communauté data quality"
     behavioral_indicators:
       1:
         - "Je comprends l'importance de la qualité des données"
@@ -30,32 +30,32 @@ skills:
         - "Je détecte les problèmes de qualité manuellement"
       2:
         - "J'implémente des tests dbt (unique, not_null, accepted_values)"
-        - "Je configure des validations avec Great Expectations"
+        - "Je configure des validations avec Elementary ou dbt packages"
         - "Je mets en place des alertes simples sur la qualité"
-        - "Je documente les règles de qualité"
+        - "Je documente les règles de qualité et les data owners"
       3:
         - "Je conçois un framework de qualité pour l'équipe"
         - "J'implémente la détection d'anomalies automatisée"
-        - "Je définis les SLAs de qualité par table"
+        - "Je définis les SLAs de qualité par table et les responsabilités des data owners"
         - "J'ai réduit significativement les incidents de qualité"
       4:
-        - "Je définis la stratégie de data quality"
-        - "Je mets en place le monitoring continu"
-        - "Je forme les équipes aux bonnes pratiques"
-        - "Je produis des rapports de qualité pour l'organisation"
+        - "Je définis la stratégie de data quality et les processus de gouvernance"
+        - "Je mets en place le monitoring continu et les rapports de qualité"
+        - "Je produis les rapports de qualité et les guides de bonnes pratiques pour l'équipe"
+        - "Je mesure et communique les KPIs de qualité des données à la direction"
       5:
-        - "Je définis les standards de data quality pour l'ensemble de l'organisation"
-        - "Je suis la référence interne pour les frameworks de qualité de données"
-        - "Je mentore les équipes sur les stratégies de monitoring avancées"
-        - "J'ai mis en place le programme de gouvernance data quality"
+        - "Je pilote le programme de gouvernance data quality à l'échelle de l'organisation"
+        - "Je définis les standards de qualité, les rôles (data owners, stewards) et les processus"
+        - "Je forme et mentore les équipes sur les stratégies de monitoring avancées"
+        - "Je mesure et communique la maturité data quality de l'organisation"
       6:
-        - "Je suis speaker à des conférences Data Quality Summit ou similaires"
-        - "J'ai publié des articles sur la data quality à l'échelle"
-        - "Je contribue à des projets open-source (Great Expectations, Soda)"
-        - "Je suis reconnu comme expert externe en data quality"
+        - "J'ai réduit le nombre d'incidents data quality de >50% sur 12 mois mesurés"
+        - "J'ai publié des articles ou retours d'expérience sur la data quality à l'échelle"
+        - "Je contribue à des projets open-source (Elementary, Soda, dbt packages)"
+        - "J'ai mis en place un programme data quality adopté par 3+ équipes avec des résultats mesurables"
     resources:
-      - url: "https://greatexpectations.io/expectations/"
-        title: "Great Expectations Documentation"
+      - url: "https://docs.elementary-data.com/"
+        title: "Elementary Documentation"
         type: "documentation"
       - url: "https://docs.getdbt.com/docs/build/tests"
         title: "dbt Tests"
@@ -67,140 +67,71 @@ skills:
         title: "Data Quality Fundamentals (O'Reilly)"
         type: "book"
     improvement_tips:
-      "1→2": "Implémentez des tests dbt sur vos modèles critiques. Utilisez Great Expectations."
-      "2→3": "Construisez un framework de qualité avec alerting automatique. Définissez les SLAs."
-      "3→4": "Concevez la stratégie data quality de l'organisation. Partagez en conférence."
+      "1→2": "Implémentez des tests dbt sur vos modèles critiques. Documentez les data owners."
+      "2→3": "Construisez un framework de qualité avec alerting automatique. Définissez les SLAs et data owners."
+      "3→4": "Concevez la stratégie data quality et gouvernance de l'organisation."
 
-  - id: data_contracts
-    name: "Data Contracts"
-    description: "Définition et enforcement de contrats de données entre producteurs et consommateurs"
+  - id: data_governance
+    name: "Data Gouvernance"
+    description: "Gouvernance des données: ownership, policies, compliance, data contracts, data catalog, lineage, metadata management, classification et data discovery self-service"
     core_roles: [data_engineer, analytics_eng]
-    levels:
-      data_analyst: [NC, NC, 1, 2]
-      data_engineer: [1, 2, 3, 4]
-      data_scientist: [NC, NC, 1, 2]
-      analytics_eng: [1, 2, 3, 4]
-      ml_engineer: [1, 1, 2, 3]
-      backend: [1, 1, 2, 3]
-    level_descriptions:
-      0: "Aucune connaissance des data contracts"
-      1: "Comprend le concept de contrat de données et son utilité"
-      2: "Peut documenter et valider les contrats de données existants"
-      3: "Conçoit et implémente des data contracts avec validation automatique"
-      4: "Expert en gouvernance des données, définit les standards organisationnels"
-      5: "Architecte data governance de l'organisation"
-      6: "Expert data contracts reconnu, publications"
-    behavioral_indicators:
-      1:
-        - "Je comprends ce qu'est un contrat de données"
-        - "Je connais les concepts de producteur et consommateur"
-        - "Je sais pourquoi les contracts sont importants"
-      2:
-        - "Je documente les schémas et contraintes des tables"
-        - "J'identifie les producteurs et consommateurs"
-        - "Je valide manuellement les contrats existants"
-        - "Je détecte les breaking changes"
-      3:
-        - "J'implémente des data contracts avec dbt"
-        - "J'automatise la validation dans le CI/CD"
-        - "Je gère les versions et évolutions des contrats"
-        - "J'ai réduit les incidents de breaking changes"
-      4:
-        - "J'ai défini le framework de data contracts"
-        - "Je forme les équipes à la gouvernance"
-        - "J'évangélise l'approche contract-first"
-        - "Je mesure l'adoption des contracts"
-      5:
-        - "Je définis les standards de data contracts pour l'organisation"
-        - "Je suis la référence interne pour la gouvernance des données"
-        - "Je mentore les équipes sur l'approche contract-first"
-        - "J'ai mis en place le programme de data governance"
-      6:
-        - "Je suis speaker à des conférences Data Governance ou Data Mesh"
-        - "J'ai publié des articles sur les data contracts"
-        - "Je contribue à la spécification Data Contract ou outils associés"
-        - "Je suis reconnu comme expert externe en data governance"
-    resources:
-      - url: "https://datacontract.com/"
-        title: "Data Contract Specification"
-        type: "documentation"
-      - url: "https://www.getdbt.com/blog/data-contracts/"
-        title: "dbt Data Contracts"
-        type: "documentation"
-      - url: "https://www.thoughtworks.com/en-gb/insights/articles/data-contracts"
-        title: "Data Contracts (ThoughtWorks)"
-        type: "documentation"
-      - url: "https://atlan.com/data-contracts/"
-        title: "Data Contracts Guide"
-        type: "documentation"
-    improvement_tips:
-      "1→2": "Documentez les schemas de vos tables critiques. Identifiez les producteurs et consommateurs."
-      "2→3": "Implémentez des data contracts avec dbt. Automatisez la validation dans le CI."
-      "3→4": "Définissez le framework de data contracts de l'organisation. Évangélisez l'approche."
-
-  - id: data_catalog_lineage
-    name: "Data Catalog & Lineage"
-    description: "Documentation metadata, traçabilité des transformations, outils type DataHub/Amundsen"
-    core_roles: [data_engineer]
     levels:
       data_analyst: [1, 1, 2, 3]
       data_engineer: [1, 2, 3, 4]
       data_scientist: [1, 1, 2, 3]
       analytics_eng: [1, 2, 3, 4]
-      ml_engineer: [NC, NC, 1, 2]
-      backend: [NC, NC, 1, 2]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 1, 2, 3]
     level_descriptions:
-      0: "Aucune connaissance du data catalog"
-      1: "Peut utiliser le data catalog pour trouver des données"
-      2: "Documente les datasets et leurs métadonnées, comprend le lineage"
-      3: "Maintient le data catalog, configure le lineage automatique"
-      4: "Expert en gouvernance, conçoit l'architecture du data catalog"
-      5: "Architecte metadata management de l'organisation"
-      6: "Contributeur DataHub/Amundsen, expert reconnu"
+      0: "Aucune connaissance de la gouvernance des données"
+      1: "Je comprends qui est responsable des données et je sais naviguer dans le data catalog pour trouver ce dont j'ai besoin"
+      2: "Je documente les schémas, classifie les données, maintiens le catalog et je détecte les changements incompatibles (breaking changes)"
+      3: "Je conçois des frameworks de gouvernance, j'implémente les data contracts en CI/CD et je configure le lineage automatique"
+      4: "Je pilote le programme de gouvernance, je conçois l'architecture du data catalog et la stratégie de data discovery"
+      5: "Je conduis la transformation culturelle de la gouvernance des données dans l'organisation"
+      6: "J'ai des résultats mesurables à grande échelle et je contribue à la communauté data governance"
     behavioral_indicators:
       1:
-        - "Je navigue dans le data catalog pour trouver des données"
-        - "Je comprends ce qu'est le lineage"
-        - "Je sais où chercher la documentation des tables"
+        - "Je comprends les concepts de data ownership, classification et contrats de données"
+        - "Je navigue dans le data catalog pour trouver des données et comprends le lineage"
+        - "Je sais identifier qui est responsable d'un dataset"
+        - "Je connais les principes de base de la compliance (RGPD, données sensibles)"
       2:
-        - "Je documente mes datasets dans le catalog"
-        - "Je maintiens les descriptions et métadonnées"
-        - "Je comprends le lineage de mes pipelines"
-        - "J'utilise les tags et classifications"
+        - "Je documente les schémas, métadonnées et data owners dans le catalog"
+        - "J'applique les règles de classification des données et je détecte les changements incompatibles (breaking changes)"
+        - "J'identifie les producteurs et consommateurs de données"
+        - "Je maintiens à jour le registre des traitements pour mon périmètre"
       3:
-        - "Je configure le lineage automatique (OpenLineage)"
-        - "Je maintiens la qualité des métadonnées"
-        - "J'intègre le catalog avec les outils de la stack"
-        - "Je forme les équipes à utiliser le catalog"
+        - "J'implémente des data contracts avec validation automatique dans le CI/CD"
+        - "Je configure le lineage automatique et le self-service data"
+        - "Je définis les rôles et responsabilités (data owners, data stewards)"
+        - "Je mets en place les processus de compliance et d'audit"
       4:
-        - "J'ai conçu l'architecture du data catalog"
-        - "Je définis les standards de documentation"
-        - "Je mesure l'adoption et la qualité du catalog"
-        - "Je contribue aux outils open-source"
+        - "Je pilote le programme de data governance pour mon domaine"
+        - "J'ai conçu l'architecture du data catalog et la stratégie de data discovery self-service"
+        - "Je coordonne les data owners et stewards et je mesure l'adoption"
+        - "Je produis des rapports de conformité et de maturité pour la direction"
       5:
-        - "Je définis les standards de metadata management pour l'organisation"
-        - "Je suis la référence interne pour l'architecture data catalog"
-        - "Je mentore les équipes sur le lineage et la traçabilité"
-        - "J'ai mis en place le programme de data discovery"
+        - "Je conduis la transformation culturelle autour de la gouvernance des données"
+        - "Je définis les standards de gouvernance, contracts et catalogage à l'échelle de l'entreprise"
+        - "Je mentore les leaders data sur les enjeux de compliance et gouvernance"
+        - "Je mesure et améliore la maturité data governance de l'organisation"
       6:
-        - "Je suis speaker à des conférences Data Governance ou Metadata"
-        - "J'ai publié des articles sur le data catalog à l'échelle"
-        - "Je contribue à DataHub, Amundsen ou OpenLineage"
-        - "Je suis reconnu comme expert externe en metadata management"
+        - "Je suis speaker à des conférences Data Governance"
+        - "J'ai publié des articles sur la gouvernance des données à l'échelle"
+        - "J'ai mis en place un programme de gouvernance avec des métriques d'adoption mesurables (>80% de couverture catalog)"
+        - "J'ai formalisé et déployé des data contracts adoptés par 3+ équipes productrices"
     resources:
-      - url: "https://datahubproject.io/docs/"
-        title: "DataHub Documentation"
+      - url: "https://datacontract.com/"
+        title: "Data Contract Specification"
         type: "documentation"
-      - url: "https://www.amundsen.io/amundsen/"
-        title: "Amundsen Documentation"
+      - url: "https://docs.elementary-data.com/"
+        title: "Elementary Documentation"
         type: "documentation"
-      - url: "https://atlan.com/what-is-data-lineage/"
-        title: "Data Lineage Guide"
-        type: "documentation"
-      - url: "https://openlineage.io/"
-        title: "OpenLineage"
-        type: "documentation"
+      - url: "https://www.oreilly.com/library/view/data-governance-the/9781492063483/"
+        title: "Data Governance: The Definitive Guide (O'Reilly)"
+        type: "book"
     improvement_tips:
-      "1→2": "Documentez vos datasets dans le data catalog. Comprenez le lineage de vos pipelines."
-      "2→3": "Configurez le lineage automatique avec OpenLineage. Maintenez la qualité des métadonnées."
-      "3→4": "Concevez l'architecture du data catalog. Intégrez avec tous les outils de la stack."
+      "1→2": "Documentez les schémas et data owners de vos tables critiques. Classifiez les données selon leur sensibilité."
+      "2→3": "Implémentez des data contracts avec validation CI/CD. Configurez le lineage automatique et le self-service data."
+      "3→4": "Pilotez le programme de gouvernance à l'échelle. Concevez l'architecture du data catalog et mesurez l'adoption."

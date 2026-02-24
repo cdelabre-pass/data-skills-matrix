@@ -17,11 +17,11 @@ skills:
       backend: [1, 1, 2, 3]
     level_descriptions:
       0: "Aucune connaissance du Pass Culture"
-      1: "Comprend le dispositif (crédit jeunes 15-20 ans, objectifs de démocratisation) et les grandes catégories d'offres culturelles (livres, cinéma, musique, spectacle vivant, musées)"
-      2: "Maîtrise les entités métier (offres, réservations, lieux, utilisateurs) et les spécificités de chaque domaine culturel (poids dans les réservations, offres physiques vs numériques)"
-      3: "Expert des parcours utilisateurs, mécaniques de crédit, et des tendances de consommation par domaine culturel et par cohorte"
-      4: "Référent métier, analyse les cohortes, mesure l'impact du dispositif et identifie les leviers de diversification par domaine"
-      5: "Expert domaine, influence la stratégie produit, les politiques publiques et la stratégie d'enrichissement du catalogue"
+      1: "Je comprends le dispositif (crédit jeunes 15-20 ans, objectifs de démocratisation) et les grandes catégories d'offres culturelles"
+      2: "Je maîtrise les entités métier (offres, réservations, lieux, utilisateurs) et les spécificités de chaque domaine culturel"
+      3: "J'analyse les parcours utilisateurs, les mécaniques de crédit et les tendances de consommation par domaine et par cohorte"
+      4: "Je mesure l'impact du dispositif, j'analyse les cohortes et j'identifie les leviers de diversification par domaine"
+      5: "J'influence la stratégie produit et les politiques publiques, et je forme les équipes aux enjeux métier"
       6: "Reconnu comme expert Pass Culture en externe, publications institutionnelles et études sectorielles"
     behavioral_indicators:
       1:
@@ -39,18 +39,18 @@ skills:
         - "J'identifie les tendances émergentes par domaine culturel et les leviers de diversification"
         - "Je connais l'écosystème des acteurs culturels et leurs enjeux sectoriels"
       4:
-        - "Je suis référent métier pour les équipes data sur le dispositif et les domaines culturels"
+        - "Je réponds aux questions métier des équipes data sur le dispositif et les domaines culturels"
         - "Je mesure l'impact du dispositif et contribue aux rapports institutionnels"
         - "Je contribue aux stratégies d'enrichissement du catalogue par domaine"
         - "Je forme les nouveaux arrivants au métier et aux spécificités des domaines culturels"
       5:
         - "Je définis les orientations stratégiques du produit data et de l'offre culturelle"
-        - "Je suis consulté par la direction sur les sujets métier et les partenariats sectoriels"
-        - "Je contribue aux réflexions de politique publique et à la stratégie d'enrichissement"
         - "Je forme les équipes produit et direction aux enjeux métier et sectoriels"
+        - "Je contribue aux réflexions de politique publique et à la stratégie d'enrichissement"
+        - "Mon expertise métier influence les décisions stratégiques de plusieurs équipes"
       6:
         - "Je publie des études institutionnelles sur le Pass Culture et les pratiques culturelles"
-        - "Je suis sollicité par le ministère ou des institutions externes"
+        - "J'interviens auprès du ministère ou d'institutions externes sur des sujets Pass Culture"
         - "Je donne des conférences sur le dispositif Pass Culture et les politiques culturelles"
         - "Je suis reconnu comme expert de référence en externe sur le dispositif et les domaines culturels"
     resources:
@@ -84,11 +84,11 @@ skills:
       backend: [NC, NC, 1, 2]
     level_descriptions:
       0: "Aucune connaissance de la recommandation culturelle"
-      1: "Comprend les enjeux de diversité et découverte culturelle propres au Pass Culture"
-      2: "Maîtrise les métriques spécifiques (diversité, sérendipité, taux de découverte)"
-      3: "Conçoit des stratégies de recommandation adaptées aux objectifs de politique publique"
-      4: "Expert en recommandation culturelle, équilibre popularité et découverte de niches"
-      5: "Définit la stratégie de recommandation et mesure son impact sur les pratiques"
+      1: "Je comprends les enjeux de diversité et découverte culturelle propres au Pass Culture"
+      2: "Je maîtrise les métriques spécifiques (diversité, sérendipité, taux de découverte) et l'équilibre explore/exploit"
+      3: "Je conçois des stratégies de recommandation adaptées aux objectifs de politique publique"
+      4: "J'équilibre popularité et découverte de niches et je définis la stratégie de recommandation"
+      5: "Je définis la roadmap stratégique de recommandation et je mesure l'impact des algorithmes sur les pratiques culturelles"
       6: "Expert reco culturelle reconnu, publications académiques sur la diversification"
     behavioral_indicators:
       1:
@@ -113,7 +113,7 @@ skills:
       5:
         - "Je définis la roadmap stratégique de recommandation"
         - "Je mesure l'impact des algorithmes sur les pratiques culturelles"
-        - "Je suis référent pour les choix éthiques de recommandation"
+        - "Je contribue aux décisions éthiques de recommandation"
         - "Je forme les équipes produit et direction aux enjeux de la reco"
       6:
         - "Je publie des articles académiques sur la recommandation culturelle"
@@ -140,7 +140,7 @@ skills:
 
   - id: cultural_ecosystem
     name: "Écosystème Culturel Français"
-    description: "Connaître les acteurs culturels (librairies, cinémas, salles de spectacle, musées, festivals) et leurs enjeux économiques et territoriaux"
+    description: "Connaître les acteurs culturels (librairies, cinémas, salles de spectacle, musées, festivals), leurs enjeux économiques et territoriaux, ainsi que le fonctionnement du secteur public culturel (Ministère de la Culture, tutelle, établissements publics)"
     core_roles: [data_analyst]
     levels:
       data_analyst: [1, 1, 2, 3]
@@ -151,11 +151,11 @@ skills:
       backend: [NC, NC, 1, 2]
     level_descriptions:
       0: "Aucune connaissance de l'écosystème culturel"
-      1: "Comprend les grandes catégories d'acteurs culturels partenaires"
-      2: "Maîtrise les spécificités par secteur (librairies indépendantes, cinémas art et essai, scènes nationales...)"
-      3: "Expert des enjeux économiques et territoriaux de chaque secteur culturel"
-      4: "Référent écosystème, contextualise les analyses selon les dynamiques sectorielles"
-      5: "Expert reconnu de l'écosystème culturel français et de ses évolutions"
+      1: "Je connais les grandes catégories d'acteurs culturels partenaires"
+      2: "Je maîtrise les spécificités par secteur (librairies indépendantes, cinémas art et essai, scènes nationales...)"
+      3: "Je comprends en profondeur les enjeux économiques et territoriaux de chaque secteur culturel"
+      4: "Je contextualise les analyses selon les dynamiques sectorielles et je conseille les équipes sur l'écosystème"
+      5: "Je définis les orientations stratégiques liées à l'écosystème culturel et je forme la direction"
       6: "Influence les politiques culturelles, expert auprès du ministère de la Culture"
     behavioral_indicators:
       1:
@@ -166,14 +166,14 @@ skills:
         - "Je connais les spécificités des librairies indépendantes"
         - "Je comprends les enjeux des cinémas art et essai"
         - "Je sais ce qu'est une scène nationale ou conventionnée"
-        - "J'analyse les données des partenaires culturels"
+        - "Je comprends le rôle du Ministère de la Culture et la relation de tutelle avec le pass Culture"
       3:
         - "Je comprends les enjeux économiques par secteur"
         - "J'analyse les dynamiques territoriales (zones rurales, QPV)"
         - "Je connais les fédérations et syndicats professionnels"
         - "Je contextualise mes analyses selon les réalités sectorielles"
       4:
-        - "Je suis référent écosystème pour les équipes"
+        - "Je contextualise les analyses data selon les dynamiques de chaque secteur culturel"
         - "Je participe aux échanges avec les partenaires institutionnels"
         - "Je contribue aux rapports sur l'écosystème"
         - "Je forme les équipes aux spécificités des acteurs culturels"
@@ -183,7 +183,7 @@ skills:
         - "Je contribue aux réflexions de politique publique sur les secteurs"
         - "Je forme la direction aux enjeux de l'écosystème"
       6:
-        - "Je suis sollicité par le ministère comme expert de l'écosystème"
+        - "J'interviens auprès du ministère en tant qu'expert de l'écosystème culturel"
         - "Je publie des études sur l'écosystème culturel français"
         - "Je donne des conférences sur les enjeux des acteurs culturels"
         - "Je suis reconnu comme expert de référence de l'écosystème"
@@ -197,8 +197,8 @@ skills:
       - url: "https://www.fncf.org/"
         title: "FNCF - Cinémas"
         type: "documentation"
-      - url: "https://www.lesindependants.net/"
-        title: "Les Indépendants"
+      - url: "https://sdicine.fr/"
+        title: "SDI - Syndicat des Distributeurs Indépendants"
         type: "documentation"
     improvement_tips:
       "1→2": "Étudiez les différents types d'acteurs culturels. Comprenez leurs enjeux économiques."
@@ -218,11 +218,11 @@ skills:
       backend: [NC, NC, NC, 1]
     level_descriptions:
       0: "Aucune connaissance de la mesure d'impact"
-      1: "Comprend les indicateurs clés (taux d'utilisation, diversification, découverte)"
-      2: "Analyse les cohortes sortantes et mesure l'évolution des pratiques culturelles"
-      3: "Conçoit des méthodologies d'évaluation d'impact (enquêtes, analyse comportementale)"
-      4: "Expert en évaluation de politiques publiques culturelles"
-      5: "Définit la stratégie d'évaluation et produit les rapports institutionnels"
+      1: "Je comprends les indicateurs clés d'impact (taux d'utilisation, diversification, découverte)"
+      2: "J'analyse les cohortes sortantes et je mesure l'évolution des pratiques culturelles"
+      3: "Je conçois des méthodologies d'évaluation d'impact (enquêtes, analyse comportementale)"
+      4: "Je produis les rapports pour les instances institutionnelles et je définis la stratégie d'évaluation"
+      5: "Je définis la stratégie globale d'évaluation d'impact et je coordonne les études avec les partenaires externes"
       6: "Expert reconnu en évaluation d'impact, publications académiques"
     behavioral_indicators:
       1:
@@ -245,20 +245,20 @@ skills:
         - "Je définis la stratégie d'évaluation"
         - "Je forme les équipes à la mesure d'impact"
       5:
-        - "Je définis la stratégie globale d'évaluation d'impact"
-        - "Je suis l'interlocuteur des instances de tutelle (ministère, etc.)"
-        - "Je coordonne les études d'impact avec des partenaires externes"
+        - "Je définis la stratégie globale d'évaluation d'impact pour l'entreprise"
+        - "Je coordonne les études d'impact avec des partenaires externes et les instances de tutelle"
         - "Je forme la direction et les équipes à l'évaluation d'impact"
+        - "Mon travail sur l'évaluation d'impact influence les décisions stratégiques de l'organisation"
       6:
         - "Je publie des articles académiques sur l'évaluation d'impact culturel"
-        - "Je suis sollicité comme expert par d'autres institutions publiques"
+        - "J'ai conseillé d'autres institutions publiques sur l'évaluation d'impact"
         - "Je donne des conférences sur l'évaluation des politiques culturelles"
         - "Je suis reconnu comme expert de référence en évaluation d'impact"
     resources:
       - url: "https://www.sciencespo.fr/liepp/fr/content/evaluation-des-politiques-publiques"
         title: "Sciences Po - Évaluation politiques publiques"
         type: "documentation"
-      - url: "https://www.francestrategic.fr/thematiques/evaluation-des-politiques-publiques"
+      - url: "https://www.strategie.gouv.fr/themes/evaluation"
         title: "France Stratégie - Évaluation"
         type: "documentation"
       - url: "https://www.jpal.org/research"
@@ -271,3 +271,134 @@ skills:
       "1→2": "Analysez les indicateurs d'impact existants. Comprenez la méthodologie des études cohortes."
       "2→3": "Contribuez à une étude d'impact. Concevez des indicateurs complémentaires."
       "3→4": "Menez une étude d'impact de bout en bout. Présentez aux instances institutionnelles."
+
+  - id: organisation_pass
+    name: "Connaissance de l'Organisation du Pass"
+    description: "Comprendre la structure organisationnelle du pass Culture, ses processus internes, les parties prenantes clés, les interactions entre équipes (produit, tech, data, opérations, partenariats) et savoir naviguer efficacement dans l'organisation"
+    core_roles: [data_analyst, data_engineer, analytics_eng]
+    levels:
+      data_analyst: [1, 2, 3, 4]
+      data_engineer: [1, 1, 2, 3]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 1, 2, 3]
+      backend: [1, 1, 2, 3]
+    level_descriptions:
+      0: "Aucune connaissance de l'organisation du pass Culture"
+      1: "Je connais les équipes principales et l'organigramme général du pass Culture"
+      2: "Je comprends les processus internes, les interactions entre équipes et les circuits de décision"
+      3: "Je navigue efficacement dans l'organisation, j'influence les décisions transverses et je facilite la collaboration inter-équipes"
+      4: "J'ai une compréhension stratégique de l'organisation, j'anticipe les évolutions structurelles et je contribue à l'amélioration des processus"
+      5: "J'optimise les processus transverses et je conseille la direction sur l'organisation"
+      6: "Expert en organisation d'établissements publics numériques, contribue aux réflexions sectorielles"
+    behavioral_indicators:
+      1:
+        - "Je connais les équipes du pass Culture et leurs missions principales"
+        - "Je sais identifier le bon interlocuteur pour une question donnée"
+        - "Je comprends l'organigramme et les rattachements hiérarchiques"
+      2:
+        - "Je comprends les processus de décision et les circuits de validation"
+        - "Je connais les rituels d'équipe et les instances de gouvernance"
+        - "Je sais comment les équipes produit, tech et data interagissent au quotidien"
+        - "Je comprends le rôle des parties prenantes externes (tutelle, partenaires)"
+      3:
+        - "Je facilite la collaboration entre équipes sur des sujets transverses"
+        - "J'influence les décisions en m'appuyant sur ma connaissance de l'organisation"
+        - "Je sais anticiper les impacts organisationnels d'un projet data"
+        - "Je contribue à l'amélioration des processus inter-équipes"
+      4:
+        - "J'ai une vision stratégique de l'organisation et de ses évolutions"
+        - "Je conseille les nouveaux arrivants sur le fonctionnement de l'organisation"
+        - "Je contribue aux réflexions sur l'évolution de la structure organisationnelle"
+        - "Je suis un relais efficace entre la direction et les équipes opérationnelles"
+      5:
+        - "Je définis et optimise les processus transverses de l'organisation"
+        - "Je suis consulté par la direction sur les sujets organisationnels"
+        - "Je facilite les transformations organisationnelles majeures"
+        - "Je forme les managers aux bonnes pratiques de collaboration"
+      6:
+        - "Je suis reconnu comme expert en organisation d'établissements publics numériques"
+        - "Je contribue aux réflexions sectorielles sur l'organisation des structures culturelles"
+        - "Je publie sur les modèles organisationnels innovants dans le secteur public"
+        - "J'ai conseillé d'autres organisations publiques sur leur fonctionnement"
+    resources:
+      - url: "https://pass.culture.fr/nous-rejoindre/"
+        title: "Pass Culture - Nous rejoindre (présentation de l'organisation)"
+        type: "documentation"
+      - url: "https://www.welcometothejungle.com/fr/companies/pass-culture"
+        title: "Pass Culture sur Welcome to the Jungle"
+        type: "documentation"
+      - url: "https://teamtopologies.com/key-concepts"
+        title: "Team Topologies - Concepts clés d'organisation"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Participez aux rituels inter-équipes. Comprenez les circuits de décision et les rôles de chaque partie prenante."
+      "2→3": "Prenez en charge des sujets transverses impliquant plusieurs équipes. Développez votre réseau interne et votre capacité d'influence."
+      "3→4": "Contribuez aux réflexions stratégiques sur l'organisation. Mentorez les nouveaux arrivants sur le fonctionnement interne."
+
+  - id: ecosysteme_technique
+    name: "Connaissance de l'Écosystème Technique"
+    description: "Connaître le socle technique du pass Culture (stack applicative, infrastructure, flux de données, outils internes), comprendre l'architecture globale et les interconnexions entre systèmes pour contextualiser les choix techniques et contribuer aux décisions d'architecture"
+    core_roles: [data_engineer, ml_engineer, backend]
+    levels:
+      data_analyst: [NC, NC, 1, 2]
+      data_engineer: [1, 2, 3, 4]
+      data_scientist: [1, 1, 2, 3]
+      analytics_eng: [1, 2, 3, 4]
+      ml_engineer: [1, 2, 3, 4]
+      backend: [1, 2, 3, 4]
+    level_descriptions:
+      0: "Aucune connaissance de l'écosystème technique"
+      1: "Je connais les composants principaux de la stack technique (applications, bases de données, outils data)"
+      2: "Je comprends l'architecture globale, les flux de données et les interactions entre systèmes"
+      3: "Je maîtrise les choix techniques, les compromis d'architecture et je sais proposer des évolutions argumentées"
+      4: "J'ai une vision stratégique de l'écosystème technique et je contribue aux décisions d'architecture structurantes"
+      5: "Je définis la stratégie technique et l'évolution de l'écosystème à moyen/long terme"
+      6: "Expert reconnu en architecture de plateformes culturelles numériques, influence le secteur"
+    behavioral_indicators:
+      1:
+        - "Je connais les principaux composants de la stack (API, base de données, data warehouse, outils BI)"
+        - "Je sais quels outils sont utilisés pour l'ingestion, le stockage et la restitution des données"
+        - "Je comprends le rôle de chaque brique technique dans l'écosystème global"
+      2:
+        - "Je comprends l'architecture globale et les flux de données entre systèmes"
+        - "Je sais comment les données transitent de la production au data warehouse"
+        - "Je connais les APIs internes et externes utilisées par le pass Culture"
+        - "Je comprends les choix d'infrastructure (cloud, orchestration, monitoring)"
+      3:
+        - "Je maîtrise les compromis techniques derrière les choix d'architecture actuels"
+        - "Je propose des évolutions techniques argumentées et adaptées au contexte"
+        - "Je suis capable d'évaluer l'impact technique d'un nouveau besoin métier"
+        - "Je contribue aux revues d'architecture et aux ADR (Architecture Decision Records)"
+      4:
+        - "J'ai une vision stratégique de l'évolution de l'écosystème technique"
+        - "Je contribue aux décisions d'architecture structurantes pour l'organisation"
+        - "J'oriente les choix de stack et d'infrastructure en fonction de la stratégie technique"
+        - "Je forme les équipes aux principes d'architecture et aux bonnes pratiques"
+      5:
+        - "Je définis la roadmap technique et l'évolution de la plateforme"
+        - "Je suis consulté par la direction sur les investissements techniques"
+        - "Je coordonne les chantiers d'architecture transverses"
+        - "Je forme les tech leads aux enjeux stratégiques de l'écosystème"
+      6:
+        - "Je suis reconnu comme expert en architecture de plateformes numériques culturelles"
+        - "Je publie sur les architectures data et les choix techniques innovants"
+        - "Je suis speaker dans des conférences techniques (Devoxx, DataEngConf, etc.)"
+        - "J'ai conseillé d'autres organisations publiques sur leurs choix d'architecture technique"
+    resources:
+      - url: "https://github.com/pass-culture"
+        title: "Pass Culture - Dépôts GitHub publics"
+        type: "documentation"
+      - url: "https://www.thoughtworks.com/radar"
+        title: "ThoughtWorks Technology Radar"
+        type: "documentation"
+      - url: "https://adr.github.io/"
+        title: "Architecture Decision Records (ADR)"
+        type: "documentation"
+      - url: "https://martinfowler.com/architecture/"
+        title: "Martin Fowler - Architecture"
+        type: "documentation"
+    improvement_tips:
+      "1→2": "Explorez l'architecture technique en lisant la documentation interne et les schémas d'architecture. Comprenez les flux de données de bout en bout."
+      "2→3": "Participez aux revues d'architecture. Comprenez les compromis derrière les choix techniques actuels et proposez des améliorations."
+      "3→4": "Contribuez aux décisions d'architecture structurantes. Formez-vous aux patterns d'architecture distribuée et aux enjeux de scalabilité."

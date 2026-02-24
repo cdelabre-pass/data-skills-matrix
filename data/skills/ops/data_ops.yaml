@@ -5,8 +5,8 @@ category:
 
 skills:
   - id: git_github
-    name: "Git & GitHub"
-    description: "Utiliser Git pour le contrôle de version (branches, merge, workflows)"
+    name: "Git, Qualité Code & CI"
+    description: "Contrôle de version (Git, branches, PR, workflows), qualité de code (ruff, sqlfluff, pre-commit) et stratégies de tests (unitaires, intégration, e2e)"
     core_roles: [data_analyst, data_engineer, data_scientist, analytics_eng, ml_engineer, backend]
     levels:
       data_analyst: [1, 2, 3, 4]
@@ -16,63 +16,61 @@ skills:
       ml_engineer: [1, 2, 3, 4]
       backend: [2, 3, 4, 4]
     level_descriptions:
-      0: "Aucune connaissance Git"
-      1: "Peut cloner, pull, commit, push - opérations basiques"
-      2: "Travaille avec les branches, gère les merges, comprend les workflows"
-      3: "Résout les conflits complexes, conçoit des stratégies de branching"
-      4: "Expert Git, peut gérer tout scénario"
-      5: "Définit les conventions Git de l'organisation"
-      6: "Contributeur Git, expert reconnu"
+      0: "Aucune connaissance Git et qualité de code"
+      1: "Je fais clone, pull, commit, push et je comprends l'importance du linting et des tests"
+      2: "Je travaille avec les branches et PRs, j'utilise pre-commit au quotidien et j'écris des tests unitaires"
+      3: "Je résous les conflits complexes, je définis la stratégie de tests et j'intègre les quality gates au CI"
+      4: "Je maîtrise tout scénario Git, je définis les standards de qualité et de tests CI/CD pour l'organisation"
+      5: "Je pilote le programme de qualité code, Git et tests à l'échelle de l'organisation"
+      6: "Contributeur Git/ruff/pytest, expert reconnu"
     behavioral_indicators:
       1:
         - "Je fais git clone, pull, commit, push au quotidien"
         - "J'écris des messages de commit descriptifs"
-        - "Je sais voir l'historique avec git log"
-        - "J'utilise parfois git status pour vérifier mes changements"
+        - "Je comprends l'importance du linting et des tests"
+        - "Je connais les outils de base (ruff, pytest)"
       2:
-        - "Je crée et switch entre branches facilement"
-        - "Je fais des merge et comprends les conflits simples"
-        - "J'utilise git stash quand j'ai besoin de changer de contexte"
-        - "Je crée des Pull Requests et fais des code reviews"
-        - "Je comprends la différence entre merge et rebase"
+        - "Je crée des branches et je fais des Pull Requests avec code reviews"
+        - "J'utilise pre-commit au quotidien et je fixe les erreurs de linting"
+        - "J'écris des tests unitaires pour mon code"
+        - "Je comprends la pyramide de tests (unitaires, intégration, e2e)"
       3:
-        - "Je résous des conflits de merge complexes"
-        - "J'utilise rebase -i pour nettoyer l'historique"
-        - "Je sais utiliser cherry-pick et bisect"
+        - "Je résous des conflits de merge complexes et j'utilise rebase"
+        - "Je configure pre-commit et personnalise les règles ruff/sqlfluff"
+        - "Je définis la stratégie de tests et les quality gates dans le CI/CD"
         - "J'ai défini une stratégie de branching (GitFlow, trunk-based)"
-        - "Je forme les collègues sur Git"
       4:
-        - "Je peux récupérer d'erreurs Git complexes (reflog, reset)"
-        - "Je définis les conventions Git de l'équipe"
-        - "Je fais des revues de PR avec feedback constructif"
-        - "Je maîtrise les hooks et automatisations Git"
+        - "Je définis les conventions Git et les standards de qualité de l'équipe"
+        - "J'optimise les pipelines CI/CD (parallélisation, caching des tests)"
+        - "Je produis les configurations de référence (ruff, sqlfluff, pytest) et les quality gates"
+        - "Je mets en place les métriques de qualité (couverture, dette technique)"
       5:
-        - "Je définis les conventions et workflows Git pour l'organisation"
-        - "Je suis la référence interne pour les problèmes Git complexes"
-        - "Je mentore les équipes sur les stratégies de branching"
-        - "J'ai mis en place les standards de code review"
+        - "Je pilote le programme de qualité code, Git et tests à l'échelle de l'organisation"
+        - "Je définis les standards de qualité, les quality gates et les métriques"
+        - "Je forme et mentore les équipes sur les stratégies de tests avancées"
+        - "Je mesure et améliore la maturité qualité de l'organisation"
       6:
-        - "Je suis speaker à des conférences Git ou DevOps"
-        - "Je contribue au projet Git ou outils associés"
-        - "J'ai publié des articles sur les workflows Git avancés"
-        - "Je suis reconnu comme expert externe en gestion de version"
+        - "Je suis speaker à des conférences Python, DevOps ou Code Quality"
+        - "Je contribue à ruff, sqlfluff, pytest ou Git"
+        - "J'ai publié des articles sur la qualité de code et les workflows Git avancés"
+        - "Je suis reconnu comme expert externe en qualité et versioning"
     resources:
       - url: "https://learngitbranching.js.org/"
         title: "Learn Git Branching (Interactive)"
         type: "tutorial"
-      - url: "https://www.atlassian.com/git/tutorials"
-        title: "Atlassian Git Tutorials"
-        type: "tutorial"
-      - url: "https://ohshitgit.com/"
-        title: "Oh Shit, Git!?"
-        type: "tutorial"
+      - url: "https://pre-commit.com/"
+        title: "Pre-commit Documentation"
+        type: "documentation"
+      - url: "https://docs.astral.sh/ruff/"
+        title: "Ruff Documentation"
+        type: "documentation"
       - url: "https://git-scm.com/book/en/v2"
         title: "Pro Git Book"
         type: "book"
     improvement_tips:
-      "1→2": "Apprenez le branching et le merging. Utilisez Learn Git Branching pour pratiquer."
-      "2→3": "Maîtrisez rebase et cherry-pick. Résolvez des conflits complexes."
-      "3→4": "Définissez une stratégie de branching pour votre équipe. Formez les autres."
+      "1→2": "Apprenez le branching et les PRs. Installez pre-commit et écrivez vos premiers tests unitaires."
+      "2→3": "Maîtrisez rebase et les conflits. Définissez la stratégie de tests et intégrez les quality gates au CI."
+      "3→4": "Définissez les standards Git et qualité pour l'organisation. Optimisez les pipelines CI/CD."
 
   - id: github_actions
     name: "GitHub Actions"
@@ -87,11 +85,11 @@ skills:
       backend: [1, 2, 3, 4]
     level_descriptions:
       0: "Aucune connaissance GitHub Actions"
-      1: "Comprend les concepts CI/CD, peut lire les workflows"
-      2: "Peut écrire des workflows basiques pour testing et déploiement"
-      3: "Conçoit des pipelines CI/CD complexes, fonctionnalités avancées"
-      4: "Expert en architecture GitHub Actions"
-      5: "Architecte CI/CD de l'organisation"
+      1: "Je lis et comprends les fichiers workflow, je consulte les logs CI/CD"
+      2: "J'écris des workflows basiques pour le testing et le déploiement"
+      3: "Je conçois des pipelines CI/CD complexes avec workflows réutilisables et matrix builds"
+      4: "Je crée des actions custom et je définis les standards de déploiement de l'équipe"
+      5: "Je conçois la plateforme CI/CD de l'organisation et j'arbitre les choix d'architecture de pipelines"
       6: "Contributeur Actions community, expert DevOps reconnu"
     behavioral_indicators:
       1:
@@ -109,13 +107,13 @@ skills:
         - "Je configure les environments et approvals"
         - "J'optimise les temps de build avec le cache"
       4:
-        - "J'ai conçu l'architecture CI/CD de l'organisation"
+        - "J'ai conçu l'architecture CI/CD de l'équipe"
         - "Je crée des actions custom"
         - "Je définis les standards de déploiement"
-        - "Je forme les équipes au CI/CD"
+        - "Je produis la documentation et les templates CI/CD réutilisables pour l'équipe"
       5:
         - "Je définis les standards CI/CD pour l'ensemble de l'organisation"
-        - "Je suis la référence interne pour les pipelines complexes"
+        - "Je diagnostique et résous les problèmes de pipelines complexes à l'échelle de l'organisation"
         - "Je mentore les équipes sur les stratégies de déploiement"
         - "J'ai mis en place la plateforme CI/CD de l'entreprise"
       6:
@@ -154,11 +152,11 @@ skills:
       backend: [1, 2, 3, 4]
     level_descriptions:
       0: "Aucune connaissance Terraform"
-      1: "Comprend les concepts IaC, peut lire les fichiers Terraform"
-      2: "Peut écrire des configurations Terraform basiques"
-      3: "Conçoit des architectures Terraform modulaires, gère le state"
-      4: "Expert en Terraform et patterns IaC"
-      5: "Architecte IaC, certifié Terraform Associate"
+      1: "Je lis les fichiers .tf et j'exécute terraform plan/apply"
+      2: "J'écris des configurations Terraform basiques pour créer des ressources GCP"
+      3: "Je conçois des architectures modulaires et je gère le state remote"
+      4: "Je maîtrise les patterns IaC avancés et je définis les standards Terraform de l'équipe"
+      5: "Je conçois la plateforme IaC de l'organisation et j'arbitre les choix d'architecture Terraform"
       6: "Contributeur Terraform providers, expert HashiCorp reconnu"
     behavioral_indicators:
       1:
@@ -176,13 +174,13 @@ skills:
         - "J'utilise les workspaces pour les environments"
         - "J'intègre Terraform dans le CI/CD"
       4:
-        - "J'ai conçu l'architecture IaC de l'organisation"
+        - "J'ai conçu l'architecture IaC de l'équipe"
         - "J'ai une certification Terraform"
-        - "Je forme les équipes à Terraform"
+        - "Je produis les modules Terraform réutilisables et la documentation pour l'équipe"
         - "Je définis les standards et bonnes pratiques"
       5:
         - "Je définis les standards IaC pour l'ensemble de l'organisation"
-        - "Je suis la référence interne pour les architectures Terraform"
+        - "Je conçois les architectures Terraform complexes et multi-environnements pour l'organisation"
         - "Je mentore les équipes sur les patterns de modules avancés"
         - "J'ai mis en place la plateforme IaC de l'entreprise"
       6:
@@ -194,7 +192,7 @@ skills:
       - url: "https://developer.hashicorp.com/terraform/tutorials"
         title: "HashiCorp Terraform Tutorials"
         type: "tutorial"
-      - url: "https://www.terraform.io/docs"
+      - url: "https://developer.hashicorp.com/terraform/docs"
         title: "Terraform Documentation"
         type: "documentation"
       - url: "https://www.hashicorp.com/certification/terraform-associate"
@@ -206,7 +204,7 @@ skills:
     improvement_tips:
       "1→2": "Créez vos premières ressources GCP avec Terraform. Comprenez le state."
       "2→3": "Développez des modules réutilisables. Implémentez la gestion du state remote."
-      "3→4": "Passez la certification Terraform Associate. Contribuez à un provider."
+      "3→4": "Passez la certification Terraform Associate. Définissez les standards et modules Terraform réutilisables pour votre équipe."
 
   - id: docker
     name: "Docker & Conteneurisation"
@@ -221,11 +219,11 @@ skills:
       backend: [1, 2, 3, 4]
     level_descriptions:
       0: "Aucune connaissance Docker"
-      1: "Comprend les concepts de conteneurs, peut exécuter des images"
-      2: "Peut écrire des Dockerfiles basiques, utiliser docker-compose"
-      3: "Conçoit des images optimisées, multi-stage builds"
-      4: "Expert en patterns de conteneurisation"
-      5: "Architecte conteneurisation de l'organisation"
+      1: "Je lance des conteneurs avec docker run et j'utilise les commandes de base"
+      2: "J'écris des Dockerfiles et j'utilise docker-compose pour plusieurs services"
+      3: "Je conçois des images optimisées avec multi-stage builds et layer caching"
+      4: "Je définis les standards Docker de l'équipe et je maîtrise les réseaux et la sécurité"
+      5: "Je conçois les standards de conteneurisation de l'organisation et j'arbitre les choix d'architecture Docker"
       6: "Expert Docker reconnu, contributeur community"
     behavioral_indicators:
       1:
@@ -238,21 +236,19 @@ skills:
         - "J'utilise docker-compose pour plusieurs services"
         - "Je sais construire et tag mes images"
         - "Je gère les volumes pour la persistance"
-        - "J'expose et mappe les ports correctement"
       3:
         - "J'utilise les multi-stage builds pour réduire la taille"
         - "J'optimise le layer caching dans mes Dockerfiles"
         - "Je configure les health checks"
         - "Je gère les secrets et variables d'environnement"
-        - "J'utilise des images de base minimales (alpine, distroless)"
       4:
         - "Je définis les standards Docker de l'équipe"
         - "J'optimise les temps de build et la taille des images"
         - "Je maîtrise les réseaux Docker et la sécurité"
-        - "Je forme les équipes aux bonnes pratiques"
+        - "Je produis les images de base et les Dockerfiles de référence pour l'équipe"
       5:
         - "Je définis les standards de conteneurisation pour l'organisation"
-        - "Je suis la référence interne pour les architectures Docker"
+        - "Je conçois les architectures de conteneurisation complexes pour l'organisation"
         - "Je mentore les équipes sur les patterns de conteneurisation avancés"
         - "J'ai mis en place le registry et les pipelines de build"
       6:
@@ -264,10 +260,10 @@ skills:
       - url: "https://docs.docker.com/get-started/"
         title: "Docker Get Started"
         type: "tutorial"
-      - url: "https://www.docker.com/101-tutorial/"
-        title: "Docker 101 Tutorial"
+      - url: "https://docker-curriculum.com/"
+        title: "Docker Curriculum"
         type: "tutorial"
-      - url: "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/"
+      - url: "https://docs.docker.com/build/building/best-practices/"
         title: "Dockerfile Best Practices"
         type: "documentation"
       - url: "https://www.youtube.com/watch?v=fqMOX6JJhGo"
@@ -291,11 +287,11 @@ skills:
       backend: [1, 2, 3, 4]
     level_descriptions:
       0: "Aucune connaissance monitoring"
-      1: "Peut utiliser les dashboards existants, comprend les métriques"
-      2: "Peut créer des dashboards, alertes et queries basiques"
-      3: "Conçoit des stratégies de monitoring, dashboards complexes"
-      4: "Expert en observabilité et monitoring"
-      5: "Architecte observabilité de l'organisation"
+      1: "Je consulte les dashboards existants et je comprends les métriques de base"
+      2: "Je crée des dashboards Grafana, je configure des alertes et j'écris des queries"
+      3: "Je conçois une stratégie de monitoring complète avec SLIs/SLOs et alerting sur anomalies"
+      4: "Je définis les standards de monitoring de l'équipe et j'améliore la fiabilité des systèmes"
+      5: "Je conçois la plateforme d'observabilité de l'organisation et j'arbitre les choix d'architecture de monitoring"
       6: "Expert monitoring reconnu, speaker ObservabilityCon"
     behavioral_indicators:
       1:
@@ -313,13 +309,13 @@ skills:
         - "Je crée des dashboards pour les pipelines data"
         - "J'implémente l'alerting sur les anomalies"
       4:
-        - "J'ai conçu l'architecture d'observabilité"
+        - "J'ai conçu l'architecture d'observabilité de l'équipe"
         - "Je définis les standards de monitoring"
-        - "Je forme les équipes au monitoring"
+        - "Je produis les dashboards de référence et les runbooks pour l'équipe"
         - "Je mesure et améliore la fiabilité"
       5:
         - "Je définis les standards d'observabilité pour l'organisation"
-        - "Je suis la référence interne pour les architectures de monitoring"
+        - "Je conduis les revues d'architecture de monitoring pour l'ensemble de l'organisation"
         - "Je mentore les équipes sur les SLIs/SLOs et error budgets"
         - "J'ai mis en place la plateforme d'observabilité"
       6:
@@ -337,77 +333,10 @@ skills:
       - url: "https://cloud.google.com/monitoring/docs"
         title: "Google Cloud Monitoring"
         type: "documentation"
-      - url: "https://www.datadoghq.com/blog/monitoring-101-collecting-data/"
-        title: "Monitoring 101"
+      - url: "https://sre.google/sre-book/monitoring-distributed-systems/"
+        title: "Google SRE Book - Monitoring"
         type: "documentation"
     improvement_tips:
       "1→2": "Créez un dashboard Grafana pour vos pipelines. Configurez des alertes basiques."
       "2→3": "Implémentez une stratégie de monitoring complète. Utilisez les SLIs/SLOs."
-      "3→4": "Concevez l'architecture d'observabilité de l'organisation. Partagez vos pratiques."
-
-  - id: precommit_quality
-    name: "Pre-commit & Qualité Code"
-    description: "Utiliser les outils de qualité de code (ruff, sqlfluff, pre-commit hooks)"
-    core_roles: [data_engineer, backend]
-    levels:
-      data_analyst: [1, 1, 2, 3]
-      data_engineer: [1, 2, 3, 4]
-      data_scientist: [1, 1, 2, 3]
-      analytics_eng: [1, 2, 3, 4]
-      ml_engineer: [1, 2, 3, 4]
-      backend: [1, 2, 3, 4]
-    level_descriptions:
-      0: "Aucune connaissance des outils de qualité"
-      1: "Comprend l'importance de la qualité de code"
-      2: "Utilise les hooks pre-commit, fixe les erreurs de linting"
-      3: "Configure les outils de qualité pour le projet"
-      4: "Expert en configuration et optimisation des outils"
-      5: "Définit les standards de qualité de l'organisation"
-      6: "Contributeur ruff/sqlfluff, expert code quality reconnu"
-    behavioral_indicators:
-      1:
-        - "Je comprends l'importance du linting"
-        - "Je sais ce qu'est un hook pre-commit"
-        - "Je connais les outils de base (ruff, black)"
-      2:
-        - "J'utilise pre-commit au quotidien"
-        - "Je fixe les erreurs de linting signalées"
-        - "Je comprends les règles de formatage"
-        - "J'utilise sqlfluff pour le SQL"
-      3:
-        - "Je configure pre-commit pour le projet"
-        - "Je personnalise les règles ruff/sqlfluff"
-        - "J'intègre les checks dans le CI"
-        - "Je définis les standards pour l'équipe"
-      4:
-        - "J'ai défini les standards de qualité de l'organisation"
-        - "J'optimise les performances des checks"
-        - "Je forme les équipes aux outils de qualité"
-        - "Je contribue aux outils open-source"
-      5:
-        - "Je définis les standards de qualité code pour l'organisation"
-        - "Je suis la référence interne pour les outils de linting"
-        - "Je mentore les équipes sur les bonnes pratiques de code"
-        - "J'ai mis en place le programme de qualité code"
-      6:
-        - "Je suis speaker à des conférences Python ou Code Quality"
-        - "Je contribue à ruff, sqlfluff ou outils similaires"
-        - "J'ai publié des articles sur la qualité de code"
-        - "Je suis reconnu comme expert externe en linting et formatage"
-    resources:
-      - url: "https://pre-commit.com/"
-        title: "Pre-commit Documentation"
-        type: "documentation"
-      - url: "https://docs.astral.sh/ruff/"
-        title: "Ruff Documentation"
-        type: "documentation"
-      - url: "https://docs.sqlfluff.com/"
-        title: "SQLFluff Documentation"
-        type: "documentation"
-      - url: "https://realpython.com/python-code-quality/"
-        title: "Python Code Quality"
-        type: "tutorial"
-    improvement_tips:
-      "1→2": "Installez pre-commit sur votre projet. Configurez ruff pour le linting Python."
-      "2→3": "Personnalisez les règles pour votre équipe. Ajoutez sqlfluff pour SQL."
-      "3→4": "Définissez les standards de l'organisation. Automatisez dans le CI."
+      "3→4": "Concevez l'architecture d'observabilité de l'équipe. Documentez les runbooks d'incident response et formez les équipes."
