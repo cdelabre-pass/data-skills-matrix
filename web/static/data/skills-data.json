@@ -1,5 +1,5 @@
 {
-  "_source_hash": "0d10f25e9d0eae8c",
+  "_source_hash": "72570f56efc22e90",
   "roles": [
     {
       "id": "data_analyst",
@@ -144,7 +144,7 @@
     {
       "id": "business",
       "name": "Business",
-      "skill_count": 6
+      "skill_count": 5
     },
     {
       "id": "compliance",
@@ -1149,129 +1149,6 @@
       },
       "category": "analytics",
       "category_name": "Analytics"
-    },
-    {
-      "id": "pass_culture_knowledge",
-      "name": "Connaissance Pass Culture",
-      "description": "Comprendre le dispositif Pass Culture (crédit jeunes 15-20 ans, parcours utilisateur, catalogue d'offres, objectifs de diversification culturelle) et les domaines culturels (Livres, Cinéma, Musique, Spectacle vivant, Musées/Patrimoine, Festivals, Pratiques artistiques)",
-      "core_roles": [
-        "data_analyst",
-        "data_scientist",
-        "analytics_eng"
-      ],
-      "levels": {
-        "data_analyst": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "data_engineer": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "data_scientist": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "analytics_eng": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "ml_engineer": [
-          1,
-          1,
-          2,
-          3
-        ],
-        "backend": [
-          1,
-          1,
-          2,
-          3
-        ]
-      },
-      "level_descriptions": {
-        "0": "Aucune connaissance du Pass Culture",
-        "1": "Je comprends le dispositif (crédit jeunes 15-20 ans, objectifs de démocratisation) et les grandes catégories d'offres culturelles",
-        "2": "Je maîtrise les entités métier (offres, réservations, lieux, utilisateurs) et les spécificités de chaque domaine culturel",
-        "3": "J'analyse les parcours utilisateurs, les mécaniques de crédit et les tendances de consommation par domaine et par cohorte",
-        "4": "Je mesure l'impact du dispositif, j'analyse les cohortes et j'identifie les leviers de diversification par domaine",
-        "5": "J'influence la stratégie produit et les politiques publiques, et je forme les équipes aux enjeux métier",
-        "6": "Reconnu comme expert Pass Culture en externe, publications institutionnelles et études sectorielles"
-      },
-      "behavioral_indicators": {
-        "1": [
-          "Je comprends les objectifs du Pass Culture et la démocratisation culturelle",
-          "Je connais les tranches d'âge, les montants de crédit et les grandes catégories d'offres",
-          "Je sais ce qu'est une offre, une réservation, et la différence entre offres physiques et numériques"
-        ],
-        "2": [
-          "Je maîtrise le modèle de données Pass Culture et les KPIs principaux",
-          "Je comprends les différents types d'offres, de lieux et les spécificités de chaque domaine culturel",
-          "Je connais le parcours utilisateur de A à Z et la répartition des réservations par domaine",
-          "Je sais quels domaines sont surreprésentés ou sous-représentés dans les réservations"
-        ],
-        "3": [
-          "J'analyse les cohortes de bénéficiaires et l'évolution de la consommation par domaine",
-          "Je comprends les mécaniques de crédit par âge et les facteurs de diversification",
-          "J'identifie les tendances émergentes par domaine culturel et les leviers de diversification",
-          "Je connais l'écosystème des acteurs culturels et leurs enjeux sectoriels"
-        ],
-        "4": [
-          "Je réponds aux questions métier des équipes data sur le dispositif et les domaines culturels",
-          "Je mesure l'impact du dispositif et contribue aux rapports institutionnels",
-          "Je contribue aux stratégies d'enrichissement du catalogue par domaine",
-          "Je forme les nouveaux arrivants au métier et aux spécificités des domaines culturels"
-        ],
-        "5": [
-          "Je définis les orientations stratégiques du produit data et de l'offre culturelle",
-          "Je forme les équipes produit et direction aux enjeux métier et sectoriels",
-          "Je contribue aux réflexions de politique publique et à la stratégie d'enrichissement",
-          "Mon expertise métier influence les décisions stratégiques de plusieurs équipes"
-        ],
-        "6": [
-          "Je publie des études institutionnelles sur le Pass Culture et les pratiques culturelles",
-          "J'interviens auprès du ministère ou d'institutions externes sur des sujets Pass Culture",
-          "Je donne des conférences sur le dispositif Pass Culture et les politiques culturelles",
-          "Je suis reconnu comme expert de référence en externe sur le dispositif et les domaines culturels"
-        ]
-      },
-      "resources": [
-        {
-          "url": "https://pass.culture.fr/",
-          "title": "Site officiel Pass Culture",
-          "type": "documentation"
-        },
-        {
-          "url": "https://passculture.zendesk.com/hc/fr",
-          "title": "Centre d'aide Pass Culture",
-          "type": "documentation"
-        },
-        {
-          "url": "https://www.culture.gouv.fr/Thematiques/Pass-Culture",
-          "title": "Ministère de la Culture - Pass Culture",
-          "type": "documentation"
-        },
-        {
-          "url": "https://www.data.gouv.fr/fr/organizations/pass-culture/",
-          "title": "Open Data Pass Culture",
-          "type": "documentation"
-        }
-      ],
-      "improvement_tips": {
-        "1→2": "Explorez les données métier (offres, réservations par domaine). Comprenez le modèle de données et la répartition par catégorie.",
-        "2→3": "Analysez les parcours utilisateurs et les tendances de consommation par cohorte et par domaine. Étudiez les facteurs de diversification.",
-        "3→4": "Contribuez aux études d'impact et aux stratégies de diversification par domaine. Présentez les résultats aux parties prenantes institutionnelles."
-      },
-      "category": "business",
-      "category_name": "Business"
     },
     {
       "id": "cultural_recommendation",
