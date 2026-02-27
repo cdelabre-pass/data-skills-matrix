@@ -19,19 +19,15 @@ assessment_modes:
 core_skills_by_role:
   data_analyst:
     - sql_bigquery          # Foundation
-    - statistical_analysis  # Core skill
+    - statistical_analysis  # Core skill (includes A/B testing)
     - insight_generation    # Key deliverable
     - python_data           # Tool
-    - metabase              # BI tool
-    - looker                # BI tool
-    - dashboard_design      # Key deliverable
+    - dashboard_design      # BI & dataviz
     - data_preparation      # Foundation
     - git_github            # Essential
     - technical_scoping        # Soft skill
     - problem_solving       # Soft skill
-    - ab_testing            # Analytics
-    - firebase_analytics    # Product analytics
-    - stakeholder_management  # Soft skill
+    - communication          # Soft skill (includes stakeholders)
     - project_management    # Soft skill
 
   data_engineer:
@@ -39,7 +35,6 @@ core_skills_by_role:
     - python_data           # Core tool
     - dbt                   # Transformation
     - airflow               # Orchestration
-    - bigquery_advanced     # Data warehouse
     - data_modeling         # Architecture
     - git_github            # Essential
     - docker                # DevOps
@@ -48,20 +43,18 @@ core_skills_by_role:
     - data_quality_management  # Quality
     - terraform             # IaC
     - monitoring            # Ops
-    - medallion_architecture  # Architecture
     - problem_solving       # Soft skill
 
   data_scientist:
     - sql_bigquery          # Foundation
     - python_data           # Core tool
-    - statistical_analysis  # Foundation
+    - statistical_analysis  # Foundation (includes A/B testing)
     - ml_fundamentals       # Core
     - insight_generation    # Deliverable
     - ml_deployment    # ML tools
     - embeddings        # Modern ML
     - mlflow     # MLOps
     - feature_engineering   # ML skill
-    - ab_testing            # Experimentation
     - git_github            # Essential
     - technical_scoping        # Soft skill
     - problem_solving       # Soft skill
@@ -70,26 +63,22 @@ core_skills_by_role:
 
   analytics_eng:
     - sql_bigquery          # Foundation
-    - dbt                   # Core tool
-    - dbt_advanced          # Advanced
+    - dbt                   # Core tool (includes advanced)
     - data_modeling         # Core skill
-    - bigquery_advanced     # Data warehouse
     - python_data           # Tool
     - git_github            # Essential
     - data_quality_management  # Quality
-    - medallion_architecture  # Architecture
     - airflow               # Orchestration
     - github_actions        # CI/CD
     - technical_scoping        # Soft skill
     - problem_solving       # Soft skill
-    - data_contracts        # Modern data
+    - data_governance       # Data governance
 
   ml_engineer:
     - python_data           # Foundation
     - ml_fundamentals       # Core
     - ml_deployment    # ML tools
     - mlflow     # MLOps
-    - vertex_ai             # GCP ML
     - docker                # Deployment
     - kubernetes            # Orchestration
     - airflow               # Pipelines
@@ -103,8 +92,7 @@ core_skills_by_role:
 
   backend:
     - python_data           # Foundation
-    - python_backend        # Core
-    - rest_api_integration  # Core
+    - python_backend        # Core (includes API integration)
     - git_github            # Essential
     - docker                # Deployment
     - kubernetes            # Orchestration
@@ -113,7 +101,6 @@ core_skills_by_role:
     - terraform             # IaC
     - sql_bigquery          # Data access
     - monitoring            # Ops
-    - precommit_quality     # Quality
     - data_modeling         # Architecture
     - problem_solving       # Soft skill
     - technical_scoping        # Soft skill
@@ -127,8 +114,6 @@ groups:
     description: "Interrogation et manipulation de données"
     skills:
       - sql_bigquery
-      - bigquery_advanced
-      - query_performance
 
   python_ecosystem:
     name: "Écosystème Python"
@@ -145,9 +130,7 @@ groups:
     description: "Modélisation et transformation"
     skills:
       - dbt
-      - dbt_advanced
       - data_modeling
-      - medallion_architecture
 
   orchestration:
     name: "Orchestration & Pipelines"
@@ -155,7 +138,6 @@ groups:
     description: "Automatisation des workflows"
     skills:
       - airflow
-      - airflow_custom_operators
 
   cloud_infra:
     name: "Cloud & Infrastructure"
@@ -164,8 +146,6 @@ groups:
     skills:
       - gcp_fundamentals
       - kubernetes
-      - vertex_ai
-      - clickhouse
 
   devops:
     name: "DevOps & Qualité"
@@ -176,7 +156,6 @@ groups:
       - github_actions
       - docker
       - terraform
-      - precommit_quality
       - monitoring
 
   analytics_tools:
@@ -185,7 +164,6 @@ groups:
     description: "Analyse et visualisation"
     skills:
       - statistical_analysis
-      - ab_testing
       - insight_generation
 
   product_analytics:
@@ -193,8 +171,6 @@ groups:
     icon: "trending-up"
     description: "Analytics produit"
     skills:
-      - firebase_analytics
-      - behavioral_analysis
       - product_metrics
       - attribution_marketing
       - tracking_design
@@ -204,8 +180,6 @@ groups:
     icon: "pie-chart"
     description: "Outils BI et dashboards"
     skills:
-      - metabase
-      - looker
       - dashboard_design
 
   ml_core:
@@ -228,13 +202,32 @@ groups:
       - mlflow
 
   data_quality:
-    name: "Qualité des Données"
+    name: "Qualité & Gouvernance"
     icon: "shield"
-    description: "Tests, contrats, gouvernance"
+    description: "Tests, gouvernance, data mesh"
     skills:
       - data_quality_management
-      - data_contracts
+      - data_governance
       - data_mesh
+
+  optimization:
+    name: "Optimisation"
+    icon: "zap"
+    description: "Coûts et performances"
+    skills:
+      - cost_optimization
+
+  domain_knowledge:
+    name: "Connaissances Métier"
+    icon: "book"
+    description: "Domaine, organisation, écosystème"
+    skills:
+      - pass_culture_knowledge
+      - cultural_ecosystem
+      - cultural_recommendation
+      - cultural_impact_measurement
+      - organisation_pass
+      - ecosysteme_technique
 
   soft_skills:
     name: "Soft Skills"
@@ -244,12 +237,12 @@ groups:
       - technical_scoping
       - communication
       - problem_solving
-      - stakeholder_management
       - mentoring_leadership
       - project_management
       - posture
-      - adaptability
-      - teamwork
+      - culture_feedback
+      - proactivity_challenge
+      - strategic_thinking
 
 # Inference rules: auto-suggest levels based on related skills
 # Format: if skill_a >= threshold, suggest skill_b = suggested_level
@@ -259,26 +252,15 @@ inference_rules:
     rules:
       - condition: ">= 3"
         targets:
-          - skill: bigquery_advanced
-            suggestion: 2
-            confidence: 0.8
-          - skill: query_performance
-            suggestion: 1
-            confidence: 0.7
-      - condition: ">= 2"
-        targets:
-          - skill: bigquery_advanced
+          - skill: cost_optimization
             suggestion: 1
             confidence: 0.7
       - condition: "<= 1"
         targets:
-          - skill: bigquery_advanced
-            suggestion: 0
-            confidence: 0.9
           - skill: dbt
             suggestion: 0
             confidence: 0.8
-          - skill: query_performance
+          - skill: cost_optimization
             suggestion: 0
             confidence: 0.9
 
@@ -312,64 +294,27 @@ inference_rules:
     rules:
       - condition: ">= 3"
         targets:
-          - skill: dbt_advanced
-            suggestion: 2
-            confidence: 0.8
           - skill: data_modeling
-            suggestion: 2
-            confidence: 0.7
-          - skill: medallion_architecture
             suggestion: 2
             confidence: 0.7
       - condition: ">= 2"
         targets:
-          - skill: dbt_advanced
-            suggestion: 1
-            confidence: 0.7
           - skill: data_modeling
             suggestion: 1
             confidence: 0.6
       - condition: "<= 1"
-        targets:
-          - skill: dbt_advanced
-            suggestion: 0
-            confidence: 0.9
-
-  # Airflow ecosystem
-  - source: airflow
-    rules:
-      - condition: ">= 3"
-        targets:
-          - skill: airflow_custom_operators
-            suggestion: 2
-            confidence: 0.8
-      - condition: ">= 2"
-        targets:
-          - skill: airflow_custom_operators
-            suggestion: 1
-            confidence: 0.7
-      - condition: "<= 1"
-        targets:
-          - skill: airflow_custom_operators
-            suggestion: 0
-            confidence: 0.9
+        targets: []
 
   # GCP ecosystem
   - source: gcp_fundamentals
     rules:
       - condition: ">= 3"
         targets:
-          - skill: bigquery_advanced
-            suggestion: 2
-            confidence: 0.6
-          - skill: vertex_ai
+          - skill: mlflow
             suggestion: 1
             confidence: 0.5
       - condition: "<= 1"
         targets:
-          - skill: vertex_ai
-            suggestion: 0
-            confidence: 0.8
           - skill: kubernetes
             suggestion: 0
             confidence: 0.7
@@ -382,9 +327,6 @@ inference_rules:
           - skill: github_actions
             suggestion: 1
             confidence: 0.7
-          - skill: precommit_quality
-            suggestion: 1
-            confidence: 0.6
       - condition: "<= 1"
         targets:
           - skill: github_actions
@@ -442,7 +384,7 @@ inference_rules:
           - skill: embeddings
             suggestion: 2
             confidence: 0.7
-          - skill: vertex_ai
+          - skill: mlflow
             suggestion: 1
             confidence: 0.6
       - condition: "<= 1"
@@ -456,54 +398,18 @@ inference_rules:
     rules:
       - condition: ">= 3"
         targets:
-          - skill: ab_testing
-            suggestion: 2
-            confidence: 0.8
           - skill: ml_fundamentals
-            suggestion: 1
-            confidence: 0.5
-      - condition: ">= 2"
-        targets:
-          - skill: ab_testing
-            suggestion: 1
-            confidence: 0.7
-      - condition: "<= 1"
-        targets:
-          - skill: ab_testing
-            suggestion: 0
-            confidence: 0.8
-
-  # BI tools
-  - source: dashboard_design
-    rules:
-      - condition: ">= 2"
-        targets:
-          - skill: metabase
-            suggestion: 1
-            confidence: 0.5
-          - skill: looker
             suggestion: 1
             confidence: 0.5
 
   # Product analytics chain
-  - source: firebase_analytics
+  - source: tracking_design
     rules:
       - condition: ">= 2"
         targets:
-          - skill: tracking_design
-            suggestion: 1
-            confidence: 0.7
-          - skill: behavioral_analysis
+          - skill: product_metrics
             suggestion: 1
             confidence: 0.6
-      - condition: "<= 1"
-        targets:
-          - skill: behavioral_analysis
-            suggestion: 0
-            confidence: 0.7
-          - skill: product_metrics
-            suggestion: 0
-            confidence: 0.7
 
   # Soft skills (less inference, more independent)
   - source: communication
@@ -513,6 +419,3 @@ inference_rules:
           - skill: technical_scoping
             suggestion: 2
             confidence: 0.7
-          - skill: stakeholder_management
-            suggestion: 1
-            confidence: 0.5

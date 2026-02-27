@@ -4,77 +4,10 @@ category:
   name: "Sécurité & Conformité"
 
 skills:
-  - id: rgpd
-    name: "RGPD & Protection des Données"
-    description: "Comprendre et appliquer le RGPD et les régulations de protection des données"
-    core_roles: [data_engineer, analytics_eng]
-    levels:
-      data_analyst: [1, 1, 2, 3]
-      data_engineer: [1, 2, 3, 4]
-      data_scientist: [1, 1, 2, 3]
-      analytics_eng: [1, 2, 3, 4]
-      ml_engineer: [1, 1, 2, 3]
-      backend: [1, 2, 3, 4]
-    level_descriptions:
-      0: "Aucune connaissance RGPD"
-      1: "Comprend les principes de base du RGPD"
-      2: "Peut implémenter les exigences RGPD dans le travail data"
-      3: "Conçoit des systèmes conformes au RGPD"
-      4: "Expert en régulations de protection des données"
-      5: "Référent RGPD de l'organisation, DPO adjoint"
-      6: "Expert RGPD reconnu, formateur externe"
-    behavioral_indicators:
-      1:
-        - "Je connais les 6 principes du RGPD"
-        - "Je sais ce qu'est une donnée personnelle"
-        - "Je comprends les droits des personnes (accès, effacement)"
-      2:
-        - "J'identifie les données personnelles dans mes pipelines"
-        - "J'applique l'anonymisation et la pseudonymisation"
-        - "Je respecte la minimisation des données"
-        - "Je documente les traitements de données"
-      3:
-        - "Je conçois des systèmes avec Privacy by Design"
-        - "J'implémente le droit à l'oubli dans les pipelines"
-        - "Je gère les durées de rétention"
-        - "J'ai réalisé une analyse d'impact (AIPD)"
-      4:
-        - "Je suis référent RGPD pour les équipes data"
-        - "Je forme les équipes aux exigences RGPD"
-        - "Je valide la conformité des nouveaux traitements"
-        - "Je participe aux audits de conformité"
-      5:
-        - "Je définis la politique de protection des données de l'organisation"
-        - "Je suis DPO adjoint ou référent privacy"
-        - "Je forme les managers et équipes à la conformité RGPD"
-        - "Je coordonne les audits de conformité internes"
-      6:
-        - "Je suis formateur externe certifié RGPD"
-        - "Je suis sollicité comme consultant par d'autres organisations"
-        - "Je donne des conférences sur la protection des données"
-        - "Je suis reconnu comme expert RGPD dans l'industrie"
-    resources:
-      - url: "https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on"
-        title: "CNIL - RGPD Guide"
-        type: "documentation"
-      - url: "https://gdpr.eu/"
-        title: "GDPR.eu Complete Guide"
-        type: "documentation"
-      - url: "https://www.coursera.org/learn/data-privacy-fundamentals"
-        title: "Data Privacy Fundamentals (Coursera)"
-        type: "course"
-      - url: "https://ico.org.uk/for-organisations/guide-to-data-protection/"
-        title: "ICO Data Protection Guide"
-        type: "documentation"
-    improvement_tips:
-      "1→2": "Identifiez les données personnelles dans vos pipelines. Implémentez l'anonymisation basique."
-      "2→3": "Concevez des systèmes avec Privacy by Design. Implémentez le droit à l'oubli."
-      "3→4": "Devenez référent RGPD de l'équipe. Formez les autres aux bonnes pratiques."
-
   - id: data_security
-    name: "Sécurité des Données"
-    description: "Implémenter les bonnes pratiques de sécurité (IAM, encryption, secrets)"
-    core_roles: [data_engineer, backend]
+    name: "Sécurité & Conformité des Données"
+    description: "RGPD, protection des données personnelles, IAM, encryption, secrets management et audit de conformité"
+    core_roles: [data_engineer, analytics_eng, backend]
     levels:
       data_analyst: [1, 1, 2, 3]
       data_engineer: [1, 2, 3, 4]
@@ -83,57 +16,57 @@ skills:
       ml_engineer: [1, 2, 3, 4]
       backend: [1, 2, 3, 4]
     level_descriptions:
-      0: "Aucune connaissance sécurité"
-      1: "Comprend les concepts de sécurité de base"
-      2: "Peut implémenter les contrôles d'accès, encryption basique"
-      3: "Conçoit des architectures de données sécurisées"
-      4: "Expert en patterns de sécurité des données"
-      5: "Architecte sécurité data de l'organisation"
-      6: "Expert sécurité reconnu, certifications CISSP/CISM"
+      0: "Aucune connaissance en sécurité et conformité des données"
+      1: "Je connais les principes du RGPD, le principe du moindre privilège et les bases de IAM"
+      2: "J'identifie les données personnelles, j'applique anonymisation/pseudonymisation et je configure les permissions IAM"
+      3: "Je conçois des systèmes avec Privacy by Design, j'implémente le droit à l'oubli et l'audit des accès"
+      4: "Je forme les équipes, je valide la conformité des nouveaux traitements et je réalise des audits de sécurité"
+      5: "Je définis la politique de sécurité et conformité des données pour l'entreprise"
+      6: "Expert sécurité et conformité reconnu, certifications CISSP/CISM"
     behavioral_indicators:
       1:
+        - "Je connais les 6 principes du RGPD et ce qu'est une donnée personnelle"
         - "Je comprends le principe du moindre privilège"
         - "Je ne stocke jamais de secrets dans le code"
-        - "Je connais les bases de IAM GCP"
       2:
-        - "Je configure les permissions IAM correctement"
-        - "J'utilise Secret Manager pour les credentials"
+        - "J'identifie les données personnelles dans mes pipelines et j'applique l'anonymisation"
+        - "Je configure les permissions IAM correctement et j'utilise Secret Manager"
         - "Je chiffre les données sensibles"
-        - "J'évite les configurations ouvertes (buckets publics)"
+        - "Je documente les traitements de données"
       3:
-        - "Je conçois des architectures sécurisées"
-        - "J'implémente l'audit des accès aux données"
-        - "Je configure le column-level security"
-        - "Je gère les service accounts avec principe du moindre privilège"
+        - "Je conçois des systèmes avec Privacy by Design"
+        - "J'implémente le droit à l'oubli et la gestion des durées de rétention"
+        - "J'implémente l'audit des accès et le column-level security"
+        - "J'ai réalisé une analyse d'impact (AIPD)"
       4:
-        - "J'ai défini les standards de sécurité data"
-        - "Je réalise des audits de sécurité"
-        - "Je forme les équipes aux bonnes pratiques"
-        - "Je participe aux certifications de sécurité"
+        - "Je valide la conformité RGPD des nouveaux projets data"
+        - "Je forme les équipes aux exigences RGPD et bonnes pratiques de sécurité"
+        - "Je réalise des audits de sécurité et conformité"
+        - "Je définis les standards de sécurité data de l'équipe"
       5:
-        - "Je définis l'architecture de sécurité data de l'organisation"
-        - "Je suis référent sécurité pour les équipes data"
-        - "Je coordonne les audits de sécurité internes et externes"
-        - "Je forme les managers et équipes à la sécurité des données"
+        - "Je définis la politique de sécurité et de protection des données pour l'entreprise"
+        - "Je coordonne les audits de conformité internes et externes"
+        - "Je forme les managers et équipes à la conformité et sécurité"
+        - "J'arbitre les décisions de sécurité et conformité data pour l'organisation"
       6:
-        - "Je suis certifié CISSP, CISM ou équivalent"
-        - "Je suis consultant externe en sécurité des données"
-        - "Je donne des conférences sur la sécurité data"
-        - "Je suis reconnu comme expert sécurité dans l'industrie"
+        - "Je suis certifié CISSP, CISM ou formateur externe RGPD"
+        - "J'ai accompagné d'autres organisations sur leur mise en conformité"
+        - "Je donne des conférences sur la sécurité et conformité des données"
+        - "Je suis reconnu comme expert en sécurité et conformité dans l'industrie"
     resources:
+      - url: "https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on"
+        title: "CNIL - RGPD Guide"
+        type: "documentation"
       - url: "https://cloud.google.com/security/best-practices"
         title: "GCP Security Best Practices"
         type: "documentation"
-      - url: "https://owasp.org/www-project-data-security/"
-        title: "OWASP Data Security"
+      - url: "https://owasp.org/www-project-data-security-top-10/"
+        title: "OWASP Data Security Top 10"
         type: "documentation"
       - url: "https://www.coursera.org/professional-certificates/google-cybersecurity"
         title: "Google Cybersecurity Certificate"
         type: "course"
-      - url: "https://cloud.google.com/docs/enterprise/best-practices-for-enterprise-organizations"
-        title: "GCP Enterprise Security"
-        type: "documentation"
     improvement_tips:
-      "1→2": "Apprenez les bases de IAM GCP. Gérez les secrets avec Secret Manager."
-      "2→3": "Implémentez le chiffrement des données sensibles. Auditez les accès."
-      "3→4": "Concevez l'architecture de sécurité data. Passez une certification sécurité."
+      "1→2": "Identifiez les données personnelles dans vos pipelines. Configurez les permissions IAM et utilisez Secret Manager."
+      "2→3": "Concevez des systèmes avec Privacy by Design. Implémentez l'audit des accès et le droit à l'oubli."
+      "3→4": "Menez un audit RGPD et sécurité complet. Formez les équipes aux bonnes pratiques."
