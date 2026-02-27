@@ -1,5 +1,5 @@
 {
-  "_source_hash": "72570f56efc22e90",
+  "_source_hash": "2c6a04705570762f",
   "roles": [
     {
       "id": "data_analyst",
@@ -1928,7 +1928,7 @@
       },
       "level_descriptions": {
         "0": "Aucune capacité de préparation de données",
-        "1": "Je sais nettoyer un dataset basique (nulls, doublons, filtres)",
+        "1": "Je sais nettoyer une table basique (nulls, doublons, filtres)",
         "2": "Je gère les transformations complexes (jointures, conversions de types, agrégations)",
         "3": "Je conçois des pipelines de préparation reproductibles et je gère les gros volumes",
         "4": "Je définis les standards de préparation de données et j'automatise la validation qualité",
