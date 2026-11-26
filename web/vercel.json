@@ -1,6 +1,5 @@
 {
-  "buildCommand": "npm run build:web",
-  "outputDirectory": ".svelte-kit/output",
   "framework": "sveltekit",
-  "installCommand": "npm install"
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build:web"
 }
